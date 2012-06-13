@@ -1,0 +1,1111 @@
+11 июн 2012 17:15:12,928 INFO  [pool-2-thread-2] network.PacketFrameDecoder     - decoding ReplayingDecoderBuffer(ridx=0, widx=10)
+11 июн 2012 17:15:12,930 INFO  [pool-2-thread-2] network.PacketFrameDecoder     - decoding rb 2147483647
+11 июн 2012 17:15:12,931 INFO  [pool-2-thread-2] network.PacketFrameDecoder     - decoding cb BigEndianHeapChannelBuffer(ridx=0, widx=10, cap=10)
+11 июн 2012 17:15:12,931 INFO  [pool-2-thread-2] network.PacketFrameDecoder     - decoding arr = 10
+11 июн 2012 17:15:12,931 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - new AMF3Deserializer(in=com.sun.org.apache.bcel.internal.util.ByteSequence@2e00e753)
+11 июн 2012 17:15:12,931 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readObject()...
+11 июн 2012 17:15:12,931 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Integer() -> 6 <0x06>
+11 июн 2012 17:15:12,932 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readObject(type=6 <0x06>)
+11 июн 2012 17:15:12,932 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3String()...
+11 июн 2012 17:15:12,932 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Integer() -> 17 <0x11>
+11 июн 2012 17:15:12,932 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3String() - length=8
+11 июн 2012 17:15:12,932 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3String() - result="18,25,55"
+11 июн 2012 17:15:12,933 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - addToStoredStrings(s="18,25,55") at index=0
+11 июн 2012 17:15:12,933 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3String() -> "18,25,55"
+11 июн 2012 17:15:12,933 ERROR [pool-2-thread-2] network.AuthenticationHandler     - java.lang.String cannot be cast to [Ljava.lang.Object;
+11 июн 2012 17:16:09,392 INFO  [pool-2-thread-2] network.PacketFrameDecoder     - decoding ReplayingDecoderBuffer(ridx=0, widx=9)
+11 июн 2012 17:16:09,392 INFO  [pool-2-thread-2] network.PacketFrameDecoder     - decoding rb 2147483647
+11 июн 2012 17:16:09,392 INFO  [pool-2-thread-2] network.PacketFrameDecoder     - decoding cb BigEndianHeapChannelBuffer(ridx=0, widx=9, cap=9)
+11 июн 2012 17:16:09,392 INFO  [pool-2-thread-2] network.PacketFrameDecoder     - decoding arr = 9
+11 июн 2012 17:16:09,393 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - new AMF3Deserializer(in=com.sun.org.apache.bcel.internal.util.ByteSequence@49dc423f)
+11 июн 2012 17:16:09,394 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readObject()...
+11 июн 2012 17:16:09,394 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Integer() -> 9 <0x09>
+11 июн 2012 17:16:09,394 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readObject(type=9 <0x09>)
+11 июн 2012 17:16:09,394 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Integer() -> 7 <0x07>
+11 июн 2012 17:16:09,394 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3String()...
+11 июн 2012 17:16:09,395 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Integer() -> 1 <0x01>
+11 июн 2012 17:16:09,395 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3String() - length=0
+11 июн 2012 17:16:09,395 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3String() -> ""
+11 июн 2012 17:16:09,395 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - addToStoredObjects(o=[null, null, null]) at index=0
+11 июн 2012 17:16:09,395 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readObject()...
+11 июн 2012 17:16:09,396 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Integer() -> 4 <0x04>
+11 июн 2012 17:16:09,396 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readObject(type=4 <0x04>)
+11 июн 2012 17:16:09,396 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Integer() -> 18 <0x12>
+11 июн 2012 17:16:09,396 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readObject()...
+11 июн 2012 17:16:09,396 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Integer() -> 4 <0x04>
+11 июн 2012 17:16:09,397 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readObject(type=4 <0x04>)
+11 июн 2012 17:16:09,397 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Integer() -> 25 <0x19>
+11 июн 2012 17:16:09,397 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readObject()...
+11 июн 2012 17:16:09,397 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Integer() -> 4 <0x04>
+11 июн 2012 17:16:09,397 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readObject(type=4 <0x04>)
+11 июн 2012 17:16:09,397 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Integer() -> 55 <0x37>
+11 июн 2012 17:16:09,398 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Array() -> [18, 25, 55]
+11 июн 2012 17:16:09,398 INFO  [pool-2-thread-2] network.PacketFrameDecoder     - decoded = [Ljava.lang.Object;@1b815bfb
+11 июн 2012 17:16:09,398 INFO  [pool-2-thread-2] network.PacketFrameDecoder     - decoded 1 = 25
+11 июн 2012 17:16:09,398 INFO  [pool-2-thread-2] network.AuthenticationHandler     - auth message received
+11 июн 2012 17:16:09,398 INFO  [pool-2-thread-2] network.AuthenticationHandler     - check auth
+11 июн 2012 17:16:09,399 ERROR [pool-2-thread-2] network.AuthenticationHandler     - [Ljava.lang.Object; cannot be cast to org.jboss.netty.buffer.ChannelBuffer
+11 июн 2012 17:38:44,101 INFO  [pool-2-thread-2] network.PacketFrameDecoder     - decoding ReplayingDecoderBuffer(ridx=0, widx=40)
+11 июн 2012 17:38:44,101 INFO  [pool-2-thread-2] network.PacketFrameDecoder     - decoding rb 2147483647
+11 июн 2012 17:38:44,101 INFO  [pool-2-thread-2] network.PacketFrameDecoder     - decoding cb BigEndianHeapChannelBuffer(ridx=0, widx=40, cap=40)
+11 июн 2012 17:38:44,102 INFO  [pool-2-thread-2] network.PacketFrameDecoder     - decoding arr = 40
+11 июн 2012 17:38:44,102 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - new AMF3Deserializer(in=com.sun.org.apache.bcel.internal.util.ByteSequence@42197bb7)
+11 июн 2012 17:38:44,104 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readObject()...
+11 июн 2012 17:38:44,104 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Integer() -> 10 <0x0A>
+11 июн 2012 17:38:44,104 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readObject(type=10 <0x0A>)
+11 июн 2012 17:38:44,104 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Object()...
+11 июн 2012 17:38:44,104 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Integer() -> 35 <0x23>
+11 июн 2012 17:38:44,105 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Object() - type=35 <0x23>
+11 июн 2012 17:38:44,105 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Object() - inlineClassDef=true
+11 июн 2012 17:38:44,105 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Object() - propertiesCount=2
+11 июн 2012 17:38:44,106 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Object() - encoding=0 <0x00>
+11 июн 2012 17:38:44,106 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3String()...
+11 июн 2012 17:38:44,106 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Integer() -> 1 <0x01>
+11 июн 2012 17:38:44,107 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3String() - length=0
+11 июн 2012 17:38:44,107 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3String() -> ""
+11 июн 2012 17:38:44,107 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Object() - className=""
+11 июн 2012 17:38:44,111 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - addToStoredClassDescriptors(desc=com.exadel.flamingo.flex.messaging.amf.io.util.DefaultActionScriptClassDescriptor {
+  type=,
+  encoding=0,
+  externalizer=null,
+  converter=com.exadel.flamingo.flex.messaging.amf.io.util.DefaultConverter@1fcef4f7,
+  properties=[]
+}) at index=0
+11 июн 2012 17:38:44,111 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Object() - defining 2 properties...
+11 июн 2012 17:38:44,111 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3String()...
+11 июн 2012 17:38:44,114 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Integer() -> 29 <0x1D>
+11 июн 2012 17:38:44,114 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3String() - length=14
+11 июн 2012 17:38:44,114 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3String() - result="command_params"
+11 июн 2012 17:38:44,114 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - addToStoredStrings(s="command_params") at index=0
+11 июн 2012 17:38:44,115 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3String() -> "command_params"
+11 июн 2012 17:38:44,115 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Object() - defining property name=command_params
+11 июн 2012 17:38:44,115 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3String()...
+11 июн 2012 17:38:44,115 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Integer() -> 21 <0x15>
+11 июн 2012 17:38:44,115 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3String() - length=10
+11 июн 2012 17:38:44,116 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3String() - result="command_id"
+11 июн 2012 17:38:44,116 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - addToStoredStrings(s="command_id") at index=1
+11 июн 2012 17:38:44,116 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3String() -> "command_id"
+11 июн 2012 17:38:44,116 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Object() - defining property name=command_id
+11 июн 2012 17:38:44,116 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Object() - actionScriptClassDescriptor=com.exadel.flamingo.flex.messaging.amf.io.util.DefaultActionScriptClassDescriptor {
+  type=,
+  encoding=0,
+  externalizer=null,
+  converter=com.exadel.flamingo.flex.messaging.amf.io.util.DefaultConverter@1fcef4f7,
+  properties=[com.exadel.flamingo.flex.messaging.amf.io.util.MapProperty@4c349471, com.exadel.flamingo.flex.messaging.amf.io.util.MapProperty@ffdadcd]
+}
+11 июн 2012 17:38:44,117 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - addToStoredObjects(o={}) at index=0
+11 июн 2012 17:38:44,117 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Object() - reading defined properties...
+11 июн 2012 17:38:44,117 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readObject(type=9 <0x09>)
+11 июн 2012 17:38:44,117 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Integer() -> 7 <0x07>
+11 июн 2012 17:38:44,118 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3String()...
+11 июн 2012 17:38:44,118 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Integer() -> 1 <0x01>
+11 июн 2012 17:38:44,119 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3String() - length=0
+11 июн 2012 17:38:44,119 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3String() -> ""
+11 июн 2012 17:38:44,119 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - addToStoredObjects(o=[null, null, null]) at index=1
+11 июн 2012 17:38:44,119 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readObject()...
+11 июн 2012 17:38:44,119 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Integer() -> 4 <0x04>
+11 июн 2012 17:38:44,120 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readObject(type=4 <0x04>)
+11 июн 2012 17:38:44,120 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Integer() -> 15 <0x0F>
+11 июн 2012 17:38:44,120 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readObject()...
+11 июн 2012 17:38:44,120 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Integer() -> 4 <0x04>
+11 июн 2012 17:38:44,120 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readObject(type=4 <0x04>)
+11 июн 2012 17:38:44,120 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Integer() -> 63 <0x3F>
+11 июн 2012 17:38:44,121 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readObject()...
+11 июн 2012 17:38:44,121 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Integer() -> 4 <0x04>
+11 июн 2012 17:38:44,121 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readObject(type=4 <0x04>)
+11 июн 2012 17:38:44,121 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Integer() -> 34 <0x22>
+11 июн 2012 17:38:44,121 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Array() -> [15, 63, 34]
+11 июн 2012 17:38:44,122 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Object() - setting defined property: command_params=[15, 63, 34]
+11 июн 2012 17:38:44,123 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readObject(type=4 <0x04>)
+11 июн 2012 17:38:44,123 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Integer() -> 0 <0x00>
+11 июн 2012 17:38:44,123 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Object() - setting defined property: command_id=0 <0x00>
+11 июн 2012 17:38:44,123 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Object() -> {command_params=[Ljava.lang.Object;@22a98932, command_id=0}
+11 июн 2012 17:38:44,124 ERROR [pool-2-thread-2] network.AuthenticationHandler     - java.util.HashMap cannot be cast to [Ljava.lang.Object;
+11 июн 2012 17:39:49,351 INFO  [pool-2-thread-2] network.PacketFrameDecoder     - decoding ReplayingDecoderBuffer(ridx=0, widx=40)
+11 июн 2012 17:39:49,351 INFO  [pool-2-thread-2] network.PacketFrameDecoder     - decoding rb 2147483647
+11 июн 2012 17:39:49,351 INFO  [pool-2-thread-2] network.PacketFrameDecoder     - decoding cb BigEndianHeapChannelBuffer(ridx=0, widx=40, cap=40)
+11 июн 2012 17:39:49,352 INFO  [pool-2-thread-2] network.PacketFrameDecoder     - decoding arr = 40
+11 июн 2012 17:39:49,352 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - new AMF3Deserializer(in=com.sun.org.apache.bcel.internal.util.ByteSequence@24c0f1ec)
+11 июн 2012 17:39:49,355 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readObject()...
+11 июн 2012 17:39:49,355 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Integer() -> 10 <0x0A>
+11 июн 2012 17:39:49,355 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readObject(type=10 <0x0A>)
+11 июн 2012 17:39:49,355 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Object()...
+11 июн 2012 17:39:49,356 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Integer() -> 35 <0x23>
+11 июн 2012 17:39:49,356 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Object() - type=35 <0x23>
+11 июн 2012 17:39:49,356 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Object() - inlineClassDef=true
+11 июн 2012 17:39:49,356 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Object() - propertiesCount=2
+11 июн 2012 17:39:49,356 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Object() - encoding=0 <0x00>
+11 июн 2012 17:39:49,356 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3String()...
+11 июн 2012 17:39:49,356 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Integer() -> 1 <0x01>
+11 июн 2012 17:39:49,357 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3String() - length=0
+11 июн 2012 17:39:49,357 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3String() -> ""
+11 июн 2012 17:39:49,357 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Object() - className=""
+11 июн 2012 17:39:49,357 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - addToStoredClassDescriptors(desc=com.exadel.flamingo.flex.messaging.amf.io.util.DefaultActionScriptClassDescriptor {
+  type=,
+  encoding=0,
+  externalizer=null,
+  converter=com.exadel.flamingo.flex.messaging.amf.io.util.DefaultConverter@774acfcd,
+  properties=[]
+}) at index=0
+11 июн 2012 17:39:49,358 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Object() - defining 2 properties...
+11 июн 2012 17:39:49,358 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3String()...
+11 июн 2012 17:39:49,358 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Integer() -> 29 <0x1D>
+11 июн 2012 17:39:49,359 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3String() - length=14
+11 июн 2012 17:39:49,359 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3String() - result="command_params"
+11 июн 2012 17:39:49,359 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - addToStoredStrings(s="command_params") at index=0
+11 июн 2012 17:39:49,359 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3String() -> "command_params"
+11 июн 2012 17:39:49,359 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Object() - defining property name=command_params
+11 июн 2012 17:39:49,360 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3String()...
+11 июн 2012 17:39:49,360 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Integer() -> 21 <0x15>
+11 июн 2012 17:39:49,360 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3String() - length=10
+11 июн 2012 17:39:49,360 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3String() - result="command_id"
+11 июн 2012 17:39:49,360 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - addToStoredStrings(s="command_id") at index=1
+11 июн 2012 17:39:49,360 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3String() -> "command_id"
+11 июн 2012 17:39:49,361 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Object() - defining property name=command_id
+11 июн 2012 17:39:49,361 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Object() - actionScriptClassDescriptor=com.exadel.flamingo.flex.messaging.amf.io.util.DefaultActionScriptClassDescriptor {
+  type=,
+  encoding=0,
+  externalizer=null,
+  converter=com.exadel.flamingo.flex.messaging.amf.io.util.DefaultConverter@774acfcd,
+  properties=[com.exadel.flamingo.flex.messaging.amf.io.util.MapProperty@5090d8ea, com.exadel.flamingo.flex.messaging.amf.io.util.MapProperty@559113f8]
+}
+11 июн 2012 17:39:49,361 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - addToStoredObjects(o={}) at index=0
+11 июн 2012 17:39:49,362 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Object() - reading defined properties...
+11 июн 2012 17:39:49,362 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readObject(type=9 <0x09>)
+11 июн 2012 17:39:49,362 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Integer() -> 7 <0x07>
+11 июн 2012 17:39:49,362 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3String()...
+11 июн 2012 17:39:49,363 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Integer() -> 1 <0x01>
+11 июн 2012 17:39:49,363 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3String() - length=0
+11 июн 2012 17:39:49,363 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3String() -> ""
+11 июн 2012 17:39:49,363 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - addToStoredObjects(o=[null, null, null]) at index=1
+11 июн 2012 17:39:49,363 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readObject()...
+11 июн 2012 17:39:49,363 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Integer() -> 4 <0x04>
+11 июн 2012 17:39:49,364 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readObject(type=4 <0x04>)
+11 июн 2012 17:39:49,364 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Integer() -> 15 <0x0F>
+11 июн 2012 17:39:49,364 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readObject()...
+11 июн 2012 17:39:49,364 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Integer() -> 4 <0x04>
+11 июн 2012 17:39:49,365 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readObject(type=4 <0x04>)
+11 июн 2012 17:39:49,365 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Integer() -> 63 <0x3F>
+11 июн 2012 17:39:49,365 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readObject()...
+11 июн 2012 17:39:49,365 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Integer() -> 4 <0x04>
+11 июн 2012 17:39:49,365 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readObject(type=4 <0x04>)
+11 июн 2012 17:39:49,365 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Integer() -> 34 <0x22>
+11 июн 2012 17:39:49,365 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Array() -> [15, 63, 34]
+11 июн 2012 17:39:49,366 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Object() - setting defined property: command_params=[15, 63, 34]
+11 июн 2012 17:39:49,366 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readObject(type=4 <0x04>)
+11 июн 2012 17:39:49,366 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Integer() -> 0 <0x00>
+11 июн 2012 17:39:49,366 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Object() - setting defined property: command_id=0 <0x00>
+11 июн 2012 17:39:49,366 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Object() -> {command_params=[Ljava.lang.Object;@27b62aab, command_id=0}
+11 июн 2012 17:39:49,367 ERROR [pool-2-thread-2] network.AuthenticationHandler     - java.util.HashMap cannot be cast to [Ljava.lang.Object;
+11 июн 2012 17:48:22,330 INFO  [pool-2-thread-2] network.PacketFrameDecoder     - decoding ReplayingDecoderBuffer(ridx=0, widx=40)
+11 июн 2012 17:48:22,330 INFO  [pool-2-thread-2] network.PacketFrameDecoder     - decoding rb 2147483647
+11 июн 2012 17:48:22,330 INFO  [pool-2-thread-2] network.PacketFrameDecoder     - decoding cb BigEndianHeapChannelBuffer(ridx=0, widx=40, cap=40)
+11 июн 2012 17:48:22,330 INFO  [pool-2-thread-2] network.PacketFrameDecoder     - decoding arr = 40
+11 июн 2012 17:48:22,330 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - new AMF3Deserializer(in=com.sun.org.apache.bcel.internal.util.ByteSequence@12d56b37)
+11 июн 2012 17:48:22,335 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readObject()...
+11 июн 2012 17:48:22,335 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Integer() -> 10 <0x0A>
+11 июн 2012 17:48:22,335 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readObject(type=10 <0x0A>)
+11 июн 2012 17:48:22,335 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Object()...
+11 июн 2012 17:48:22,335 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Integer() -> 35 <0x23>
+11 июн 2012 17:48:22,336 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Object() - type=35 <0x23>
+11 июн 2012 17:48:22,336 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Object() - inlineClassDef=true
+11 июн 2012 17:48:22,336 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Object() - propertiesCount=2
+11 июн 2012 17:48:22,336 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Object() - encoding=0 <0x00>
+11 июн 2012 17:48:22,336 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3String()...
+11 июн 2012 17:48:22,336 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Integer() -> 1 <0x01>
+11 июн 2012 17:48:22,337 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3String() - length=0
+11 июн 2012 17:48:22,337 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3String() -> ""
+11 июн 2012 17:48:22,337 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Object() - className=""
+11 июн 2012 17:48:22,337 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - addToStoredClassDescriptors(desc=com.exadel.flamingo.flex.messaging.amf.io.util.DefaultActionScriptClassDescriptor {
+  type=,
+  encoding=0,
+  externalizer=null,
+  converter=com.exadel.flamingo.flex.messaging.amf.io.util.DefaultConverter@7971f189,
+  properties=[]
+}) at index=0
+11 июн 2012 17:48:22,338 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Object() - defining 2 properties...
+11 июн 2012 17:48:22,338 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3String()...
+11 июн 2012 17:48:22,338 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Integer() -> 29 <0x1D>
+11 июн 2012 17:48:22,338 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3String() - length=14
+11 июн 2012 17:48:22,338 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3String() - result="command_params"
+11 июн 2012 17:48:22,339 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - addToStoredStrings(s="command_params") at index=0
+11 июн 2012 17:48:22,339 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3String() -> "command_params"
+11 июн 2012 17:48:22,339 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Object() - defining property name=command_params
+11 июн 2012 17:48:22,339 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3String()...
+11 июн 2012 17:48:22,339 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Integer() -> 21 <0x15>
+11 июн 2012 17:48:22,339 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3String() - length=10
+11 июн 2012 17:48:22,339 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3String() - result="command_id"
+11 июн 2012 17:48:22,340 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - addToStoredStrings(s="command_id") at index=1
+11 июн 2012 17:48:22,340 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3String() -> "command_id"
+11 июн 2012 17:48:22,340 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Object() - defining property name=command_id
+11 июн 2012 17:48:22,340 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Object() - actionScriptClassDescriptor=com.exadel.flamingo.flex.messaging.amf.io.util.DefaultActionScriptClassDescriptor {
+  type=,
+  encoding=0,
+  externalizer=null,
+  converter=com.exadel.flamingo.flex.messaging.amf.io.util.DefaultConverter@7971f189,
+  properties=[com.exadel.flamingo.flex.messaging.amf.io.util.MapProperty@27a897a9, com.exadel.flamingo.flex.messaging.amf.io.util.MapProperty@2d7cec96]
+}
+11 июн 2012 17:48:22,341 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - addToStoredObjects(o={}) at index=0
+11 июн 2012 17:48:22,341 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Object() - reading defined properties...
+11 июн 2012 17:48:22,341 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readObject(type=9 <0x09>)
+11 июн 2012 17:48:22,341 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Integer() -> 7 <0x07>
+11 июн 2012 17:48:22,341 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3String()...
+11 июн 2012 17:48:22,341 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Integer() -> 1 <0x01>
+11 июн 2012 17:48:22,342 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3String() - length=0
+11 июн 2012 17:48:22,342 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3String() -> ""
+11 июн 2012 17:48:22,342 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - addToStoredObjects(o=[null, null, null]) at index=1
+11 июн 2012 17:48:22,342 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readObject()...
+11 июн 2012 17:48:22,343 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Integer() -> 4 <0x04>
+11 июн 2012 17:48:22,343 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readObject(type=4 <0x04>)
+11 июн 2012 17:48:22,343 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Integer() -> 15 <0x0F>
+11 июн 2012 17:48:22,343 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readObject()...
+11 июн 2012 17:48:22,343 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Integer() -> 4 <0x04>
+11 июн 2012 17:48:22,343 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readObject(type=4 <0x04>)
+11 июн 2012 17:48:22,343 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Integer() -> 63 <0x3F>
+11 июн 2012 17:48:22,344 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readObject()...
+11 июн 2012 17:48:22,344 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Integer() -> 4 <0x04>
+11 июн 2012 17:48:22,344 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readObject(type=4 <0x04>)
+11 июн 2012 17:48:22,344 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Integer() -> 34 <0x22>
+11 июн 2012 17:48:22,344 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Array() -> [15, 63, 34]
+11 июн 2012 17:48:22,345 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Object() - setting defined property: command_params=[15, 63, 34]
+11 июн 2012 17:48:22,345 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readObject(type=4 <0x04>)
+11 июн 2012 17:48:22,345 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Integer() -> 0 <0x00>
+11 июн 2012 17:48:22,345 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Object() - setting defined property: command_id=0 <0x00>
+11 июн 2012 17:48:22,345 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Object() -> {command_params=[Ljava.lang.Object;@6490832e, command_id=0}
+11 июн 2012 17:48:22,346 ERROR [pool-2-thread-2] network.AuthenticationHandler     - java.util.HashMap cannot be cast to [Ljava.lang.Object;
+11 июн 2012 17:48:23,233 INFO  [pool-2-thread-2] network.PacketFrameDecoder     - decoding ReplayingDecoderBuffer(ridx=0, widx=40)
+11 июн 2012 17:48:23,233 INFO  [pool-2-thread-2] network.PacketFrameDecoder     - decoding rb 2147483647
+11 июн 2012 17:48:23,234 INFO  [pool-2-thread-2] network.PacketFrameDecoder     - decoding cb BigEndianHeapChannelBuffer(ridx=0, widx=40, cap=40)
+11 июн 2012 17:48:23,234 INFO  [pool-2-thread-2] network.PacketFrameDecoder     - decoding arr = 40
+11 июн 2012 17:48:23,234 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - new AMF3Deserializer(in=com.sun.org.apache.bcel.internal.util.ByteSequence@7f724a9d)
+11 июн 2012 17:48:23,234 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readObject()...
+11 июн 2012 17:48:23,234 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Integer() -> 10 <0x0A>
+11 июн 2012 17:48:23,234 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readObject(type=10 <0x0A>)
+11 июн 2012 17:48:23,234 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Object()...
+11 июн 2012 17:48:23,235 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Integer() -> 35 <0x23>
+11 июн 2012 17:48:23,235 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Object() - type=35 <0x23>
+11 июн 2012 17:48:23,235 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Object() - inlineClassDef=true
+11 июн 2012 17:48:23,235 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Object() - propertiesCount=2
+11 июн 2012 17:48:23,235 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Object() - encoding=0 <0x00>
+11 июн 2012 17:48:23,235 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3String()...
+11 июн 2012 17:48:23,236 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Integer() -> 1 <0x01>
+11 июн 2012 17:48:23,236 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3String() - length=0
+11 июн 2012 17:48:23,236 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3String() -> ""
+11 июн 2012 17:48:23,236 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Object() - className=""
+11 июн 2012 17:48:23,236 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - addToStoredClassDescriptors(desc=com.exadel.flamingo.flex.messaging.amf.io.util.DefaultActionScriptClassDescriptor {
+  type=,
+  encoding=0,
+  externalizer=null,
+  converter=com.exadel.flamingo.flex.messaging.amf.io.util.DefaultConverter@2880cac9,
+  properties=[]
+}) at index=0
+11 июн 2012 17:48:23,237 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Object() - defining 2 properties...
+11 июн 2012 17:48:23,237 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3String()...
+11 июн 2012 17:48:23,237 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Integer() -> 29 <0x1D>
+11 июн 2012 17:48:23,237 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3String() - length=14
+11 июн 2012 17:48:23,238 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3String() - result="command_params"
+11 июн 2012 17:48:23,238 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - addToStoredStrings(s="command_params") at index=0
+11 июн 2012 17:48:23,238 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3String() -> "command_params"
+11 июн 2012 17:48:23,238 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Object() - defining property name=command_params
+11 июн 2012 17:48:23,238 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3String()...
+11 июн 2012 17:48:23,239 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Integer() -> 21 <0x15>
+11 июн 2012 17:48:23,239 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3String() - length=10
+11 июн 2012 17:48:23,239 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3String() - result="command_id"
+11 июн 2012 17:48:23,239 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - addToStoredStrings(s="command_id") at index=1
+11 июн 2012 17:48:23,239 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3String() -> "command_id"
+11 июн 2012 17:48:23,239 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Object() - defining property name=command_id
+11 июн 2012 17:48:23,240 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Object() - actionScriptClassDescriptor=com.exadel.flamingo.flex.messaging.amf.io.util.DefaultActionScriptClassDescriptor {
+  type=,
+  encoding=0,
+  externalizer=null,
+  converter=com.exadel.flamingo.flex.messaging.amf.io.util.DefaultConverter@2880cac9,
+  properties=[com.exadel.flamingo.flex.messaging.amf.io.util.MapProperty@1f8166e5, com.exadel.flamingo.flex.messaging.amf.io.util.MapProperty@688a548b]
+}
+11 июн 2012 17:48:23,240 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - addToStoredObjects(o={}) at index=0
+11 июн 2012 17:48:23,241 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Object() - reading defined properties...
+11 июн 2012 17:48:23,241 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readObject(type=9 <0x09>)
+11 июн 2012 17:48:23,241 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Integer() -> 7 <0x07>
+11 июн 2012 17:48:23,241 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3String()...
+11 июн 2012 17:48:23,241 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Integer() -> 1 <0x01>
+11 июн 2012 17:48:23,242 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3String() - length=0
+11 июн 2012 17:48:23,242 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3String() -> ""
+11 июн 2012 17:48:23,242 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - addToStoredObjects(o=[null, null, null]) at index=1
+11 июн 2012 17:48:23,242 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readObject()...
+11 июн 2012 17:48:23,242 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Integer() -> 4 <0x04>
+11 июн 2012 17:48:23,242 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readObject(type=4 <0x04>)
+11 июн 2012 17:48:23,242 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Integer() -> 15 <0x0F>
+11 июн 2012 17:48:23,243 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readObject()...
+11 июн 2012 17:48:23,243 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Integer() -> 4 <0x04>
+11 июн 2012 17:48:23,243 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readObject(type=4 <0x04>)
+11 июн 2012 17:48:23,243 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Integer() -> 63 <0x3F>
+11 июн 2012 17:48:23,243 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readObject()...
+11 июн 2012 17:48:23,244 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Integer() -> 4 <0x04>
+11 июн 2012 17:48:23,244 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readObject(type=4 <0x04>)
+11 июн 2012 17:48:23,244 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Integer() -> 34 <0x22>
+11 июн 2012 17:48:23,244 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Array() -> [15, 63, 34]
+11 июн 2012 17:48:23,244 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Object() - setting defined property: command_params=[15, 63, 34]
+11 июн 2012 17:48:23,244 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readObject(type=4 <0x04>)
+11 июн 2012 17:48:23,245 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Integer() -> 0 <0x00>
+11 июн 2012 17:48:23,245 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Object() - setting defined property: command_id=0 <0x00>
+11 июн 2012 17:48:23,245 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Object() -> {command_params=[Ljava.lang.Object;@51b4a74b, command_id=0}
+11 июн 2012 17:48:23,245 ERROR [pool-2-thread-2] network.AuthenticationHandler     - java.util.HashMap cannot be cast to [Ljava.lang.Object;
+11 июн 2012 17:48:23,865 INFO  [pool-2-thread-2] network.PacketFrameDecoder     - decoding ReplayingDecoderBuffer(ridx=0, widx=40)
+11 июн 2012 17:48:23,865 INFO  [pool-2-thread-2] network.PacketFrameDecoder     - decoding rb 2147483647
+11 июн 2012 17:48:23,866 INFO  [pool-2-thread-2] network.PacketFrameDecoder     - decoding cb BigEndianHeapChannelBuffer(ridx=0, widx=40, cap=40)
+11 июн 2012 17:48:23,866 INFO  [pool-2-thread-2] network.PacketFrameDecoder     - decoding arr = 40
+11 июн 2012 17:48:23,866 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - new AMF3Deserializer(in=com.sun.org.apache.bcel.internal.util.ByteSequence@6c69d02b)
+11 июн 2012 17:48:23,867 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readObject()...
+11 июн 2012 17:48:23,867 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Integer() -> 10 <0x0A>
+11 июн 2012 17:48:23,867 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readObject(type=10 <0x0A>)
+11 июн 2012 17:48:23,867 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Object()...
+11 июн 2012 17:48:23,867 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Integer() -> 35 <0x23>
+11 июн 2012 17:48:23,868 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Object() - type=35 <0x23>
+11 июн 2012 17:48:23,868 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Object() - inlineClassDef=true
+11 июн 2012 17:48:23,868 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Object() - propertiesCount=2
+11 июн 2012 17:48:23,868 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Object() - encoding=0 <0x00>
+11 июн 2012 17:48:23,868 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3String()...
+11 июн 2012 17:48:23,868 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Integer() -> 1 <0x01>
+11 июн 2012 17:48:23,868 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3String() - length=0
+11 июн 2012 17:48:23,869 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3String() -> ""
+11 июн 2012 17:48:23,869 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Object() - className=""
+11 июн 2012 17:48:23,869 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - addToStoredClassDescriptors(desc=com.exadel.flamingo.flex.messaging.amf.io.util.DefaultActionScriptClassDescriptor {
+  type=,
+  encoding=0,
+  externalizer=null,
+  converter=com.exadel.flamingo.flex.messaging.amf.io.util.DefaultConverter@16e1eea8,
+  properties=[]
+}) at index=0
+11 июн 2012 17:48:23,870 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Object() - defining 2 properties...
+11 июн 2012 17:48:23,870 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3String()...
+11 июн 2012 17:48:23,870 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Integer() -> 29 <0x1D>
+11 июн 2012 17:48:23,870 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3String() - length=14
+11 июн 2012 17:48:23,870 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3String() - result="command_params"
+11 июн 2012 17:48:23,871 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - addToStoredStrings(s="command_params") at index=0
+11 июн 2012 17:48:23,871 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3String() -> "command_params"
+11 июн 2012 17:48:23,871 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Object() - defining property name=command_params
+11 июн 2012 17:48:23,871 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3String()...
+11 июн 2012 17:48:23,871 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Integer() -> 21 <0x15>
+11 июн 2012 17:48:23,871 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3String() - length=10
+11 июн 2012 17:48:23,872 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3String() - result="command_id"
+11 июн 2012 17:48:23,872 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - addToStoredStrings(s="command_id") at index=1
+11 июн 2012 17:48:23,872 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3String() -> "command_id"
+11 июн 2012 17:48:23,872 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Object() - defining property name=command_id
+11 июн 2012 17:48:23,872 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Object() - actionScriptClassDescriptor=com.exadel.flamingo.flex.messaging.amf.io.util.DefaultActionScriptClassDescriptor {
+  type=,
+  encoding=0,
+  externalizer=null,
+  converter=com.exadel.flamingo.flex.messaging.amf.io.util.DefaultConverter@16e1eea8,
+  properties=[com.exadel.flamingo.flex.messaging.amf.io.util.MapProperty@4afb6354, com.exadel.flamingo.flex.messaging.amf.io.util.MapProperty@3e364641]
+}
+11 июн 2012 17:48:23,873 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - addToStoredObjects(o={}) at index=0
+11 июн 2012 17:48:23,873 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Object() - reading defined properties...
+11 июн 2012 17:48:23,873 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readObject(type=9 <0x09>)
+11 июн 2012 17:48:23,873 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Integer() -> 7 <0x07>
+11 июн 2012 17:48:23,873 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3String()...
+11 июн 2012 17:48:23,874 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Integer() -> 1 <0x01>
+11 июн 2012 17:48:23,874 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3String() - length=0
+11 июн 2012 17:48:23,874 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3String() -> ""
+11 июн 2012 17:48:23,874 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - addToStoredObjects(o=[null, null, null]) at index=1
+11 июн 2012 17:48:23,874 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readObject()...
+11 июн 2012 17:48:23,875 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Integer() -> 4 <0x04>
+11 июн 2012 17:48:23,875 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readObject(type=4 <0x04>)
+11 июн 2012 17:48:23,875 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Integer() -> 15 <0x0F>
+11 июн 2012 17:48:23,875 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readObject()...
+11 июн 2012 17:48:23,875 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Integer() -> 4 <0x04>
+11 июн 2012 17:48:23,875 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readObject(type=4 <0x04>)
+11 июн 2012 17:48:23,876 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Integer() -> 63 <0x3F>
+11 июн 2012 17:48:23,876 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readObject()...
+11 июн 2012 17:48:23,876 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Integer() -> 4 <0x04>
+11 июн 2012 17:48:23,876 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readObject(type=4 <0x04>)
+11 июн 2012 17:48:23,876 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Integer() -> 34 <0x22>
+11 июн 2012 17:48:23,877 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Array() -> [15, 63, 34]
+11 июн 2012 17:48:23,877 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Object() - setting defined property: command_params=[15, 63, 34]
+11 июн 2012 17:48:23,877 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readObject(type=4 <0x04>)
+11 июн 2012 17:48:23,877 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Integer() -> 0 <0x00>
+11 июн 2012 17:48:23,877 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Object() - setting defined property: command_id=0 <0x00>
+11 июн 2012 17:48:23,878 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Object() -> {command_params=[Ljava.lang.Object;@7aae3364, command_id=0}
+11 июн 2012 17:48:23,878 ERROR [pool-2-thread-2] network.AuthenticationHandler     - java.util.HashMap cannot be cast to [Ljava.lang.Object;
+11 июн 2012 17:48:24,579 INFO  [pool-2-thread-2] network.PacketFrameDecoder     - decoding ReplayingDecoderBuffer(ridx=0, widx=40)
+11 июн 2012 17:48:24,580 INFO  [pool-2-thread-2] network.PacketFrameDecoder     - decoding rb 2147483647
+11 июн 2012 17:48:24,580 INFO  [pool-2-thread-2] network.PacketFrameDecoder     - decoding cb BigEndianHeapChannelBuffer(ridx=0, widx=40, cap=40)
+11 июн 2012 17:48:24,580 INFO  [pool-2-thread-2] network.PacketFrameDecoder     - decoding arr = 40
+11 июн 2012 17:48:24,580 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - new AMF3Deserializer(in=com.sun.org.apache.bcel.internal.util.ByteSequence@3b5e234c)
+11 июн 2012 17:48:24,581 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readObject()...
+11 июн 2012 17:48:24,581 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Integer() -> 10 <0x0A>
+11 июн 2012 17:48:24,581 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readObject(type=10 <0x0A>)
+11 июн 2012 17:48:24,581 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Object()...
+11 июн 2012 17:48:24,581 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Integer() -> 35 <0x23>
+11 июн 2012 17:48:24,582 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Object() - type=35 <0x23>
+11 июн 2012 17:48:24,582 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Object() - inlineClassDef=true
+11 июн 2012 17:48:24,582 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Object() - propertiesCount=2
+11 июн 2012 17:48:24,582 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Object() - encoding=0 <0x00>
+11 июн 2012 17:48:24,582 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3String()...
+11 июн 2012 17:48:24,582 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Integer() -> 1 <0x01>
+11 июн 2012 17:48:24,583 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3String() - length=0
+11 июн 2012 17:48:24,583 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3String() -> ""
+11 июн 2012 17:48:24,583 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Object() - className=""
+11 июн 2012 17:48:24,583 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - addToStoredClassDescriptors(desc=com.exadel.flamingo.flex.messaging.amf.io.util.DefaultActionScriptClassDescriptor {
+  type=,
+  encoding=0,
+  externalizer=null,
+  converter=com.exadel.flamingo.flex.messaging.amf.io.util.DefaultConverter@215f7107,
+  properties=[]
+}) at index=0
+11 июн 2012 17:48:24,584 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Object() - defining 2 properties...
+11 июн 2012 17:48:24,584 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3String()...
+11 июн 2012 17:48:24,584 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Integer() -> 29 <0x1D>
+11 июн 2012 17:48:24,584 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3String() - length=14
+11 июн 2012 17:48:24,585 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3String() - result="command_params"
+11 июн 2012 17:48:24,585 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - addToStoredStrings(s="command_params") at index=0
+11 июн 2012 17:48:24,585 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3String() -> "command_params"
+11 июн 2012 17:48:24,585 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Object() - defining property name=command_params
+11 июн 2012 17:48:24,585 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3String()...
+11 июн 2012 17:48:24,585 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Integer() -> 21 <0x15>
+11 июн 2012 17:48:24,585 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3String() - length=10
+11 июн 2012 17:48:24,585 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3String() - result="command_id"
+11 июн 2012 17:48:24,586 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - addToStoredStrings(s="command_id") at index=1
+11 июн 2012 17:48:24,586 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3String() -> "command_id"
+11 июн 2012 17:48:24,586 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Object() - defining property name=command_id
+11 июн 2012 17:48:24,586 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Object() - actionScriptClassDescriptor=com.exadel.flamingo.flex.messaging.amf.io.util.DefaultActionScriptClassDescriptor {
+  type=,
+  encoding=0,
+  externalizer=null,
+  converter=com.exadel.flamingo.flex.messaging.amf.io.util.DefaultConverter@215f7107,
+  properties=[com.exadel.flamingo.flex.messaging.amf.io.util.MapProperty@f593af, com.exadel.flamingo.flex.messaging.amf.io.util.MapProperty@7ab2c6a6]
+}
+11 июн 2012 17:48:24,587 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - addToStoredObjects(o={}) at index=0
+11 июн 2012 17:48:24,587 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Object() - reading defined properties...
+11 июн 2012 17:48:24,587 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readObject(type=9 <0x09>)
+11 июн 2012 17:48:24,587 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Integer() -> 7 <0x07>
+11 июн 2012 17:48:24,587 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3String()...
+11 июн 2012 17:48:24,587 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Integer() -> 1 <0x01>
+11 июн 2012 17:48:24,588 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3String() - length=0
+11 июн 2012 17:48:24,588 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3String() -> ""
+11 июн 2012 17:48:24,588 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - addToStoredObjects(o=[null, null, null]) at index=1
+11 июн 2012 17:48:24,588 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readObject()...
+11 июн 2012 17:48:24,588 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Integer() -> 4 <0x04>
+11 июн 2012 17:48:24,588 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readObject(type=4 <0x04>)
+11 июн 2012 17:48:24,589 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Integer() -> 15 <0x0F>
+11 июн 2012 17:48:24,589 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readObject()...
+11 июн 2012 17:48:24,589 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Integer() -> 4 <0x04>
+11 июн 2012 17:48:24,589 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readObject(type=4 <0x04>)
+11 июн 2012 17:48:24,589 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Integer() -> 63 <0x3F>
+11 июн 2012 17:48:24,590 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readObject()...
+11 июн 2012 17:48:24,590 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Integer() -> 4 <0x04>
+11 июн 2012 17:48:24,590 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readObject(type=4 <0x04>)
+11 июн 2012 17:48:24,590 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Integer() -> 34 <0x22>
+11 июн 2012 17:48:24,590 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Array() -> [15, 63, 34]
+11 июн 2012 17:48:24,590 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Object() - setting defined property: command_params=[15, 63, 34]
+11 июн 2012 17:48:24,591 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readObject(type=4 <0x04>)
+11 июн 2012 17:48:24,591 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Integer() -> 0 <0x00>
+11 июн 2012 17:48:24,591 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Object() - setting defined property: command_id=0 <0x00>
+11 июн 2012 17:48:24,591 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Object() -> {command_params=[Ljava.lang.Object;@3c6210fb, command_id=0}
+11 июн 2012 17:48:24,591 ERROR [pool-2-thread-2] network.AuthenticationHandler     - java.util.HashMap cannot be cast to [Ljava.lang.Object;
+11 июн 2012 17:48:24,977 INFO  [pool-2-thread-2] network.PacketFrameDecoder     - decoding ReplayingDecoderBuffer(ridx=0, widx=40)
+11 июн 2012 17:48:24,978 INFO  [pool-2-thread-2] network.PacketFrameDecoder     - decoding rb 2147483647
+11 июн 2012 17:48:24,978 INFO  [pool-2-thread-2] network.PacketFrameDecoder     - decoding cb BigEndianHeapChannelBuffer(ridx=0, widx=40, cap=40)
+11 июн 2012 17:48:24,978 INFO  [pool-2-thread-2] network.PacketFrameDecoder     - decoding arr = 40
+11 июн 2012 17:48:24,978 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - new AMF3Deserializer(in=com.sun.org.apache.bcel.internal.util.ByteSequence@4a48edb5)
+11 июн 2012 17:48:24,983 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readObject()...
+11 июн 2012 17:48:24,983 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Integer() -> 10 <0x0A>
+11 июн 2012 17:48:24,983 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readObject(type=10 <0x0A>)
+11 июн 2012 17:48:24,983 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Object()...
+11 июн 2012 17:48:24,984 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Integer() -> 35 <0x23>
+11 июн 2012 17:48:24,984 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Object() - type=35 <0x23>
+11 июн 2012 17:48:24,984 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Object() - inlineClassDef=true
+11 июн 2012 17:48:24,984 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Object() - propertiesCount=2
+11 июн 2012 17:48:24,984 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Object() - encoding=0 <0x00>
+11 июн 2012 17:48:24,984 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3String()...
+11 июн 2012 17:48:24,985 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Integer() -> 1 <0x01>
+11 июн 2012 17:48:24,985 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3String() - length=0
+11 июн 2012 17:48:24,985 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3String() -> ""
+11 июн 2012 17:48:24,985 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Object() - className=""
+11 июн 2012 17:48:24,985 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - addToStoredClassDescriptors(desc=com.exadel.flamingo.flex.messaging.amf.io.util.DefaultActionScriptClassDescriptor {
+  type=,
+  encoding=0,
+  externalizer=null,
+  converter=com.exadel.flamingo.flex.messaging.amf.io.util.DefaultConverter@79ee2c2c,
+  properties=[]
+}) at index=0
+11 июн 2012 17:48:24,986 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Object() - defining 2 properties...
+11 июн 2012 17:48:24,986 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3String()...
+11 июн 2012 17:48:24,986 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Integer() -> 29 <0x1D>
+11 июн 2012 17:48:24,986 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3String() - length=14
+11 июн 2012 17:48:24,986 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3String() - result="command_params"
+11 июн 2012 17:48:24,987 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - addToStoredStrings(s="command_params") at index=0
+11 июн 2012 17:48:24,987 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3String() -> "command_params"
+11 июн 2012 17:48:24,987 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Object() - defining property name=command_params
+11 июн 2012 17:48:24,987 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3String()...
+11 июн 2012 17:48:24,988 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Integer() -> 21 <0x15>
+11 июн 2012 17:48:24,988 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3String() - length=10
+11 июн 2012 17:48:24,988 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3String() - result="command_id"
+11 июн 2012 17:48:24,988 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - addToStoredStrings(s="command_id") at index=1
+11 июн 2012 17:48:24,988 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3String() -> "command_id"
+11 июн 2012 17:48:24,988 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Object() - defining property name=command_id
+11 июн 2012 17:48:24,989 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Object() - actionScriptClassDescriptor=com.exadel.flamingo.flex.messaging.amf.io.util.DefaultActionScriptClassDescriptor {
+  type=,
+  encoding=0,
+  externalizer=null,
+  converter=com.exadel.flamingo.flex.messaging.amf.io.util.DefaultConverter@79ee2c2c,
+  properties=[com.exadel.flamingo.flex.messaging.amf.io.util.MapProperty@3963b3e, com.exadel.flamingo.flex.messaging.amf.io.util.MapProperty@7c0b6548]
+}
+11 июн 2012 17:48:24,989 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - addToStoredObjects(o={}) at index=0
+11 июн 2012 17:48:24,990 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Object() - reading defined properties...
+11 июн 2012 17:48:24,990 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readObject(type=9 <0x09>)
+11 июн 2012 17:48:24,990 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Integer() -> 7 <0x07>
+11 июн 2012 17:48:24,990 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3String()...
+11 июн 2012 17:48:24,990 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Integer() -> 1 <0x01>
+11 июн 2012 17:48:24,991 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3String() - length=0
+11 июн 2012 17:48:24,991 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3String() -> ""
+11 июн 2012 17:48:24,991 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - addToStoredObjects(o=[null, null, null]) at index=1
+11 июн 2012 17:48:24,991 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readObject()...
+11 июн 2012 17:48:24,991 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Integer() -> 4 <0x04>
+11 июн 2012 17:48:24,991 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readObject(type=4 <0x04>)
+11 июн 2012 17:48:24,992 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Integer() -> 15 <0x0F>
+11 июн 2012 17:48:24,992 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readObject()...
+11 июн 2012 17:48:24,992 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Integer() -> 4 <0x04>
+11 июн 2012 17:48:24,992 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readObject(type=4 <0x04>)
+11 июн 2012 17:48:24,992 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Integer() -> 63 <0x3F>
+11 июн 2012 17:48:24,993 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readObject()...
+11 июн 2012 17:48:24,993 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Integer() -> 4 <0x04>
+11 июн 2012 17:48:24,993 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readObject(type=4 <0x04>)
+11 июн 2012 17:48:24,993 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Integer() -> 34 <0x22>
+11 июн 2012 17:48:24,993 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Array() -> [15, 63, 34]
+11 июн 2012 17:48:24,993 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Object() - setting defined property: command_params=[15, 63, 34]
+11 июн 2012 17:48:24,993 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readObject(type=4 <0x04>)
+11 июн 2012 17:48:24,994 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Integer() -> 0 <0x00>
+11 июн 2012 17:48:24,994 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Object() - setting defined property: command_id=0 <0x00>
+11 июн 2012 17:48:24,994 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Object() -> {command_params=[Ljava.lang.Object;@50269997, command_id=0}
+11 июн 2012 17:48:24,994 ERROR [pool-2-thread-2] network.AuthenticationHandler     - java.util.HashMap cannot be cast to [Ljava.lang.Object;
+11 июн 2012 17:48:25,591 INFO  [pool-2-thread-2] network.PacketFrameDecoder     - decoding ReplayingDecoderBuffer(ridx=0, widx=40)
+11 июн 2012 17:48:25,592 INFO  [pool-2-thread-2] network.PacketFrameDecoder     - decoding rb 2147483647
+11 июн 2012 17:48:25,592 INFO  [pool-2-thread-2] network.PacketFrameDecoder     - decoding cb BigEndianHeapChannelBuffer(ridx=0, widx=40, cap=40)
+11 июн 2012 17:48:25,592 INFO  [pool-2-thread-2] network.PacketFrameDecoder     - decoding arr = 40
+11 июн 2012 17:48:25,592 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - new AMF3Deserializer(in=com.sun.org.apache.bcel.internal.util.ByteSequence@11e7c5cb)
+11 июн 2012 17:48:25,593 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readObject()...
+11 июн 2012 17:48:25,593 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Integer() -> 10 <0x0A>
+11 июн 2012 17:48:25,593 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readObject(type=10 <0x0A>)
+11 июн 2012 17:48:25,593 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Object()...
+11 июн 2012 17:48:25,593 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Integer() -> 35 <0x23>
+11 июн 2012 17:48:25,594 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Object() - type=35 <0x23>
+11 июн 2012 17:48:25,594 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Object() - inlineClassDef=true
+11 июн 2012 17:48:25,594 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Object() - propertiesCount=2
+11 июн 2012 17:48:25,594 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Object() - encoding=0 <0x00>
+11 июн 2012 17:48:25,594 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3String()...
+11 июн 2012 17:48:25,594 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Integer() -> 1 <0x01>
+11 июн 2012 17:48:25,595 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3String() - length=0
+11 июн 2012 17:48:25,595 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3String() -> ""
+11 июн 2012 17:48:25,595 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Object() - className=""
+11 июн 2012 17:48:25,595 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - addToStoredClassDescriptors(desc=com.exadel.flamingo.flex.messaging.amf.io.util.DefaultActionScriptClassDescriptor {
+  type=,
+  encoding=0,
+  externalizer=null,
+  converter=com.exadel.flamingo.flex.messaging.amf.io.util.DefaultConverter@76a9b9c,
+  properties=[]
+}) at index=0
+11 июн 2012 17:48:25,596 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Object() - defining 2 properties...
+11 июн 2012 17:48:25,596 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3String()...
+11 июн 2012 17:48:25,596 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Integer() -> 29 <0x1D>
+11 июн 2012 17:48:25,596 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3String() - length=14
+11 июн 2012 17:48:25,596 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3String() - result="command_params"
+11 июн 2012 17:48:25,597 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - addToStoredStrings(s="command_params") at index=0
+11 июн 2012 17:48:25,597 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3String() -> "command_params"
+11 июн 2012 17:48:25,597 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Object() - defining property name=command_params
+11 июн 2012 17:48:25,597 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3String()...
+11 июн 2012 17:48:25,597 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Integer() -> 21 <0x15>
+11 июн 2012 17:48:25,598 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3String() - length=10
+11 июн 2012 17:48:25,598 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3String() - result="command_id"
+11 июн 2012 17:48:25,598 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - addToStoredStrings(s="command_id") at index=1
+11 июн 2012 17:48:25,598 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3String() -> "command_id"
+11 июн 2012 17:48:25,598 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Object() - defining property name=command_id
+11 июн 2012 17:48:25,599 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Object() - actionScriptClassDescriptor=com.exadel.flamingo.flex.messaging.amf.io.util.DefaultActionScriptClassDescriptor {
+  type=,
+  encoding=0,
+  externalizer=null,
+  converter=com.exadel.flamingo.flex.messaging.amf.io.util.DefaultConverter@76a9b9c,
+  properties=[com.exadel.flamingo.flex.messaging.amf.io.util.MapProperty@680e2291, com.exadel.flamingo.flex.messaging.amf.io.util.MapProperty@77ff92f5]
+}
+11 июн 2012 17:48:25,599 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - addToStoredObjects(o={}) at index=0
+11 июн 2012 17:48:25,600 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Object() - reading defined properties...
+11 июн 2012 17:48:25,600 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readObject(type=9 <0x09>)
+11 июн 2012 17:48:25,600 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Integer() -> 7 <0x07>
+11 июн 2012 17:48:25,600 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3String()...
+11 июн 2012 17:48:25,600 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Integer() -> 1 <0x01>
+11 июн 2012 17:48:25,600 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3String() - length=0
+11 июн 2012 17:48:25,601 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3String() -> ""
+11 июн 2012 17:48:25,601 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - addToStoredObjects(o=[null, null, null]) at index=1
+11 июн 2012 17:48:25,601 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readObject()...
+11 июн 2012 17:48:25,601 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Integer() -> 4 <0x04>
+11 июн 2012 17:48:25,601 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readObject(type=4 <0x04>)
+11 июн 2012 17:48:25,602 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Integer() -> 15 <0x0F>
+11 июн 2012 17:48:25,602 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readObject()...
+11 июн 2012 17:48:25,602 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Integer() -> 4 <0x04>
+11 июн 2012 17:48:25,602 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readObject(type=4 <0x04>)
+11 июн 2012 17:48:25,602 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Integer() -> 63 <0x3F>
+11 июн 2012 17:48:25,603 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readObject()...
+11 июн 2012 17:48:25,603 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Integer() -> 4 <0x04>
+11 июн 2012 17:48:25,603 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readObject(type=4 <0x04>)
+11 июн 2012 17:48:25,603 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Integer() -> 34 <0x22>
+11 июн 2012 17:48:25,603 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Array() -> [15, 63, 34]
+11 июн 2012 17:48:25,603 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Object() - setting defined property: command_params=[15, 63, 34]
+11 июн 2012 17:48:25,604 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readObject(type=4 <0x04>)
+11 июн 2012 17:48:25,604 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Integer() -> 0 <0x00>
+11 июн 2012 17:48:25,604 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Object() - setting defined property: command_id=0 <0x00>
+11 июн 2012 17:48:25,604 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Object() -> {command_params=[Ljava.lang.Object;@2c09505f, command_id=0}
+11 июн 2012 17:48:25,604 ERROR [pool-2-thread-2] network.AuthenticationHandler     - java.util.HashMap cannot be cast to [Ljava.lang.Object;
+11 июн 2012 17:48:26,773 INFO  [pool-2-thread-2] network.PacketFrameDecoder     - decoding ReplayingDecoderBuffer(ridx=0, widx=40)
+11 июн 2012 17:48:26,773 INFO  [pool-2-thread-2] network.PacketFrameDecoder     - decoding rb 2147483647
+11 июн 2012 17:48:26,774 INFO  [pool-2-thread-2] network.PacketFrameDecoder     - decoding cb BigEndianHeapChannelBuffer(ridx=0, widx=40, cap=40)
+11 июн 2012 17:48:26,774 INFO  [pool-2-thread-2] network.PacketFrameDecoder     - decoding arr = 40
+11 июн 2012 17:48:26,774 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - new AMF3Deserializer(in=com.sun.org.apache.bcel.internal.util.ByteSequence@177ba38f)
+11 июн 2012 17:48:26,778 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readObject()...
+11 июн 2012 17:48:26,778 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Integer() -> 10 <0x0A>
+11 июн 2012 17:48:26,778 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readObject(type=10 <0x0A>)
+11 июн 2012 17:48:26,778 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Object()...
+11 июн 2012 17:48:26,779 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Integer() -> 35 <0x23>
+11 июн 2012 17:48:26,779 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Object() - type=35 <0x23>
+11 июн 2012 17:48:26,779 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Object() - inlineClassDef=true
+11 июн 2012 17:48:26,779 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Object() - propertiesCount=2
+11 июн 2012 17:48:26,779 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Object() - encoding=0 <0x00>
+11 июн 2012 17:48:26,779 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3String()...
+11 июн 2012 17:48:26,779 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Integer() -> 1 <0x01>
+11 июн 2012 17:48:26,780 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3String() - length=0
+11 июн 2012 17:48:26,780 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3String() -> ""
+11 июн 2012 17:48:26,780 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Object() - className=""
+11 июн 2012 17:48:26,780 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - addToStoredClassDescriptors(desc=com.exadel.flamingo.flex.messaging.amf.io.util.DefaultActionScriptClassDescriptor {
+  type=,
+  encoding=0,
+  externalizer=null,
+  converter=com.exadel.flamingo.flex.messaging.amf.io.util.DefaultConverter@362f0d54,
+  properties=[]
+}) at index=0
+11 июн 2012 17:48:26,781 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Object() - defining 2 properties...
+11 июн 2012 17:48:26,781 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3String()...
+11 июн 2012 17:48:26,781 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Integer() -> 29 <0x1D>
+11 июн 2012 17:48:26,781 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3String() - length=14
+11 июн 2012 17:48:26,782 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3String() - result="command_params"
+11 июн 2012 17:48:26,782 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - addToStoredStrings(s="command_params") at index=0
+11 июн 2012 17:48:26,782 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3String() -> "command_params"
+11 июн 2012 17:48:26,782 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Object() - defining property name=command_params
+11 июн 2012 17:48:26,782 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3String()...
+11 июн 2012 17:48:26,782 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Integer() -> 21 <0x15>
+11 июн 2012 17:48:26,783 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3String() - length=10
+11 июн 2012 17:48:26,783 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3String() - result="command_id"
+11 июн 2012 17:48:26,783 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - addToStoredStrings(s="command_id") at index=1
+11 июн 2012 17:48:26,783 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3String() -> "command_id"
+11 июн 2012 17:48:26,783 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Object() - defining property name=command_id
+11 июн 2012 17:48:26,784 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Object() - actionScriptClassDescriptor=com.exadel.flamingo.flex.messaging.amf.io.util.DefaultActionScriptClassDescriptor {
+  type=,
+  encoding=0,
+  externalizer=null,
+  converter=com.exadel.flamingo.flex.messaging.amf.io.util.DefaultConverter@362f0d54,
+  properties=[com.exadel.flamingo.flex.messaging.amf.io.util.MapProperty@4b142196, com.exadel.flamingo.flex.messaging.amf.io.util.MapProperty@16a9255c]
+}
+11 июн 2012 17:48:26,784 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - addToStoredObjects(o={}) at index=0
+11 июн 2012 17:48:26,785 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Object() - reading defined properties...
+11 июн 2012 17:48:26,785 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readObject(type=9 <0x09>)
+11 июн 2012 17:48:26,785 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Integer() -> 7 <0x07>
+11 июн 2012 17:48:26,785 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3String()...
+11 июн 2012 17:48:26,785 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Integer() -> 1 <0x01>
+11 июн 2012 17:48:26,786 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3String() - length=0
+11 июн 2012 17:48:26,786 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3String() -> ""
+11 июн 2012 17:48:26,786 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - addToStoredObjects(o=[null, null, null]) at index=1
+11 июн 2012 17:48:26,786 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readObject()...
+11 июн 2012 17:48:26,786 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Integer() -> 4 <0x04>
+11 июн 2012 17:48:26,786 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readObject(type=4 <0x04>)
+11 июн 2012 17:48:26,786 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Integer() -> 15 <0x0F>
+11 июн 2012 17:48:26,787 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readObject()...
+11 июн 2012 17:48:26,787 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Integer() -> 4 <0x04>
+11 июн 2012 17:48:26,787 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readObject(type=4 <0x04>)
+11 июн 2012 17:48:26,787 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Integer() -> 63 <0x3F>
+11 июн 2012 17:48:26,788 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readObject()...
+11 июн 2012 17:48:26,788 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Integer() -> 4 <0x04>
+11 июн 2012 17:48:26,788 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readObject(type=4 <0x04>)
+11 июн 2012 17:48:26,788 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Integer() -> 34 <0x22>
+11 июн 2012 17:48:26,789 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Array() -> [15, 63, 34]
+11 июн 2012 17:48:26,789 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Object() - setting defined property: command_params=[15, 63, 34]
+11 июн 2012 17:48:26,789 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readObject(type=4 <0x04>)
+11 июн 2012 17:48:26,790 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Integer() -> 0 <0x00>
+11 июн 2012 17:48:26,790 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Object() - setting defined property: command_id=0 <0x00>
+11 июн 2012 17:48:26,790 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Object() -> {command_params=[Ljava.lang.Object;@3ad3c6a3, command_id=0}
+11 июн 2012 17:48:26,791 ERROR [pool-2-thread-2] network.AuthenticationHandler     - java.util.HashMap cannot be cast to [Ljava.lang.Object;
+11 июн 2012 17:48:27,459 INFO  [pool-2-thread-2] network.PacketFrameDecoder     - decoding ReplayingDecoderBuffer(ridx=0, widx=40)
+11 июн 2012 17:48:27,460 INFO  [pool-2-thread-2] network.PacketFrameDecoder     - decoding rb 2147483647
+11 июн 2012 17:48:27,460 INFO  [pool-2-thread-2] network.PacketFrameDecoder     - decoding cb BigEndianHeapChannelBuffer(ridx=0, widx=40, cap=40)
+11 июн 2012 17:48:27,460 INFO  [pool-2-thread-2] network.PacketFrameDecoder     - decoding arr = 40
+11 июн 2012 17:48:27,460 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - new AMF3Deserializer(in=com.sun.org.apache.bcel.internal.util.ByteSequence@25961581)
+11 июн 2012 17:48:27,463 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readObject()...
+11 июн 2012 17:48:27,463 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Integer() -> 10 <0x0A>
+11 июн 2012 17:48:27,463 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readObject(type=10 <0x0A>)
+11 июн 2012 17:48:27,463 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Object()...
+11 июн 2012 17:48:27,463 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Integer() -> 35 <0x23>
+11 июн 2012 17:48:27,463 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Object() - type=35 <0x23>
+11 июн 2012 17:48:27,464 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Object() - inlineClassDef=true
+11 июн 2012 17:48:27,464 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Object() - propertiesCount=2
+11 июн 2012 17:48:27,464 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Object() - encoding=0 <0x00>
+11 июн 2012 17:48:27,464 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3String()...
+11 июн 2012 17:48:27,464 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Integer() -> 1 <0x01>
+11 июн 2012 17:48:27,464 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3String() - length=0
+11 июн 2012 17:48:27,465 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3String() -> ""
+11 июн 2012 17:48:27,465 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Object() - className=""
+11 июн 2012 17:48:27,465 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - addToStoredClassDescriptors(desc=com.exadel.flamingo.flex.messaging.amf.io.util.DefaultActionScriptClassDescriptor {
+  type=,
+  encoding=0,
+  externalizer=null,
+  converter=com.exadel.flamingo.flex.messaging.amf.io.util.DefaultConverter@205ddb6e,
+  properties=[]
+}) at index=0
+11 июн 2012 17:48:27,466 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Object() - defining 2 properties...
+11 июн 2012 17:48:27,466 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3String()...
+11 июн 2012 17:48:27,466 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Integer() -> 29 <0x1D>
+11 июн 2012 17:48:27,466 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3String() - length=14
+11 июн 2012 17:48:27,466 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3String() - result="command_params"
+11 июн 2012 17:48:27,467 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - addToStoredStrings(s="command_params") at index=0
+11 июн 2012 17:48:27,467 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3String() -> "command_params"
+11 июн 2012 17:48:27,467 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Object() - defining property name=command_params
+11 июн 2012 17:48:27,467 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3String()...
+11 июн 2012 17:48:27,467 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Integer() -> 21 <0x15>
+11 июн 2012 17:48:27,468 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3String() - length=10
+11 июн 2012 17:48:27,468 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3String() - result="command_id"
+11 июн 2012 17:48:27,468 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - addToStoredStrings(s="command_id") at index=1
+11 июн 2012 17:48:27,468 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3String() -> "command_id"
+11 июн 2012 17:48:27,468 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Object() - defining property name=command_id
+11 июн 2012 17:48:27,469 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Object() - actionScriptClassDescriptor=com.exadel.flamingo.flex.messaging.amf.io.util.DefaultActionScriptClassDescriptor {
+  type=,
+  encoding=0,
+  externalizer=null,
+  converter=com.exadel.flamingo.flex.messaging.amf.io.util.DefaultConverter@205ddb6e,
+  properties=[com.exadel.flamingo.flex.messaging.amf.io.util.MapProperty@71f1235b, com.exadel.flamingo.flex.messaging.amf.io.util.MapProperty@e4865ce]
+}
+11 июн 2012 17:48:27,469 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - addToStoredObjects(o={}) at index=0
+11 июн 2012 17:48:27,470 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Object() - reading defined properties...
+11 июн 2012 17:48:27,470 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readObject(type=9 <0x09>)
+11 июн 2012 17:48:27,470 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Integer() -> 7 <0x07>
+11 июн 2012 17:48:27,470 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3String()...
+11 июн 2012 17:48:27,470 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Integer() -> 1 <0x01>
+11 июн 2012 17:48:27,470 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3String() - length=0
+11 июн 2012 17:48:27,471 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3String() -> ""
+11 июн 2012 17:48:27,471 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - addToStoredObjects(o=[null, null, null]) at index=1
+11 июн 2012 17:48:27,471 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readObject()...
+11 июн 2012 17:48:27,471 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Integer() -> 4 <0x04>
+11 июн 2012 17:48:27,471 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readObject(type=4 <0x04>)
+11 июн 2012 17:48:27,471 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Integer() -> 15 <0x0F>
+11 июн 2012 17:48:27,472 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readObject()...
+11 июн 2012 17:48:27,472 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Integer() -> 4 <0x04>
+11 июн 2012 17:48:27,472 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readObject(type=4 <0x04>)
+11 июн 2012 17:48:27,472 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Integer() -> 63 <0x3F>
+11 июн 2012 17:48:27,472 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readObject()...
+11 июн 2012 17:48:27,472 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Integer() -> 4 <0x04>
+11 июн 2012 17:48:27,473 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readObject(type=4 <0x04>)
+11 июн 2012 17:48:27,473 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Integer() -> 34 <0x22>
+11 июн 2012 17:48:27,473 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Array() -> [15, 63, 34]
+11 июн 2012 17:48:27,473 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Object() - setting defined property: command_params=[15, 63, 34]
+11 июн 2012 17:48:27,473 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readObject(type=4 <0x04>)
+11 июн 2012 17:48:27,473 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Integer() -> 0 <0x00>
+11 июн 2012 17:48:27,474 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Object() - setting defined property: command_id=0 <0x00>
+11 июн 2012 17:48:27,474 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Object() -> {command_params=[Ljava.lang.Object;@3313beb5, command_id=0}
+11 июн 2012 17:48:27,474 ERROR [pool-2-thread-2] network.AuthenticationHandler     - java.util.HashMap cannot be cast to [Ljava.lang.Object;
+11 июн 2012 17:48:27,997 INFO  [pool-2-thread-2] network.PacketFrameDecoder     - decoding ReplayingDecoderBuffer(ridx=0, widx=40)
+11 июн 2012 17:48:27,998 INFO  [pool-2-thread-2] network.PacketFrameDecoder     - decoding rb 2147483647
+11 июн 2012 17:48:27,998 INFO  [pool-2-thread-2] network.PacketFrameDecoder     - decoding cb BigEndianHeapChannelBuffer(ridx=0, widx=40, cap=40)
+11 июн 2012 17:48:27,998 INFO  [pool-2-thread-2] network.PacketFrameDecoder     - decoding arr = 40
+11 июн 2012 17:48:27,998 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - new AMF3Deserializer(in=com.sun.org.apache.bcel.internal.util.ByteSequence@554d7745)
+11 июн 2012 17:48:28,002 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readObject()...
+11 июн 2012 17:48:28,002 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Integer() -> 10 <0x0A>
+11 июн 2012 17:48:28,002 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readObject(type=10 <0x0A>)
+11 июн 2012 17:48:28,002 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Object()...
+11 июн 2012 17:48:28,002 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Integer() -> 35 <0x23>
+11 июн 2012 17:48:28,003 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Object() - type=35 <0x23>
+11 июн 2012 17:48:28,003 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Object() - inlineClassDef=true
+11 июн 2012 17:48:28,003 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Object() - propertiesCount=2
+11 июн 2012 17:48:28,003 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Object() - encoding=0 <0x00>
+11 июн 2012 17:48:28,003 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3String()...
+11 июн 2012 17:48:28,003 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Integer() -> 1 <0x01>
+11 июн 2012 17:48:28,003 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3String() - length=0
+11 июн 2012 17:48:28,004 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3String() -> ""
+11 июн 2012 17:48:28,004 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Object() - className=""
+11 июн 2012 17:48:28,004 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - addToStoredClassDescriptors(desc=com.exadel.flamingo.flex.messaging.amf.io.util.DefaultActionScriptClassDescriptor {
+  type=,
+  encoding=0,
+  externalizer=null,
+  converter=com.exadel.flamingo.flex.messaging.amf.io.util.DefaultConverter@50d17ec3,
+  properties=[]
+}) at index=0
+11 июн 2012 17:48:28,005 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Object() - defining 2 properties...
+11 июн 2012 17:48:28,005 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3String()...
+11 июн 2012 17:48:28,005 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Integer() -> 29 <0x1D>
+11 июн 2012 17:48:28,005 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3String() - length=14
+11 июн 2012 17:48:28,006 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3String() - result="command_params"
+11 июн 2012 17:48:28,006 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - addToStoredStrings(s="command_params") at index=0
+11 июн 2012 17:48:28,006 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3String() -> "command_params"
+11 июн 2012 17:48:28,006 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Object() - defining property name=command_params
+11 июн 2012 17:48:28,006 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3String()...
+11 июн 2012 17:48:28,007 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Integer() -> 21 <0x15>
+11 июн 2012 17:48:28,007 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3String() - length=10
+11 июн 2012 17:48:28,007 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3String() - result="command_id"
+11 июн 2012 17:48:28,007 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - addToStoredStrings(s="command_id") at index=1
+11 июн 2012 17:48:28,008 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3String() -> "command_id"
+11 июн 2012 17:48:28,008 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Object() - defining property name=command_id
+11 июн 2012 17:48:28,008 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Object() - actionScriptClassDescriptor=com.exadel.flamingo.flex.messaging.amf.io.util.DefaultActionScriptClassDescriptor {
+  type=,
+  encoding=0,
+  externalizer=null,
+  converter=com.exadel.flamingo.flex.messaging.amf.io.util.DefaultConverter@50d17ec3,
+  properties=[com.exadel.flamingo.flex.messaging.amf.io.util.MapProperty@69d95da8, com.exadel.flamingo.flex.messaging.amf.io.util.MapProperty@3d93f6e2]
+}
+11 июн 2012 17:48:28,009 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - addToStoredObjects(o={}) at index=0
+11 июн 2012 17:48:28,009 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Object() - reading defined properties...
+11 июн 2012 17:48:28,009 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readObject(type=9 <0x09>)
+11 июн 2012 17:48:28,009 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Integer() -> 7 <0x07>
+11 июн 2012 17:48:28,009 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3String()...
+11 июн 2012 17:48:28,010 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Integer() -> 1 <0x01>
+11 июн 2012 17:48:28,010 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3String() - length=0
+11 июн 2012 17:48:28,010 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3String() -> ""
+11 июн 2012 17:48:28,010 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - addToStoredObjects(o=[null, null, null]) at index=1
+11 июн 2012 17:48:28,010 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readObject()...
+11 июн 2012 17:48:28,010 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Integer() -> 4 <0x04>
+11 июн 2012 17:48:28,010 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readObject(type=4 <0x04>)
+11 июн 2012 17:48:28,011 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Integer() -> 15 <0x0F>
+11 июн 2012 17:48:28,011 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readObject()...
+11 июн 2012 17:48:28,011 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Integer() -> 4 <0x04>
+11 июн 2012 17:48:28,011 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readObject(type=4 <0x04>)
+11 июн 2012 17:48:28,012 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Integer() -> 63 <0x3F>
+11 июн 2012 17:48:28,012 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readObject()...
+11 июн 2012 17:48:28,012 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Integer() -> 4 <0x04>
+11 июн 2012 17:48:28,012 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readObject(type=4 <0x04>)
+11 июн 2012 17:48:28,012 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Integer() -> 34 <0x22>
+11 июн 2012 17:48:28,012 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Array() -> [15, 63, 34]
+11 июн 2012 17:48:28,013 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Object() - setting defined property: command_params=[15, 63, 34]
+11 июн 2012 17:48:28,013 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readObject(type=4 <0x04>)
+11 июн 2012 17:48:28,013 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Integer() -> 0 <0x00>
+11 июн 2012 17:48:28,013 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Object() - setting defined property: command_id=0 <0x00>
+11 июн 2012 17:48:28,013 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Object() -> {command_params=[Ljava.lang.Object;@7402d5a, command_id=0}
+11 июн 2012 17:48:28,014 ERROR [pool-2-thread-2] network.AuthenticationHandler     - java.util.HashMap cannot be cast to [Ljava.lang.Object;
+11 июн 2012 17:48:28,697 INFO  [pool-2-thread-2] network.PacketFrameDecoder     - decoding ReplayingDecoderBuffer(ridx=0, widx=40)
+11 июн 2012 17:48:28,697 INFO  [pool-2-thread-2] network.PacketFrameDecoder     - decoding rb 2147483647
+11 июн 2012 17:48:28,697 INFO  [pool-2-thread-2] network.PacketFrameDecoder     - decoding cb BigEndianHeapChannelBuffer(ridx=0, widx=40, cap=40)
+11 июн 2012 17:48:28,698 INFO  [pool-2-thread-2] network.PacketFrameDecoder     - decoding arr = 40
+11 июн 2012 17:48:28,698 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - new AMF3Deserializer(in=com.sun.org.apache.bcel.internal.util.ByteSequence@67e13e07)
+11 июн 2012 17:48:28,702 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readObject()...
+11 июн 2012 17:48:28,702 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Integer() -> 10 <0x0A>
+11 июн 2012 17:48:28,702 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readObject(type=10 <0x0A>)
+11 июн 2012 17:48:28,702 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Object()...
+11 июн 2012 17:48:28,702 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Integer() -> 35 <0x23>
+11 июн 2012 17:48:28,702 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Object() - type=35 <0x23>
+11 июн 2012 17:48:28,703 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Object() - inlineClassDef=true
+11 июн 2012 17:48:28,703 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Object() - propertiesCount=2
+11 июн 2012 17:48:28,703 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Object() - encoding=0 <0x00>
+11 июн 2012 17:48:28,703 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3String()...
+11 июн 2012 17:48:28,703 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Integer() -> 1 <0x01>
+11 июн 2012 17:48:28,703 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3String() - length=0
+11 июн 2012 17:48:28,704 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3String() -> ""
+11 июн 2012 17:48:28,704 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Object() - className=""
+11 июн 2012 17:48:28,704 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - addToStoredClassDescriptors(desc=com.exadel.flamingo.flex.messaging.amf.io.util.DefaultActionScriptClassDescriptor {
+  type=,
+  encoding=0,
+  externalizer=null,
+  converter=com.exadel.flamingo.flex.messaging.amf.io.util.DefaultConverter@74af72d8,
+  properties=[]
+}) at index=0
+11 июн 2012 17:48:28,705 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Object() - defining 2 properties...
+11 июн 2012 17:48:28,705 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3String()...
+11 июн 2012 17:48:28,705 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Integer() -> 29 <0x1D>
+11 июн 2012 17:48:28,705 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3String() - length=14
+11 июн 2012 17:48:28,705 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3String() - result="command_params"
+11 июн 2012 17:48:28,706 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - addToStoredStrings(s="command_params") at index=0
+11 июн 2012 17:48:28,706 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3String() -> "command_params"
+11 июн 2012 17:48:28,706 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Object() - defining property name=command_params
+11 июн 2012 17:48:28,706 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3String()...
+11 июн 2012 17:48:28,706 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Integer() -> 21 <0x15>
+11 июн 2012 17:48:28,706 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3String() - length=10
+11 июн 2012 17:48:28,706 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3String() - result="command_id"
+11 июн 2012 17:48:28,707 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - addToStoredStrings(s="command_id") at index=1
+11 июн 2012 17:48:28,707 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3String() -> "command_id"
+11 июн 2012 17:48:28,707 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Object() - defining property name=command_id
+11 июн 2012 17:48:28,707 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Object() - actionScriptClassDescriptor=com.exadel.flamingo.flex.messaging.amf.io.util.DefaultActionScriptClassDescriptor {
+  type=,
+  encoding=0,
+  externalizer=null,
+  converter=com.exadel.flamingo.flex.messaging.amf.io.util.DefaultConverter@74af72d8,
+  properties=[com.exadel.flamingo.flex.messaging.amf.io.util.MapProperty@2a9cfec1, com.exadel.flamingo.flex.messaging.amf.io.util.MapProperty@291946c2]
+}
+11 июн 2012 17:48:28,708 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - addToStoredObjects(o={}) at index=0
+11 июн 2012 17:48:28,708 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Object() - reading defined properties...
+11 июн 2012 17:48:28,708 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readObject(type=9 <0x09>)
+11 июн 2012 17:48:28,708 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Integer() -> 7 <0x07>
+11 июн 2012 17:48:28,709 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3String()...
+11 июн 2012 17:48:28,709 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Integer() -> 1 <0x01>
+11 июн 2012 17:48:28,709 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3String() - length=0
+11 июн 2012 17:48:28,709 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3String() -> ""
+11 июн 2012 17:48:28,709 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - addToStoredObjects(o=[null, null, null]) at index=1
+11 июн 2012 17:48:28,709 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readObject()...
+11 июн 2012 17:48:28,709 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Integer() -> 4 <0x04>
+11 июн 2012 17:48:28,710 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readObject(type=4 <0x04>)
+11 июн 2012 17:48:28,710 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Integer() -> 15 <0x0F>
+11 июн 2012 17:48:28,710 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readObject()...
+11 июн 2012 17:48:28,710 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Integer() -> 4 <0x04>
+11 июн 2012 17:48:28,710 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readObject(type=4 <0x04>)
+11 июн 2012 17:48:28,711 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Integer() -> 63 <0x3F>
+11 июн 2012 17:48:28,711 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readObject()...
+11 июн 2012 17:48:28,711 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Integer() -> 4 <0x04>
+11 июн 2012 17:48:28,711 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readObject(type=4 <0x04>)
+11 июн 2012 17:48:28,711 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Integer() -> 34 <0x22>
+11 июн 2012 17:48:28,711 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Array() -> [15, 63, 34]
+11 июн 2012 17:48:28,711 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Object() - setting defined property: command_params=[15, 63, 34]
+11 июн 2012 17:48:28,712 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readObject(type=4 <0x04>)
+11 июн 2012 17:48:28,712 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Integer() -> 0 <0x00>
+11 июн 2012 17:48:28,712 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Object() - setting defined property: command_id=0 <0x00>
+11 июн 2012 17:48:28,712 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Object() -> {command_params=[Ljava.lang.Object;@3a747fa2, command_id=0}
+11 июн 2012 17:48:28,713 ERROR [pool-2-thread-2] network.AuthenticationHandler     - java.util.HashMap cannot be cast to [Ljava.lang.Object;
+11 июн 2012 17:48:29,281 INFO  [pool-2-thread-2] network.PacketFrameDecoder     - decoding ReplayingDecoderBuffer(ridx=0, widx=40)
+11 июн 2012 17:48:29,281 INFO  [pool-2-thread-2] network.PacketFrameDecoder     - decoding rb 2147483647
+11 июн 2012 17:48:29,282 INFO  [pool-2-thread-2] network.PacketFrameDecoder     - decoding cb BigEndianHeapChannelBuffer(ridx=0, widx=40, cap=40)
+11 июн 2012 17:48:29,282 INFO  [pool-2-thread-2] network.PacketFrameDecoder     - decoding arr = 40
+11 июн 2012 17:48:29,282 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - new AMF3Deserializer(in=com.sun.org.apache.bcel.internal.util.ByteSequence@366782a9)
+11 июн 2012 17:48:29,285 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readObject()...
+11 июн 2012 17:48:29,285 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Integer() -> 10 <0x0A>
+11 июн 2012 17:48:29,285 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readObject(type=10 <0x0A>)
+11 июн 2012 17:48:29,285 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Object()...
+11 июн 2012 17:48:29,285 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Integer() -> 35 <0x23>
+11 июн 2012 17:48:29,286 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Object() - type=35 <0x23>
+11 июн 2012 17:48:29,286 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Object() - inlineClassDef=true
+11 июн 2012 17:48:29,286 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Object() - propertiesCount=2
+11 июн 2012 17:48:29,286 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Object() - encoding=0 <0x00>
+11 июн 2012 17:48:29,286 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3String()...
+11 июн 2012 17:48:29,286 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Integer() -> 1 <0x01>
+11 июн 2012 17:48:29,287 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3String() - length=0
+11 июн 2012 17:48:29,287 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3String() -> ""
+11 июн 2012 17:48:29,287 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Object() - className=""
+11 июн 2012 17:48:29,287 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - addToStoredClassDescriptors(desc=com.exadel.flamingo.flex.messaging.amf.io.util.DefaultActionScriptClassDescriptor {
+  type=,
+  encoding=0,
+  externalizer=null,
+  converter=com.exadel.flamingo.flex.messaging.amf.io.util.DefaultConverter@45b34126,
+  properties=[]
+}) at index=0
+11 июн 2012 17:48:29,288 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Object() - defining 2 properties...
+11 июн 2012 17:48:29,288 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3String()...
+11 июн 2012 17:48:29,288 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Integer() -> 29 <0x1D>
+11 июн 2012 17:48:29,288 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3String() - length=14
+11 июн 2012 17:48:29,288 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3String() - result="command_params"
+11 июн 2012 17:48:29,288 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - addToStoredStrings(s="command_params") at index=0
+11 июн 2012 17:48:29,289 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3String() -> "command_params"
+11 июн 2012 17:48:29,289 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Object() - defining property name=command_params
+11 июн 2012 17:48:29,289 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3String()...
+11 июн 2012 17:48:29,289 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Integer() -> 21 <0x15>
+11 июн 2012 17:48:29,289 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3String() - length=10
+11 июн 2012 17:48:29,290 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3String() - result="command_id"
+11 июн 2012 17:48:29,290 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - addToStoredStrings(s="command_id") at index=1
+11 июн 2012 17:48:29,290 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3String() -> "command_id"
+11 июн 2012 17:48:29,290 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Object() - defining property name=command_id
+11 июн 2012 17:48:29,290 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Object() - actionScriptClassDescriptor=com.exadel.flamingo.flex.messaging.amf.io.util.DefaultActionScriptClassDescriptor {
+  type=,
+  encoding=0,
+  externalizer=null,
+  converter=com.exadel.flamingo.flex.messaging.amf.io.util.DefaultConverter@45b34126,
+  properties=[com.exadel.flamingo.flex.messaging.amf.io.util.MapProperty@7b7a4989, com.exadel.flamingo.flex.messaging.amf.io.util.MapProperty@197200b4]
+}
+11 июн 2012 17:48:29,291 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - addToStoredObjects(o={}) at index=0
+11 июн 2012 17:48:29,291 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Object() - reading defined properties...
+11 июн 2012 17:48:29,291 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readObject(type=9 <0x09>)
+11 июн 2012 17:48:29,291 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Integer() -> 7 <0x07>
+11 июн 2012 17:48:29,291 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3String()...
+11 июн 2012 17:48:29,292 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Integer() -> 1 <0x01>
+11 июн 2012 17:48:29,292 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3String() - length=0
+11 июн 2012 17:48:29,292 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3String() -> ""
+11 июн 2012 17:48:29,292 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - addToStoredObjects(o=[null, null, null]) at index=1
+11 июн 2012 17:48:29,292 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readObject()...
+11 июн 2012 17:48:29,292 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Integer() -> 4 <0x04>
+11 июн 2012 17:48:29,292 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readObject(type=4 <0x04>)
+11 июн 2012 17:48:29,292 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Integer() -> 15 <0x0F>
+11 июн 2012 17:48:29,293 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readObject()...
+11 июн 2012 17:48:29,293 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Integer() -> 4 <0x04>
+11 июн 2012 17:48:29,293 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readObject(type=4 <0x04>)
+11 июн 2012 17:48:29,293 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Integer() -> 63 <0x3F>
+11 июн 2012 17:48:29,293 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readObject()...
+11 июн 2012 17:48:29,293 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Integer() -> 4 <0x04>
+11 июн 2012 17:48:29,294 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readObject(type=4 <0x04>)
+11 июн 2012 17:48:29,294 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Integer() -> 34 <0x22>
+11 июн 2012 17:48:29,294 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Array() -> [15, 63, 34]
+11 июн 2012 17:48:29,294 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Object() - setting defined property: command_params=[15, 63, 34]
+11 июн 2012 17:48:29,294 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readObject(type=4 <0x04>)
+11 июн 2012 17:48:29,294 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Integer() -> 0 <0x00>
+11 июн 2012 17:48:29,295 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Object() - setting defined property: command_id=0 <0x00>
+11 июн 2012 17:48:29,295 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Object() -> {command_params=[Ljava.lang.Object;@b8c3679, command_id=0}
+11 июн 2012 17:48:29,296 ERROR [pool-2-thread-2] network.AuthenticationHandler     - java.util.HashMap cannot be cast to [Ljava.lang.Object;
+11 июн 2012 17:48:29,787 INFO  [pool-2-thread-2] network.PacketFrameDecoder     - decoding ReplayingDecoderBuffer(ridx=0, widx=40)
+11 июн 2012 17:48:29,787 INFO  [pool-2-thread-2] network.PacketFrameDecoder     - decoding rb 2147483647
+11 июн 2012 17:48:29,788 INFO  [pool-2-thread-2] network.PacketFrameDecoder     - decoding cb BigEndianHeapChannelBuffer(ridx=0, widx=40, cap=40)
+11 июн 2012 17:48:29,788 INFO  [pool-2-thread-2] network.PacketFrameDecoder     - decoding arr = 40
+11 июн 2012 17:48:29,788 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - new AMF3Deserializer(in=com.sun.org.apache.bcel.internal.util.ByteSequence@224c47db)
+11 июн 2012 17:48:29,788 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readObject()...
+11 июн 2012 17:48:29,788 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Integer() -> 10 <0x0A>
+11 июн 2012 17:48:29,788 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readObject(type=10 <0x0A>)
+11 июн 2012 17:48:29,788 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Object()...
+11 июн 2012 17:48:29,788 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Integer() -> 35 <0x23>
+11 июн 2012 17:48:29,789 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Object() - type=35 <0x23>
+11 июн 2012 17:48:29,789 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Object() - inlineClassDef=true
+11 июн 2012 17:48:29,789 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Object() - propertiesCount=2
+11 июн 2012 17:48:29,789 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Object() - encoding=0 <0x00>
+11 июн 2012 17:48:29,789 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3String()...
+11 июн 2012 17:48:29,789 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Integer() -> 1 <0x01>
+11 июн 2012 17:48:29,789 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3String() - length=0
+11 июн 2012 17:48:29,790 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3String() -> ""
+11 июн 2012 17:48:29,790 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Object() - className=""
+11 июн 2012 17:48:29,790 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - addToStoredClassDescriptors(desc=com.exadel.flamingo.flex.messaging.amf.io.util.DefaultActionScriptClassDescriptor {
+  type=,
+  encoding=0,
+  externalizer=null,
+  converter=com.exadel.flamingo.flex.messaging.amf.io.util.DefaultConverter@3e018c74,
+  properties=[]
+}) at index=0
+11 июн 2012 17:48:29,791 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Object() - defining 2 properties...
+11 июн 2012 17:48:29,791 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3String()...
+11 июн 2012 17:48:29,791 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Integer() -> 29 <0x1D>
+11 июн 2012 17:48:29,791 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3String() - length=14
+11 июн 2012 17:48:29,791 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3String() - result="command_params"
+11 июн 2012 17:48:29,791 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - addToStoredStrings(s="command_params") at index=0
+11 июн 2012 17:48:29,792 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3String() -> "command_params"
+11 июн 2012 17:48:29,792 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Object() - defining property name=command_params
+11 июн 2012 17:48:29,792 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3String()...
+11 июн 2012 17:48:29,792 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Integer() -> 21 <0x15>
+11 июн 2012 17:48:29,792 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3String() - length=10
+11 июн 2012 17:48:29,793 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3String() - result="command_id"
+11 июн 2012 17:48:29,793 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - addToStoredStrings(s="command_id") at index=1
+11 июн 2012 17:48:29,793 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3String() -> "command_id"
+11 июн 2012 17:48:29,793 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Object() - defining property name=command_id
+11 июн 2012 17:48:29,793 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Object() - actionScriptClassDescriptor=com.exadel.flamingo.flex.messaging.amf.io.util.DefaultActionScriptClassDescriptor {
+  type=,
+  encoding=0,
+  externalizer=null,
+  converter=com.exadel.flamingo.flex.messaging.amf.io.util.DefaultConverter@3e018c74,
+  properties=[com.exadel.flamingo.flex.messaging.amf.io.util.MapProperty@2f74219d, com.exadel.flamingo.flex.messaging.amf.io.util.MapProperty@714ae2c1]
+}
+11 июн 2012 17:48:29,793 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - addToStoredObjects(o={}) at index=0
+11 июн 2012 17:48:29,793 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Object() - reading defined properties...
+11 июн 2012 17:48:29,793 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readObject(type=9 <0x09>)
+11 июн 2012 17:48:29,794 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Integer() -> 7 <0x07>
+11 июн 2012 17:48:29,794 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3String()...
+11 июн 2012 17:48:29,794 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Integer() -> 1 <0x01>
+11 июн 2012 17:48:29,794 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3String() - length=0
+11 июн 2012 17:48:29,794 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3String() -> ""
+11 июн 2012 17:48:29,794 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - addToStoredObjects(o=[null, null, null]) at index=1
+11 июн 2012 17:48:29,794 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readObject()...
+11 июн 2012 17:48:29,795 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Integer() -> 4 <0x04>
+11 июн 2012 17:48:29,795 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readObject(type=4 <0x04>)
+11 июн 2012 17:48:29,795 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Integer() -> 15 <0x0F>
+11 июн 2012 17:48:29,795 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readObject()...
+11 июн 2012 17:48:29,795 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Integer() -> 4 <0x04>
+11 июн 2012 17:48:29,795 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readObject(type=4 <0x04>)
+11 июн 2012 17:48:29,795 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Integer() -> 63 <0x3F>
+11 июн 2012 17:48:29,795 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readObject()...
+11 июн 2012 17:48:29,796 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Integer() -> 4 <0x04>
+11 июн 2012 17:48:29,796 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readObject(type=4 <0x04>)
+11 июн 2012 17:48:29,796 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Integer() -> 34 <0x22>
+11 июн 2012 17:48:29,796 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Array() -> [15, 63, 34]
+11 июн 2012 17:48:29,796 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Object() - setting defined property: command_params=[15, 63, 34]
+11 июн 2012 17:48:29,796 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readObject(type=4 <0x04>)
+11 июн 2012 17:48:29,796 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Integer() -> 0 <0x00>
+11 июн 2012 17:48:29,797 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Object() - setting defined property: command_id=0 <0x00>
+11 июн 2012 17:48:29,797 DEBUG [pool-2-thread-2] amf.io.AMF3Deserializer     - readAMF3Object() -> {command_params=[Ljava.lang.Object;@26659db7, command_id=0}
+11 июн 2012 17:48:29,797 ERROR [pool-2-thread-2] network.AuthenticationHandler     - java.util.HashMap cannot be cast to [Ljava.lang.Object;

@@ -1,0 +1,114 @@
+11 июн 2012 15:11:31,955 INFO  [pool-2-thread-1] network.PacketFrameDecoder     - STATE = READ_LENGTH
+11 июн 2012 15:11:31,960 INFO  [pool-2-thread-1] network.PacketFrameDecoder     - lentgth = 102331493
+11 июн 2012 15:12:10,228 INFO  [pool-2-thread-1] network.PacketFrameDecoder     - STATE = READ_LENGTH
+11 июн 2012 15:12:10,232 INFO  [pool-2-thread-1] network.PacketFrameDecoder     - lentgth = 10
+11 июн 2012 15:12:10,232 INFO  [pool-2-thread-1] network.AuthenticationHandler     - auth message received
+11 июн 2012 15:12:10,232 INFO  [pool-2-thread-1] network.AuthenticationHandler     - check auth
+11 июн 2012 15:12:10,243 ERROR [pool-2-thread-1] network.AuthenticationHandler     - Unknown type: 115
+11 июн 2012 15:24:34,292 INFO  [pool-2-thread-1] network.PacketFrameEncoder     - decoding ReplayingDecoderBuffer(ridx=0, widx=14)
+11 июн 2012 15:25:06,652 INFO  [pool-2-thread-1] network.PacketFrameEncoder     - decoding ReplayingDecoderBuffer(ridx=0, widx=28)
+11 июн 2012 15:25:09,587 INFO  [pool-2-thread-1] network.PacketFrameEncoder     - decoding ReplayingDecoderBuffer(ridx=0, widx=42)
+11 июн 2012 15:25:14,200 INFO  [pool-2-thread-1] network.PacketFrameEncoder     - decoding ReplayingDecoderBuffer(ridx=0, widx=56)
+11 июн 2012 15:25:29,445 INFO  [pool-2-thread-1] network.PacketFrameEncoder     - decoding ReplayingDecoderBuffer(ridx=0, widx=70)
+11 июн 2012 15:25:29,848 INFO  [pool-2-thread-1] network.PacketFrameEncoder     - decoding ReplayingDecoderBuffer(ridx=0, widx=84)
+11 июн 2012 15:25:30,262 INFO  [pool-2-thread-1] network.PacketFrameEncoder     - decoding ReplayingDecoderBuffer(ridx=0, widx=98)
+11 июн 2012 15:25:30,714 INFO  [pool-2-thread-1] network.PacketFrameEncoder     - decoding ReplayingDecoderBuffer(ridx=0, widx=112)
+11 июн 2012 15:25:31,150 INFO  [pool-2-thread-1] network.PacketFrameEncoder     - decoding ReplayingDecoderBuffer(ridx=0, widx=126)
+11 июн 2012 15:25:31,570 INFO  [pool-2-thread-1] network.PacketFrameEncoder     - decoding ReplayingDecoderBuffer(ridx=0, widx=140)
+11 июн 2012 15:25:31,982 INFO  [pool-2-thread-1] network.PacketFrameEncoder     - decoding ReplayingDecoderBuffer(ridx=0, widx=154)
+11 июн 2012 15:25:32,396 INFO  [pool-2-thread-1] network.PacketFrameEncoder     - decoding ReplayingDecoderBuffer(ridx=0, widx=168)
+11 июн 2012 15:25:32,832 INFO  [pool-2-thread-1] network.PacketFrameEncoder     - decoding ReplayingDecoderBuffer(ridx=0, widx=182)
+11 июн 2012 15:25:33,298 INFO  [pool-2-thread-1] network.PacketFrameEncoder     - decoding ReplayingDecoderBuffer(ridx=0, widx=196)
+11 июн 2012 15:25:33,728 INFO  [pool-2-thread-1] network.PacketFrameEncoder     - decoding ReplayingDecoderBuffer(ridx=0, widx=210)
+11 июн 2012 15:25:34,148 INFO  [pool-2-thread-1] network.PacketFrameEncoder     - decoding ReplayingDecoderBuffer(ridx=0, widx=224)
+11 июн 2012 15:25:34,592 INFO  [pool-2-thread-1] network.PacketFrameEncoder     - decoding ReplayingDecoderBuffer(ridx=0, widx=238)
+11 июн 2012 15:25:35,028 INFO  [pool-2-thread-1] network.PacketFrameEncoder     - decoding ReplayingDecoderBuffer(ridx=0, widx=252)
+11 июн 2012 15:25:35,504 INFO  [pool-2-thread-1] network.PacketFrameEncoder     - decoding ReplayingDecoderBuffer(ridx=0, widx=266)
+11 июн 2012 15:25:35,970 INFO  [pool-2-thread-1] network.PacketFrameEncoder     - decoding ReplayingDecoderBuffer(ridx=0, widx=280)
+11 июн 2012 15:25:36,406 INFO  [pool-2-thread-1] network.PacketFrameEncoder     - decoding ReplayingDecoderBuffer(ridx=0, widx=294)
+11 июн 2012 15:25:36,882 INFO  [pool-2-thread-1] network.PacketFrameEncoder     - decoding ReplayingDecoderBuffer(ridx=0, widx=308)
+11 июн 2012 15:29:52,034 INFO  [pool-2-thread-1] network.PacketFrameDecoder     - decoding ReplayingDecoderBuffer(ridx=0, widx=14)
+11 июн 2012 15:29:52,037 INFO  [pool-2-thread-1] network.PacketFrameDecoder     - decoding rb 2147483647
+11 июн 2012 15:30:05,946 INFO  [pool-2-thread-1] network.PacketFrameDecoder     - decoding ReplayingDecoderBuffer(ridx=0, widx=28)
+11 июн 2012 15:30:05,946 INFO  [pool-2-thread-1] network.PacketFrameDecoder     - decoding rb 2147483647
+11 июн 2012 15:30:09,024 INFO  [pool-2-thread-1] network.PacketFrameDecoder     - decoding ReplayingDecoderBuffer(ridx=0, widx=42)
+11 июн 2012 15:30:09,025 INFO  [pool-2-thread-1] network.PacketFrameDecoder     - decoding rb 2147483647
+11 июн 2012 15:33:23,500 INFO  [pool-2-thread-1] network.PacketFrameDecoder     - decoding ReplayingDecoderBuffer(ridx=0, widx=14)
+11 июн 2012 15:33:23,503 INFO  [pool-2-thread-1] network.PacketFrameDecoder     - decoding rb 2147483647
+11 июн 2012 15:33:23,503 INFO  [pool-2-thread-1] network.PacketFrameDecoder     - decoding cbBigEndianHeapChannelBuffer(ridx=0, widx=14, cap=14)
+11 июн 2012 15:33:23,503 INFO  [pool-2-thread-1] network.PacketFrameDecoder     - decoding arr14
+11 июн 2012 15:33:23,512 INFO  [pool-2-thread-1] network.PacketFrameDecoder     - decoded = test request
+11 июн 2012 15:33:23,512 INFO  [pool-2-thread-1] network.AuthenticationHandler     - auth message received
+11 июн 2012 15:33:23,512 INFO  [pool-2-thread-1] network.AuthenticationHandler     - check auth
+11 июн 2012 15:33:23,548 ERROR [pool-2-thread-1] network.AuthenticationHandler     - java.lang.String cannot be cast to org.jboss.netty.buffer.ChannelBuffer
+11 июн 2012 15:37:38,269 INFO  [pool-2-thread-1] network.PacketFrameDecoder     - decoding ReplayingDecoderBuffer(ridx=0, widx=14)
+11 июн 2012 15:37:38,272 INFO  [pool-2-thread-1] network.PacketFrameDecoder     - decoding rb 2147483647
+11 июн 2012 15:37:38,272 INFO  [pool-2-thread-1] network.PacketFrameDecoder     - decoding cbBigEndianHeapChannelBuffer(ridx=0, widx=14, cap=14)
+11 июн 2012 15:37:38,273 INFO  [pool-2-thread-1] network.PacketFrameDecoder     - decoding arr14
+11 июн 2012 15:37:38,281 INFO  [pool-2-thread-1] network.PacketFrameDecoder     - decoded = test request
+11 июн 2012 15:37:38,281 INFO  [pool-2-thread-1] network.AuthenticationHandler     - auth message received
+11 июн 2012 15:37:38,281 INFO  [pool-2-thread-1] network.AuthenticationHandler     - check auth
+11 июн 2012 15:37:38,283 ERROR [pool-2-thread-1] network.AuthenticationHandler     - java.lang.String cannot be cast to org.jboss.netty.buffer.ChannelBuffer
+11 июн 2012 15:40:50,456 INFO  [pool-2-thread-1] network.PacketFrameDecoder     - decoding ReplayingDecoderBuffer(ridx=0, widx=14)
+11 июн 2012 15:40:50,459 INFO  [pool-2-thread-1] network.PacketFrameDecoder     - decoding rb 2147483647
+11 июн 2012 15:40:50,459 INFO  [pool-2-thread-1] network.PacketFrameDecoder     - decoding cb BigEndianHeapChannelBuffer(ridx=0, widx=14, cap=14)
+11 июн 2012 15:40:50,459 INFO  [pool-2-thread-1] network.PacketFrameDecoder     - decoding arr = 14
+11 июн 2012 15:40:50,467 INFO  [pool-2-thread-1] network.PacketFrameDecoder     - decoded = test request
+11 июн 2012 15:40:50,468 INFO  [pool-2-thread-1] network.AuthenticationHandler     - auth message received
+11 июн 2012 15:40:50,468 INFO  [pool-2-thread-1] network.AuthenticationHandler     - check auth
+11 июн 2012 15:40:50,470 ERROR [pool-2-thread-1] network.AuthenticationHandler     - java.lang.String cannot be cast to org.jboss.netty.buffer.ChannelBuffer
+11 июн 2012 15:45:02,885 INFO  [pool-2-thread-1] network.PacketFrameDecoder     - decoding ReplayingDecoderBuffer(ridx=0, widx=12)
+11 июн 2012 15:45:02,887 INFO  [pool-2-thread-1] network.PacketFrameDecoder     - decoding rb 2147483647
+11 июн 2012 15:45:02,888 INFO  [pool-2-thread-1] network.PacketFrameDecoder     - decoding cb BigEndianHeapChannelBuffer(ridx=0, widx=12, cap=12)
+11 июн 2012 15:45:02,888 INFO  [pool-2-thread-1] network.PacketFrameDecoder     - decoding arr = 12
+11 июн 2012 15:45:02,898 ERROR [pool-2-thread-1] network.AuthenticationHandler     - java.lang.String cannot be cast to [Ljava.lang.Object;
+11 июн 2012 15:45:54,401 ERROR [pool-2-thread-1] network.AuthenticationHandler     - 
+11 июн 2012 15:47:22,311 INFO  [pool-2-thread-1] network.PacketFrameDecoder     - decoding ReplayingDecoderBuffer(ridx=0, widx=30)
+11 июн 2012 15:47:22,313 INFO  [pool-2-thread-1] network.PacketFrameDecoder     - decoding rb 2147483647
+11 июн 2012 15:47:22,313 INFO  [pool-2-thread-1] network.PacketFrameDecoder     - decoding cb BigEndianHeapChannelBuffer(ridx=0, widx=30, cap=30)
+11 июн 2012 15:47:22,314 INFO  [pool-2-thread-1] network.PacketFrameDecoder     - decoding arr = 30
+11 июн 2012 15:47:22,324 ERROR [pool-2-thread-1] network.AuthenticationHandler     - java.lang.String cannot be cast to [Ljava.lang.Object;
+11 июн 2012 15:48:03,419 INFO  [pool-2-thread-1] network.PacketFrameDecoder     - decoding ReplayingDecoderBuffer(ridx=0, widx=30)
+11 июн 2012 15:48:03,422 INFO  [pool-2-thread-1] network.PacketFrameDecoder     - decoding rb 2147483647
+11 июн 2012 15:48:03,422 INFO  [pool-2-thread-1] network.PacketFrameDecoder     - decoding cb BigEndianHeapChannelBuffer(ridx=0, widx=30, cap=30)
+11 июн 2012 15:48:03,422 INFO  [pool-2-thread-1] network.PacketFrameDecoder     - decoding arr = 30
+11 июн 2012 15:48:03,430 INFO  [pool-2-thread-1] network.PacketFrameDecoder     - decoded = test one,test two,test_three
+11 июн 2012 15:48:03,430 INFO  [pool-2-thread-1] network.AuthenticationHandler     - auth message received
+11 июн 2012 15:48:03,430 INFO  [pool-2-thread-1] network.AuthenticationHandler     - check auth
+11 июн 2012 15:48:03,433 ERROR [pool-2-thread-1] network.AuthenticationHandler     - java.lang.String cannot be cast to org.jboss.netty.buffer.ChannelBuffer
+11 июн 2012 15:58:16,855 INFO  [pool-2-thread-1] network.PacketFrameDecoder     - decoding ReplayingDecoderBuffer(ridx=0, widx=30)
+11 июн 2012 15:58:16,855 INFO  [pool-2-thread-1] network.PacketFrameDecoder     - decoding rb 2147483647
+11 июн 2012 15:58:16,855 INFO  [pool-2-thread-1] network.PacketFrameDecoder     - decoding cb BigEndianHeapChannelBuffer(ridx=0, widx=30, cap=30)
+11 июн 2012 15:58:16,855 INFO  [pool-2-thread-1] network.PacketFrameDecoder     - decoding arr = 30
+11 июн 2012 15:58:16,855 DEBUG [pool-2-thread-1] amf.io.AMF3Deserializer     - new AMF3Deserializer(in=com.sun.org.apache.bcel.internal.util.ByteSequence@3f829e6f)
+11 июн 2012 15:58:16,871 DEBUG [pool-2-thread-1] amf.io.AMF3Deserializer     - readObject()...
+11 июн 2012 15:58:16,882 DEBUG [pool-2-thread-1] amf.io.AMF3Deserializer     - readAMF3Integer() -> 6 <0x06>
+11 июн 2012 15:58:16,882 DEBUG [pool-2-thread-1] amf.io.AMF3Deserializer     - readObject(type=6 <0x06>)
+11 июн 2012 15:58:16,882 DEBUG [pool-2-thread-1] amf.io.AMF3Deserializer     - readAMF3String()...
+11 июн 2012 15:58:16,882 DEBUG [pool-2-thread-1] amf.io.AMF3Deserializer     - readAMF3Integer() -> 57 <0x39>
+11 июн 2012 15:58:16,883 DEBUG [pool-2-thread-1] amf.io.AMF3Deserializer     - readAMF3String() - length=28
+11 июн 2012 15:58:16,883 DEBUG [pool-2-thread-1] amf.io.AMF3Deserializer     - readAMF3String() - result="test one,test two,test_three"
+11 июн 2012 15:58:16,883 DEBUG [pool-2-thread-1] amf.io.AMF3Deserializer     - addToStoredStrings(s="test one,test two,test_three") at index=0
+11 июн 2012 15:58:16,883 DEBUG [pool-2-thread-1] amf.io.AMF3Deserializer     - readAMF3String() -> "test one,test two,test_three"
+11 июн 2012 15:58:16,883 INFO  [pool-2-thread-1] network.PacketFrameDecoder     - decoded = test one,test two,test_three
+11 июн 2012 15:58:16,884 INFO  [pool-2-thread-1] network.AuthenticationHandler     - auth message received
+11 июн 2012 15:58:16,884 INFO  [pool-2-thread-1] network.AuthenticationHandler     - check auth
+11 июн 2012 15:58:16,886 ERROR [pool-2-thread-1] network.AuthenticationHandler     - java.lang.String cannot be cast to org.jboss.netty.buffer.ChannelBuffer
+11 июн 2012 15:59:20,848 INFO  [pool-2-thread-1] network.PacketFrameDecoder     - decoding ReplayingDecoderBuffer(ridx=0, widx=30)
+11 июн 2012 15:59:20,852 INFO  [pool-2-thread-1] network.PacketFrameDecoder     - decoding rb 2147483647
+11 июн 2012 15:59:20,852 INFO  [pool-2-thread-1] network.PacketFrameDecoder     - decoding cb BigEndianHeapChannelBuffer(ridx=0, widx=30, cap=30)
+11 июн 2012 15:59:20,852 INFO  [pool-2-thread-1] network.PacketFrameDecoder     - decoding arr = 30
+11 июн 2012 15:59:20,858 DEBUG [pool-2-thread-1] amf.io.AMF3Deserializer     - new AMF3Deserializer(in=com.sun.org.apache.bcel.internal.util.ByteSequence@69b1fbf4)
+11 июн 2012 15:59:20,859 DEBUG [pool-2-thread-1] amf.io.AMF3Deserializer     - readObject()...
+11 июн 2012 15:59:20,859 DEBUG [pool-2-thread-1] amf.io.AMF3Deserializer     - readAMF3Integer() -> 6 <0x06>
+11 июн 2012 15:59:20,860 DEBUG [pool-2-thread-1] amf.io.AMF3Deserializer     - readObject(type=6 <0x06>)
+11 июн 2012 15:59:20,860 DEBUG [pool-2-thread-1] amf.io.AMF3Deserializer     - readAMF3String()...
+11 июн 2012 15:59:20,860 DEBUG [pool-2-thread-1] amf.io.AMF3Deserializer     - readAMF3Integer() -> 57 <0x39>
+11 июн 2012 15:59:20,860 DEBUG [pool-2-thread-1] amf.io.AMF3Deserializer     - readAMF3String() - length=28
+11 июн 2012 15:59:20,860 DEBUG [pool-2-thread-1] amf.io.AMF3Deserializer     - readAMF3String() - result="test one,test two,test_three"
+11 июн 2012 15:59:20,861 DEBUG [pool-2-thread-1] amf.io.AMF3Deserializer     - addToStoredStrings(s="test one,test two,test_three") at index=0
+11 июн 2012 15:59:20,861 DEBUG [pool-2-thread-1] amf.io.AMF3Deserializer     - readAMF3String() -> "test one,test two,test_three"
+11 июн 2012 15:59:20,861 INFO  [pool-2-thread-1] network.PacketFrameDecoder     - decoded = test one,test two,test_three
+11 июн 2012 15:59:20,861 INFO  [pool-2-thread-1] network.AuthenticationHandler     - auth message received
+11 июн 2012 15:59:20,862 INFO  [pool-2-thread-1] network.AuthenticationHandler     - check auth
+11 июн 2012 15:59:20,864 ERROR [pool-2-thread-1] network.AuthenticationHandler     - java.lang.String cannot be cast to org.jboss.netty.buffer.ChannelBuffer

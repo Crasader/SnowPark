@@ -1,0 +1,37 @@
+12 июн 2012 22:40:05,504 INFO  [pool-2-thread-1] network.AuthenticationHandler     - :: auth passed
+12 июн 2012 22:41:42,082 INFO  [pool-2-thread-1] network.AuthenticationHandler     - :: auth passed
+12 июн 2012 22:43:25,658 INFO  [pool-2-thread-1] network.AuthenticationHandler     - :: auth passed
+12 июн 2012 22:44:26,700 INFO  [pool-2-thread-1] network.UserHandler     - channelConnected
+12 июн 2012 22:44:26,730 INFO  [pool-2-thread-1] network.AuthenticationHandler     - :: auth passed
+12 июн 2012 22:45:54,611 INFO  [pool-2-thread-1] network.UserHandler     - channelConnected
+12 июн 2012 22:45:54,640 INFO  [pool-2-thread-1] network.AuthenticationHandler     - :: auth passed
+12 июн 2012 22:45:54,654 INFO  [pool-2-thread-1] network.UserHandler     - messageReceived
+12 июн 2012 22:45:54,654 INFO  [pool-2-thread-1] objects.UserWorker     - :: accept command : 4 : [Ljava.lang.Object;@3794d372
+12 июн 2012 22:45:54,654 INFO  [pool-2-thread-1] objects.UserWorker     - login
+12 июн 2012 22:45:54,654 INFO  [pool-2-thread-1] objects.UserWorker     - password
+12 июн 2012 22:46:15,053 ERROR [pool-2-thread-1] network.AuthenticationHandler     - 
+12 июн 2012 23:51:58,628 INFO  [pool-2-thread-1] network.UserHandler     - channelConnected
+12 июн 2012 23:51:58,655 INFO  [pool-2-thread-1] network.AuthenticationHandler     - :: auth passed
+12 июн 2012 23:51:58,668 INFO  [pool-2-thread-1] network.UserHandler     - messageReceived
+12 июн 2012 23:51:58,669 INFO  [pool-2-thread-1] objects.UserWorker     - :: accept command : 4 : [Ljava.lang.Object;@42b307f0
+12 июн 2012 23:51:58,669 INFO  [pool-2-thread-1] objects.UserWorker     - login
+12 июн 2012 23:51:58,669 INFO  [pool-2-thread-1] objects.UserWorker     - password
+12 июн 2012 23:51:59,205 ERROR [pool-2-thread-1] network.AuthenticationHandler     - 
+12 июн 2012 23:53:29,682 INFO  [pool-2-thread-1] network.UserHandler     - channelConnected
+12 июн 2012 23:53:29,711 INFO  [pool-2-thread-1] network.AuthenticationHandler     - :: auth passed
+12 июн 2012 23:53:29,725 INFO  [pool-2-thread-1] network.UserHandler     - messageReceived
+12 июн 2012 23:53:29,726 INFO  [pool-2-thread-1] objects.UserWorker     - :: accept command : 4 : [Ljava.lang.Object;@56c163f
+12 июн 2012 23:53:29,726 INFO  [pool-2-thread-1] objects.UserWorker     - login
+12 июн 2012 23:53:29,726 INFO  [pool-2-thread-1] objects.UserWorker     - password
+12 июн 2012 23:53:30,269 ERROR [pool-2-thread-1] network.AuthenticationHandler     - 
+12 июн 2012 23:55:37,472 INFO  [pool-2-thread-1] network.UserHandler     - channelConnected
+12 июн 2012 23:55:37,501 INFO  [pool-2-thread-1] network.AuthenticationHandler     - :: auth passed
+12 июн 2012 23:55:37,515 INFO  [pool-2-thread-1] network.UserHandler     - messageReceived
+12 июн 2012 23:55:38,044 ERROR [pool-2-thread-1] network.AuthenticationHandler     - 
+12 июн 2012 23:58:22,997 INFO  [pool-2-thread-1] network.UserHandler     - channelConnected
+12 июн 2012 23:58:23,028 INFO  [pool-2-thread-1] network.AuthenticationHandler     - :: auth passed
+12 июн 2012 23:58:23,042 INFO  [pool-2-thread-1] network.UserHandler     - messageReceived
+12 июн 2012 23:58:23,042 INFO  [pool-2-thread-1] objects.UserWorker     - :: accept command : 4 : [Ljava.lang.Object;@7b2884e0
+12 июн 2012 23:58:23,042 INFO  [pool-2-thread-1] objects.UserWorker     - login
+12 июн 2012 23:58:23,042 INFO  [pool-2-thread-1] objects.UserWorker     - password
+12 июн 2012 23:58:23,591 ERROR [pool-2-thread-1] network.AuthenticationHandler     - 

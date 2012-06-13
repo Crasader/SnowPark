@@ -1,0 +1,41 @@
+12 июн 2012 01:00:37,872 INFO  [pool-2-thread-4] network.PacketFrameDecoder     - decode
+12 июн 2012 01:00:37,875 INFO  [pool-2-thread-4] network.AuthenticationHandler     - auth failed
+12 июн 2012 01:00:37,875 INFO  [pool-2-thread-4] network.PacketFrameEncoder     - encoding
+12 июн 2012 01:06:11,160 INFO  [pool-2-thread-5] network.PacketFrameDecoder     - decode
+12 июн 2012 01:06:11,161 INFO  [pool-2-thread-5] network.AuthenticationHandler     - auth failed
+12 июн 2012 01:06:11,161 INFO  [pool-2-thread-5] network.PacketFrameEncoder     - encoding
+12 июн 2012 01:06:42,771 INFO  [pool-2-thread-5] network.PacketFrameDecoder     - decode
+12 июн 2012 01:06:42,771 INFO  [pool-2-thread-5] network.AuthenticationHandler     - auth failed
+12 июн 2012 01:06:42,771 INFO  [pool-2-thread-5] network.PacketFrameEncoder     - encoding
+12 июн 2012 01:06:54,686 INFO  [pool-2-thread-5] network.PacketFrameDecoder     - decode
+12 июн 2012 01:06:54,686 INFO  [pool-2-thread-5] network.AuthenticationHandler     - auth failed
+12 июн 2012 01:06:54,686 INFO  [pool-2-thread-5] network.PacketFrameEncoder     - encoding
+12 июн 2012 01:09:36,167 INFO  [pool-2-thread-1] network.PacketFrameDecoder     - decode
+12 июн 2012 01:09:36,178 INFO  [pool-2-thread-1] network.AuthenticationHandler     - auth failed
+12 июн 2012 01:09:36,179 INFO  [pool-2-thread-1] network.PacketFrameEncoder     - encoding
+12 июн 2012 01:09:44,043 INFO  [pool-2-thread-1] network.PacketFrameDecoder     - decode
+12 июн 2012 01:09:44,044 INFO  [pool-2-thread-1] network.AuthenticationHandler     - auth passed
+12 июн 2012 01:09:44,044 INFO  [pool-2-thread-1] network.PacketFrameEncoder     - encoding
+12 июн 2012 01:09:48,359 INFO  [pool-2-thread-1] network.PacketFrameDecoder     - decode
+12 июн 2012 01:09:49,611 INFO  [pool-2-thread-1] network.PacketFrameDecoder     - decode
+12 июн 2012 01:14:33,814 INFO  [pool-2-thread-1] network.PacketFrameDecoder     - decode
+12 июн 2012 01:14:33,825 INFO  [pool-2-thread-1] network.AuthenticationHandler     - auth failed
+12 июн 2012 01:14:33,826 INFO  [pool-2-thread-1] network.PacketFrameEncoder     - encoding
+12 июн 2012 01:15:51,178 INFO  [pool-2-thread-1] network.PacketFrameDecoder     - decode
+12 июн 2012 01:15:51,189 INFO  [pool-2-thread-1] network.AuthenticationHandler     - auth failed
+12 июн 2012 01:15:51,190 INFO  [pool-2-thread-1] network.PacketFrameEncoder     - encoding
+12 июн 2012 01:18:04,598 INFO  [pool-2-thread-1] network.PacketFrameDecoder     - decode
+12 июн 2012 01:18:04,610 INFO  [pool-2-thread-1] network.AuthenticationHandler     - auth failed
+12 июн 2012 01:18:04,611 INFO  [pool-2-thread-1] network.PacketFrameEncoder     - encoding
+12 июн 2012 01:18:08,896 INFO  [pool-2-thread-1] network.PacketFrameDecoder     - decode
+12 июн 2012 01:18:08,896 INFO  [pool-2-thread-1] network.AuthenticationHandler     - auth failed
+12 июн 2012 01:18:08,896 INFO  [pool-2-thread-1] network.PacketFrameEncoder     - encoding
+12 июн 2012 01:18:11,845 INFO  [pool-2-thread-1] network.PacketFrameDecoder     - decode
+12 июн 2012 01:18:11,845 INFO  [pool-2-thread-1] network.AuthenticationHandler     - auth failed
+12 июн 2012 01:18:11,845 INFO  [pool-2-thread-1] network.PacketFrameEncoder     - encoding
+12 июн 2012 01:18:20,099 INFO  [pool-2-thread-1] network.PacketFrameDecoder     - decode
+12 июн 2012 01:18:20,099 INFO  [pool-2-thread-1] network.AuthenticationHandler     - auth failed
+12 июн 2012 01:18:20,100 INFO  [pool-2-thread-1] network.PacketFrameEncoder     - encoding
+12 июн 2012 01:18:23,041 INFO  [pool-2-thread-1] network.PacketFrameDecoder     - decode
+12 июн 2012 01:18:23,042 INFO  [pool-2-thread-1] network.AuthenticationHandler     - auth passed
+12 июн 2012 01:18:23,042 INFO  [pool-2-thread-1] network.PacketFrameEncoder     - encoding

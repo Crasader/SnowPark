@@ -1,0 +1,16 @@
+10 июн 2012 22:29:06,703 INFO  [pool-2-thread-1] network.User     - received test request
+10 июн 2012 22:29:06,772 ERROR [pool-2-thread-1] network.AuthenticationHandler     -
+10 июн 2012 22:29:14,739 INFO  [pool-2-thread-1] network.User     - received test request
+10 июн 2012 22:29:14,739 ERROR [pool-2-thread-1] network.AuthenticationHandler     -
+10 июн 2012 22:40:57,507 INFO  [pool-2-thread-1] network.User     - received test request
+10 июн 2012 22:40:57,520 INFO  [pool-2-thread-1] network.User     - sent message
+10 июн 2012 22:40:59,167 INFO  [pool-2-thread-1] network.User     - received test request
+10 июн 2012 22:40:59,168 INFO  [pool-2-thread-1] network.User     - sent message
+10 июн 2012 22:42:13,944 INFO  [pool-2-thread-1] network.User     - received test request
+10 июн 2012 22:42:13,961 INFO  [pool-2-thread-1] network.User     - sent message
+10 июн 2012 22:42:37,525 INFO  [pool-2-thread-1] network.User     - received test request
+10 июн 2012 22:42:37,525 INFO  [pool-2-thread-1] network.User     - sent message
+10 июн 2012 22:42:39,530 INFO  [pool-2-thread-1] network.User     - received test request
+10 июн 2012 22:42:39,531 INFO  [pool-2-thread-1] network.User     - sent message
+10 июн 2012 22:42:40,962 INFO  [pool-2-thread-1] network.User     - received test request
+10 июн 2012 22:42:40,963 INFO  [pool-2-thread-1] network.User     - sent message

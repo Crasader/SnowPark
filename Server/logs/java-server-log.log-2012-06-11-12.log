@@ -1,0 +1,27 @@
+11 июн 2012 12:40:02,671 INFO  [pool-2-thread-1] network.User     - decoding
+11 июн 2012 12:40:02,712 ERROR [pool-2-thread-1] network.AuthenticationHandler     - 
+11 июн 2012 12:40:20,206 ERROR [pool-2-thread-1] network.AuthenticationHandler     - 
+11 июн 2012 12:40:27,892 ERROR [pool-2-thread-1] network.AuthenticationHandler     - 
+11 июн 2012 12:40:33,174 ERROR [pool-2-thread-1] network.AuthenticationHandler     - 
+11 июн 2012 12:42:03,691 INFO  [pool-2-thread-1] network.User     - decoding
+11 июн 2012 12:42:03,707 ERROR [pool-2-thread-1] network.AuthenticationHandler     - 
+11 июн 2012 12:42:13,125 ERROR [pool-2-thread-1] network.AuthenticationHandler     - 
+11 июн 2012 12:43:42,600 INFO  [pool-2-thread-1] network.User     - decoding
+11 июн 2012 12:43:42,616 ERROR [pool-2-thread-1] network.AuthenticationHandler     - 
+11 июн 2012 12:43:48,248 ERROR [pool-2-thread-1] network.AuthenticationHandler     - 
+11 июн 2012 12:44:24,147 ERROR [pool-2-thread-1] network.AuthenticationHandler     - 
+11 июн 2012 12:47:28,479 INFO  [pool-2-thread-1] network.User     - decoding
+11 июн 2012 12:47:28,492 ERROR [pool-2-thread-1] network.AuthenticationHandler     - 
+11 июн 2012 12:47:52,380 ERROR [pool-2-thread-1] network.AuthenticationHandler     - 
+11 июн 2012 12:47:53,866 ERROR [pool-2-thread-1] network.AuthenticationHandler     - 
+11 июн 2012 12:47:55,090 ERROR [pool-2-thread-1] network.AuthenticationHandler     - 
+11 июн 2012 12:49:07,860 INFO  [pool-2-thread-1] network.User     - decoding
+11 июн 2012 12:49:07,871 ERROR [pool-2-thread-1] network.AuthenticationHandler     - 
+11 июн 2012 12:49:18,362 ERROR [pool-2-thread-1] network.AuthenticationHandler     - 
+11 июн 2012 12:51:41,230 INFO  [pool-2-thread-1] network.User     - decoding
+11 июн 2012 12:51:41,242 ERROR [pool-2-thread-1] network.AuthenticationHandler     - 
+11 июн 2012 12:51:47,842 ERROR [pool-2-thread-1] network.AuthenticationHandler     - 
+11 июн 2012 12:54:08,395 INFO  [pool-2-thread-1] network.User     - decoding
+11 июн 2012 12:54:08,400 ERROR [pool-2-thread-1] network.AuthenticationHandler     - decode() method must consume at least one byte if it returned a decoded message (caused by: class network.PacketFrameDecoder)
+11 июн 2012 12:56:02,296 INFO  [pool-2-thread-1] network.User     - decoding
+11 июн 2012 12:56:02,302 ERROR [pool-2-thread-1] network.AuthenticationHandler     - decode() method must consume at least one byte if it returned a decoded message (caused by: class network.PacketFrameDecoder)

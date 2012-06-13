@@ -1,0 +1,169 @@
+11 июн 2012 22:33:10,081 INFO  [pool-2-thread-3] network.PacketFrameDecoder     - decoding ReplayingDecoderBuffer(ridx=0, widx=19)
+11 июн 2012 22:33:10,084 INFO  [pool-2-thread-3] network.PacketFrameDecoder     - decoding rb 2147483647
+11 июн 2012 22:33:10,084 INFO  [pool-2-thread-3] network.PacketFrameDecoder     - decoding cb BigEndianHeapChannelBuffer(ridx=0, widx=19, cap=19)
+11 июн 2012 22:33:10,084 INFO  [pool-2-thread-3] network.PacketFrameDecoder     - decoding arr = 19
+11 июн 2012 22:33:10,084 DEBUG [pool-2-thread-3] amf.io.AMF3Deserializer     - new AMF3Deserializer(in=com.sun.org.apache.bcel.internal.util.ByteSequence@8c943d1)
+11 июн 2012 22:33:10,085 DEBUG [pool-2-thread-3] amf.io.AMF3Deserializer     - readObject()...
+11 июн 2012 22:33:10,085 DEBUG [pool-2-thread-3] amf.io.AMF3Deserializer     - readAMF3Integer() -> 9 <0x09>
+11 июн 2012 22:33:10,085 DEBUG [pool-2-thread-3] amf.io.AMF3Deserializer     - readObject(type=9 <0x09>)
+11 июн 2012 22:33:10,085 DEBUG [pool-2-thread-3] amf.io.AMF3Deserializer     - readAMF3Integer() -> 5 <0x05>
+11 июн 2012 22:33:10,085 DEBUG [pool-2-thread-3] amf.io.AMF3Deserializer     - readAMF3String()...
+11 июн 2012 22:33:10,085 DEBUG [pool-2-thread-3] amf.io.AMF3Deserializer     - readAMF3Integer() -> 1 <0x01>
+11 июн 2012 22:33:10,086 DEBUG [pool-2-thread-3] amf.io.AMF3Deserializer     - readAMF3String() - length=0
+11 июн 2012 22:33:10,086 DEBUG [pool-2-thread-3] amf.io.AMF3Deserializer     - readAMF3String() -> ""
+11 июн 2012 22:33:10,086 DEBUG [pool-2-thread-3] amf.io.AMF3Deserializer     - addToStoredObjects(o=[null, null]) at index=0
+11 июн 2012 22:33:10,086 DEBUG [pool-2-thread-3] amf.io.AMF3Deserializer     - readObject()...
+11 июн 2012 22:33:10,086 DEBUG [pool-2-thread-3] amf.io.AMF3Deserializer     - readAMF3Integer() -> 4 <0x04>
+11 июн 2012 22:33:10,086 DEBUG [pool-2-thread-3] amf.io.AMF3Deserializer     - readObject(type=4 <0x04>)
+11 июн 2012 22:33:10,087 DEBUG [pool-2-thread-3] amf.io.AMF3Deserializer     - readAMF3Integer() -> 3 <0x03>
+11 июн 2012 22:33:10,087 DEBUG [pool-2-thread-3] amf.io.AMF3Deserializer     - readObject()...
+11 июн 2012 22:33:10,087 DEBUG [pool-2-thread-3] amf.io.AMF3Deserializer     - readAMF3Integer() -> 9 <0x09>
+11 июн 2012 22:33:10,087 DEBUG [pool-2-thread-3] amf.io.AMF3Deserializer     - readObject(type=9 <0x09>)
+11 июн 2012 22:33:10,087 DEBUG [pool-2-thread-3] amf.io.AMF3Deserializer     - readAMF3Integer() -> 5 <0x05>
+11 июн 2012 22:33:10,087 DEBUG [pool-2-thread-3] amf.io.AMF3Deserializer     - readAMF3String()...
+11 июн 2012 22:33:10,088 DEBUG [pool-2-thread-3] amf.io.AMF3Deserializer     - readAMF3Integer() -> 1 <0x01>
+11 июн 2012 22:33:10,088 DEBUG [pool-2-thread-3] amf.io.AMF3Deserializer     - readAMF3String() - length=0
+11 июн 2012 22:33:10,088 DEBUG [pool-2-thread-3] amf.io.AMF3Deserializer     - readAMF3String() -> ""
+11 июн 2012 22:33:10,088 DEBUG [pool-2-thread-3] amf.io.AMF3Deserializer     - addToStoredObjects(o=[null, null]) at index=1
+11 июн 2012 22:33:10,088 DEBUG [pool-2-thread-3] amf.io.AMF3Deserializer     - readObject()...
+11 июн 2012 22:33:10,089 DEBUG [pool-2-thread-3] amf.io.AMF3Deserializer     - readAMF3Integer() -> 6 <0x06>
+11 июн 2012 22:33:10,089 DEBUG [pool-2-thread-3] amf.io.AMF3Deserializer     - readObject(type=6 <0x06>)
+11 июн 2012 22:33:10,089 DEBUG [pool-2-thread-3] amf.io.AMF3Deserializer     - readAMF3String()...
+11 июн 2012 22:33:10,089 DEBUG [pool-2-thread-3] amf.io.AMF3Deserializer     - readAMF3Integer() -> 9 <0x09>
+11 июн 2012 22:33:10,089 DEBUG [pool-2-thread-3] amf.io.AMF3Deserializer     - readAMF3String() - length=4
+11 июн 2012 22:33:10,089 DEBUG [pool-2-thread-3] amf.io.AMF3Deserializer     - readAMF3String() - result="asdf"
+11 июн 2012 22:33:10,089 DEBUG [pool-2-thread-3] amf.io.AMF3Deserializer     - addToStoredStrings(s="asdf") at index=0
+11 июн 2012 22:33:10,090 DEBUG [pool-2-thread-3] amf.io.AMF3Deserializer     - readAMF3String() -> "asdf"
+11 июн 2012 22:33:10,090 DEBUG [pool-2-thread-3] amf.io.AMF3Deserializer     - readObject()...
+11 июн 2012 22:33:10,090 DEBUG [pool-2-thread-3] amf.io.AMF3Deserializer     - readAMF3Integer() -> 6 <0x06>
+11 июн 2012 22:33:10,090 DEBUG [pool-2-thread-3] amf.io.AMF3Deserializer     - readObject(type=6 <0x06>)
+11 июн 2012 22:33:10,090 DEBUG [pool-2-thread-3] amf.io.AMF3Deserializer     - readAMF3String()...
+11 июн 2012 22:33:10,090 DEBUG [pool-2-thread-3] amf.io.AMF3Deserializer     - readAMF3Integer() -> 7 <0x07>
+11 июн 2012 22:33:10,091 DEBUG [pool-2-thread-3] amf.io.AMF3Deserializer     - readAMF3String() - length=3
+11 июн 2012 22:33:10,091 DEBUG [pool-2-thread-3] amf.io.AMF3Deserializer     - readAMF3String() - result="jkl"
+11 июн 2012 22:33:10,091 DEBUG [pool-2-thread-3] amf.io.AMF3Deserializer     - addToStoredStrings(s="jkl") at index=1
+11 июн 2012 22:33:10,091 DEBUG [pool-2-thread-3] amf.io.AMF3Deserializer     - readAMF3String() -> "jkl"
+11 июн 2012 22:33:10,091 DEBUG [pool-2-thread-3] amf.io.AMF3Deserializer     - readAMF3Array() -> [asdf, jkl]
+11 июн 2012 22:33:10,091 DEBUG [pool-2-thread-3] amf.io.AMF3Deserializer     - readAMF3Array() -> [3, [Ljava.lang.Object;@558352d8]
+11 июн 2012 22:33:10,092 INFO  [pool-2-thread-3] network.PacketFrameDecoder     - decoded = [Ljava.lang.Object;@20b40ec4
+11 июн 2012 22:33:10,092 INFO  [pool-2-thread-3] network.PacketFrameDecoder     - decoded 1 = [Ljava.lang.Object;@558352d8
+11 июн 2012 22:33:10,092 INFO  [pool-2-thread-3] network.AuthenticationHandler     - auth message received
+11 июн 2012 22:33:10,092 INFO  [pool-2-thread-3] network.AuthenticationHandler     - check auth
+11 июн 2012 22:33:10,093 ERROR [pool-2-thread-3] network.AuthenticationHandler     - [Ljava.lang.Object; cannot be cast to org.jboss.netty.buffer.ChannelBuffer
+11 июн 2012 22:33:18,044 INFO  [pool-2-thread-3] network.PacketFrameDecoder     - decoding ReplayingDecoderBuffer(ridx=0, widx=19)
+11 июн 2012 22:33:18,044 INFO  [pool-2-thread-3] network.PacketFrameDecoder     - decoding rb 2147483647
+11 июн 2012 22:33:18,044 INFO  [pool-2-thread-3] network.PacketFrameDecoder     - decoding cb BigEndianHeapChannelBuffer(ridx=0, widx=19, cap=19)
+11 июн 2012 22:33:18,044 INFO  [pool-2-thread-3] network.PacketFrameDecoder     - decoding arr = 19
+11 июн 2012 22:33:18,044 DEBUG [pool-2-thread-3] amf.io.AMF3Deserializer     - new AMF3Deserializer(in=com.sun.org.apache.bcel.internal.util.ByteSequence@595e2ccd)
+11 июн 2012 22:33:18,048 DEBUG [pool-2-thread-3] amf.io.AMF3Deserializer     - readObject()...
+11 июн 2012 22:33:18,048 DEBUG [pool-2-thread-3] amf.io.AMF3Deserializer     - readAMF3Integer() -> 9 <0x09>
+11 июн 2012 22:33:18,048 DEBUG [pool-2-thread-3] amf.io.AMF3Deserializer     - readObject(type=9 <0x09>)
+11 июн 2012 22:33:18,048 DEBUG [pool-2-thread-3] amf.io.AMF3Deserializer     - readAMF3Integer() -> 5 <0x05>
+11 июн 2012 22:33:18,048 DEBUG [pool-2-thread-3] amf.io.AMF3Deserializer     - readAMF3String()...
+11 июн 2012 22:33:18,048 DEBUG [pool-2-thread-3] amf.io.AMF3Deserializer     - readAMF3Integer() -> 1 <0x01>
+11 июн 2012 22:33:18,049 DEBUG [pool-2-thread-3] amf.io.AMF3Deserializer     - readAMF3String() - length=0
+11 июн 2012 22:33:18,049 DEBUG [pool-2-thread-3] amf.io.AMF3Deserializer     - readAMF3String() -> ""
+11 июн 2012 22:33:18,049 DEBUG [pool-2-thread-3] amf.io.AMF3Deserializer     - addToStoredObjects(o=[null, null]) at index=0
+11 июн 2012 22:33:18,049 DEBUG [pool-2-thread-3] amf.io.AMF3Deserializer     - readObject()...
+11 июн 2012 22:33:18,049 DEBUG [pool-2-thread-3] amf.io.AMF3Deserializer     - readAMF3Integer() -> 4 <0x04>
+11 июн 2012 22:33:18,049 DEBUG [pool-2-thread-3] amf.io.AMF3Deserializer     - readObject(type=4 <0x04>)
+11 июн 2012 22:33:18,050 DEBUG [pool-2-thread-3] amf.io.AMF3Deserializer     - readAMF3Integer() -> 3 <0x03>
+11 июн 2012 22:33:18,050 DEBUG [pool-2-thread-3] amf.io.AMF3Deserializer     - readObject()...
+11 июн 2012 22:33:18,050 DEBUG [pool-2-thread-3] amf.io.AMF3Deserializer     - readAMF3Integer() -> 9 <0x09>
+11 июн 2012 22:33:18,050 DEBUG [pool-2-thread-3] amf.io.AMF3Deserializer     - readObject(type=9 <0x09>)
+11 июн 2012 22:33:18,050 DEBUG [pool-2-thread-3] amf.io.AMF3Deserializer     - readAMF3Integer() -> 5 <0x05>
+11 июн 2012 22:33:18,050 DEBUG [pool-2-thread-3] amf.io.AMF3Deserializer     - readAMF3String()...
+11 июн 2012 22:33:18,051 DEBUG [pool-2-thread-3] amf.io.AMF3Deserializer     - readAMF3Integer() -> 1 <0x01>
+11 июн 2012 22:33:18,051 DEBUG [pool-2-thread-3] amf.io.AMF3Deserializer     - readAMF3String() - length=0
+11 июн 2012 22:33:18,051 DEBUG [pool-2-thread-3] amf.io.AMF3Deserializer     - readAMF3String() -> ""
+11 июн 2012 22:33:18,051 DEBUG [pool-2-thread-3] amf.io.AMF3Deserializer     - addToStoredObjects(o=[null, null]) at index=1
+11 июн 2012 22:33:18,051 DEBUG [pool-2-thread-3] amf.io.AMF3Deserializer     - readObject()...
+11 июн 2012 22:33:18,051 DEBUG [pool-2-thread-3] amf.io.AMF3Deserializer     - readAMF3Integer() -> 6 <0x06>
+11 июн 2012 22:33:18,052 DEBUG [pool-2-thread-3] amf.io.AMF3Deserializer     - readObject(type=6 <0x06>)
+11 июн 2012 22:33:18,052 DEBUG [pool-2-thread-3] amf.io.AMF3Deserializer     - readAMF3String()...
+11 июн 2012 22:33:18,052 DEBUG [pool-2-thread-3] amf.io.AMF3Deserializer     - readAMF3Integer() -> 9 <0x09>
+11 июн 2012 22:33:18,052 DEBUG [pool-2-thread-3] amf.io.AMF3Deserializer     - readAMF3String() - length=4
+11 июн 2012 22:33:18,052 DEBUG [pool-2-thread-3] amf.io.AMF3Deserializer     - readAMF3String() - result="asdf"
+11 июн 2012 22:33:18,052 DEBUG [pool-2-thread-3] amf.io.AMF3Deserializer     - addToStoredStrings(s="asdf") at index=0
+11 июн 2012 22:33:18,053 DEBUG [pool-2-thread-3] amf.io.AMF3Deserializer     - readAMF3String() -> "asdf"
+11 июн 2012 22:33:18,053 DEBUG [pool-2-thread-3] amf.io.AMF3Deserializer     - readObject()...
+11 июн 2012 22:33:18,053 DEBUG [pool-2-thread-3] amf.io.AMF3Deserializer     - readAMF3Integer() -> 6 <0x06>
+11 июн 2012 22:33:18,053 DEBUG [pool-2-thread-3] amf.io.AMF3Deserializer     - readObject(type=6 <0x06>)
+11 июн 2012 22:33:18,053 DEBUG [pool-2-thread-3] amf.io.AMF3Deserializer     - readAMF3String()...
+11 июн 2012 22:33:18,053 DEBUG [pool-2-thread-3] amf.io.AMF3Deserializer     - readAMF3Integer() -> 7 <0x07>
+11 июн 2012 22:33:18,054 DEBUG [pool-2-thread-3] amf.io.AMF3Deserializer     - readAMF3String() - length=3
+11 июн 2012 22:33:18,054 DEBUG [pool-2-thread-3] amf.io.AMF3Deserializer     - readAMF3String() - result="jkl"
+11 июн 2012 22:33:18,054 DEBUG [pool-2-thread-3] amf.io.AMF3Deserializer     - addToStoredStrings(s="jkl") at index=1
+11 июн 2012 22:33:18,054 DEBUG [pool-2-thread-3] amf.io.AMF3Deserializer     - readAMF3String() -> "jkl"
+11 июн 2012 22:33:18,054 DEBUG [pool-2-thread-3] amf.io.AMF3Deserializer     - readAMF3Array() -> [asdf, jkl]
+11 июн 2012 22:33:18,054 DEBUG [pool-2-thread-3] amf.io.AMF3Deserializer     - readAMF3Array() -> [3, [Ljava.lang.Object;@35cf7491]
+11 июн 2012 22:33:18,055 INFO  [pool-2-thread-3] network.PacketFrameDecoder     - decoded = [Ljava.lang.Object;@46edf730
+11 июн 2012 22:33:18,055 INFO  [pool-2-thread-3] network.PacketFrameDecoder     - decoded 1 = [Ljava.lang.Object;@35cf7491
+11 июн 2012 22:33:18,055 INFO  [pool-2-thread-3] network.AuthenticationHandler     - auth message received
+11 июн 2012 22:33:18,055 INFO  [pool-2-thread-3] network.AuthenticationHandler     - check auth
+11 июн 2012 22:33:18,055 ERROR [pool-2-thread-3] network.AuthenticationHandler     - [Ljava.lang.Object; cannot be cast to org.jboss.netty.buffer.ChannelBuffer
+11 июн 2012 22:33:51,853 INFO  [pool-2-thread-1] network.PacketFrameDecoder     - decoding ReplayingDecoderBuffer(ridx=0, widx=19)
+11 июн 2012 22:33:51,856 INFO  [pool-2-thread-1] network.PacketFrameDecoder     - decoding rb 2147483647
+11 июн 2012 22:33:51,856 INFO  [pool-2-thread-1] network.PacketFrameDecoder     - decoding cb BigEndianHeapChannelBuffer(ridx=0, widx=19, cap=19)
+11 июн 2012 22:33:51,857 INFO  [pool-2-thread-1] network.PacketFrameDecoder     - decoding arr = 19
+11 июн 2012 22:33:51,863 DEBUG [pool-2-thread-1] amf.io.AMF3Deserializer     - new AMF3Deserializer(in=com.sun.org.apache.bcel.internal.util.ByteSequence@69b1fbf4)
+11 июн 2012 22:33:51,864 DEBUG [pool-2-thread-1] amf.io.AMF3Deserializer     - readObject()...
+11 июн 2012 22:33:51,883 DEBUG [pool-2-thread-1] amf.io.AMF3Deserializer     - readAMF3Integer() -> 9 <0x09>
+11 июн 2012 22:33:51,883 DEBUG [pool-2-thread-1] amf.io.AMF3Deserializer     - readObject(type=9 <0x09>)
+11 июн 2012 22:33:51,884 DEBUG [pool-2-thread-1] amf.io.AMF3Deserializer     - readAMF3Integer() -> 5 <0x05>
+11 июн 2012 22:33:51,884 DEBUG [pool-2-thread-1] amf.io.AMF3Deserializer     - readAMF3String()...
+11 июн 2012 22:33:51,884 DEBUG [pool-2-thread-1] amf.io.AMF3Deserializer     - readAMF3Integer() -> 1 <0x01>
+11 июн 2012 22:33:51,884 DEBUG [pool-2-thread-1] amf.io.AMF3Deserializer     - readAMF3String() - length=0
+11 июн 2012 22:33:51,886 DEBUG [pool-2-thread-1] amf.io.AMF3Deserializer     - readAMF3String() -> ""
+11 июн 2012 22:33:51,886 DEBUG [pool-2-thread-1] amf.io.AMF3Deserializer     - addToStoredObjects(o=[null, null]) at index=0
+11 июн 2012 22:33:51,887 DEBUG [pool-2-thread-1] amf.io.AMF3Deserializer     - readObject()...
+11 июн 2012 22:33:51,887 DEBUG [pool-2-thread-1] amf.io.AMF3Deserializer     - readAMF3Integer() -> 4 <0x04>
+11 июн 2012 22:33:51,887 DEBUG [pool-2-thread-1] amf.io.AMF3Deserializer     - readObject(type=4 <0x04>)
+11 июн 2012 22:33:51,887 DEBUG [pool-2-thread-1] amf.io.AMF3Deserializer     - readAMF3Integer() -> 3 <0x03>
+11 июн 2012 22:33:51,887 DEBUG [pool-2-thread-1] amf.io.AMF3Deserializer     - readObject()...
+11 июн 2012 22:33:51,888 DEBUG [pool-2-thread-1] amf.io.AMF3Deserializer     - readAMF3Integer() -> 9 <0x09>
+11 июн 2012 22:33:51,888 DEBUG [pool-2-thread-1] amf.io.AMF3Deserializer     - readObject(type=9 <0x09>)
+11 июн 2012 22:33:51,888 DEBUG [pool-2-thread-1] amf.io.AMF3Deserializer     - readAMF3Integer() -> 5 <0x05>
+11 июн 2012 22:33:51,888 DEBUG [pool-2-thread-1] amf.io.AMF3Deserializer     - readAMF3String()...
+11 июн 2012 22:33:51,888 DEBUG [pool-2-thread-1] amf.io.AMF3Deserializer     - readAMF3Integer() -> 1 <0x01>
+11 июн 2012 22:33:51,888 DEBUG [pool-2-thread-1] amf.io.AMF3Deserializer     - readAMF3String() - length=0
+11 июн 2012 22:33:51,889 DEBUG [pool-2-thread-1] amf.io.AMF3Deserializer     - readAMF3String() -> ""
+11 июн 2012 22:33:51,889 DEBUG [pool-2-thread-1] amf.io.AMF3Deserializer     - addToStoredObjects(o=[null, null]) at index=1
+11 июн 2012 22:33:51,889 DEBUG [pool-2-thread-1] amf.io.AMF3Deserializer     - readObject()...
+11 июн 2012 22:33:51,889 DEBUG [pool-2-thread-1] amf.io.AMF3Deserializer     - readAMF3Integer() -> 6 <0x06>
+11 июн 2012 22:33:51,889 DEBUG [pool-2-thread-1] amf.io.AMF3Deserializer     - readObject(type=6 <0x06>)
+11 июн 2012 22:33:51,890 DEBUG [pool-2-thread-1] amf.io.AMF3Deserializer     - readAMF3String()...
+11 июн 2012 22:33:51,890 DEBUG [pool-2-thread-1] amf.io.AMF3Deserializer     - readAMF3Integer() -> 9 <0x09>
+11 июн 2012 22:33:51,890 DEBUG [pool-2-thread-1] amf.io.AMF3Deserializer     - readAMF3String() - length=4
+11 июн 2012 22:33:51,890 DEBUG [pool-2-thread-1] amf.io.AMF3Deserializer     - readAMF3String() - result="asdf"
+11 июн 2012 22:33:51,890 DEBUG [pool-2-thread-1] amf.io.AMF3Deserializer     - addToStoredStrings(s="asdf") at index=0
+11 июн 2012 22:33:51,891 DEBUG [pool-2-thread-1] amf.io.AMF3Deserializer     - readAMF3String() -> "asdf"
+11 июн 2012 22:33:51,891 DEBUG [pool-2-thread-1] amf.io.AMF3Deserializer     - readObject()...
+11 июн 2012 22:33:51,891 DEBUG [pool-2-thread-1] amf.io.AMF3Deserializer     - readAMF3Integer() -> 6 <0x06>
+11 июн 2012 22:33:51,891 DEBUG [pool-2-thread-1] amf.io.AMF3Deserializer     - readObject(type=6 <0x06>)
+11 июн 2012 22:33:51,891 DEBUG [pool-2-thread-1] amf.io.AMF3Deserializer     - readAMF3String()...
+11 июн 2012 22:33:51,892 DEBUG [pool-2-thread-1] amf.io.AMF3Deserializer     - readAMF3Integer() -> 7 <0x07>
+11 июн 2012 22:33:51,892 DEBUG [pool-2-thread-1] amf.io.AMF3Deserializer     - readAMF3String() - length=3
+11 июн 2012 22:33:51,892 DEBUG [pool-2-thread-1] amf.io.AMF3Deserializer     - readAMF3String() - result="jkl"
+11 июн 2012 22:33:51,892 DEBUG [pool-2-thread-1] amf.io.AMF3Deserializer     - addToStoredStrings(s="jkl") at index=1
+11 июн 2012 22:33:51,892 DEBUG [pool-2-thread-1] amf.io.AMF3Deserializer     - readAMF3String() -> "jkl"
+11 июн 2012 22:33:51,893 DEBUG [pool-2-thread-1] amf.io.AMF3Deserializer     - readAMF3Array() -> [asdf, jkl]
+11 июн 2012 22:33:51,893 DEBUG [pool-2-thread-1] amf.io.AMF3Deserializer     - readAMF3Array() -> [3, [Ljava.lang.Object;@186fa9fc]
+11 июн 2012 22:33:51,893 INFO  [pool-2-thread-1] network.PacketFrameDecoder     - decoded = [Ljava.lang.Object;@4b00ebec
+11 июн 2012 22:33:51,893 INFO  [pool-2-thread-1] network.PacketFrameDecoder     - decoded 1 = [Ljava.lang.Object;@186fa9fc
+11 июн 2012 22:33:51,893 INFO  [pool-2-thread-1] network.AuthenticationHandler     - auth message received
+11 июн 2012 22:33:51,894 INFO  [pool-2-thread-1] network.AuthenticationHandler     - check auth
+11 июн 2012 22:33:51,896 ERROR [pool-2-thread-1] network.AuthenticationHandler     - [Ljava.lang.Object; cannot be cast to org.jboss.netty.buffer.ChannelBuffer
+11 июн 2012 22:52:21,434 INFO  [pool-2-thread-1] network.AuthenticationHandler     - auth message received
+11 июн 2012 22:52:21,436 INFO  [pool-2-thread-1] network.AuthenticationHandler     - auth failed
+11 июн 2012 22:55:31,071 INFO  [pool-2-thread-1] network.AuthenticationHandler     - auth message received
+11 июн 2012 22:55:31,073 INFO  [pool-2-thread-1] network.AuthenticationHandler     - 2
+11 июн 2012 22:55:31,073 INFO  [pool-2-thread-1] network.AuthenticationHandler     - auth failed
+11 июн 2012 22:56:04,331 INFO  [pool-2-thread-1] network.AuthenticationHandler     - auth message received
+11 июн 2012 22:56:04,333 INFO  [pool-2-thread-1] network.AuthenticationHandler     - 3
+11 июн 2012 22:56:04,333 INFO  [pool-2-thread-1] network.AuthenticationHandler     - [Ljava.lang.Object;@5c1fe88d
+11 июн 2012 22:56:04,333 INFO  [pool-2-thread-1] network.AuthenticationHandler     - auth failed
+11 июн 2012 22:56:12,377 INFO  [pool-2-thread-1] network.AuthenticationHandler     - auth message received
+11 июн 2012 22:56:12,377 INFO  [pool-2-thread-1] network.AuthenticationHandler     - 3
+11 июн 2012 22:56:12,377 INFO  [pool-2-thread-1] network.AuthenticationHandler     - [Ljava.lang.Object;@36b60b93
+11 июн 2012 22:56:12,378 INFO  [pool-2-thread-1] network.AuthenticationHandler     - auth failed
