@@ -7,8 +7,8 @@
  */
 package models
 {
-import park.BaseParkObjectController;
-import park.BaseParkObjectModel;
+import park.BaseSpaceObjectController;
+import park.BaseSpaceObjectModel;
 
 import utils.ArrayHelper;
 import utils.IntPnt;
@@ -22,15 +22,15 @@ public class SnowParkField
 
     public function SnowParkField()
     {
-        _field = ArrayHelper.init_2d_array(WIDTH, HEIGHT, null);
+        _field = ArrayHelper.init_2d_array(HEIGHT, WIDTH, null);
     }
 
-    public function setBlock(pos:IntPnt, obj:BaseParkObjectModel):void
+    public function setBlock(pos:IntPnt, obj:BaseSpaceObjectModel):void
     {
         _field[pos.x][pos.y] = obj;
     }
 
-    public function getBlock(pos:IntPnt):BaseParkObjectModel
+    public function getBlock(pos:IntPnt):BaseSpaceObjectModel
     {
         return _field[pos.x][pos.y];
     }

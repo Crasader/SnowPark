@@ -20,8 +20,8 @@ import models.SnowParkField;
 
 import mx.binding.utils.BindingUtils;
 
-import park.BaseParkObjectModel;
-import park.BaseParkObjectView;
+import park.BaseSpaceObjectModel;
+import park.BaseSpaceObjectView;
 
 import utils.IntPnt;
 

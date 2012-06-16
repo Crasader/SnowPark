@@ -11,18 +11,18 @@ import basemvc.controller.CompositeController;
 
 import flash.profiler.profile;
 
-public class BaseParkObjectController extends CompositeController
+public class BaseSpaceObjectController extends CompositeController
 {
-    public function BaseParkObjectController()
+    public function BaseSpaceObjectController()
     {
     }
 
-    public function getView():BaseParkObjectView
+    public function getView():BaseSpaceObjectView
     {
         return null;
     }
 
-    public function getModel():BaseParkObjectModel
+    public function getModel():BaseSpaceObjectModel
     {
         return null;
     }

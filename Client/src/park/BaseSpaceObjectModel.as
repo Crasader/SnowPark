@@ -7,7 +7,7 @@
  */
 package park
 {
-public class BaseParkObjectModel
+public class BaseSpaceObjectModel
 {
     [Bindable]
     public var _x:int = 0;
@@ -15,12 +15,18 @@ public class BaseParkObjectModel
     public var _y:int = 0;
 
     [Bindable]
-    public var _width:int = 1;
+    public var _width:int = 0;
+    [Bindable]
+    public var _length:int = 0;
 
     [Bindable]
-    public var _length:int = 1;
+    public var _group:int = 0;
 
-    public function BaseParkObjectModel()
+    [Bindable]
+    public var _id:int = 0;
+
+
+    public function BaseSpaceObjectModel()
     {
     }
 }

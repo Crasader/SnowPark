@@ -4,7 +4,6 @@
  */
 package views
 {
-import com.junkbyte.console.Cc;
 
 import flash.display.SimpleButton;
 import flash.display.Sprite;

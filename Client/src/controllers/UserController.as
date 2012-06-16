@@ -66,6 +66,9 @@ public class UserController extends CompositeController
         }
     }
 
-
+    public function getModel():UserModel
+    {
+        return UserModel.instanse;
+    }
 }
 }

@@ -4,12 +4,11 @@
  */
 package net
 {
-import avmplus.factoryXml;
+import com.junkbyte.console.Cc;
 
 import config.Constants;
 
 import flash.events.EventDispatcher;
-import flash.net.Socket;
 
 import net.ServerAPI.JSSConnection;
 import net.ServerAPI.JSSEvent;
@@ -53,9 +52,9 @@ public class ServerConnection extends EventDispatcher
 
     private function send_postponed_requests():void
     {
-        var request:Array = _postponed_requests.pop();
+        var request:Array = _postponed_requests.shift();
         if (request)
-            _jss.sendObject(request);
+            send_request(request);
     }
 
     private function handleReceiveData(event:JSSEvent):void
@@ -84,6 +83,18 @@ public class ServerConnection extends EventDispatcher
             return;
         }
 
+        send_request(request);
+    }
+
+    private function send_request(request:Array):void
+    {
+        try
+        {
+            Cc.log("send request : " + request[0] + " : " + request[1]);
+        } catch (e:*)
+        {
+            Cc.error("Try send invalid request!");
+        }
         _jss.sendObject(request);
     }
 }

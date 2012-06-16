@@ -24,7 +24,7 @@ import flash.geom.Point;
 
 import models.FieldModel;
 
-import park.static.SimpleBlockController;
+import park.static.SpaceObjController;
 
 import utils.IntPnt;
 
@@ -63,13 +63,21 @@ public class FieldController extends CompositeController
         var pos:IntPnt = new IntPnt(iso_pt.x / FieldView.CELL_SIZE, iso_pt.y / FieldView.CELL_SIZE);
 
 
-        var block:SimpleBlockController = new SimpleBlockController();
+        var block:SpaceObjController = new SpaceObjController();
         if(FieldModel.instanse.placeObject(block.getModel(), pos))
         {
             _fieldView.addChild(block.getView());
             add(block);
         }
 
+        dispatchEvent(new CommandEvent(CMDList.CREATE_OBJECT_ON_SPACE,
+                [block.getModel()._id,
+                block.getModel()._group,
+                pos.x,
+                pos.y,
+                block.getModel()._width,
+                block.getModel()._length],
+            true));
     }
 
 

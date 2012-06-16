@@ -13,11 +13,11 @@ import mx.binding.utils.BindingUtils;
 
 import views.FieldView;
 
-public class BaseParkObjectView extends IsoBox
+public class BaseSpaceObjectView extends IsoBox
 {
-    protected var _base_model:BaseParkObjectModel;
+    protected var _base_model:BaseSpaceObjectModel;
 
-    public function BaseParkObjectView(model:BaseParkObjectModel)
+    public function BaseSpaceObjectView(model:BaseSpaceObjectModel)
     {
         _base_model = model;
         BindingUtils.bindSetter(update_x_pos, model, "_x");

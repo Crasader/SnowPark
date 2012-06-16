@@ -11,26 +11,25 @@ import flash.events.Event;
 
 import mx.binding.utils.BindingUtils;
 
-import park.BaseParkObjectView;
+import park.BaseSpaceObjectView;
 
 import views.FieldView;
 
-public class SimpleBlockView extends BaseParkObjectView
+public class SpaceObjView extends BaseSpaceObjectView
 {
-    public function SimpleBlockView(m:SimpleBlockModel)
+    public function SpaceObjView(m:SpaceObjModel)
     {
         super(m);
         width = FieldView.CELL_SIZE;
         length = FieldView.CELL_SIZE;
-        height = m._height;
 
-        BindingUtils.bindSetter(setHeight, m, "_height");
+//        BindingUtils.bindSetter(setHeight, m, "_height");
     }
 
-    private function setHeight(value:int):void
-    {
-        height = value;
-        render();
-    }
+//    private function setHeight(value:int):void
+//    {
+//        height = value;
+//        render();
+//    }
 }
 }

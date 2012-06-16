@@ -10,7 +10,7 @@ package models
 import flash.events.Event;
 import flash.events.EventDispatcher;
 
-import park.BaseParkObjectModel;
+import park.BaseSpaceObjectModel;
 
 import utils.IntPnt;
 
@@ -30,7 +30,7 @@ public class FieldModel extends EventDispatcher
         return _field;
     }
 
-    public function placeObject(obj_model:BaseParkObjectModel, pos:IntPnt):Boolean
+    public function placeObject(obj_model:BaseSpaceObjectModel, pos:IntPnt):Boolean
     {
         obj_model._x = pos.x;
         obj_model._y = pos.y;
@@ -44,7 +44,7 @@ public class FieldModel extends EventDispatcher
         return true;
     }
 
-    private function fill_field_by_object(obj:BaseParkObjectModel):void
+    private function fill_field_by_object(obj:BaseSpaceObjectModel):void
     {
         for(var x:int = obj._x; x < obj._x + obj._width; x++)
             for(var y:int = obj._y; y < obj._y + obj._length; y++)
@@ -53,7 +53,7 @@ public class FieldModel extends EventDispatcher
             }
     }
 
-    private function is_place_free(obj:BaseParkObjectModel):Boolean
+    private function is_place_free(obj:BaseSpaceObjectModel):Boolean
     {
         for(var x:int = obj._x; x < obj._x + obj._width; x++)
             for(var y:int = obj._y; y < obj._y + obj._length; y++)
