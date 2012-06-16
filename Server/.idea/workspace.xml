@@ -1,7 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="29d18484-5fc4-4a98-afa2-cbd3ebc7a347" name="Default" comment="" />
+    <list default="true" id="29d18484-5fc4-4a98-afa2-cbd3ebc7a347" name="Default" comment="wip 17 june 2012">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Client/src/park/static/SpaceObjController.as" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Client/src/park/static/SpaceObjModel.as" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/crypt/Crypter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/objects/Space.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/objects/SpaceObj.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/objects/UserState.java" />
+      <change type="DELETED" beforePath="C:\Projects\SnowParkPrototipe\Client\src\park\static\SimpleBlockController.as" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projects\SnowParkPrototipe\Client\src\park\static\SimpleBlockModel.as" afterPath="" />
+      <change type="MOVED" beforePath="C:\Projects\SnowParkPrototipe\Client\src\park\BaseParkObjectController.as" afterPath="$PROJECT_DIR$/../Client/src/park/BaseSpaceObjectController.as" />
+      <change type="MOVED" beforePath="C:\Projects\SnowParkPrototipe\Client\src\park\BaseParkObjectModel.as" afterPath="$PROJECT_DIR$/../Client/src/park/BaseSpaceObjectModel.as" />
+      <change type="MOVED" beforePath="C:\Projects\SnowParkPrototipe\Client\src\park\BaseParkObjectView.as" afterPath="$PROJECT_DIR$/../Client/src/park/BaseSpaceObjectView.as" />
+      <change type="MOVED" beforePath="C:\Projects\SnowParkPrototipe\Client\src\park\static\SimpleBlockView.as" afterPath="$PROJECT_DIR$/../Client/src/park/static/SpaceObjView.as" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Client/out/production/SnowParkPrototipe/SnowParkPrototipe.swf" afterPath="$PROJECT_DIR$/../Client/out/production/SnowParkPrototipe/SnowParkPrototipe.swf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Client/.idea/vcs.xml" afterPath="$PROJECT_DIR$/../Client/.idea/vcs.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Client/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../Client/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Client/SnowParkPrototipe.iml" afterPath="$PROJECT_DIR$/../Client/SnowParkPrototipe.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Client/src/controllers/CoreController.as" afterPath="$PROJECT_DIR$/../Client/src/controllers/CoreController.as" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Client/src/controllers/FieldController.as" afterPath="$PROJECT_DIR$/../Client/src/controllers/FieldController.as" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Client/src/controllers/UserController.as" afterPath="$PROJECT_DIR$/../Client/src/controllers/UserController.as" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Client/src/controllers/events/CMDList.as" afterPath="$PROJECT_DIR$/../Client/src/controllers/events/CMDList.as" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Client/src/models/FieldModel.as" afterPath="$PROJECT_DIR$/../Client/src/models/FieldModel.as" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Client/src/models/SnowParkField.as" afterPath="$PROJECT_DIR$/../Client/src/models/SnowParkField.as" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Client/src/net/ServerConnection.as" afterPath="$PROJECT_DIR$/../Client/src/net/ServerConnection.as" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Client/src/views/FieldView.as" afterPath="$PROJECT_DIR$/../Client/src/views/FieldView.as" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Client/src/views/UserView.as" afterPath="$PROJECT_DIR$/../Client/src/views/UserView.as" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/logs/java-server-log.log" afterPath="$PROJECT_DIR$/logs/java-server-log.log" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/db/DataBase.java" afterPath="$PROJECT_DIR$/src/db/DataBase.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/network/AuthenticationHandler.java" afterPath="$PROJECT_DIR$/src/network/AuthenticationHandler.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/objects/UserWorker.java" afterPath="$PROJECT_DIR$/src/objects/UserWorker.java" />
+    </list>
     <ignored path="SnowServer.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -58,86 +90,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="AuthenticationHandler.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/network/AuthenticationHandler.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="83" column="5" selection-start="2261" selection-end="2261" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Main.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Main.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="69" column="40" selection-start="2252" selection-end="2252" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DataBase.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/db/DataBase.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="35" column="38" selection-start="797" selection-end="797" vertical-scroll-proportion="0.65738755">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CFG.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/config/CFG.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="49" selection-start="298" selection-end="298" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="PacketFrameDecoder.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/network/PacketFrameDecoder.java">
           <provider selected="true" editor-type-id="text-editor">
             <state line="29" column="5" selection-start="947" selection-end="947" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PacketFrameEncoder.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/network/PacketFrameEncoder.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="21" column="5" selection-start="739" selection-end="739" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Response.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/network/Response.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="27" selection-start="114" selection-end="114" vertical-scroll-proportion="0.0">
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ServerPipelineFactory.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/network/ServerPipelineFactory.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="13" selection-start="221" selection-end="221" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -146,9 +103,7 @@
         <entry file="file://$PROJECT_DIR$/src/network/UserHandler.java">
           <provider selected="true" editor-type-id="text-editor">
             <state line="24" column="82" selection-start="652" selection-end="652" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -156,7 +111,71 @@
       <file leaf-file-name="UserWorker.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/objects/UserWorker.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="80" column="28" selection-start="1864" selection-end="1864" vertical-scroll-proportion="0.0">
+            <state line="21" column="27" selection-start="448" selection-end="448" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CMDList.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/network/CMDList.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="10" column="28" selection-start="218" selection-end="218" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AuthenticationHandler.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/network/AuthenticationHandler.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="90" column="47" selection-start="2510" selection-end="2510" vertical-scroll-proportion="0.5526882">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DataBase.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/db/DataBase.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="10" column="0" selection-start="181" selection-end="181" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UserState.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/objects/UserState.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="14" column="4" selection-start="298" selection-end="329" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Space.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/objects/Space.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="18" column="0" selection-start="351" selection-end="351" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SpaceObj.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/objects/SpaceObj.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="15" column="13" selection-start="300" selection-end="300" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -171,24 +190,27 @@
       <setting name="OPEN_NEW_TAB" value="false" />
     </FindUsagesManager>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/network/PlayerHandler.java" />
-        <option value="$PROJECT_DIR$/src/network/Command.java" />
-        <option value="$PROJECT_DIR$/src/network/Response.java" />
-        <option value="$PROJECT_DIR$/src/db_objects/UserDBO.java" />
-        <option value="$PROJECT_DIR$/src/db_objects/DBO.java" />
-        <option value="$PROJECT_DIR$/src/db_objects/UserDAO.java" />
-        <option value="$PROJECT_DIR$/src/db/SLF4JLoggerImplFactory.java" />
         <option value="$PROJECT_DIR$/src/network/PacketFrameEncoder.java" />
         <option value="$PROJECT_DIR$/src/network/UserHandler.java" />
         <option value="$PROJECT_DIR$/src/network/PacketFrameDecoder.java" />
         <option value="$PROJECT_DIR$/config/log4j.properties" />
+        <option value="$PROJECT_DIR$/src/config/CFG.java" />
+        <option value="$PROJECT_DIR$/src/Main.java" />
+        <option value="$PROJECT_DIR$/src/objects/GameUsers.java" />
+        <option value="$PROJECT_DIR$/src/crypt/Crypter.java" />
+        <option value="$PROJECT_DIR$/src/objects/user_state.java" />
+        <option value="$PROJECT_DIR$/src/objects/UserState.java" />
+        <option value="$PROJECT_DIR$/src/objects/Field.java" />
+        <option value="$PROJECT_DIR$/src/objects/Space.java" />
+        <option value="$PROJECT_DIR$/src/objects/SpaceObj.java" />
         <option value="$PROJECT_DIR$/src/objects/UserWorker.java" />
         <option value="$PROJECT_DIR$/src/network/AuthenticationHandler.java" />
-        <option value="$PROJECT_DIR$/src/Main.java" />
-        <option value="$PROJECT_DIR$/src/config/CFG.java" />
         <option value="$PROJECT_DIR$/src/db/DataBase.java" />
       </list>
     </option>
@@ -199,7 +221,7 @@
     <option name="width" value="1608" />
     <option name="height" value="880" />
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
     <OptionsSetting value="true" id="Remove" />
     <OptionsSetting value="true" id="Checkout" />
@@ -225,16 +247,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope">
-        <subPane subId="Project Files">
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -245,46 +257,6 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="External Libraries" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SnowServer" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="External Libraries" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="amf-serializer-1.0.0" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="amf-serializer-1.0.0.jar" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="META-INF" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SnowServer" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="External Libraries" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="amf-serializer-1.0.0" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="amf-serializer-1.0.0.jar" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -379,6 +351,24 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="crypt" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SnowServer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Server" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="config" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -395,6 +385,16 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="config" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="Scope">
+        <subPane subId="Project Files">
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
@@ -432,9 +432,9 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="MemberChooser.showClasses" value="true" />
     <property name="GoToClass.includeLibraries" value="false" />
-    <property name="dynamic.classpath" value="false" />
-    <property name="options.searchVisible" value="true" />
     <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
+    <property name="dynamic.classpath" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
@@ -465,24 +465,6 @@
       <method>
         <option name="AntTarget" enabled="false" />
         <option name="BuildArtifacts" enabled="false" />
-        <option name="Maven.BeforeRunTask" enabled="false" />
-      </method>
-    </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <module name="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="HTML_FILE_NAME" />
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <option name="VM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <method>
-        <option name="AntTarget" enabled="false" />
-        <option name="BuildArtifacts" enabled="false" />
-        <option name="Make" enabled="true" />
         <option name="Maven.BeforeRunTask" enabled="false" />
       </method>
     </configuration>
@@ -519,6 +501,24 @@
         <option name="Maven.BeforeRunTask" enabled="false" />
       </method>
     </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <method>
+        <option name="AntTarget" enabled="false" />
+        <option name="BuildArtifacts" enabled="false" />
+        <option name="Make" enabled="true" />
+        <option name="Maven.BeforeRunTask" enabled="false" />
+      </method>
+    </configuration>
     <configuration default="true" type="Application" factoryName="Application">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <option name="MAIN_CLASS_NAME" />
@@ -536,17 +536,6 @@
         <option name="AntTarget" enabled="false" />
         <option name="BuildArtifacts" enabled="false" />
         <option name="Make" enabled="true" />
-        <option name="Maven.BeforeRunTask" enabled="false" />
-      </method>
-    </configuration>
-    <configuration default="true" type="JavascriptDebugSession" factoryName="Local">
-      <JSDebuggerConfigurationSettings>
-        <option name="engineId" value="embedded" />
-        <option name="fileUrl" />
-      </JSDebuggerConfigurationSettings>
-      <method>
-        <option name="AntTarget" enabled="false" />
-        <option name="BuildArtifacts" enabled="false" />
         <option name="Maven.BeforeRunTask" enabled="false" />
       </method>
     </configuration>
@@ -573,6 +562,17 @@
         <option name="AntTarget" enabled="false" />
         <option name="BuildArtifacts" enabled="false" />
         <option name="Make" enabled="true" />
+        <option name="Maven.BeforeRunTask" enabled="false" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JavascriptDebugSession" factoryName="Local">
+      <JSDebuggerConfigurationSettings>
+        <option name="engineId" value="embedded" />
+        <option name="fileUrl" />
+      </JSDebuggerConfigurationSettings>
+      <method>
+        <option name="AntTarget" enabled="false" />
+        <option name="BuildArtifacts" enabled="false" />
         <option name="Maven.BeforeRunTask" enabled="false" />
       </method>
     </configuration>
@@ -631,14 +631,13 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-4" y="-4" width="1608" height="880" extended-state="7" />
+    <frame x="-4" y="-4" width="1608" height="880" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Data Sources" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32894737" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JavaEE:App" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32894737" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -646,15 +645,17 @@
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32947233" sideWeight="0.67368424" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32894737" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32894737" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32894737" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24967825" sideWeight="0.8" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24967825" sideWeight="0.67368424" order="6" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3263158" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="JSON Formatter" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32894737" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24967825" sideWeight="0.67105263" order="6" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.37236843" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32894737" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
@@ -696,7 +697,7 @@
     <option name="SHOW_VCS_ERROR_NOTIFICATIONS" value="true" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" />
+    <option name="LAST_COMMIT_MESSAGE" value="wip 17 june 2012" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -709,6 +710,7 @@
     <option name="UPDATE_GROUP_BY_CHANGELIST" value="false" />
     <option name="SHOW_FILE_HISTORY_AS_TREE" value="false" />
     <option name="FILE_HISTORY_SPLITTER_PROPORTION" value="0.6" />
+    <MESSAGE value="wip 17 june 2012" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -718,103 +720,113 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://C:/Java_Utilites/morphia-0.98.jar!/com/google/code/morphia/Datastore.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="51" column="49" selection-start="2070" selection-end="2070" vertical-scroll-proportion="0.35543767">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/network/CMDList.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="22" selection-start="212" selection-end="212" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/network/Command.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="27" selection-start="140" selection-end="140" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/network/UserHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="82" selection-start="652" selection-end="652" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/network/ServerPipelineFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="13" selection-start="221" selection-end="221" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/network/Response.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="27" selection-start="114" selection-end="114" vertical-scroll-proportion="0.0">
+        <state line="8" column="27" selection-start="114" selection-end="114" vertical-scroll-proportion="0.28318584">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/network/PacketFrameEncoder.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="5" selection-start="739" selection-end="739" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state line="21" column="5" selection-start="739" selection-end="739" vertical-scroll-proportion="0.46902654">
+          <folding />
         </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/crypt/Crypter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="18" selection-start="153" selection-end="153" vertical-scroll-proportion="0.3539823">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Java_Utilites/netty-3.4.0.Final/src/main/java/org/jboss/netty/handler/codec/replay/ReplayingDecoder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="565" column="0" selection-start="21300" selection-end="21300" vertical-scroll-proportion="0.33257404">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Java_Utilites/netty-3.4.0.Final/src/main/java/org/jboss/netty/channel/Channels.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="295" column="0" selection-start="11080" selection-end="11080" vertical-scroll-proportion="0.3318584">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/network/UserHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="24" column="82" selection-start="652" selection-end="652" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/network/PacketFrameDecoder.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="29" column="5" selection-start="947" selection-end="947" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.6.0_31/src.zip!/java/util/List.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="89" column="17" selection-start="4126" selection-end="4126" vertical-scroll-proportion="0.3318584">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/objects/UserState.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="4" selection-start="298" selection-end="329" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/log4j.properties">
+    <entry file="file://$PROJECT_DIR$/src/objects/Space.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="67" selection-start="603" selection-end="603" vertical-scroll-proportion="0.34261242">
+        <state line="18" column="0" selection-start="351" selection-end="351" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/network/CMDList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="28" selection-start="218" selection-end="218" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="jar://C:/Java_Utilites/morphia-logging-slf4j-0.99.jar!/com/google/code/morphia/logging/slf4j/SLF4JLogr.class">
+    <entry file="file://$PROJECT_DIR$/../Client/src/controllers/events/CMDList.as">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="0" selection-start="408" selection-end="408" vertical-scroll-proportion="0.35067874">
+        <state line="18" column="0" selection-start="331" selection-end="331" vertical-scroll-proportion="0.516129">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="jar://C:/Java_Utilites/morphia-logging-slf4j-0.99.jar!/com/google/code/morphia/logging/slf4j/SLF4JLogrImplFactory.class">
+    <entry file="file://$PROJECT_DIR$/src/db/DataBase.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="0" selection-start="419" selection-end="419" vertical-scroll-proportion="0.32579187">
-          <folding />
+        <state line="10" column="0" selection-start="181" selection-end="181" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/objects/SpaceObj.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="13" selection-start="300" selection-end="300" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/objects/UserWorker.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="80" column="28" selection-start="1864" selection-end="1864" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="69" column="40" selection-start="2252" selection-end="2252" vertical-scroll-proportion="0.0">
+        <state line="21" column="27" selection-start="448" selection-end="448" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -823,23 +835,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/network/AuthenticationHandler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="83" column="5" selection-start="2261" selection-end="2261" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/config/CFG.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="49" selection-start="298" selection-end="298" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/db/DataBase.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="35" column="38" selection-start="797" selection-end="797" vertical-scroll-proportion="0.65738755">
+        <state line="90" column="47" selection-start="2510" selection-end="2510" vertical-scroll-proportion="0.5526882">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -877,7 +873,7 @@
       </state>
       <state key="GlobalLibrariesConfigurable.UI">
         <settings>
-          <last-edited>morphia-0.99</last-edited>
+          <last-edited>snakeyaml-1.10</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>

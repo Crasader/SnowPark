@@ -1,14 +1,10 @@
 package objects;
 
-import com.google.code.morphia.annotations.Embedded;
-import com.google.code.morphia.annotations.Entity;
-import com.google.code.morphia.annotations.Id;
-import com.google.code.morphia.annotations.Transient;
+import crypt.Crypter;
 import db.DataBase;
 import network.CMDList;
 import network.Command;
 import org.apache.log4j.Logger;
-import org.bson.types.ObjectId;
 import org.jboss.netty.channel.Channel;
 import org.jboss.netty.channel.ChannelHandler;
 
@@ -16,22 +12,14 @@ import org.jboss.netty.channel.ChannelHandler;
  * Author: JuzTosS
  * Date: 12.06.12
  */
-@Entity
+
 public class UserWorker extends Thread
 {
-    @Transient
     private final Logger logger = Logger.getLogger(UserWorker.class);
 
-    @Id
-    ObjectId e_database_id;
-    @Embedded
-    String e_password;
-    @Embedded
-    String e_login;
+    private UserState user_state;
 
-    @Transient
     private ChannelHandler _handler;
-    @Transient
     private Channel _channel;
 
     public UserWorker(ChannelHandler handler, Channel channel)
@@ -47,7 +35,8 @@ public class UserWorker extends Thread
 
     public void acceptCommand(Command cmd)
     {
-        logger.info(":: accept command : " + cmd.command_id + " : " + cmd.params.toString());
+        log_cmd(cmd);
+
         switch (cmd.command_id)
         {
             case CMDList.CREATE_USER:
@@ -59,26 +48,46 @@ public class UserWorker extends Thread
             case CMDList.GET_USER_STATE:
 
                 break;
+            case CMDList.CREATE_OBJECT_ON_FIELD:
+                create_object(cmd);
+                break;
             default:
                 logger.error("Unknown command type");
         }
     }
 
-    private void load_user(Command cmd)
+    private void log_cmd(Command cmd)
+    {
+        String command_params_to_trace = "";
+        for(int i = 0; i < cmd.params.length; i++){
+            command_params_to_trace += ", " + cmd.params[i];
+        }
+        logger.info(":: accept command : " + cmd.command_id + command_params_to_trace);
+    }
+
+    private void create_object(Command cmd)
     {
 
+    }
+
+    private void load_user(Command cmd)
+    {
+        Object[] cmd_params = cmd.params;
+
+        user_state = (UserState) DataBase.ds().find(UserState.class, "login", cmd_params[0]).get();
+        logger.info(user_state.login);
+        logger.info(user_state.password);
     }
 
     private void create_user(Command cmd)
     {
         Object[] cmd_params = cmd.params;
-        e_login = (String) cmd_params[0];
-        e_password = (String) cmd_params[1];
 
-        logger.info(e_login);
-        logger.info(e_password);
+        user_state = new UserState();
+        user_state.login = (String) cmd_params[0];
+        user_state.password = Crypter.encrypt((String) cmd_params[1]);
 
-        DataBase.inst().get_ds().save(this);
+        DataBase.ds().save(user_state);
     }
 
 

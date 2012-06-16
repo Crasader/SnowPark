@@ -1,5 +1,7 @@
 package network;
 
+import db.DataBase;
+import objects.UserState;
 import org.apache.log4j.Logger;
 import org.jboss.netty.channel.*;
 
@@ -51,7 +53,8 @@ public class AuthenticationHandler extends SimpleChannelHandler
                 case CMDList.CREATE_USER:
                     return true;
                 default:
-                    throw new Exception("Wrong first command = " + cmd.command_id);
+                    logger.info("Wrong auth command = " + cmd.command_id);
+                    return false;
             }
 
         } catch (Exception exc)
@@ -63,7 +66,12 @@ public class AuthenticationHandler extends SimpleChannelHandler
 
     private boolean auth(Command cmd)
     {
-        if (cmd.params[0].toString().contentEquals("JuzTosS"))
+        String login = (String) cmd.params[0];
+        String pass = (String) cmd.params[1];
+
+        UserState us = (UserState) DataBase.ds().find(UserState.class, "login", login).get();
+
+        if (us != null && us.password.contentEquals(pass))
             return true;
         else
             return false;
@@ -81,5 +89,9 @@ public class AuthenticationHandler extends SimpleChannelHandler
     public void exceptionCaught(ChannelHandlerContext ctx, ExceptionEvent e) throws Exception
     {
         logger.error(e.getCause().getMessage());
+        logger.error(e.toString());
+        for(int i = 0; i < e.getCause().getStackTrace().length; i++)
+            System.out.println(e.getCause().getStackTrace()[i]);
+        System.out.println("End of stack trace");
     }
 }
