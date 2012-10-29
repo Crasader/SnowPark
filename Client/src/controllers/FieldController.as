@@ -71,13 +71,14 @@ public class FieldController extends CompositeController
         }
 
         dispatchEvent(new CommandEvent(CMDList.CREATE_OBJECT_ON_SPACE,
-                [block.getModel()._id,
+                [block.getModel().object_id,
+                block.getModel().class_id(),
                 block.getModel()._group,
                 pos.x,
                 pos.y,
                 block.getModel()._width,
                 block.getModel()._length],
-            true));
+            false, true));
     }
 
 

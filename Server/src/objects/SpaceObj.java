@@ -21,9 +21,15 @@ public class SpaceObj
     int y;
 
     @Embedded
-    int group;
+    int object_id;
 
     @Embedded
-    int id;
+    int class_id;
+
+    @Embedded
+    int width;
+
+    @Embedded
+    int height;
 
 }

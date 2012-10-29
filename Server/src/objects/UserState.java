@@ -5,6 +5,8 @@ import com.google.code.morphia.annotations.Entity;
 import com.google.code.morphia.annotations.Id;
 import org.bson.types.ObjectId;
 
+import java.util.HashMap;
+
 /**
  * Author: JuzTosS
  * Date: 16.06.12
@@ -16,10 +18,11 @@ public class UserState
     ObjectId e_database_id;
 
     @Embedded
-    public String password;
+    public String password = "";
     @Embedded
-    public String login;
+    public String login = "";
 
     @Embedded
-    public Space field;
+    public HashMap<Integer, Space> spaces = new HashMap<Integer, Space>();
+
 }

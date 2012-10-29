@@ -2,31 +2,34 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="85753450-e205-4fe6-b3df-ea4c9dc58e85" name="Default" comment="Client wip 17 june 2012">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/park/static/SpaceObjController.as" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/park/static/SpaceObjModel.as" />
-      <change type="DELETED" beforePath="C:\Projects\SnowParkPrototipe\Client\src\park\static\SimpleBlockController.as" afterPath="" />
-      <change type="DELETED" beforePath="C:\Projects\SnowParkPrototipe\Client\src\park\static\SimpleBlockModel.as" afterPath="" />
-      <change type="MOVED" beforePath="C:\Projects\SnowParkPrototipe\Client\src\park\BaseParkObjectController.as" afterPath="$PROJECT_DIR$/src/park/BaseSpaceObjectController.as" />
-      <change type="MOVED" beforePath="C:\Projects\SnowParkPrototipe\Client\src\park\BaseParkObjectModel.as" afterPath="$PROJECT_DIR$/src/park/BaseSpaceObjectModel.as" />
-      <change type="MOVED" beforePath="C:\Projects\SnowParkPrototipe\Client\src\park\BaseParkObjectView.as" afterPath="$PROJECT_DIR$/src/park/BaseSpaceObjectView.as" />
-      <change type="MOVED" beforePath="C:\Projects\SnowParkPrototipe\Client\src\park\static\SimpleBlockView.as" afterPath="$PROJECT_DIR$/src/park/static/SpaceObjView.as" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/crypt/Crypter.as" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Server/src/errors/Errors.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Server/src/errors/GameException.java" />
+      <change type="DELETED" beforePath="C:\Projects\SnowParkPrototipe\Server\src\crypt\Crypter.java" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SnowParkPrototipe/SnowParkPrototipe.swf" afterPath="$PROJECT_DIR$/out/production/SnowParkPrototipe/SnowParkPrototipe.swf" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Server/out/production/Server/config/CFG.class" afterPath="$PROJECT_DIR$/../Server/out/production/Server/config/CFG.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Server/out/production/Server/db/DataBase.class" afterPath="$PROJECT_DIR$/../Server/out/production/Server/db/DataBase.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Server/out/production/Server/network/AuthenticationHandler.class" afterPath="$PROJECT_DIR$/../Server/out/production/Server/network/AuthenticationHandler.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Server/out/production/Server/network/UserHandler.class" afterPath="$PROJECT_DIR$/../Server/out/production/Server/network/UserHandler.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Server/out/production/Server/objects/UserWorker.class" afterPath="$PROJECT_DIR$/../Server/out/production/Server/objects/UserWorker.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SnowParkPrototipe.iml" afterPath="$PROJECT_DIR$/SnowParkPrototipe.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/config/Constants.as" afterPath="$PROJECT_DIR$/src/config/Constants.as" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/controllers/CoreController.as" afterPath="$PROJECT_DIR$/src/controllers/CoreController.as" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/controllers/FieldController.as" afterPath="$PROJECT_DIR$/src/controllers/FieldController.as" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/controllers/UserController.as" afterPath="$PROJECT_DIR$/src/controllers/UserController.as" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/controllers/events/CMDList.as" afterPath="$PROJECT_DIR$/src/controllers/events/CMDList.as" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/models/FieldModel.as" afterPath="$PROJECT_DIR$/src/models/FieldModel.as" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/models/SnowParkField.as" afterPath="$PROJECT_DIR$/src/models/SnowParkField.as" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/controllers/events/CommandEvent.as" afterPath="$PROJECT_DIR$/src/controllers/events/CommandEvent.as" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/models/UserModel.as" afterPath="$PROJECT_DIR$/src/models/UserModel.as" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/net/ServerConnection.as" afterPath="$PROJECT_DIR$/src/net/ServerConnection.as" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/views/FieldView.as" afterPath="$PROJECT_DIR$/src/views/FieldView.as" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/views/UserView.as" afterPath="$PROJECT_DIR$/src/views/UserView.as" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/park/BaseSpaceObjectModel.as" afterPath="$PROJECT_DIR$/src/park/BaseSpaceObjectModel.as" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Server/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../Server/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Server/logs/java-server-log.log" afterPath="$PROJECT_DIR$/../Server/logs/java-server-log.log" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Server/src/network/AuthenticationHandler.java" afterPath="$PROJECT_DIR$/../Server/src/network/AuthenticationHandler.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Server/src/network/UserHandler.java" afterPath="$PROJECT_DIR$/../Server/src/network/UserHandler.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Server/src/objects/Space.java" afterPath="$PROJECT_DIR$/../Server/src/objects/Space.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Server/src/objects/SpaceObj.java" afterPath="$PROJECT_DIR$/../Server/src/objects/SpaceObj.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Server/src/objects/UserState.java" afterPath="$PROJECT_DIR$/../Server/src/objects/UserState.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Server/src/objects/UserWorker.java" afterPath="$PROJECT_DIR$/../Server/src/objects/UserWorker.java" />
     </list>
     <ignored path="SnowParkPrototipe.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -84,72 +87,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="FieldController.as" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/controllers/FieldController.as">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="83" column="24" selection-start="2167" selection-end="2167" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CMDList.as" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/controllers/events/CMDList.as">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="24" selection-start="121" selection-end="121" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SnowParkField.as" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/models/SnowParkField.as">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="24" column="56" selection-start="533" selection-end="533" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="FieldModel.as" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/models/FieldModel.as">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="27" column="20" selection-start="529" selection-end="529" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ArrayedQueue.as" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://C:/Flash_Utilites/as3ds_1.04/src/de/polygonal/ds/ArrayedQueue.as">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="29" column="17" selection-start="1368" selection-end="1368" vertical-scroll-proportion="128.52">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CoreController.as" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/controllers/CoreController.as">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="97" column="21" selection-start="2511" selection-end="2511" vertical-scroll-proportion="0.45691907">
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-                <element signature="e#174#220#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="ServerConnection.as" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/net/ServerConnection.as">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="56" column="19" selection-start="1380" selection-end="1380" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="e#59#90#0" expanded="true" />
-              </folding>
+            <state line="74" column="39" selection-start="1886" selection-end="1886" vertical-scroll-proportion="0.0">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -157,7 +99,43 @@
       <file leaf-file-name="UserController.as" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/controllers/UserController.as">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="59" column="21" selection-start="1689" selection-end="1689" vertical-scroll-proportion="-5.08">
+            <state line="43" column="129" selection-start="1240" selection-end="1240" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CoreController.as" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/controllers/CoreController.as">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="90" column="33" selection-start="2334" selection-end="2334" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FieldController.as" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/controllers/FieldController.as">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="74" column="16" selection-start="1966" selection-end="1994" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Constants.as" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/config/Constants.as">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="19" column="1" selection-start="467" selection-end="467" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Crypter.as" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/crypt/Crypter.as">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="22" column="0" selection-start="263" selection-end="263" vertical-scroll-proportion="0.53427064">
               <folding />
             </state>
           </provider>
@@ -166,7 +144,7 @@
       <file leaf-file-name="UserModel.as" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/models/UserModel.as">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="21" column="31" selection-start="334" selection-end="334" vertical-scroll-proportion="0.0">
+            <state line="35" column="42" selection-start="600" selection-end="600" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -185,22 +163,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/controllers/events/CMDList.as" />
-        <option value="$PROJECT_DIR$/src/views/UserViewEvent.as" />
-        <option value="$PROJECT_DIR$/src/net/ServerAPI/JSSConnection.as" />
         <option value="$PROJECT_DIR$/src/views/UserView.as" />
         <option value="$PROJECT_DIR$/src/park/static/SimpleBlockModel.as" />
         <option value="$PROJECT_DIR$/src/park/static/SpaceObjController.as" />
         <option value="$PROJECT_DIR$/src/park/static/SpaceObjModel.as" />
         <option value="$PROJECT_DIR$/src/park/BaseParkObjectModel.as" />
         <option value="$PROJECT_DIR$/src/park/static/SpaceObjView.as" />
+        <option value="$PROJECT_DIR$/src/models/SnowParkField.as" />
+        <option value="$PROJECT_DIR$/src/controllers/events/CommandEvent.as" />
+        <option value="$PROJECT_DIR$/src/controllers/UserController.as" />
+        <option value="$PROJECT_DIR$/src/controllers/CoreController.as" />
+        <option value="$PROJECT_DIR$/src/net/ServerConnection.as" />
+        <option value="$PROJECT_DIR$/src/config/Constants.as" />
+        <option value="$PROJECT_DIR$/src/models/UserModel.as" />
+        <option value="$PROJECT_DIR$/src/crypt/Crypter.as" />
         <option value="$PROJECT_DIR$/src/park/BaseSpaceObjectModel.as" />
         <option value="$PROJECT_DIR$/src/controllers/FieldController.as" />
-        <option value="$PROJECT_DIR$/src/net/ServerConnection.as" />
-        <option value="$PROJECT_DIR$/src/controllers/CoreController.as" />
-        <option value="$PROJECT_DIR$/src/controllers/UserController.as" />
-        <option value="$PROJECT_DIR$/src/models/UserModel.as" />
-        <option value="$PROJECT_DIR$/src/models/SnowParkField.as" />
       </list>
     </option>
   </component>
@@ -236,16 +214,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="PackagesPane">
-        <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SnowParkPrototipe" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -546,6 +514,28 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="crypt" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SnowParkPrototipe" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SnowParkPrototipe" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Client" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="core" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -674,6 +664,16 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="PackagesPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SnowParkPrototipe" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
       <pane id="Scope">
         <subPane subId="Project Files">
           <PATH>
@@ -701,9 +701,9 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="MemberChooser.showClasses" value="true" />
     <property name="GoToClass.includeLibraries" value="false" />
-    <property name="dynamic.classpath" value="false" />
-    <property name="options.searchVisible" value="true" />
     <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
+    <property name="dynamic.classpath" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -803,6 +803,7 @@
       <option name="airProgramParameters" value="" />
       <option name="appDescriptorForEmulator" value="Generated" />
       <option name="debugTransport" value="USB" />
+      <option name="debuggerSdkRaw" value="BC SDK" />
       <option name="emulator" value="NexusOne" />
       <option name="emulatorAdlOptions" value="" />
       <option name="fullScreenHeight" value="0" />
@@ -838,6 +839,7 @@
       <option name="airProgramParameters" value="" />
       <option name="appDescriptorForEmulator" value="Generated" />
       <option name="debugTransport" value="USB" />
+      <option name="debuggerSdkRaw" value="BC SDK" />
       <option name="emulator" value="NexusOne" />
       <option name="emulatorAdlOptions" value="" />
       <option name="fullScreenHeight" value="0" />
@@ -872,6 +874,7 @@
       <option name="airProgramParameters" value="" />
       <option name="appDescriptorForEmulator" value="Generated" />
       <option name="debugTransport" value="USB" />
+      <option name="debuggerSdkRaw" value="BC SDK" />
       <option name="emulator" value="NexusOne" />
       <option name="emulatorAdlOptions" value="" />
       <option name="fullScreenHeight" value="0" />
@@ -914,6 +917,11 @@
       <created>1332518211938</created>
       <updated>1332518211938</updated>
     </task>
+    <task id="LOCAL-00001" summary="Client wip 17 june 2012">
+      <created>1339885367893</created>
+      <updated>1339885367893</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -937,33 +945,33 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-4" y="-4" width="1608" height="880" extended-state="6" />
+    <frame x="-4" y="-4" width="1608" height="880" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Data Sources" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3296433" sideWeight="0.67045456" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3242938" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3276316" sideWeight="0.47168598" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.21842106" sideWeight="0.73166025" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.21842106" sideWeight="0.72779924" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.40394738" sideWeight="0.52895755" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21842106" sideWeight="0.26769626" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32921347" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.40394738" sideWeight="0.46653795" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3283582" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33414933" sideWeight="0.0" order="5" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="JSON Formatter" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2966538" sideWeight="0.59605265" order="6" side_tool="false" content_ui="combo" />
+      <window_info id="JSON Formatter" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3005148" sideWeight="0.78157896" order="6" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3276316" sideWeight="0.47168598" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.40394738" sideWeight="0.46653795" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Profiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -972,8 +980,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="OFFER_MOVE_TO_ANOTHER_CHANGELIST_ON_PARTIAL_COMMIT" value="true" />
-    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="true" />
-    <option name="CHECK_NEW_TODO" value="true" />
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="CHECK_NEW_TODO" value="false" />
     <option name="myTodoPanelSettings">
       <value>
         <are-packages-shown value="false" />
@@ -1020,137 +1028,111 @@
     <MESSAGE value="Client wip 17 june 2012" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="flex">
+          <url>file://$PROJECT_DIR$/src/net/ServerConnection.as</url>
+          <line>49</line>
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="flex">
+          <url>file://$PROJECT_DIR$/src/net/ServerConnection.as</url>
+          <line>91</line>
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="flex">
+          <url>file://$PROJECT_DIR$/src/controllers/CoreController.as</url>
+          <line>89</line>
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/park/static/SpaceObjController.as">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="0" selection-start="280" selection-end="280" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/park/static/SpaceObjModel.as">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="1" selection-start="377" selection-end="377" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/views/FieldView.as">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.3090129">
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/park/static/SpaceObjView.as">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="7" selection-start="629" selection-end="629" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/net/ServerAPI/JSSConnection.as">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="109" column="20" selection-start="3052" selection-end="3052" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/park/BaseSpaceObjectModel.as">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="22" selection-start="371" selection-end="371" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="109" column="20" selection-start="3052" selection-end="3052" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://C:/Flash_Utilites/as3ds_1.04/src/de/polygonal/ds/Collection.as">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="21" selection-start="1280" selection-end="1280" vertical-scroll-proportion="-1.0784314">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/net/ServerConnection.as">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="56" column="19" selection-start="1380" selection-end="1380" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="e#59#90#0" expanded="true" />
-          </folding>
-        </state>
+        <state line="26" column="21" selection-start="1280" selection-end="1280" vertical-scroll-proportion="-1.0784314" />
       </provider>
     </entry>
     <entry file="file://C:/Flash_Utilites/as3ds_1.04/src/de/polygonal/ds/ArrayedQueue.as">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="17" selection-start="1368" selection-end="1368" vertical-scroll-proportion="128.52">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/models/UserModel.as">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="31" selection-start="334" selection-end="334" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="29" column="17" selection-start="1368" selection-end="1368" vertical-scroll-proportion="128.52" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/controllers/events/CMDList.as">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="24" selection-start="121" selection-end="121" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="8" column="24" selection-start="121" selection-end="121" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/models/SnowParkField.as">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="56" selection-start="533" selection-end="533" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="24" column="56" selection-start="533" selection-end="533" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/models/FieldModel.as">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="20" selection-start="529" selection-end="529" vertical-scroll-proportion="0.0">
+        <state line="27" column="20" selection-start="529" selection-end="529" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controllers/events/CommandEvent.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="42" column="39" selection-start="1025" selection-end="1025" vertical-scroll-proportion="0.4813084" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/park/BaseSpaceObjectController.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/park/BaseSpaceObjectModel.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="34" column="34" selection-start="608" selection-end="608" vertical-scroll-proportion="0.73110723" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/net/ServerConnection.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="74" column="39" selection-start="1886" selection-end="1886" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/controllers/UserController.as">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="59" column="21" selection-start="1689" selection-end="1689" vertical-scroll-proportion="-5.08">
+        <state line="43" column="129" selection-start="1240" selection-end="1240" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controllers/CoreController.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="90" column="33" selection-start="2334" selection-end="2334" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/controllers/FieldController.as">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="83" column="24" selection-start="2167" selection-end="2167" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
+        <state line="74" column="16" selection-start="1966" selection-end="1994" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/controllers/CoreController.as">
+    <entry file="file://$PROJECT_DIR$/src/config/Constants.as">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="97" column="21" selection-start="2511" selection-end="2511" vertical-scroll-proportion="0.45691907">
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-            <element signature="e#174#220#0" expanded="true" />
-          </folding>
+        <state line="19" column="1" selection-start="467" selection-end="467" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/models/UserModel.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="35" column="42" selection-start="600" selection-end="600" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/crypt/Crypter.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="22" column="0" selection-start="263" selection-end="263" vertical-scroll-proportion="0.53427064">
+          <folding />
         </state>
       </provider>
     </entry>

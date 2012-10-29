@@ -17,7 +17,6 @@ public class UserHandler extends SimpleChannelUpstreamHandler
     @Override
     public void channelConnected(ChannelHandlerContext ctx, ChannelStateEvent e) throws Exception
     {
-        logger.info("channelConnected");
         user_worker = new UserWorker(this, e.getChannel());
     }
 
@@ -30,7 +29,6 @@ public class UserHandler extends SimpleChannelUpstreamHandler
     @Override
     public void messageReceived(ChannelHandlerContext ctx, MessageEvent e)
     {
-        logger.info("messageReceived");
         if (e.getChannel().isOpen())
             user_worker.acceptCommand((Command) e.getMessage());
     }

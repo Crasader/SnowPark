@@ -97,7 +97,7 @@ public class CoreController extends CompositeController
 
     private function send_command(e:CommandEvent):void
     {
-        ServerConnection.inst.send(e.command_id, e.command_params);
+        ServerConnection.inst.send(e.command_id, e.command_params, e.force_send);
     }
 
 }

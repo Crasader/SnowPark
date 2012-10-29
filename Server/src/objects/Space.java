@@ -6,6 +6,7 @@ import com.google.code.morphia.annotations.Id;
 import org.bson.types.ObjectId;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 /**
  * Author: JuzTosS
@@ -18,9 +19,6 @@ public class Space
     ObjectId e_database_id;
 
     @Embedded
-    String name;
-
-    @Embedded
-    ArrayList<SpaceObj> objects;
+    HashMap<Integer, SpaceObj> objects = new HashMap<Integer, SpaceObj>();
 
 }

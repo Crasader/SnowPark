@@ -7,6 +7,8 @@
  */
 package park
 {
+import flash.net.registerClassAlias;
+
 public class BaseSpaceObjectModel
 {
     [Bindable]
@@ -23,11 +25,16 @@ public class BaseSpaceObjectModel
     public var _group:int = 0;
 
     [Bindable]
-    public var _id:int = 0;
+    public var object_id:int = 0;
 
 
     public function BaseSpaceObjectModel()
     {
+    }
+
+    public function class_id():int
+    {
+        return 0;
     }
 }
 }

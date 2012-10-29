@@ -1,5 +1,6 @@
 package network;
 
+import errors.Errors;
 import db.DataBase;
 import objects.UserState;
 import org.apache.log4j.Logger;
@@ -88,10 +89,6 @@ public class AuthenticationHandler extends SimpleChannelHandler
     @Override
     public void exceptionCaught(ChannelHandlerContext ctx, ExceptionEvent e) throws Exception
     {
-        logger.error(e.getCause().getMessage());
-        logger.error(e.toString());
-        for(int i = 0; i < e.getCause().getStackTrace().length; i++)
-            System.out.println(e.getCause().getStackTrace()[i]);
-        System.out.println("End of stack trace");
+        Errors.log_error(logger, e);
     }
 }

@@ -41,7 +41,7 @@ public class UserController extends CompositeController
         UserModel.instanse._login = _user_view.login_str;
         UserModel.instanse._password = _user_view.pass_str;
 
-        dispatchEvent(new CommandEvent(CMDList.CREATE_USER, [UserModel.instanse._login, UserModel.instanse.pass_hash], true));
+        dispatchEvent(new CommandEvent(CMDList.CREATE_USER, [UserModel.instanse._login, UserModel.instanse.pass_hash], true, true));
     }
 
     private function on_auth(e:UserViewEvent):void
@@ -49,7 +49,7 @@ public class UserController extends CompositeController
         UserModel.instanse._login = _user_view.login_str;
         UserModel.instanse._password = _user_view.pass_str;
 
-        dispatchEvent(new CommandEvent(CMDList.AUTH, [UserModel.instanse._login, UserModel.instanse.pass_hash], true));
+        dispatchEvent(new CommandEvent(CMDList.AUTH, [UserModel.instanse._login, UserModel.instanse.pass_hash], true, true));
     }
 
     private function init():void

@@ -4,6 +4,8 @@
  */
 package models
 {
+import crypt.Crypter;
+
 public class UserModel
 {
     private static var _instanse:UserModel;
@@ -31,7 +33,7 @@ public class UserModel
 
     public function get pass_hash():String
     {
-        return _password;
+        return Crypter.encrypt(_password);
     }
 
     public function auth_passed():void
