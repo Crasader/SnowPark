@@ -17,7 +17,7 @@ import utils.IntPnt;
 public class FieldModel extends EventDispatcher
 {
     private var _field:SnowParkField;
-    private var _all_objects:Vector.<BaseSpaceObjectModel> = new Vector.<BaseSpaceObjectModel>();
+    private var _allObjects:Vector.<BaseSpaceObjectModel> = new Vector.<BaseSpaceObjectModel>();
 
     private static var _instanse:FieldModel;
 
@@ -31,22 +31,22 @@ public class FieldModel extends EventDispatcher
         return _field;
     }
 
-    public function placeObject(obj_model:BaseSpaceObjectModel, pos:IntPnt):Boolean
+    public function placeObject(objModel:BaseSpaceObjectModel, pos:IntPnt):Boolean
     {
-        obj_model._x = pos.x;
-        obj_model._y = pos.y;
+        objModel._x = pos.x;
+        objModel._y = pos.y;
 
-        if (!is_place_free(obj_model))
+        if (!isPlaceFree(objModel))
             return false;
 
-        fill_field_by_object(obj_model);
-        _all_objects.push(obj_model);
+        fillFieldByObject(objModel);
+        _allObjects.push(objModel);
 
         dispatchEvent(new Event(Event.CHANGE));
         return true;
     }
 
-    private function fill_field_by_object(obj:BaseSpaceObjectModel):void
+    private function fillFieldByObject(obj:BaseSpaceObjectModel):void
     {
         for (var x:int = obj._x; x < obj._x + obj._width; x++)
             for (var y:int = obj._y; y < obj._y + obj._length; y++)
@@ -55,12 +55,12 @@ public class FieldModel extends EventDispatcher
             }
     }
 
-    private function is_place_free(obj:BaseSpaceObjectModel):Boolean
+    private function isPlaceFree(obj:BaseSpaceObjectModel):Boolean
     {
         for (var x:int = obj._x; x < obj._x + obj._width; x++)
             for (var y:int = obj._y; y < obj._y + obj._length; y++)
             {
-                if (is_pos_invalid(new IntPnt(x, y))
+                if (isPosInvalid(new IntPnt(x, y))
                         || (_field.getBlock(new IntPnt(x, y)) != null))
                     return false;
             }
@@ -75,17 +75,17 @@ public class FieldModel extends EventDispatcher
         return _instanse;
     }
 
-    public function is_pos_invalid(pos:IntPnt):Boolean
+    public function isPosInvalid(pos:IntPnt):Boolean
     {
         return (pos.x >= _field.width || pos.y >= _field.height || pos.x < 0 || pos.y < 0);
     }
 
     public function clear():void
     {
-        while (_all_objects.length != 0)
+        while (_allObjects.length != 0)
         {
-            var obj_to_destroy:BaseSpaceObjectModel = _all_objects.pop();
-            obj_to_destroy.destroy();
+            var objToDestroy:BaseSpaceObjectModel = _allObjects.pop();
+            objToDestroy.destroy();
         }
 
         _field = new SnowParkField();
@@ -93,9 +93,9 @@ public class FieldModel extends EventDispatcher
         dispatchEvent(new Event(Event.CHANGE));
     }
 
-    public function get all_objects():Vector.<BaseSpaceObjectModel>
+    public function get allObjects():Vector.<BaseSpaceObjectModel>
     {
-        return _all_objects;
+        return _allObjects;
     }
 }
 }

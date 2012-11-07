@@ -7,7 +7,6 @@
  */
 package models
 {
-import flash.events.Event;
 import flash.events.EventDispatcher;
 
 public class CameraModel extends EventDispatcher
@@ -31,7 +30,7 @@ public class CameraModel extends EventDispatcher
 
     public static function get instanse():CameraModel
     {
-        if(_instanse == null)
+        if (_instanse == null)
         {
             _instanse = new CameraModel();
         }
@@ -39,30 +38,30 @@ public class CameraModel extends EventDispatcher
         return _instanse;
     }
 
-    public function set_postion(x:Number,  y:Number):void
+    public function setPostion(x:Number, y:Number):void
     {
         _x = x;
         _y = y;
     }
 
-    public function zoom_down():void
+    public function zoomDown():void
     {
-        _zoom = check_zoom_value(_zoom - ZOOM_DELTA);
+        _zoom = checkZoomValue(_zoom - ZOOM_DELTA);
     }
 
-    public function zoom_up():void
+    public function zoomUp():void
     {
-        _zoom = check_zoom_value(_zoom + ZOOM_DELTA);
+        _zoom = checkZoomValue(_zoom + ZOOM_DELTA);
     }
-    
-    private function check_zoom_value(zoom:Number):Number
+
+    private function checkZoomValue(zoom:Number):Number
     {
-        if(zoom > ZOOM_MAX)
+        if (zoom > ZOOM_MAX)
             return ZOOM_MAX;
-        
-        if(zoom < ZOOM_MIN)
+
+        if (zoom < ZOOM_MIN)
             return ZOOM_MIN;
-        
+
         return zoom;
     }
 }

@@ -18,14 +18,12 @@ public class CompositeObject extends ComponentObject
     {
     }
 
-
     override public function add(c:ComponentObject):void
     {
         _children.push(c);
         c._parent = this;
-        c._child_index = _children.indexOf(c);
+        c._childIndex = _children.indexOf(c);
     }
-
 
     override public function update(event:Event = null):void
     {
@@ -35,21 +33,19 @@ public class CompositeObject extends ComponentObject
         }
     }
 
-
     override public function remove(c:ComponentObject):void
     {
         _children.splice(c, 1);
         c._parent = null;
-        c._child_index = undefined;
+        c._childIndex = undefined;
     }
-
 
     override public function getChild(n:int):ComponentObject
     {
         return _children[n];
     }
 
-    public function get num_children():int
+    public function get numChildren():int
     {
         return _children.length;
     }

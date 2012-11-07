@@ -9,22 +9,28 @@ package park
 {
 import basemvc.controller.CompositeController;
 
-import flash.profiler.profile;
+import controllers.CoreController;
 
 public class BaseSpaceObjectController extends CompositeController
 {
-    public function BaseSpaceObjectController()
+
+    protected var _model:BaseSpaceObjectModel;
+    protected var _view:BaseSpaceObjectView;
+
+    public function BaseSpaceObjectController(objectId:int, classId:String)
     {
+        _model = new BaseSpaceObjectModel(objectId, classId, CoreController.instanse.cfg[classId]);
+        _view = new BaseSpaceObjectView(_model);
     }
 
     public function getView():BaseSpaceObjectView
     {
-        return null;
+        return _view;
     }
 
     public function getModel():BaseSpaceObjectModel
     {
-        return null;
+        return _model;
     }
 }
 }

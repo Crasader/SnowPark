@@ -22,7 +22,7 @@ import flash.geom.Point;
 
 import models.FieldModel;
 
-import park.static.SpaceObjController;
+import park.BaseSpaceObjectController;
 
 import utils.IntPnt;
 
@@ -33,53 +33,52 @@ public class FieldController extends CompositeController
     private var _fieldView:FieldView;
     private var _parentView:IsoView;
 
-    public function FieldController(parent_view:IsoView)
+    public function FieldController(parentView:IsoView)
     {
-        _parentView = parent_view;
+        _parentView = parentView;
         _fieldView = new FieldView();
-        parent_view.addScene(_fieldView);
+        parentView.addScene(_fieldView);
 
         FieldModel.instanse.addEventListener(Event.CHANGE, _fieldView.update);
         _fieldView.update();
 
-
-        if (parent_view.stage)
+        if (parentView.stage)
             init();
         else
-            parent_view.addEventListener(Event.ADDED_TO_STAGE, init);
+            parentView.addEventListener(Event.ADDED_TO_STAGE, init);
     }
 
     private function init(event:Event = null):void
     {
-        _core.addEventListener(ResponseEvent.SNOW_RESPONSE, on_response);
-        _parentView.stage.addEventListener(MouseEvent.CLICK, on_click);
+        CoreController.instanse.addEventListener(ResponseEvent.SNOW_RESPONSE, onResponse);
+        _parentView.stage.addEventListener(MouseEvent.CLICK, onClick);
     }
 
-    private function on_response(e:ResponseEvent):void
+    private function onResponse(e:ResponseEvent):void
     {
-        if (e.command_id == CMDList.GET_USER_STATE)
+        if (e.commandId == CMDList.GET_USER_STATE)
         {
-            update_user_state(e.response_params);
+            updateUserState(e.responseParams);
         }
     }
 
-    private function update_user_state(response_param:Array):void
+    private function updateUserState(responseParam:Array):void
     {
-        reload_field(response_param[0]);
+        reloadField(responseParam[0]);
     }
 
-    private function reload_field(field_objects:Array):void
+    private function reloadField(fieldObjects:Array):void
     {
         FieldModel.instanse.clear();
         _fieldView.removeAllChildren();
 
-        while (num_children)
+        while (numChildren)
             remove(getChild(0));
 
-        for each(var obj_info:Array in field_objects)
+        for each(var objInfo:Array in fieldObjects)
         {
-            var pos:IntPnt = new IntPnt(obj_info[3], obj_info[4]);
-            var block:SpaceObjController = new SpaceObjController();
+            var pos:IntPnt = new IntPnt(objInfo[2], objInfo[3]); // x, y
+            var block:BaseSpaceObjectController = new BaseSpaceObjectController(objInfo[0], objInfo[1]); // obj_id, class_id
             if (FieldModel.instanse.placeObject(block.getModel(), pos))
             {
                 _fieldView.addChild(block.getView());
@@ -88,14 +87,13 @@ public class FieldController extends CompositeController
         }
     }
 
-    private function on_click(e:MouseEvent):void
+    private function onClick(e:MouseEvent):void
     {
 
-        var iso_pt:Pt = _parentView.localToIso(new Point(e.stageX, e.stageY));
-        var pos:IntPnt = new IntPnt(iso_pt.x / FieldView.CELL_SIZE, iso_pt.y / FieldView.CELL_SIZE);
+        var isoPnt:Pt = _parentView.localToIso(new Point(e.stageX, e.stageY));
+        var pos:IntPnt = new IntPnt(isoPnt.x / FieldView.CELL_SIZE, isoPnt.y / FieldView.CELL_SIZE);
 
-
-        var block:SpaceObjController = new SpaceObjController();
+        var block:BaseSpaceObjectController = new BaseSpaceObjectController(12345, "1");
         if (FieldModel.instanse.placeObject(block.getModel(), pos))
         {
             _fieldView.addChild(block.getView());
@@ -103,8 +101,8 @@ public class FieldController extends CompositeController
         }
 
         dispatchEvent(new CommandEvent(CMDList.CREATE_OBJECT_ON_SPACE,
-                [block.getModel().object_id,
-                    block.getModel().class_id(),
+                [block.getModel().objectId,
+                    block.getModel().classId,
                     block.getModel()._group,
                     pos.x,
                     pos.y,
@@ -112,7 +110,6 @@ public class FieldController extends CompositeController
                     block.getModel()._length],
                 false, true));
     }
-
 
     public function get fieldView():FieldView
     {

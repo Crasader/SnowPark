@@ -14,9 +14,7 @@ import flash.events.EventDispatcher;
 public class ComponentObject extends EventDispatcher
 {
     internal var _parent:CompositeObject;
-    internal var _child_index:int;
-
-    public static var _core:CompositeObject;
+    internal var _childIndex:int;
 
     public function ComponentObject()
     {
@@ -48,15 +46,15 @@ public class ComponentObject extends EventDispatcher
     {
         var result:Boolean = super.dispatchEvent(event);
 
-        if(event.bubbles && _parent)
+        if (event.bubbles && _parent)
             _parent.dispatchEvent(event);
 
         return result;
     }
 
-    public function get child_index():int
+    public function get childIndex():int
     {
-        return _child_index;
+        return _childIndex;
     }
 
     public function get parent():CompositeObject
@@ -64,7 +62,7 @@ public class ComponentObject extends EventDispatcher
         return _parent;
     }
 
-    internal function set_parent(value:CompositeObject):void
+    internal function setParent(value:CompositeObject):void
     {
         dispatchEvent(new Event(Event.ADDED));
     }

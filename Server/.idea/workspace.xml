@@ -2,39 +2,40 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="29d18484-5fc4-4a98-afa2-cbd3ebc7a347" name="Default" comment="wip 17 june 2012">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Client/.idea/codeStyleSettings.xml" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Client/.idea/excludeFromValidation.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Client/src/controllers/events/LocalEvent.as" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Client/src/net/loaders/ConfigLoader.as" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Client/src/net/loaders/GraphicLoader.as" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Client/src/utils/NodeHelper.as" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/config/main_cfg.yml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/helpers/CryptHelper.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/objects/SpacesList.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tests/test_CrypterHelper.java" />
-      <change type="MOVED" beforePath="C:\Projects\SnowParkPrototipe\Client\SnowParkPrototipe.iml" afterPath="$PROJECT_DIR$/../Client/SnowClient.iml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Client/src/net/loaders/MovieLoader.as" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/config/objects.yml" />
+      <change type="DELETED" beforePath="C:\Projects\SnowParkPrototipe\Client\src\net\loaders\GraphicLoader.as" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projects\SnowParkPrototipe\Client\src\park\static\SpaceObjController.as" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projects\SnowParkPrototipe\Client\src\park\static\SpaceObjModel.as" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projects\SnowParkPrototipe\Client\src\park\static\SpaceObjView.as" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Client/out/production/SnowParkPrototipe/SnowParkPrototipe.swf" afterPath="$PROJECT_DIR$/../Client/out/production/SnowParkPrototipe/SnowParkPrototipe.swf" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Client/.idea/compiler.xml" afterPath="$PROJECT_DIR$/../Client/.idea/compiler.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Client/.idea/modules.xml" afterPath="$PROJECT_DIR$/../Client/.idea/modules.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Client/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../Client/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Client/src/SnowParkPrototipe.as" afterPath="$PROJECT_DIR$/../Client/src/SnowParkPrototipe.as" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Client/src/basemvc/compose/ComponentObject.as" afterPath="$PROJECT_DIR$/../Client/src/basemvc/compose/ComponentObject.as" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Client/src/basemvc/compose/CompositeObject.as" afterPath="$PROJECT_DIR$/../Client/src/basemvc/compose/CompositeObject.as" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Client/src/config/Constants.as" afterPath="$PROJECT_DIR$/../Client/src/config/Constants.as" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Client/src/controllers/CameraController.as" afterPath="$PROJECT_DIR$/../Client/src/controllers/CameraController.as" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Client/src/controllers/CoreController.as" afterPath="$PROJECT_DIR$/../Client/src/controllers/CoreController.as" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Client/src/controllers/FieldController.as" afterPath="$PROJECT_DIR$/../Client/src/controllers/FieldController.as" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Client/src/controllers/UserController.as" afterPath="$PROJECT_DIR$/../Client/src/controllers/UserController.as" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Client/src/core/EntryPoint.as" afterPath="$PROJECT_DIR$/../Client/src/core/EntryPoint.as" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Client/src/crypt/Crypter.as" afterPath="$PROJECT_DIR$/../Client/src/crypt/Crypter.as" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Client/src/controllers/events/CommandEvent.as" afterPath="$PROJECT_DIR$/../Client/src/controllers/events/CommandEvent.as" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Client/src/controllers/events/ResponseEvent.as" afterPath="$PROJECT_DIR$/../Client/src/controllers/events/ResponseEvent.as" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Client/src/models/CameraModel.as" afterPath="$PROJECT_DIR$/../Client/src/models/CameraModel.as" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Client/src/models/FieldModel.as" afterPath="$PROJECT_DIR$/../Client/src/models/FieldModel.as" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Client/src/models/SnowParkField.as" afterPath="$PROJECT_DIR$/../Client/src/models/SnowParkField.as" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Client/src/models/UserModel.as" afterPath="$PROJECT_DIR$/../Client/src/models/UserModel.as" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Client/src/net/ServerConnection.as" afterPath="$PROJECT_DIR$/../Client/src/net/ServerConnection.as" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Client/src/net/loaders/ConfigLoader.as" afterPath="$PROJECT_DIR$/../Client/src/net/loaders/ConfigLoader.as" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Client/src/park/BaseSpaceObjectController.as" afterPath="$PROJECT_DIR$/../Client/src/park/BaseSpaceObjectController.as" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Client/src/park/BaseSpaceObjectModel.as" afterPath="$PROJECT_DIR$/../Client/src/park/BaseSpaceObjectModel.as" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Client/src/park/BaseSpaceObjectView.as" afterPath="$PROJECT_DIR$/../Client/src/park/BaseSpaceObjectView.as" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Client/src/utils/ArrayHelper.as" afterPath="$PROJECT_DIR$/../Client/src/utils/ArrayHelper.as" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Client/src/utils/NodeHelper.as" afterPath="$PROJECT_DIR$/../Client/src/utils/NodeHelper.as" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Client/src/views/UserView.as" afterPath="$PROJECT_DIR$/../Client/src/views/UserView.as" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Client/src/views/UserViewEvent.as" afterPath="$PROJECT_DIR$/../Client/src/views/UserViewEvent.as" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Server.iml" afterPath="$PROJECT_DIR$/Server.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/logs/java-server-log.log" afterPath="$PROJECT_DIR$/logs/java-server-log.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/network/AuthenticationHandler.java" afterPath="$PROJECT_DIR$/src/network/AuthenticationHandler.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/network/PacketFrameEncoder.java" afterPath="$PROJECT_DIR$/src/network/PacketFrameEncoder.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/objects/SpaceObj.java" afterPath="$PROJECT_DIR$/src/objects/SpaceObj.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/objects/UserState.java" afterPath="$PROJECT_DIR$/src/objects/UserState.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/objects/UserWorker.java" afterPath="$PROJECT_DIR$/src/objects/UserWorker.java" />
     </list>
     <ignored path="SnowServer.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -119,10 +120,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CFG.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="CFG.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/config/CFG.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="13" selection-start="75" selection-end="75" vertical-scroll-proportion="0.12631579">
+            <state line="6" column="13" selection-start="75" selection-end="75" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="objects.yml" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/config/objects.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="35" column="14" selection-start="603" selection-end="615" vertical-scroll-proportion="0.63561076">
               <folding />
             </state>
           </provider>
@@ -222,6 +232,30 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope">
+        <subPane subId="Project Files">
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="PackagesPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SnowServer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Server" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -396,30 +430,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane">
-        <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SnowServer" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Server" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
-      <pane id="Scope">
-        <subPane subId="Project Files">
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -439,9 +449,9 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="MemberChooser.showClasses" value="true" />
     <property name="GoToClass.includeLibraries" value="false" />
-    <property name="options.splitter.details.proportions" value="0.2" />
-    <property name="options.searchVisible" value="true" />
     <property name="dynamic.classpath" value="false" />
+    <property name="options.searchVisible" value="true" />
+    <property name="options.splitter.details.proportions" value="0.2" />
   </component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
@@ -472,6 +482,24 @@
       <method>
         <option name="AntTarget" enabled="false" />
         <option name="BuildArtifacts" enabled="false" />
+        <option name="Maven.BeforeRunTask" enabled="false" />
+      </method>
+    </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <method>
+        <option name="AntTarget" enabled="false" />
+        <option name="BuildArtifacts" enabled="false" />
+        <option name="Make" enabled="true" />
         <option name="Maven.BeforeRunTask" enabled="false" />
       </method>
     </configuration>
@@ -508,24 +536,6 @@
         <option name="Maven.BeforeRunTask" enabled="false" />
       </method>
     </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <module name="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="HTML_FILE_NAME" />
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <option name="VM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <method>
-        <option name="AntTarget" enabled="false" />
-        <option name="BuildArtifacts" enabled="false" />
-        <option name="Make" enabled="true" />
-        <option name="Maven.BeforeRunTask" enabled="false" />
-      </method>
-    </configuration>
     <configuration default="true" type="Application" factoryName="Application">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <option name="MAIN_CLASS_NAME" />
@@ -543,6 +553,17 @@
         <option name="AntTarget" enabled="false" />
         <option name="BuildArtifacts" enabled="false" />
         <option name="Make" enabled="true" />
+        <option name="Maven.BeforeRunTask" enabled="false" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JavascriptDebugSession" factoryName="Local">
+      <JSDebuggerConfigurationSettings>
+        <option name="engineId" value="embedded" />
+        <option name="fileUrl" />
+      </JSDebuggerConfigurationSettings>
+      <method>
+        <option name="AntTarget" enabled="false" />
+        <option name="BuildArtifacts" enabled="false" />
         <option name="Maven.BeforeRunTask" enabled="false" />
       </method>
     </configuration>
@@ -569,17 +590,6 @@
         <option name="AntTarget" enabled="false" />
         <option name="BuildArtifacts" enabled="false" />
         <option name="Make" enabled="true" />
-        <option name="Maven.BeforeRunTask" enabled="false" />
-      </method>
-    </configuration>
-    <configuration default="true" type="JavascriptDebugSession" factoryName="Local">
-      <JSDebuggerConfigurationSettings>
-        <option name="engineId" value="embedded" />
-        <option name="fileUrl" />
-      </JSDebuggerConfigurationSettings>
-      <method>
-        <option name="AntTarget" enabled="false" />
-        <option name="BuildArtifacts" enabled="false" />
         <option name="Maven.BeforeRunTask" enabled="false" />
       </method>
     </configuration>
@@ -673,31 +683,31 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-4" y="-4" width="1608" height="880" extended-state="0" />
+    <frame x="-4" y="-4" width="1608" height="880" extended-state="1" />
     <editor active="true" />
     <layout>
       <window_info id="Data Sources" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32894737" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="JavaEE:App" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
+      <window_info id="JavaEE:App" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.329375" sideWeight="0.67368424" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.329375" sideWeight="0.67368424" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32866243" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32894737" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24967825" sideWeight="0.8" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24967825" sideWeight="0.8" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.6713376" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="JSON Formatter" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32894737" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2425" sideWeight="0.64713377" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.35286623" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2425" sideWeight="0.64713377" order="7" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.35286623" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32866243" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32866243" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
@@ -798,19 +808,14 @@
         <state line="13" column="13" selection-start="261" selection-end="261" vertical-scroll-proportion="0.43064183" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/network/PacketFrameDecoder.java">
+    <entry file="file://$PROJECT_DIR$/src/config/main_cfg.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="37" column="80" selection-start="1272" selection-end="1272" vertical-scroll-proportion="0.0" />
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/objects/UserWorker.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="112" column="32" selection-start="2812" selection-end="2812" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/objects/SpaceObj.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="35" column="5" selection-start="536" selection-end="536" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Main.java">
@@ -828,14 +833,28 @@
         <state line="39" column="5" selection-start="886" selection-end="886" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/config/main_cfg.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/config/CFG.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="13" selection-start="75" selection-end="75" vertical-scroll-proportion="0.12631579">
+        <state line="6" column="13" selection-start="75" selection-end="75" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/network/PacketFrameDecoder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="37" column="80" selection-start="1272" selection-end="1272" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/objects/SpaceObj.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="35" column="5" selection-start="536" selection-end="536" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/config/objects.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="35" column="14" selection-start="603" selection-end="615" vertical-scroll-proportion="0.63561076">
           <folding />
         </state>
       </provider>

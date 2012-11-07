@@ -7,7 +7,6 @@
  */
 package models
 {
-import park.BaseSpaceObjectController;
 import park.BaseSpaceObjectModel;
 
 import utils.ArrayHelper;
@@ -22,7 +21,7 @@ public class SnowParkField
 
     public function SnowParkField()
     {
-        _field = ArrayHelper.init_2d_array(HEIGHT, WIDTH, null);
+        _field = ArrayHelper.init2dArray(HEIGHT, WIDTH, null);
     }
 
     public function setBlock(pos:IntPnt, obj:BaseSpaceObjectModel):void

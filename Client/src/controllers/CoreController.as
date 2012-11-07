@@ -27,12 +27,12 @@ import net.loaders.ConfigLoader;
 public class CoreController extends CompositeController
 {
 
-    private var _instanse:CoreController;
+    private static var _instanse:CoreController;
 
     private var _node:DisplayObjectContainer;
-    private var _command_queue:Array = [];
+    private var _commandQueue:Array = [];
 
-    private var _user_controller:UserController;
+    private var _userController:UserController;
     private var _configLoader:ConfigLoader;
 
     public function CoreController(node:DisplayObjectContainer)
@@ -40,7 +40,6 @@ public class CoreController extends CompositeController
         if (_instanse == null)
         {
             _instanse = this;
-            _core = this;
         }
         else
         {
@@ -54,7 +53,7 @@ public class CoreController extends CompositeController
 
         _configLoader.addEventListener(LocalEvent.CONFIG_LOADED, onConfigLoaded);
         _configLoader.addEventListener(LocalEvent.CONFIG_LOAD_ERROR, onConfigLoadError);
-        _configLoader.load_configs();
+        _configLoader.loadConfigs();
     }
 
     private function onConfigLoadError(event:LocalEvent):void
@@ -65,61 +64,70 @@ public class CoreController extends CompositeController
     private function onConfigLoaded(event:LocalEvent):void
     {
         Cc.log("Configs loaded!");
-        _user_controller = new UserController(_node);
-        add(_user_controller);
+        _userController = new UserController(_node);
+        add(_userController);
 
-        BindingUtils.bindSetter(on_auth, _user_controller.getModel(), "_auth_passed");
-        addEventListener(CommandEvent.SNOW_COMMAND, on_send_command);
-        ServerConnection.inst.addEventListener(ServerConnectionEvent.REQUEST_RECEIVED, on_receive_request);
+        BindingUtils.bindSetter(onAuth, _userController.getModel(), "_authPassed");
+        addEventListener(CommandEvent.SNOW_COMMAND, onSendCommand);
+        ServerConnection.inst.addEventListener(ServerConnectionEvent.REQUEST_RECEIVED, onReceiveRequest);
     }
 
-    private function on_auth(passed:Boolean):void
+    private function onAuth(passed:Boolean):void
     {
         if (passed)
-            send_postponed_commands();
+            sendPostponedCommands();
     }
 
-    private function send_postponed_commands():void
+    private function sendPostponedCommands():void
     {
-        for (var i:int = _command_queue.length - 1; i >= 0; i--)
-            send_command(_command_queue[i]);
+        for (var i:int = _commandQueue.length - 1; i >= 0; i--)
+            sendCommand(_commandQueue[i]);
 
-        _command_queue.length = 0;
+        _commandQueue.length = 0;
     }
 
-    private function on_receive_request(event:ServerConnectionEvent):void
+    private function onReceiveRequest(event:ServerConnectionEvent):void
     {
 
         try
         {
-            var response_data:Array = event._data;
+            var responseData:Array = event._data;
 
-            var command_id:int = response_data[0];
-            var response_params:Array = response_data[1];
+            var commandId:int = responseData[0];
+            var responseParams:Array = responseData[1];
 
-            Cc.log("receive response : " + command_id + " : " + response_params);
+            Cc.log("receive response : " + commandId + " : " + responseParams);
 
-            dispatchEvent(new ResponseEvent(command_id, response_params))
+            dispatchEvent(new ResponseEvent(commandId, responseParams))
         } catch (e:Error)
         {
             Cc.log("invalid response!");
         }
     }
 
-    private function on_send_command(e:CommandEvent):void
+    private function onSendCommand(e:CommandEvent):void
     {
-        if (_user_controller.getModel()._auth_passed
-                || e.command_id == CMDList.AUTH
-                || e.command_id == CMDList.CREATE_USER)
-            send_command(e);
+        if (_userController.getModel()._authPassed
+                || e.commandId == CMDList.AUTH
+                || e.commandId == CMDList.CREATE_USER)
+            sendCommand(e);
 //        else
-//            _command_queue.push(e);
+//            _commandQueue.push(e);
     }
 
-    private function send_command(e:CommandEvent):void
+    private function sendCommand(e:CommandEvent):void
     {
-        ServerConnection.inst.send(e.command_id, e.command_params, e.force_send);
+        ServerConnection.inst.send(e.commandId, e.commandParams, e.forceSend);
     }
 
+    public function get cfg():Object
+    {
+        return _configLoader.objectsConfig
+    }
+
+    public static function get instanse():CoreController
+    {
+        return _instanse;
+    }
 }
 }

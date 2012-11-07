@@ -20,46 +20,46 @@ import views.UserViewEvent;
 public class UserController extends CompositeController
 {
 
-    private var _user_view:UserView;
+    private var _userView:UserView;
 
-    public function UserController(parent_view:DisplayObjectContainer)
+    public function UserController(parentView:DisplayObjectContainer)
     {
-        var cameraController:CameraController = new CameraController(parent_view);
+        var cameraController:CameraController = new CameraController(parentView);
         add(cameraController);
 
-        _user_view = new UserView();
-        parent_view.addChild(_user_view);
-        _user_view.addEventListener(UserViewEvent.AUTH, on_auth);
-        _user_view.addEventListener(UserViewEvent.CREATE_NEW_USER, on_create_new);
+        _userView = new UserView();
+        parentView.addChild(_userView);
+        _userView.addEventListener(UserViewEvent.AUTH, onAuth);
+        _userView.addEventListener(UserViewEvent.CREATE_NEW_USER, onCreateNew);
         init();
     }
 
-    private function on_create_new(e:UserViewEvent):void
+    private function onCreateNew(e:UserViewEvent):void
     {
-        UserModel.instanse._login = _user_view.login_str;
-        UserModel.instanse._password = _user_view.pass_str;
+        UserModel.instanse._login = _userView.loginStr;
+        UserModel.instanse._password = _userView.passStr;
 
-        dispatchEvent(new CommandEvent(CMDList.CREATE_USER, [UserModel.instanse._login, UserModel.instanse.pass_hash], true, true));
+        dispatchEvent(new CommandEvent(CMDList.CREATE_USER, [UserModel.instanse._login, UserModel.instanse.passHash], true, true));
     }
 
-    private function on_auth(e:UserViewEvent):void
+    private function onAuth(e:UserViewEvent):void
     {
-        UserModel.instanse._login = _user_view.login_str;
-        UserModel.instanse._password = _user_view.pass_str;
+        UserModel.instanse._login = _userView.loginStr;
+        UserModel.instanse._password = _userView.passStr;
 
-        dispatchEvent(new CommandEvent(CMDList.AUTH, [UserModel.instanse._login, UserModel.instanse.pass_hash], true, true));
+        dispatchEvent(new CommandEvent(CMDList.AUTH, [UserModel.instanse._login, UserModel.instanse.passHash], true, true));
     }
 
     private function init():void
     {
-        _core.addEventListener(ResponseEvent.SNOW_RESPONSE, on_response);
+        CoreController.instanse.addEventListener(ResponseEvent.SNOW_RESPONSE, onResponse);
     }
 
-    private function on_response(e:ResponseEvent):void
+    private function onResponse(e:ResponseEvent):void
     {
-        if (e.command_id == CMDList.AUTH)
+        if (e.commandId == CMDList.AUTH)
         {
-            if (e.response_params[0] != 0)
+            if (e.responseParams[0] != 0)
             {
                 UserModel.instanse.auth_passed();
                 dispatchEvent(new CommandEvent(CMDList.GET_USER_STATE, [], true, true));

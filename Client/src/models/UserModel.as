@@ -14,7 +14,7 @@ public class UserModel
     public var _password:String;
 
     [Bindable]
-    public var _auth_passed:Boolean = false;
+    public var _authPassed:Boolean = false;
 
     public function UserModel()
     {
@@ -23,7 +23,7 @@ public class UserModel
 
     public static function get instanse():UserModel
     {
-        if(_instanse == null)
+        if (_instanse == null)
         {
             _instanse = new UserModel();
         }
@@ -31,14 +31,14 @@ public class UserModel
         return _instanse;
     }
 
-    public function get pass_hash():String
+    public function get passHash():String
     {
         return Crypter.encrypt(_password);
     }
 
     public function auth_passed():void
     {
-        _auth_passed = true;
+        _authPassed = true;
     }
 }
 }

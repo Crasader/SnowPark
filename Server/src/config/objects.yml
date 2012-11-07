@@ -1,0 +1,63 @@
+2: &trampoline
+  shop:
+    price_ruby: 100
+    price_gold: 100
+  behavior:
+    type: trampoline
+    width: 1
+    length: 3
+    rotated: false
+    static:
+      x: 3
+      y: 3
+  view:
+    field: "some_file.swf"
+    shop: "other_file.swf"
+  descriptions:
+    ru:
+      name: "Обычный трамплин"
+      desc: "Понравится начинающим"
+    en:
+      name: "Simple trampoline"
+      desc: "Will like for beginners"
+
+1: &decor
+  shop:
+    price_ruby: 100
+    price_gold: 100
+  behavior:
+    type: decor
+    width: 1
+    length: 1
+    rotated: true
+  view:
+    field: "some_file.swf"
+    shop: "other_file.swf"
+  descriptions:
+      ru:
+        name: "Плакат с символикой парка"
+        desc: "Хороший плакат, расскажет посетителям о том где они находятся"
+      en:
+        name: "Poster with park logo"
+        desc: "Good poster, tell to riders about park"
+
+3: &rail
+  shop:
+    price_ruby: 100
+    price_gold: 100
+  behavior:
+    type: rail
+    width: 1
+    length: 2
+    rotated: true
+  view:
+    field: "some_file.swf"
+    shop: "other_file.swf"
+  descriptions:
+        ru:
+          name: "Обычный рэйл"
+          desc: "Понравится начинающим"
+        en:
+          name: "Simple rail"
+          desc: "Will like for beginners"
+

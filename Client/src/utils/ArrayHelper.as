@@ -13,31 +13,31 @@ public class ArrayHelper
     {
     }
 
-    static public function trace_array(a:Array):void
+    static public function traceArray(a:Array):void
     {
         trace("----grid----");
         for each(var row:Array in a)
         {
-            var col_str:String = "";
+            var colStr:String = "";
             for each(var col:int in row)
             {
                 if (col < 10)
-                    col_str += " ";
+                    colStr += " ";
 
-                col_str += col.toString() + " ";
+                colStr += col.toString() + " ";
             }
-            trace(col_str);
+            trace(colStr);
         }
         trace("------------");
     }
 
-    static public function init_2d_array(height:int, width:int, val:* = 0):Array
+    static public function init2dArray(height:int, width:int, val:* = 0):Array
     {
         var a:Array = [];
-        for (var column_num:int = 0; column_num < height; column_num++)
+        for (var columnNum:int = 0; columnNum < height; columnNum++)
         {
             var column:Array = [];
-            for (var row_num:int = 0; row_num < width; row_num++)
+            for (var rowNum:int = 0; rowNum < width; rowNum++)
                 column.push(val);
 
             a.push(column);
@@ -48,32 +48,32 @@ public class ArrayHelper
 
     static public function get2DRotatedArray(array:Array):Array
     {
-        var rotated_array:Array = ArrayHelper.init_2d_array(array[0].length, array.length);
+        var rotatedArray:Array = ArrayHelper.init2dArray(array[0].length, array.length);
         for (var i:int = 0; i < array[0].length; i++)
         {
             for (var j:int = array.length - 1; j >= 0; j--)
             {
-                rotated_array[i][array.length - j - 1] = array[j][i];
+                rotatedArray[i][array.length - j - 1] = array[j][i];
             }
         }
 
-        return rotated_array;
+        return rotatedArray;
     }
 
-    static public function change2DArraySize(x_size:int, y_size:int, array:Array):Array
+    static public function change2DArraySize(xSize:int, ySize:int, array:Array):Array
     {
-        if(x_size > array.length)
+        if (xSize > array.length)
         {
-            array.length = x_size;
-            for (var i:int = 0; i < x_size; i++)
+            array.length = xSize;
+            for (var i:int = 0; i < xSize; i++)
                 array[i] ||= [];
         }
-        if(y_size > array[0].length)
+        if (ySize > array[0].length)
         {
             for each(var line:Array in array)
             {
-                line.length = y_size;
-                for (var j:int = 0; j < y_size; j++)
+                line.length = ySize;
+                for (var j:int = 0; j < ySize; j++)
                 {
                     line[j] ||= 0;
                 }
@@ -83,7 +83,6 @@ public class ArrayHelper
 
         return array;
     }
-
 
 }
 }

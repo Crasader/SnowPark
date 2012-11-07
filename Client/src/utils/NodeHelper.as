@@ -5,7 +5,6 @@
 package utils
 {
 import flash.utils.clearTimeout;
-import flash.utils.setTimeout;
 
 public class NodeHelper
 {
@@ -13,14 +12,14 @@ public class NodeHelper
     {
     }
 
-    public static function set_timeout(cb:Function, delay:int, ...params):uint
+    public static function setTimeout(cb:Function, delay:int, ...params):uint
     {
-        var timeout_id:uint = setTimeout(function ():void
+        var timeoutId:uint = setTimeout(function ():void
         {
-            clearTimeout(timeout_id);
+            clearTimeout(timeoutId);
             cb.apply(NaN, params);
         }, delay);
-        return timeout_id;
+        return timeoutId;
     }
 }
 }

@@ -7,7 +7,7 @@
  */
 package park
 {
-
+import com.junkbyte.console.Cc;
 
 public class BaseSpaceObjectModel
 {
@@ -25,21 +25,56 @@ public class BaseSpaceObjectModel
     public var _group:int = 0;
 
     [Bindable]
-    public var object_id:int = 0;
+    public var objectId:int = 0;
 
+    private var _config:Object;
+    private var _objectId:int;
+    private var _classId:String;
 
-    public function BaseSpaceObjectModel()
+    public function BaseSpaceObjectModel(objectId:int, classId:String, config:Object)
     {
+        _objectId = objectId;
+        _classId = classId;
+        _config = config;
     }
 
-    public function class_id():int
+    public function get classId():String
     {
-        return 0;
+        return _classId;
     }
 
     public function destroy():void
     {
 
+    }
+
+    public function get config():Object
+    {
+        return _config;
+    }
+
+    private function get cfgView():Object
+    {
+        if (!config.view) Cc.error("Null view cfg in object with id " + classId);
+        return config.view;
+    }
+
+    private function get cfgShop():Object
+    {
+        if (!config.shop) Cc.error("Null shop cfg in object with id " + classId);
+        return config.shop;
+    }
+
+    private function get cfgBehavior():Object
+    {
+        if (!config.behavior) Cc.error("Null behavior cfg in object with id " + classId);
+        return config.behavior;
+    }
+
+    private function get cfgDescriptions():Object
+    {
+        if (!config.descriptions) Cc.error("Null descriptions cfg in object with id " + classId);
+        return config.descriptions;
     }
 }
 }

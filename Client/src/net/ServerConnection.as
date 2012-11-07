@@ -24,7 +24,7 @@ public class ServerConnection extends EventDispatcher
     private var _connected:Boolean = false;
     private var _connecting:Boolean = false;
 
-    private var _postponed_requests:Array = [];
+    private var _postponedRequests:Array = [];
 
     private var _timer:Timer;
 
@@ -36,7 +36,7 @@ public class ServerConnection extends EventDispatcher
         addEventListener(JSSEvent.CONNECTION_LOST, hadleConnectionLost);
         addEventListener(JSSEvent.SOCKET_ERROR, hadleConnectionLost);
 
-        init_requests_timer();
+        initRequestsTimer();
     }
 
     public function connect():void
@@ -45,10 +45,10 @@ public class ServerConnection extends EventDispatcher
 
     }
 
-    private function init_requests_timer():void
+    private function initRequestsTimer():void
     {
         _timer = new Timer(Constants.SEND_REQUESTS_INTERVAL);
-        _timer.addEventListener(TimerEvent.TIMER, send_postponed_requests);
+        _timer.addEventListener(TimerEvent.TIMER, sendPostponedRequests);
         _timer.start();
     }
 
@@ -64,18 +64,18 @@ public class ServerConnection extends EventDispatcher
         Cc.log("Connected.");
         _connected = true;
         _connecting = false;
-        send_postponed_requests();
+        sendPostponedRequests();
     }
 
-    private function send_postponed_requests(e:Event = null):void
+    private function sendPostponedRequests(e:Event = null):void
     {
-        safe_connect();
+        safeConnect();
         if (!_connected) return;
 
-        for (var i:int = _postponed_requests.length - 1; i >= 0; i--)
-            send_request(_postponed_requests[i]);
+        for (var i:int = _postponedRequests.length - 1; i >= 0; i--)
+            sendRequest(_postponedRequests[i]);
 
-        _postponed_requests.length = 0;
+        _postponedRequests.length = 0;
     }
 
     private function handleReceiveData(event:JSSEvent):void
@@ -89,17 +89,17 @@ public class ServerConnection extends EventDispatcher
         return _inst;
     }
 
-    public function send(command_id:int, command_params:Array, force:Boolean = false):void
+    public function send(commandId:int, commandParams:Array, force:Boolean = false):void
     {
-        var request:Array = [command_id, command_params];
-        _postponed_requests.push(request);
-        if (_postponed_requests.length >= Constants.MAX_NUM_OF_REQUESTS || force)
-            send_postponed_requests();
+        var request:Array = [commandId, commandParams];
+        _postponedRequests.push(request);
+        if (_postponedRequests.length >= Constants.MAX_NUM_OF_REQUESTS || force)
+            sendPostponedRequests();
 
         return;
     }
 
-    private function safe_connect():void
+    private function safeConnect():void
     {
         if (!_connecting && !_connected)
         {
@@ -108,7 +108,7 @@ public class ServerConnection extends EventDispatcher
         }
     }
 
-    private function send_request(request:Array):void
+    private function sendRequest(request:Array):void
     {
         try
         {

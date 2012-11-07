@@ -7,29 +7,54 @@
  */
 package park
 {
-import as3isolib.display.primitive.IsoBox;
+import as3isolib.display.IsoSprite;
+
+import flash.events.Event;
 
 import mx.binding.utils.BindingUtils;
 
+import net.loaders.MovieLoader;
+
 import views.FieldView;
 
-public class BaseSpaceObjectView extends IsoBox
+public class BaseSpaceObjectView extends IsoSprite
 {
-    protected var _base_model:BaseSpaceObjectModel;
+    protected var _baseModel:BaseSpaceObjectModel;
+
+    private var _movieLoader:MovieLoader = new MovieLoader();
 
     public function BaseSpaceObjectView(model:BaseSpaceObjectModel)
     {
-        _base_model = model;
-        BindingUtils.bindSetter(update_x_pos, model, "_x");
-        BindingUtils.bindSetter(update_y_pos, model, "_y");
+        _baseModel = model;
+        BindingUtils.bindSetter(updateXPos, model, "_x");
+        BindingUtils.bindSetter(updateYPos, model, "_y");
+
+        addEventListener(Event.ADDED_TO_STAGE, onStage);
+        _movieLoader.addEventListener(MovieLoader.MOVIE_LOADED, onMovieLoaded);
+        _movieLoader.addEventListener(MovieLoader.ERROR_LOAD_MOVIE, onErrorLoadMovie);
     }
 
-    private function update_y_pos(value:int):void
+    private function onErrorLoadMovie(event:MovieLoader):void
+    {
+
+    }
+
+    private function onMovieLoaded(event:MovieLoader):void
+    {
+
+    }
+
+    private function onStage(event:Event):void
+    {
+//        _movieLoader.load()
+    }
+
+    private function updateYPos(value:int):void
     {
         this.y = FieldView.CELL_SIZE * value;
     }
 
-    private function update_x_pos(value:int):void
+    private function updateXPos(value:int):void
     {
         this.x = FieldView.CELL_SIZE * value;
     }

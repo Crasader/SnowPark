@@ -10,6 +10,8 @@ import br.com.stimuli.loading.BulkLoader;
 
 import com.junkbyte.console.Cc;
 
+import config.Constants;
+
 import controllers.events.LocalEvent;
 
 import flash.events.Event;
@@ -20,17 +22,17 @@ import org.as3yaml.YAML;
 public class ConfigLoader extends CompositeController
 {
     private var _loader:BulkLoader = new BulkLoader("snow configs loader");
-    private var _objects_config:Object;
-    [Bindable]
-    public var objects_config_loaded:Boolean = false;
+    private var _objectsConfig:Object;
+
+    private static const OBJ_IDENTIFIER:String = "snow_objets_config";
 
     public function ConfigLoader()
     {
-        _loader.addEventListener(BulkLoader.COMPLETE, on_all_loaded);
-        _loader.addEventListener(BulkLoader.ERROR, on_error_load);
+        _loader.addEventListener(BulkLoader.COMPLETE, onAllLoaded);
+        _loader.addEventListener(BulkLoader.ERROR, onErrorLoad);
     }
 
-    private function on_error_load(event:Event):void
+    private function onErrorLoad(event:Event):void
     {
         var type:String = "IO";
         if (event is SecurityErrorEvent) type = "Security"
@@ -39,12 +41,12 @@ public class ConfigLoader extends CompositeController
         dispatchEvent(new LocalEvent(LocalEvent.CONFIG_LOAD_ERROR, true));
     }
 
-    private function on_all_loaded(event:Event):void
+    private function onAllLoaded(event:Event):void
     {
         try
         {
-            var objects:String = _loader.getText("objects");
-            _objects_config = YAML.decode(objects);
+            var objects:String = _loader.getText(OBJ_IDENTIFIER);
+            _objectsConfig = YAML.decode(objects);
             dispatchEvent(new LocalEvent(LocalEvent.CONFIG_LOADED, true));
         } catch (e:*)
         {
@@ -52,16 +54,16 @@ public class ConfigLoader extends CompositeController
         }
     }
 
-    public function load_configs():void
+    public function loadConfigs():void
     {
-        _loader.add("http://127.0.0.1/config/objects.yml", {id:"objects"});
+        _loader.add(Constants.CONFIG_PATH, {id:OBJ_IDENTIFIER});
         _loader.start();
 
     }
 
-    public function get objects_config():Object
+    public function get objectsConfig():Object
     {
-        return _objects_config;
+        return _objectsConfig;
     }
 }
 }

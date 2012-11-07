@@ -16,67 +16,67 @@ import mx.binding.utils.BindingUtils;
 
 public class UserView extends Sprite
 {
-    private var _login_screen:Sprite = new LoginScreen();
+    private var _loginScreen:Sprite = new LoginScreen();
 
     public function UserView()
     {
-        addChild(_login_screen);
-        connect_btn.addEventListener(MouseEvent.CLICK, on_connect_click);
-        create_btn.addEventListener(MouseEvent.CLICK, on_create_click);
-        BindingUtils.bindSetter(auth_changed, UserModel.instanse, "_auth_passed");
+        addChild(_loginScreen);
+        connectBtn.addEventListener(MouseEvent.CLICK, onConnectClick);
+        createBtn.addEventListener(MouseEvent.CLICK, onCreateClick);
+        BindingUtils.bindSetter(authChanged, UserModel.instanse, "_authPassed");
     }
 
-    private function auth_changed(auth_passed:Boolean):void
+    private function authChanged(authPassed:Boolean):void
     {
-        if (auth_passed)
+        if (authPassed)
         {
-            removeChild(_login_screen);
+            removeChild(_loginScreen);
         }
         else
         {
-            addChild(_login_screen);
+            addChild(_loginScreen);
         }
 
     }
 
-    private function on_create_click(event:MouseEvent):void
+    private function onCreateClick(event:MouseEvent):void
     {
         dispatchEvent(new UserViewEvent(UserViewEvent.CREATE_NEW_USER));
     }
 
-    private function on_connect_click(event:MouseEvent):void
+    private function onConnectClick(event:MouseEvent):void
     {
         dispatchEvent(new UserViewEvent(UserViewEvent.AUTH));
     }
 
-    private function get connect_btn():SimpleButton
+    private function get connectBtn():SimpleButton
     {
-        return _login_screen.getChildByName("connect_btn") as SimpleButton;
+        return _loginScreen.getChildByName("connect_btn") as SimpleButton;
     }
 
-    private function get create_btn():SimpleButton
+    private function get createBtn():SimpleButton
     {
-        return _login_screen.getChildByName("create_btn") as SimpleButton;
+        return _loginScreen.getChildByName("create_btn") as SimpleButton;
     }
 
-    private function get login_tf():TextField
+    private function get loginTF():TextField
     {
-        return _login_screen.getChildByName("login_tf") as TextField;
+        return _loginScreen.getChildByName("login_tf") as TextField;
     }
 
-    private function get password_tf():TextField
+    private function get passwordTF():TextField
     {
-        return _login_screen.getChildByName("password_tf") as TextField;
+        return _loginScreen.getChildByName("password_tf") as TextField;
     }
 
-    public function get login_str():String
+    public function get loginStr():String
     {
-        return login_tf.text;
+        return loginTF.text;
     }
 
-    public function get pass_str():String
+    public function get passStr():String
     {
-        return password_tf.text;
+        return passwordTF.text;
     }
 }
 }

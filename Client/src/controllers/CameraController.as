@@ -22,22 +22,21 @@ public class CameraController extends CompositeController
 {
     private var _cameraView:CameraView;
 
-    private var _mouse_pressed:Boolean = false;
-    private var _last_mouse_down_pos:Point = new Point();
-    private var _last_mouse_down_camera_pos:Point = new Point();
-    private var _mouse_moved:Boolean = false;
-    private var _last_mouse_move_event:MouseEvent;
-    
+    private var _mousePressed:Boolean = false;
+    private var _lastMouseDownPos:Point = new Point();
+    private var _lastMouseDownCameraPos:Point = new Point();
+    private var _mouseMoved:Boolean = false;
+    private var _lastMouseMoveEvent:MouseEvent;
 
-    public function CameraController(parent_view:DisplayObjectContainer)
+    public function CameraController(parentView:DisplayObjectContainer)
     {
         _cameraView = new CameraView();
-        parent_view.addChild(_cameraView);
+        parentView.addChild(_cameraView);
 
-        var field_controller:FieldController = new FieldController(_cameraView);
-        add(field_controller);
+        var fieldController:FieldController = new FieldController(_cameraView);
+        add(fieldController);
 
-        if(_cameraView.stage)
+        if (_cameraView.stage)
             init();
         else
             _cameraView.addEventListener(Event.ADDED_TO_STAGE, init);
@@ -46,7 +45,7 @@ public class CameraController extends CompositeController
     private function init(e:Event = null):void
     {
         _cameraView.removeEventListener(Event.ADDED_TO_STAGE, init);
-        
+
         _cameraView.stage.addEventListener(MouseEvent.MOUSE_DOWN, onDown);
         _cameraView.stage.addEventListener(MouseEvent.MOUSE_UP, onUp);
         _cameraView.stage.addEventListener(MouseEvent.MOUSE_MOVE, onMouseMove);
@@ -56,52 +55,50 @@ public class CameraController extends CompositeController
 
     private function onWheel(event:MouseEvent):void
     {
-        if(event.delta > 0)
-            CameraModel.instanse.zoom_up();
+        if (event.delta > 0)
+            CameraModel.instanse.zoomUp();
         else
-            CameraModel.instanse.zoom_down();
+            CameraModel.instanse.zoomDown();
     }
 
     private function onMouseMove(event:MouseEvent):void
     {
-        _mouse_moved = true;
-        _last_mouse_move_event = event;
+        _mouseMoved = true;
+        _lastMouseMoveEvent = event;
     }
 
     private function onEnterFrame(event:Event):void
     {
-        if(_mouse_moved)
+        if (_mouseMoved)
         {
-            _mouse_moved = false;
-            mouse_move_impl(_last_mouse_move_event);
+            _mouseMoved = false;
+            mouseMoveImpl(_lastMouseMoveEvent);
         }
-
 
     }
 
-    private function mouse_move_impl(e:MouseEvent):void
+    private function mouseMoveImpl(e:MouseEvent):void
     {
-        if(_mouse_pressed)
+        if (_mousePressed)
         {
-            CameraModel.instanse.set_postion(_last_mouse_down_camera_pos.x - ( _last_mouse_down_pos.x - e.stageX) / CameraModel.instanse._zoom
-                                            , _last_mouse_down_camera_pos.y -  (_last_mouse_down_pos.y - e.stageY) / CameraModel.instanse._zoom);
+            CameraModel.instanse.setPostion(_lastMouseDownCameraPos.x - ( _lastMouseDownPos.x - e.stageX) / CameraModel.instanse._zoom
+                    , _lastMouseDownCameraPos.y - (_lastMouseDownPos.y - e.stageY) / CameraModel.instanse._zoom);
         }
     }
 
     private function onUp(e:MouseEvent):void
     {
-        _mouse_pressed = false;
+        _mousePressed = false;
     }
 
     private function onDown(e:MouseEvent):void
     {
-        _last_mouse_down_camera_pos.x = CameraModel.instanse._x;
-        _last_mouse_down_camera_pos.y = CameraModel.instanse._y;
-        _last_mouse_down_pos.x = e.stageX
-        _last_mouse_down_pos.y = e.stageY
-        _mouse_pressed = true;
+        _lastMouseDownCameraPos.x = CameraModel.instanse._x;
+        _lastMouseDownCameraPos.y = CameraModel.instanse._y;
+        _lastMouseDownPos.x = e.stageX
+        _lastMouseDownPos.y = e.stageY
+        _mousePressed = true;
     }
 
-    
 }
 }
