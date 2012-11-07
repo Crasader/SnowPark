@@ -30,18 +30,19 @@ public class ServerConnection extends EventDispatcher
 
     public function ServerConnection()
     {
-    }
-
-    public function connect():void
-    {
         _jss = new JSSConnection(this, true);
         addEventListener(JSSEvent.CONNECT_TO_SERVER_SOCKET, handleConnect);
         addEventListener(JSSEvent.RECEIVE_DATA, handleReceiveData);
         addEventListener(JSSEvent.CONNECTION_LOST, hadleConnectionLost);
-
-        _jss.connect(Constants.SERVER_IP, Constants.SERVER_PORT);
+        addEventListener(JSSEvent.SOCKET_ERROR, hadleConnectionLost);
 
         init_requests_timer();
+    }
+
+    public function connect():void
+    {
+        _jss.connect(Constants.SERVER_IP, Constants.SERVER_PORT);
+
     }
 
     private function init_requests_timer():void
@@ -53,12 +54,14 @@ public class ServerConnection extends EventDispatcher
 
     private function hadleConnectionLost(event:JSSEvent):void
     {
+        Cc.log("/!\\ Connection failed /!\\");
         _connected = false;
         _connecting = false;
     }
 
     private function handleConnect(event:JSSEvent):void
     {
+        Cc.log("Connected.");
         _connected = true;
         _connecting = false;
         send_postponed_requests();
@@ -90,7 +93,7 @@ public class ServerConnection extends EventDispatcher
     {
         var request:Array = [command_id, command_params];
         _postponed_requests.push(request);
-        if(_postponed_requests.length >= Constants.MAX_NUM_OF_REQUESTS || force)
+        if (_postponed_requests.length >= Constants.MAX_NUM_OF_REQUESTS || force)
             send_postponed_requests();
 
         return;

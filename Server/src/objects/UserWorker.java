@@ -2,6 +2,7 @@ package objects;
 
 import errors.Errors;
 import db.DataBase;
+import helpers.CryptHelper;
 import network.CMDList;
 import network.Command;
 import network.Response;
@@ -9,6 +10,9 @@ import org.apache.log4j.Logger;
 import org.jboss.netty.channel.Channel;
 import org.jboss.netty.channel.ChannelHandler;
 
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Iterator;
 import java.util.LinkedList;
 
 /**
@@ -79,7 +83,7 @@ public class UserWorker extends Thread
                     load_user(cmd);
                     break;
                 case CMDList.GET_USER_STATE:
-                    return_user_state();
+                    return_user_state(cmd);
                     break;
                 case CMDList.CREATE_OBJECT_ON_FIELD:
                     create_object(cmd);
@@ -94,9 +98,24 @@ public class UserWorker extends Thread
         }
     }
 
-    private void return_user_state()
+    private void return_user_state(Command cmd)
     {
+        Object[] cmd_params = cmd.params;
 
+        Space field = _user_state.spaces.get(SpacesList.FIELD);
+
+        Response resp = new Response();
+        resp.response_id = cmd.command_id;
+        Collection<SpaceObj> objects = field.objects.values();
+        Iterator<SpaceObj> obj_it = objects.iterator();
+
+        ArrayList<Object[]> serialized_objs = new ArrayList<Object[]>();
+        while (obj_it.hasNext())
+            serialized_objs.add(obj_it.next().getSerialized());
+        resp.params = new Object[]{serialized_objs.toArray()};
+        _channel.write(resp);
+
+        logger.info("return field for user: " + _user_state.login);
     }
 
     public void acceptCommand(Command cmd)
@@ -135,7 +154,7 @@ public class UserWorker extends Thread
         }
 
         SpaceObj obj =  sp.objects.get(object_id);
-        if(obj != null) throw new Exception("Objecta already created!");
+        if(obj != null) throw new Exception("Object already created!");
 
         obj = new SpaceObj();
         obj.object_id = object_id;
@@ -154,19 +173,19 @@ public class UserWorker extends Thread
     {
         Object[] cmd_params = cmd.params;
 
-        _user_state = (UserState) DataBase.ds().find(UserState.class, "login", cmd_params[0]).get();
-        logger.info(_user_state.login);
-        logger.info(_user_state.password);
+        _user_state = DataBase.ds().find(UserState.class, "login", cmd_params[0]).get();
+        logger.info("load user state for user: " + _user_state.login);
     }
 
-    private void create_user(Command cmd)
+    private void create_user(Command cmd) throws Exception
     {
         Object[] cmd_params = cmd.params;
 
         _user_state = new UserState();
         _user_state.login = (String) cmd_params[0];
-        _user_state.password = (String) cmd_params[1];
-
+        _user_state.salt = CryptHelper.getSalt(4);
+        System.out.println(cmd_params[1].toString());
+        _user_state.password = CryptHelper.hashPass(cmd_params[1].toString(), _user_state.salt);
         DataBase.ds().save(_user_state);
     }
 

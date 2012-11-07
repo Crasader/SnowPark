@@ -7,7 +7,7 @@
  */
 package park
 {
-import flash.net.registerClassAlias;
+
 
 public class BaseSpaceObjectModel
 {
@@ -35,6 +35,11 @@ public class BaseSpaceObjectModel
     public function class_id():int
     {
         return 0;
+    }
+
+    public function destroy():void
+    {
+
     }
 }
 }

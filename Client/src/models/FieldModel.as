@@ -17,6 +17,7 @@ import utils.IntPnt;
 public class FieldModel extends EventDispatcher
 {
     private var _field:SnowParkField;
+    private var _all_objects:Vector.<BaseSpaceObjectModel> = new Vector.<BaseSpaceObjectModel>();
 
     private static var _instanse:FieldModel;
 
@@ -34,20 +35,21 @@ public class FieldModel extends EventDispatcher
     {
         obj_model._x = pos.x;
         obj_model._y = pos.y;
-        
-        if(!is_place_free(obj_model))
+
+        if (!is_place_free(obj_model))
             return false;
-        
+
         fill_field_by_object(obj_model);
-        
+        _all_objects.push(obj_model);
+
         dispatchEvent(new Event(Event.CHANGE));
         return true;
     }
 
     private function fill_field_by_object(obj:BaseSpaceObjectModel):void
     {
-        for(var x:int = obj._x; x < obj._x + obj._width; x++)
-            for(var y:int = obj._y; y < obj._y + obj._length; y++)
+        for (var x:int = obj._x; x < obj._x + obj._width; x++)
+            for (var y:int = obj._y; y < obj._y + obj._length; y++)
             {
                 _field.setBlock(new IntPnt(x, y), obj);
             }
@@ -55,11 +57,11 @@ public class FieldModel extends EventDispatcher
 
     private function is_place_free(obj:BaseSpaceObjectModel):Boolean
     {
-        for(var x:int = obj._x; x < obj._x + obj._width; x++)
-            for(var y:int = obj._y; y < obj._y + obj._length; y++)
+        for (var x:int = obj._x; x < obj._x + obj._width; x++)
+            for (var y:int = obj._y; y < obj._y + obj._length; y++)
             {
-                if(is_pos_invalid(new IntPnt(x, y))
-                    || (_field.getBlock(new IntPnt(x, y)) != null))
+                if (is_pos_invalid(new IntPnt(x, y))
+                        || (_field.getBlock(new IntPnt(x, y)) != null))
                     return false;
             }
 
@@ -68,7 +70,7 @@ public class FieldModel extends EventDispatcher
 
     public static function get instanse():FieldModel
     {
-        if(_instanse == null)
+        if (_instanse == null)
             _instanse = new FieldModel();
         return _instanse;
     }
@@ -76,6 +78,24 @@ public class FieldModel extends EventDispatcher
     public function is_pos_invalid(pos:IntPnt):Boolean
     {
         return (pos.x >= _field.width || pos.y >= _field.height || pos.x < 0 || pos.y < 0);
+    }
+
+    public function clear():void
+    {
+        while (_all_objects.length != 0)
+        {
+            var obj_to_destroy:BaseSpaceObjectModel = _all_objects.pop();
+            obj_to_destroy.destroy();
+        }
+
+        _field = new SnowParkField();
+
+        dispatchEvent(new Event(Event.CHANGE));
+    }
+
+    public function get all_objects():Vector.<BaseSpaceObjectModel>
+    {
+        return _all_objects;
     }
 }
 }

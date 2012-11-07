@@ -4,7 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/../APISnowWrapper/APISnowWrapper.iml" filepath="$PROJECT_DIR$/../APISnowWrapper/APISnowWrapper.iml" />
       <module fileurl="file://$PROJECT_DIR$/../Loader/Loader.iml" filepath="$PROJECT_DIR$/../Loader/Loader.iml" />
-      <module fileurl="file://$PROJECT_DIR$/SnowParkPrototipe.iml" filepath="$PROJECT_DIR$/SnowParkPrototipe.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SnowClient.iml" filepath="$PROJECT_DIR$/SnowClient.iml" />
     </modules>
   </component>
 </project>

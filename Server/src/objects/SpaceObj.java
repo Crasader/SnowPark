@@ -32,4 +32,8 @@ public class SpaceObj
     @Embedded
     int height;
 
+    public Object[] getSerialized()
+    {
+        return new Object[]{object_id, class_id, x, y, width, height};
+    }
 }

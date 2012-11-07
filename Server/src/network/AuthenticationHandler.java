@@ -2,6 +2,7 @@ package network;
 
 import errors.Errors;
 import db.DataBase;
+import helpers.CryptHelper;
 import objects.UserState;
 import org.apache.log4j.Logger;
 import org.jboss.netty.channel.*;
@@ -60,7 +61,7 @@ public class AuthenticationHandler extends SimpleChannelHandler
 
         } catch (Exception exc)
         {
-            logger.error(exc.getCause().getMessage());
+            Errors.log_error(logger, exc);
             return false;
         }
     }
@@ -70,9 +71,12 @@ public class AuthenticationHandler extends SimpleChannelHandler
         String login = (String) cmd.params[0];
         String pass = (String) cmd.params[1];
 
-        UserState us = (UserState) DataBase.ds().find(UserState.class, "login", login).get();
+        UserState us = DataBase.ds().find(UserState.class, "login", login).get();
 
-        if (us != null && us.password.contentEquals(pass))
+        if(us == null) return false;
+
+        String hashedPass = CryptHelper.hashPass(pass, us.salt);
+        if (us.password.contentEquals(hashedPass))
             return true;
         else
             return false;

@@ -1,6 +1,5 @@
-package {
-
-import com.junkbyte.console.Cc;
+package
+{
 
 import core.EntryPoint;
 
@@ -10,12 +9,14 @@ import flash.display.Sprite;
 import flash.events.Event;
 import flash.system.Security;
 
-public class SnowParkPrototipe extends Sprite {
+public class SnowParkPrototipe extends Sprite
+{
 
 
-    public function SnowParkPrototipe() {
+    public function SnowParkPrototipe()
+    {
 
-        if(stage)
+        if (stage)
             init();
         else
             addEventListener(Event.ADDED_TO_STAGE, init);

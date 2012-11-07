@@ -6,8 +6,6 @@ package controllers
 {
 import basemvc.controller.CompositeController;
 
-import com.junkbyte.console.Cc;
-
 import controllers.events.CMDList;
 import controllers.events.CommandEvent;
 import controllers.events.ResponseEvent;
@@ -61,8 +59,11 @@ public class UserController extends CompositeController
     {
         if (e.command_id == CMDList.AUTH)
         {
-            if(e.response_params[0] != 0)
+            if (e.response_params[0] != 0)
+            {
                 UserModel.instanse.auth_passed();
+                dispatchEvent(new CommandEvent(CMDList.GET_USER_STATE, [], true, true));
+            }
         }
     }
 

@@ -18,6 +18,8 @@ public class UserState
     ObjectId e_database_id;
 
     @Embedded
+    public String salt = "";
+    @Embedded
     public String password = "";
     @Embedded
     public String login = "";

@@ -15,8 +15,7 @@ public class Crypter
 
     public static function encrypt(str:String):String
     {
-        //TODO
-        return str;
+        return MD5.hash(str);
     }
 }
 }

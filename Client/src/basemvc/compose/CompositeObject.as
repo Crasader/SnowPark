@@ -29,7 +29,7 @@ public class CompositeObject extends ComponentObject
 
     override public function update(event:Event = null):void
     {
-        for each( var c:ComponentObject in _children)
+        for each(var c:ComponentObject in _children)
         {
             c.update(event);
         }
@@ -48,6 +48,10 @@ public class CompositeObject extends ComponentObject
     {
         return _children[n];
     }
-    
+
+    public function get num_children():int
+    {
+        return _children.length;
+    }
 }
 }

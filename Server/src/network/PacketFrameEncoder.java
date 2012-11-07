@@ -25,7 +25,7 @@ public class PacketFrameEncoder extends OneToOneEncoder
         AMF3Serializer to = new AMF3Serializer(new ChannelBufferOutputStream(b));
         Object[] serializable = {response.response_id, response.params};
         to.writeObject(serializable);
-
+        to.close();
         return b;
     }
 }

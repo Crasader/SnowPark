@@ -1,19 +1,14 @@
-18 июн 2012 00:00:03,376 INFO  [main] Main     - DB connection inited
-18 июн 2012 00:00:03,510 INFO  [main] Main     - User server started
-18 июн 2012 00:00:18,772 INFO  [pool-2-thread-1] network.AuthenticationHandler     - :: auth passed
-18 июн 2012 00:00:18,785 INFO  [Thread-2] objects.UserWorker     - :: accept command : 4, login, password
-18 июн 2012 00:00:21,730 INFO  [Thread-2] objects.UserWorker     - :: accept command : 2, 0, 0, 0, 4, 4, 0, 0
-18 июн 2012 00:00:21,731 ERROR [Thread-2] objects.UserWorker     - java.lang.NullPointerException
-18 июн 2012 00:00:57,486 INFO  [main] Main     - DB connection inited
-18 июн 2012 00:00:57,608 INFO  [main] Main     - User server started
-18 июн 2012 00:01:00,440 INFO  [pool-2-thread-1] network.AuthenticationHandler     - :: auth passed
-18 июн 2012 00:01:00,453 INFO  [Thread-2] objects.UserWorker     - :: accept command : 4, login, password
-18 июн 2012 00:01:03,392 INFO  [Thread-2] objects.UserWorker     - :: accept command : 2, 0, 0, 0, 1, 0, 0, 0
-18 июн 2012 00:01:03,393 ERROR [Thread-2] objects.UserWorker     - java.lang.NullPointerException
-18 июн 2012 00:02:20,693 INFO  [main] Main     - DB connection inited
-18 июн 2012 00:02:20,815 INFO  [main] Main     - User server started
-18 июн 2012 00:02:27,891 INFO  [pool-2-thread-1] network.AuthenticationHandler     - :: auth passed
-18 июн 2012 00:02:27,904 INFO  [Thread-2] objects.UserWorker     - :: accept command : 4, login, password
-18 июн 2012 00:02:30,841 INFO  [Thread-2] objects.UserWorker     - :: accept command : 2, 0, 0, 0, 4, 3, 0, 0
-18 июн 2012 00:02:30,899 INFO  [Thread-2] objects.UserWorker     - :: accept command : 2, 0, 0, 0, 0, 0, 0, 0
-18 июн 2012 00:02:30,901 ERROR [Thread-2] objects.UserWorker     - java.lang.Exception: Objecta already created!
+05 ноя 2012 20:37:59,786 INFO  [main] Main     - DB connection inited
+05 ноя 2012 20:38:00,085 INFO  [main] Main     - User server started
+05 ноя 2012 20:38:24,672 INFO  [pool-2-thread-1] network.AuthenticationHandler     - :: auth failed
+05 ноя 2012 20:38:36,227 INFO  [pool-2-thread-1] network.AuthenticationHandler     - :: auth passed
+05 ноя 2012 20:38:36,229 INFO  [Thread-2] objects.UserWorker     - :: accept command : 3, login1, 5f4dcc3b5aa765d61d8327deb882cf99
+05 ноя 2012 20:38:36,233 INFO  [Thread-2] objects.UserWorker     - load user state for user: login1
+05 ноя 2012 20:38:36,233 INFO  [Thread-2] objects.UserWorker     - :: accept command : 1
+05 ноя 2012 20:38:36,234 INFO  [Thread-2] objects.UserWorker     - return field for user: login1
+05 ноя 2012 20:39:39,054 INFO  [Thread-2] objects.UserWorker     - :: accept command : 2, 0, 0, 0, 5, 3, 0, 0
+05 ноя 2012 20:39:39,075 ERROR [Thread-2] objects.UserWorker     - java.lang.Exception: Object already created!
+05 ноя 2012 20:39:44,054 INFO  [Thread-2] objects.UserWorker     - :: accept command : 2, 0, 0, 0, 9, 3, 0, 0
+05 ноя 2012 20:39:44,055 ERROR [Thread-2] objects.UserWorker     - java.lang.Exception: Object already created!
+05 ноя 2012 20:39:44,055 INFO  [Thread-2] objects.UserWorker     - :: accept command : 2, 0, 0, 0, 7, 4, 0, 0
+05 ноя 2012 20:39:44,055 ERROR [Thread-2] objects.UserWorker     - java.lang.Exception: Object already created!

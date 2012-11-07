@@ -11,6 +11,9 @@
             <entry library-id="2c5cd2bf-6efd-4ac2-811b-1fc4d96ea600">
               <dependency linkage="Merged" />
             </entry>
+            <entry library-name="AS3YAML_041" library-level="application">
+              <dependency linkage="Merged" />
+            </entry>
           </entries>
           <sdk name="flexsdk" />
         </dependencies>
@@ -52,6 +55,7 @@
         <SOURCES />
       </library>
     </orderEntry>
+    <orderEntry type="library" name="AS3YAML_041" level="application" />
   </component>
 </module>
 

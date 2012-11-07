@@ -8,16 +8,14 @@
 package controllers
 {
 import as3isolib.display.IsoView;
-import as3isolib.display.primitive.IsoBox;
 import as3isolib.geom.Pt;
 
 import basemvc.controller.CompositeController;
 
 import controllers.events.CMDList;
-
 import controllers.events.CommandEvent;
+import controllers.events.ResponseEvent;
 
-import flash.display.DisplayObject;
 import flash.events.Event;
 import flash.events.MouseEvent;
 import flash.geom.Point;
@@ -34,7 +32,7 @@ public class FieldController extends CompositeController
 {
     private var _fieldView:FieldView;
     private var _parentView:IsoView;
-    
+
     public function FieldController(parent_view:IsoView)
     {
         _parentView = parent_view;
@@ -44,8 +42,8 @@ public class FieldController extends CompositeController
         FieldModel.instanse.addEventListener(Event.CHANGE, _fieldView.update);
         _fieldView.update();
 
-        
-        if(parent_view.stage)
+
+        if (parent_view.stage)
             init();
         else
             parent_view.addEventListener(Event.ADDED_TO_STAGE, init);
@@ -53,7 +51,41 @@ public class FieldController extends CompositeController
 
     private function init(event:Event = null):void
     {
-        (event.target as DisplayObject).stage.addEventListener(MouseEvent.CLICK, on_click);
+        _core.addEventListener(ResponseEvent.SNOW_RESPONSE, on_response);
+        _parentView.stage.addEventListener(MouseEvent.CLICK, on_click);
+    }
+
+    private function on_response(e:ResponseEvent):void
+    {
+        if (e.command_id == CMDList.GET_USER_STATE)
+        {
+            update_user_state(e.response_params);
+        }
+    }
+
+    private function update_user_state(response_param:Array):void
+    {
+        reload_field(response_param[0]);
+    }
+
+    private function reload_field(field_objects:Array):void
+    {
+        FieldModel.instanse.clear();
+        _fieldView.removeAllChildren();
+
+        while (num_children)
+            remove(getChild(0));
+
+        for each(var obj_info:Array in field_objects)
+        {
+            var pos:IntPnt = new IntPnt(obj_info[3], obj_info[4]);
+            var block:SpaceObjController = new SpaceObjController();
+            if (FieldModel.instanse.placeObject(block.getModel(), pos))
+            {
+                _fieldView.addChild(block.getView());
+                add(block);
+            }
+        }
     }
 
     private function on_click(e:MouseEvent):void
@@ -64,7 +96,7 @@ public class FieldController extends CompositeController
 
 
         var block:SpaceObjController = new SpaceObjController();
-        if(FieldModel.instanse.placeObject(block.getModel(), pos))
+        if (FieldModel.instanse.placeObject(block.getModel(), pos))
         {
             _fieldView.addChild(block.getView());
             add(block);
@@ -72,13 +104,13 @@ public class FieldController extends CompositeController
 
         dispatchEvent(new CommandEvent(CMDList.CREATE_OBJECT_ON_SPACE,
                 [block.getModel().object_id,
-                block.getModel().class_id(),
-                block.getModel()._group,
-                pos.x,
-                pos.y,
-                block.getModel()._width,
-                block.getModel()._length],
-            false, true));
+                    block.getModel().class_id(),
+                    block.getModel()._group,
+                    pos.x,
+                    pos.y,
+                    block.getModel()._width,
+                    block.getModel()._length],
+                false, true));
     }
 
 
