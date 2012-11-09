@@ -8,8 +8,11 @@
 package views
 {
 import as3isolib.data.INode;
+import as3isolib.display.primitive.IsoBox;
+import as3isolib.display.primitive.IsoPolygon;
 import as3isolib.display.scene.IsoGrid;
 import as3isolib.display.scene.IsoScene;
+import as3isolib.geom.Pt;
 
 import com.junkbyte.console.Cc;
 
@@ -20,6 +23,9 @@ import models.IBindableModel;
 public class FieldView extends IsoScene
 {
     public static const CELL_SIZE:int = 25;
+
+    private static const HEIGHT_MULTIPLIER:Number = -0.7; //Крутизна склона
+    private static const HEIGHT_SHIFT:Number = 7; //Точка начала склона
 
     public function FieldView(model:IBindableModel)
     {
@@ -39,15 +45,35 @@ public class FieldView extends IsoScene
 
     private var _grid:IsoGrid;
 
+    public function z(value:int):Number
+    {
+        var new_z:Number = value * HEIGHT_MULTIPLIER + HEIGHT_SHIFT;
+        if (new_z < 0) new_z = 0;
+        return new_z;
+    }
+
     private function drawGrid():void
     {
-        if (_grid == null)
+//        if (_grid == null)
+//        {
+//            _grid = new IsoGrid();
+//            _grid.setGridSize(15, 15, 0);
+//            _grid.cellSize = CELL_SIZE;
+//            this.addChild(_grid);
+//        }
+        const GRID_SIZE:int = 15;
+        for (var x:int = 0; x < GRID_SIZE; x++)
         {
-            _grid = new IsoGrid();
-            _grid.setGridSize(15, 15, 0);
-            _grid.cellSize = CELL_SIZE;
-            this.addChild(_grid);
+            for (var y:int = 0; y < GRID_SIZE; y++)
+            {
+
+                var p:IsoBox = new IsoBox();
+                p.setSize(CELL_SIZE, CELL_SIZE, z(x) * CELL_SIZE - CELL_SIZE);
+                p.moveTo(x * CELL_SIZE, y * CELL_SIZE, 0)
+                addChild(p);
+            }
         }
+
     }
 }
 }

@@ -12,25 +12,25 @@ public class UserHandler extends SimpleChannelUpstreamHandler
 {
     private final Logger logger = Logger.getLogger(UserHandler.class);
 
-    private UserWorker user_worker;
+    private UserWorker userWorker;
 
     @Override
     public void channelConnected(ChannelHandlerContext ctx, ChannelStateEvent e) throws Exception
     {
-        user_worker = new UserWorker(this, e.getChannel());
+        userWorker = new UserWorker(this, e.getChannel());
     }
 
     @Override
     public void channelDisconnected(ChannelHandlerContext ctx, ChannelStateEvent e) throws Exception
     {
-        user_worker.disconnectedFromChannel();
+        userWorker.disconnectedFromChannel();
     }
 
     @Override
     public void messageReceived(ChannelHandlerContext ctx, MessageEvent e)
     {
         if (e.getChannel().isOpen())
-            user_worker.acceptCommand((Command) e.getMessage());
+            userWorker.acceptCommand((Command) e.getMessage());
     }
 
     @Override

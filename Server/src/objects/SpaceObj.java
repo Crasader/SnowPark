@@ -13,7 +13,7 @@ import org.bson.types.ObjectId;
 public class SpaceObj
 {
     @Id
-    ObjectId e_database_id;
+    ObjectId eDatabaseId;
 
     @Embedded
     int x;
@@ -21,10 +21,10 @@ public class SpaceObj
     int y;
 
     @Embedded
-    int object_id;
+    int objectId;
 
     @Embedded
-    int class_id;
+    int classId;
 
     @Embedded
     int width;
@@ -34,6 +34,6 @@ public class SpaceObj
 
     public Object[] getSerialized()
     {
-        return new Object[]{object_id, class_id, x, y, width, height};
+        return new Object[]{objectId, classId, x, y, width, height};
     }
 }

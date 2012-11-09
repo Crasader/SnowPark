@@ -11,7 +11,7 @@ import static org.junit.Assert.fail;
  * Author: JuzTosS
  * Date: 02.11.12
  */
-public class test_CrypterHelper
+public class testCrypterHelper
 {
     @Test
     public void TestLengthSalt()

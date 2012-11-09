@@ -15,7 +15,7 @@ import java.util.HashMap;
 public class UserState
 {
     @Id
-    ObjectId e_database_id;
+    ObjectId eDatabaseId;
 
     @Embedded
     public String salt = "";

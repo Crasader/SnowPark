@@ -13,12 +13,12 @@ import java.util.Random;
  */
 public class CryptHelper
 {
-    public static String getSalt(int salt_length) throws Exception
+    public static String getSalt(int saltLength) throws Exception
     {
-        if(salt_length <= 0) throw new Exception("wrong salt_length, must be > 0");
+        if(saltLength <= 0) throw new Exception("wrong saltLength, must be > 0");
 
         Random r = new SecureRandom();
-        byte[] salt = new byte[salt_length];
+        byte[] salt = new byte[saltLength];
 
         r.nextBytes(salt);
         return new BigInteger(1, salt).toString(16);

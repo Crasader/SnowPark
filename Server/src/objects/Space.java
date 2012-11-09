@@ -16,7 +16,7 @@ import java.util.HashMap;
 public class Space
 {
     @Id
-    ObjectId e_database_id;
+    ObjectId eDatabaseId;
 
     @Embedded
     HashMap<Integer, SpaceObj> objects = new HashMap<Integer, SpaceObj>();

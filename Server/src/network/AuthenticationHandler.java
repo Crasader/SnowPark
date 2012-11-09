@@ -25,9 +25,9 @@ public class AuthenticationHandler extends SimpleChannelHandler
     public void messageReceived(ChannelHandlerContext ctx, MessageEvent e) throws Exception
     {
         Response response = new Response();
-        response.response_id = CMDList.AUTH;
+        response.responseId = CMDList.AUTH;
 
-        if (process_cmd(e))
+        if (processCmd(e))
         {
             logger.info(":: auth passed");
             response.params = new Object[]{AUTH_PASSED};
@@ -42,26 +42,26 @@ public class AuthenticationHandler extends SimpleChannelHandler
         }
     }
 
-    private boolean process_cmd(MessageEvent e)
+    private boolean processCmd(MessageEvent e)
     {
         try
         {
             Command cmd = (Command) e.getMessage();
 
-            switch (cmd.command_id)
+            switch (cmd.commandId)
             {
                 case CMDList.AUTH:
                     return auth(cmd);
                 case CMDList.CREATE_USER:
                     return true;
                 default:
-                    logger.info("Wrong auth command = " + cmd.command_id);
+                    logger.info("Wrong auth command = " + cmd.commandId);
                     return false;
             }
 
         } catch (Exception exc)
         {
-            Errors.log_error(logger, exc);
+            Errors.logError(logger, exc);
             return false;
         }
     }
@@ -93,6 +93,6 @@ public class AuthenticationHandler extends SimpleChannelHandler
     @Override
     public void exceptionCaught(ChannelHandlerContext ctx, ExceptionEvent e) throws Exception
     {
-        Errors.log_error(logger, e);
+        Errors.logError(logger, e);
     }
 }

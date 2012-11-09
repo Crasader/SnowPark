@@ -13,15 +13,15 @@ import mx.binding.utils.BindingUtils;
 
 public class BaseSpaceObjectModel implements IBaseSpaceObjectModel
 {
-    private static const HEIGHT_MULTIPLIER:Number = -1.5; //Крутизна склона
-    private static const HEIGHT_SHIFT:Number = 10; //Точка начала склона
+    private static const HEIGHT_MULTIPLIER:Number = -0.7; //Крутизна склона
+    private static const HEIGHT_SHIFT:Number = 7; //Точка начала склона
 
     [Bindable]
     public var _x:int = 0;
     [Bindable]
     public var _y:int = 0;
     [Bindable]
-    public var _z:int = 0;
+    public var _z:Number = 0;
 
     [Bindable]
     public var _width:int = 0;
@@ -58,7 +58,7 @@ public class BaseSpaceObjectModel implements IBaseSpaceObjectModel
 
     public function updateZPos(value:int):void
     {
-        var new_z:int = value * HEIGHT_MULTIPLIER + HEIGHT_SHIFT;
+        var new_z:Number = value * HEIGHT_MULTIPLIER + HEIGHT_SHIFT;
         if (new_z < 0) new_z = 0;
         _z = new_z;
     }

@@ -12,7 +12,7 @@ public class Errors
     public static final int NO_ERRORS = 0;
     public static final int ERROR = 1;
 
-    public static void log_error(Logger logger, Exception e)
+    public static void logError(Logger logger, Exception e)
     {
         logger.error(e.toString());
         for(int i = 0; i < e.getStackTrace().length; i++)
@@ -20,7 +20,7 @@ public class Errors
         System.out.println("End of stack trace");
     }
 
-    public static void log_error(Logger logger, ExceptionEvent e)
+    public static void logError(Logger logger, ExceptionEvent e)
     {
         logger.error(e.getCause().getMessage());
         logger.error(e.toString());

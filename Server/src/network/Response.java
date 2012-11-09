@@ -6,6 +6,6 @@ package network;
  */
 public class Response
 {
-    public int response_id;
+    public int responseId;
     public Object[] params;
 }

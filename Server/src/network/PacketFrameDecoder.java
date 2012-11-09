@@ -38,7 +38,7 @@ public class PacketFrameDecoder extends ReplayingDecoder<VoidEnum>
         AMF3Deserializer d = new AMF3Deserializer(new ByteSequence(cb.array()));
         Object[] o = (Object[]) d.readObject();
         Command command = new Command();
-        command.command_id = (Integer) o[0];
+        command.commandId = (Integer) o[0];
         command.params = (Object[]) o[1];
         return command;
     }

@@ -62,7 +62,7 @@ public class BaseSpaceObjectView extends IsoSprite
         this.y = FieldView.CELL_SIZE * value;
     }
 
-    private function updateZPos(value:int):void
+    private function updateZPos(value:Number):void
     {
         this.z = FieldView.CELL_SIZE * value;
     }

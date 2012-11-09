@@ -24,14 +24,14 @@ public class UserWorker extends Thread
 {
     private final Logger logger = Logger.getLogger(UserWorker.class);
 
-    private UserState _user_state;
+    private UserState _userState;
 
     private ChannelHandler _handler;
     private Channel _channel;
 
     private Boolean _stopped = false;
 
-    volatile private LinkedList<Command> _command_queue = new LinkedList<Command>();
+    volatile private LinkedList<Command> _commandQueue = new LinkedList<Command>();
 
     public UserWorker(ChannelHandler handler, Channel channel)
     {
@@ -44,10 +44,10 @@ public class UserWorker extends Thread
         _stopped = true;
     }
 
-    private void send_bad_responce(int cmd_id)
+    private void sendErrorResponce(int cmdId)
     {
         Response resp = new Response();
-        resp.response_id = cmd_id;
+        resp.responseId = cmdId;
         resp.params = new Object[]{Errors.ERROR};
         _channel.write(resp);
     }
@@ -57,136 +57,138 @@ public class UserWorker extends Thread
     {
         while (!_stopped)
         {
-            if (_command_queue.size() > 0)
+            if (_commandQueue.size() > 0)
             {
-                Command cmd = _command_queue.removeFirst();
-                process_command(cmd);
+                Command cmd = _commandQueue.removeFirst();
+                processCommand(cmd);
             }
         }
     }
 
-    private void process_command(Command cmd)
+    private void processCommand(Command cmd)
     {
 
         if (cmd == null) return;
 
-        log_cmd(cmd);
+        logCmd(cmd);
 
         try
         {
-            switch (cmd.command_id)
+            switch (cmd.commandId)
             {
                 case CMDList.CREATE_USER:
-                    create_user(cmd);
+                    createUser(cmd);
                     break;
                 case CMDList.AUTH:
-                    load_user(cmd);
+                    loadUser(cmd);
                     break;
                 case CMDList.GET_USER_STATE:
-                    return_user_state(cmd);
+                    returnUserState(cmd);
                     break;
                 case CMDList.CREATE_OBJECT_ON_FIELD:
-                    create_object(cmd);
+                    createObject(cmd);
                     break;
                 default:
                     logger.error("Unknown command type");
             }
         } catch (Exception exc)
         {
-            send_bad_responce(cmd.command_id);
-            Errors.log_error(logger, exc);
+            sendErrorResponce(cmd.commandId);
+            Errors.logError(logger, exc);
         }
     }
 
-    private void return_user_state(Command cmd)
+    private void returnUserState(Command cmd)
     {
-        Object[] cmd_params = cmd.params;
+        Object[] cmdParams = cmd.params;
 
-        Space field = _user_state.spaces.get(SpacesList.FIELD);
+        Space field = _userState.spaces.get(SpacesList.FIELD);
 
         Response resp = new Response();
-        resp.response_id = cmd.command_id;
+        resp.responseId = cmd.commandId;
         Collection<SpaceObj> objects = field.objects.values();
-        Iterator<SpaceObj> obj_it = objects.iterator();
+        Iterator<SpaceObj> objIt = objects.iterator();
 
-        ArrayList<Object[]> serialized_objs = new ArrayList<Object[]>();
-        while (obj_it.hasNext())
-            serialized_objs.add(obj_it.next().getSerialized());
-        resp.params = new Object[]{serialized_objs.toArray()};
+        ArrayList<Object[]> serializedObjs = new ArrayList<Object[]>();
+        while (objIt.hasNext())
+            serializedObjs.add(objIt.next().getSerialized());
+        resp.params = new Object[]{serializedObjs.toArray()};
         _channel.write(resp);
 
-        logger.info("return field for user: " + _user_state.login);
+        logger.info("return field for user: " + _userState.login);
     }
 
     public void acceptCommand(Command cmd)
     {
-        _command_queue.push(cmd);
+        _commandQueue.push(cmd);
 
         if (!isAlive())
             start();
     }
 
-    private void log_cmd(Command cmd)
+    private void logCmd(Command cmd)
     {
-        String command_params_to_trace = "";
+        String commandParamsToTrace = "";
         for (int i = 0; i < cmd.params.length; i++)
         {
-            command_params_to_trace += ", " + cmd.params[i];
+            commandParamsToTrace += ", " + cmd.params[i];
         }
-        logger.info(":: accept command : " + cmd.command_id + command_params_to_trace);
+        logger.info(":: accept command : " + cmd.commandId + commandParamsToTrace);
     }
 
-    private void create_object(Command cmd) throws Exception
+    private void createObject(Command cmd) throws Exception
     {
-        Object[] cmd_params = cmd.params;
-        int object_id = (Integer) cmd_params[0];
-        int class_id = (Integer) cmd_params[1];
-        int group = (Integer) cmd_params[2];
-        int x = (Integer) cmd_params[3];
-        int y = (Integer) cmd_params[4];
-        int width = (Integer) cmd_params[5];
-        int height = (Integer) cmd_params[6];
+        Object[] cmdParams = cmd.params;
+        int objectId = (Integer) cmdParams[0];
+        int classId = (Integer) cmdParams[1];
+        int group = (Integer) cmdParams[2];
+        int x = (Integer) cmdParams[3];
+        int y = (Integer) cmdParams[4];
+        int width = (Integer) cmdParams[5];
+        int height = (Integer) cmdParams[6];
 
-        Space sp = _user_state.spaces.get(group);
+        Space sp = _userState.spaces.get(group);
         if(sp == null){
             sp = new Space();
-            _user_state.spaces.put(group, sp);
+            _userState.spaces.put(group, sp);
         }
 
-        SpaceObj obj =  sp.objects.get(object_id);
+        SpaceObj obj =  sp.objects.get(objectId);
         if(obj != null) throw new Exception("Object already created!");
 
         obj = new SpaceObj();
-        obj.object_id = object_id;
-        obj.class_id = class_id;
+        obj.objectId = objectId;
+        obj.classId = classId;
         obj.x = x;
         obj.y = y;
         obj.width = width;
         obj.height = height;
 
-        sp.objects.put(object_id, obj);
+        sp.objects.put(objectId, obj);
 
-        DataBase.ds().save(_user_state);//TODO: update
+        DataBase.ds().save(_userState);//TODO: update
     }
 
-    private void load_user(Command cmd)
+    private void loadUser(Command cmd)
     {
-        Object[] cmd_params = cmd.params;
+        Object[] cmdParams = cmd.params;
 
-        _user_state = DataBase.ds().find(UserState.class, "login", cmd_params[0]).get();
-        logger.info("load user state for user: " + _user_state.login);
+        _userState = DataBase.ds().find(UserState.class, "login", cmdParams[0]).get();
+        logger.info("load user state for user: " + _userState.login);
     }
 
-    private void create_user(Command cmd) throws Exception
+    private void createUser(Command cmd) throws Exception
     {
-        Object[] cmd_params = cmd.params;
+        Object[] cmdParams = cmd.params;
 
-        _user_state = new UserState();
-        _user_state.login = (String) cmd_params[0];
-        _user_state.salt = CryptHelper.getSalt(4);
-        System.out.println(cmd_params[1].toString());
-        _user_state.password = CryptHelper.hashPass(cmd_params[1].toString(), _user_state.salt);
-        DataBase.ds().save(_user_state);
+        _userState = new UserState();
+        _userState.login = (String) cmdParams[0];
+        _userState.salt = CryptHelper.getSalt(4);
+        System.out.println(cmdParams[1].toString());
+        _userState.password = CryptHelper.hashPass(cmdParams[1].toString(), _userState.salt);
+
+
+        DataBase.ds().save(_userState);
     }
 
 

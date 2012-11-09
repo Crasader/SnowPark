@@ -6,6 +6,6 @@ package network;
  */
 public class Command
 {
-    public int command_id;
+    public int commandId;
     public Object[] params;
 }

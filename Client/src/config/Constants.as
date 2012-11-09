@@ -19,6 +19,9 @@ public class Constants
     public static const CONFIG_PATH:String = "http://127.0.0.1/config/objects.yml";
     public static const GRAPHICS_PATH:String = "http://127.0.0.1/graphics/";
 
+    public static const STAGE_WIDTH:int = 800;
+    public static const STAGE_HEIGHT:int = 600;
+
     internal static var _config:Object;
 
     public static function get CFG():Object

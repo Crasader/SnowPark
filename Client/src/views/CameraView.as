@@ -9,6 +9,8 @@ package views
 {
 import as3isolib.display.IsoView;
 
+import config.Constants;
+
 import models.IBindableModel;
 
 import mx.binding.utils.BindingUtils;
@@ -18,7 +20,7 @@ public class CameraView extends IsoView
     public function CameraView(model:IBindableModel)
     {
         super();
-        this.setSize(480, 320);
+        this.setSize(Constants.STAGE_WIDTH, Constants.STAGE_HEIGHT);
         BindingUtils.bindProperty(mainContainer, "x", model, "_x");
         BindingUtils.bindProperty(mainContainer, "y", model, "_y");
         BindingUtils.bindSetter(zoom, model, "_zoom");

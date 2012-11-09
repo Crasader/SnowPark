@@ -23,7 +23,7 @@ public class PacketFrameEncoder extends OneToOneEncoder
         Response response = (Response) obj;
         ChannelBuffer b = ChannelBuffers.dynamicBuffer();
         AMF3Serializer to = new AMF3Serializer(new ChannelBufferOutputStream(b));
-        Object[] serializable = {response.response_id, response.params};
+        Object[] serializable = {response.responseId, response.params};
         to.writeObject(serializable);
         to.close();
         return b;

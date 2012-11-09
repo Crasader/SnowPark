@@ -14,7 +14,7 @@ public interface IBaseSpaceObjectModel
 
     function get _length():int;
 
-    function get _z():int;
+    function get _z():Number;
 
     function get _group():int;
 

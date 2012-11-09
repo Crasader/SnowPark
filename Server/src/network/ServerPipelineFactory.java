@@ -15,9 +15,9 @@ public class ServerPipelineFactory implements ChannelPipelineFactory
     {
         PacketFrameDecoder decoder = new PacketFrameDecoder();
         PacketFrameEncoder encoder = new PacketFrameEncoder();
-        UserHandler player_handler = new UserHandler();
-        AuthenticationHandler authentication_handler = new AuthenticationHandler();
+        UserHandler playerHandler = new UserHandler();
+        AuthenticationHandler authenticationHandler = new AuthenticationHandler();
 
-        return Channels.pipeline(decoder, encoder, authentication_handler, player_handler);
+        return Channels.pipeline(decoder, encoder, authenticationHandler, playerHandler);
     }
 }
