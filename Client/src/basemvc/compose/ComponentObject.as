@@ -66,5 +66,16 @@ public class ComponentObject extends EventDispatcher
     {
         dispatchEvent(new Event(Event.ADDED));
     }
+
+    public function get root():ComponentObject
+    {
+        if (!parent) return null;
+
+        var p:ComponentObject = this;
+        while (p.parent)
+            p = p.parent;
+
+        return p;
+    }
 }
 }

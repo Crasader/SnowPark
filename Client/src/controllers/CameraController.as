@@ -21,6 +21,7 @@ import views.CameraView;
 public class CameraController extends CompositeController
 {
     private var _cameraView:CameraView;
+    private var _cameraModel:CameraModel;
 
     private var _mousePressed:Boolean = false;
     private var _lastMouseDownPos:Point = new Point();
@@ -30,7 +31,8 @@ public class CameraController extends CompositeController
 
     public function CameraController(parentView:DisplayObjectContainer)
     {
-        _cameraView = new CameraView();
+        _cameraModel = new CameraModel();
+        _cameraView = new CameraView(_cameraModel);
         parentView.addChild(_cameraView);
 
         var fieldController:FieldController = new FieldController(_cameraView);
@@ -56,9 +58,9 @@ public class CameraController extends CompositeController
     private function onWheel(event:MouseEvent):void
     {
         if (event.delta > 0)
-            CameraModel.instanse.zoomUp();
+            _cameraModel.zoomUp();
         else
-            CameraModel.instanse.zoomDown();
+            _cameraModel.zoomDown();
     }
 
     private function onMouseMove(event:MouseEvent):void
@@ -81,8 +83,8 @@ public class CameraController extends CompositeController
     {
         if (_mousePressed)
         {
-            CameraModel.instanse.setPostion(_lastMouseDownCameraPos.x - ( _lastMouseDownPos.x - e.stageX) / CameraModel.instanse._zoom
-                    , _lastMouseDownCameraPos.y - (_lastMouseDownPos.y - e.stageY) / CameraModel.instanse._zoom);
+            _cameraModel.setPostion(_lastMouseDownCameraPos.x - ( _lastMouseDownPos.x - e.stageX) / _cameraModel._zoom
+                    , _lastMouseDownCameraPos.y - (_lastMouseDownPos.y - e.stageY) / _cameraModel._zoom);
         }
     }
 
@@ -93,10 +95,10 @@ public class CameraController extends CompositeController
 
     private function onDown(e:MouseEvent):void
     {
-        _lastMouseDownCameraPos.x = CameraModel.instanse._x;
-        _lastMouseDownCameraPos.y = CameraModel.instanse._y;
-        _lastMouseDownPos.x = e.stageX
-        _lastMouseDownPos.y = e.stageY
+        _lastMouseDownCameraPos.x = _cameraModel._x;
+        _lastMouseDownCameraPos.y = _cameraModel._y;
+        _lastMouseDownPos.x = e.stageX;
+        _lastMouseDownPos.y = e.stageY;
         _mousePressed = true;
     }
 

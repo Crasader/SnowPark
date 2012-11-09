@@ -23,6 +23,8 @@ public class CompositeObject extends ComponentObject
         _children.push(c);
         c._parent = this;
         c._childIndex = _children.indexOf(c);
+
+        c.dispatchEvent(new Event(Event.ADDED));
     }
 
     override public function update(event:Event = null):void

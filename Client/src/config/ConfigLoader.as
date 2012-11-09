@@ -2,15 +2,13 @@
  * Author: JuzTosS
  * Date: 06.11.12
  */
-package net.loaders
+package config
 {
 import basemvc.controller.CompositeController;
 
 import br.com.stimuli.loading.BulkLoader;
 
 import com.junkbyte.console.Cc;
-
-import config.Constants;
 
 import controllers.events.LocalEvent;
 
@@ -22,7 +20,6 @@ import org.as3yaml.YAML;
 public class ConfigLoader extends CompositeController
 {
     private var _loader:BulkLoader = new BulkLoader("snow configs loader");
-    private var _objectsConfig:Object;
 
     private static const OBJ_IDENTIFIER:String = "snow_objets_config";
 
@@ -35,7 +32,7 @@ public class ConfigLoader extends CompositeController
     private function onErrorLoad(event:Event):void
     {
         var type:String = "IO";
-        if (event is SecurityErrorEvent) type = "Security"
+        if (event is SecurityErrorEvent) type = "Security";
         Cc.log("error load configs - " + type + "Error");
 
         dispatchEvent(new LocalEvent(LocalEvent.CONFIG_LOAD_ERROR, true));
@@ -46,7 +43,7 @@ public class ConfigLoader extends CompositeController
         try
         {
             var objects:String = _loader.getText(OBJ_IDENTIFIER);
-            _objectsConfig = YAML.decode(objects);
+            Constants._config = YAML.decode(objects);
             dispatchEvent(new LocalEvent(LocalEvent.CONFIG_LOADED, true));
         } catch (e:*)
         {
@@ -59,11 +56,6 @@ public class ConfigLoader extends CompositeController
         _loader.add(Constants.CONFIG_PATH, {id:OBJ_IDENTIFIER});
         _loader.start();
 
-    }
-
-    public function get objectsConfig():Object
-    {
-        return _objectsConfig;
     }
 }
 }

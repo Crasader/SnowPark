@@ -11,12 +11,17 @@ import basemvc.compose.CompositeObject;
 
 public class CompositeController extends CompositeObject
 {
+    private static var _root_controller:CompositeController;
+
     public function CompositeController()
     {
-
+        if (!_root_controller) _root_controller = this;
     }
 
-
+    public function get core():CompositeController
+    {
+        return _root_controller;
+    }
 
 }
 }

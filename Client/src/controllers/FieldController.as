@@ -31,15 +31,17 @@ import views.FieldView;
 public class FieldController extends CompositeController
 {
     private var _fieldView:FieldView;
+    private var _fieldModel:FieldModel;
     private var _parentView:IsoView;
 
     public function FieldController(parentView:IsoView)
     {
+        _fieldModel = new FieldModel();
         _parentView = parentView;
-        _fieldView = new FieldView();
+        _fieldView = new FieldView(_fieldModel);
         parentView.addScene(_fieldView);
 
-        FieldModel.instanse.addEventListener(Event.CHANGE, _fieldView.update);
+        _fieldModel.addEventListener(Event.CHANGE, _fieldView.update);
         _fieldView.update();
 
         if (parentView.stage)
@@ -50,7 +52,7 @@ public class FieldController extends CompositeController
 
     private function init(event:Event = null):void
     {
-        CoreController.instanse.addEventListener(ResponseEvent.SNOW_RESPONSE, onResponse);
+        core.addEventListener(ResponseEvent.SNOW_RESPONSE, onResponse);
         _parentView.stage.addEventListener(MouseEvent.CLICK, onClick);
     }
 
@@ -69,7 +71,7 @@ public class FieldController extends CompositeController
 
     private function reloadField(fieldObjects:Array):void
     {
-        FieldModel.instanse.clear();
+        _fieldModel.clear();
         _fieldView.removeAllChildren();
 
         while (numChildren)
@@ -79,7 +81,7 @@ public class FieldController extends CompositeController
         {
             var pos:IntPnt = new IntPnt(objInfo[2], objInfo[3]); // x, y
             var block:BaseSpaceObjectController = new BaseSpaceObjectController(objInfo[0], objInfo[1]); // obj_id, class_id
-            if (FieldModel.instanse.placeObject(block.getModel(), pos))
+            if (_fieldModel.placeObject(block.getModel(), pos))
             {
                 _fieldView.addChild(block.getView());
                 add(block);
@@ -94,7 +96,7 @@ public class FieldController extends CompositeController
         var pos:IntPnt = new IntPnt(isoPnt.x / FieldView.CELL_SIZE, isoPnt.y / FieldView.CELL_SIZE);
 
         var block:BaseSpaceObjectController = new BaseSpaceObjectController(12345, "1");
-        if (FieldModel.instanse.placeObject(block.getModel(), pos))
+        if (_fieldModel.placeObject(block.getModel(), pos))
         {
             _fieldView.addChild(block.getView());
             add(block);

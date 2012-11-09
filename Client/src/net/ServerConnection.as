@@ -95,8 +95,6 @@ public class ServerConnection extends EventDispatcher
         _postponedRequests.push(request);
         if (_postponedRequests.length >= Constants.MAX_NUM_OF_REQUESTS || force)
             sendPostponedRequests();
-
-        return;
     }
 
     private function safeConnect():void

@@ -11,6 +11,7 @@ import controllers.events.CommandEvent;
 import controllers.events.ResponseEvent;
 
 import flash.display.DisplayObjectContainer;
+import flash.events.Event;
 
 import models.UserModel;
 
@@ -21,38 +22,41 @@ public class UserController extends CompositeController
 {
 
     private var _userView:UserView;
+    private var _userModel:UserModel;
 
     public function UserController(parentView:DisplayObjectContainer)
     {
         var cameraController:CameraController = new CameraController(parentView);
         add(cameraController);
 
-        _userView = new UserView();
+        _userModel = new UserModel();
+        _userView = new UserView(_userModel);
         parentView.addChild(_userView);
         _userView.addEventListener(UserViewEvent.AUTH, onAuth);
         _userView.addEventListener(UserViewEvent.CREATE_NEW_USER, onCreateNew);
+
         init();
     }
 
     private function onCreateNew(e:UserViewEvent):void
     {
-        UserModel.instanse._login = _userView.loginStr;
-        UserModel.instanse._password = _userView.passStr;
+        _userModel._login = _userView.loginStr;
+        _userModel._password = _userView.passStr;
 
-        dispatchEvent(new CommandEvent(CMDList.CREATE_USER, [UserModel.instanse._login, UserModel.instanse.passHash], true, true));
+        dispatchEvent(new CommandEvent(CMDList.CREATE_USER, [_userModel._login, _userModel.passHash], true, true));
     }
 
     private function onAuth(e:UserViewEvent):void
     {
-        UserModel.instanse._login = _userView.loginStr;
-        UserModel.instanse._password = _userView.passStr;
+        _userModel._login = _userView.loginStr;
+        _userModel._password = _userView.passStr;
 
-        dispatchEvent(new CommandEvent(CMDList.AUTH, [UserModel.instanse._login, UserModel.instanse.passHash], true, true));
+        dispatchEvent(new CommandEvent(CMDList.AUTH, [_userModel._login, _userModel.passHash], true, true));
     }
 
-    private function init():void
+    private function init(e:Event = null):void
     {
-        CoreController.instanse.addEventListener(ResponseEvent.SNOW_RESPONSE, onResponse);
+        core.addEventListener(ResponseEvent.SNOW_RESPONSE, onResponse);
     }
 
     private function onResponse(e:ResponseEvent):void
@@ -61,7 +65,7 @@ public class UserController extends CompositeController
         {
             if (e.responseParams[0] != 0)
             {
-                UserModel.instanse.auth_passed();
+                _userModel.auth_passed();
                 dispatchEvent(new CommandEvent(CMDList.GET_USER_STATE, [], true, true));
             }
         }
@@ -69,7 +73,7 @@ public class UserController extends CompositeController
 
     public function getModel():UserModel
     {
-        return UserModel.instanse;
+        return _userModel;
     }
 }
 }

@@ -4,6 +4,8 @@
  */
 package config
 {
+import com.junkbyte.console.Cc;
+
 public class Constants
 {
     public static const VERSION:String = "v.0.01";
@@ -16,6 +18,14 @@ public class Constants
 
     public static const CONFIG_PATH:String = "http://127.0.0.1/config/objects.yml";
     public static const GRAPHICS_PATH:String = "http://127.0.0.1/graphics";
+
+    internal static var _config:Object;
+
+    public static function get CFG():Object
+    {
+        if (!_config) Cc.error("Null CFG!");
+        return _config;
+    }
 
     public function Constants()
     {

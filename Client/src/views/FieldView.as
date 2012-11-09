@@ -8,28 +8,18 @@
 package views
 {
 import as3isolib.data.INode;
-import as3isolib.display.primitive.IsoBox;
 import as3isolib.display.scene.IsoGrid;
 import as3isolib.display.scene.IsoScene;
 
-import flash.display.Sprite;
 import flash.events.Event;
 
-import models.FieldModel;
-import models.SnowParkField;
-
-import mx.binding.utils.BindingUtils;
-
-import park.BaseSpaceObjectModel;
-import park.BaseSpaceObjectView;
-
-import utils.IntPnt;
+import models.IBindableModel;
 
 public class FieldView extends IsoScene
 {
     public static const CELL_SIZE:int = 20;
 
-    public function FieldView()
+    public function FieldView(model:IBindableModel)
     {
         drawGrid();
     }
@@ -49,7 +39,7 @@ public class FieldView extends IsoScene
 
     private function drawGrid():void
     {
-        if(_grid == null)
+        if (_grid == null)
         {
             _grid = new IsoGrid();
             _grid.setGridSize(15, 15, 0);

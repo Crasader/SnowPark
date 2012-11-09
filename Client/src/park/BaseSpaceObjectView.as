@@ -34,12 +34,12 @@ public class BaseSpaceObjectView extends IsoSprite
         _movieLoader.addEventListener(MovieLoader.ERROR_LOAD_MOVIE, onErrorLoadMovie);
     }
 
-    private function onErrorLoadMovie(event:MovieLoader):void
+    private function onErrorLoadMovie(event:Event):void
     {
 
     }
 
-    private function onMovieLoaded(event:MovieLoader):void
+    private function onMovieLoaded(event:Event):void
     {
 
     }

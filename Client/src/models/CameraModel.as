@@ -9,9 +9,8 @@ package models
 {
 import flash.events.EventDispatcher;
 
-public class CameraModel extends EventDispatcher
+public class CameraModel extends EventDispatcher implements IBindableModel
 {
-    private static var _instanse:CameraModel;
 
     [Bindable]
     public var _x:int = 0;
@@ -26,16 +25,6 @@ public class CameraModel extends EventDispatcher
 
     public function CameraModel()
     {
-    }
-
-    public static function get instanse():CameraModel
-    {
-        if (_instanse == null)
-        {
-            _instanse = new CameraModel();
-        }
-
-        return _instanse;
     }
 
     public function setPostion(x:Number, y:Number):void

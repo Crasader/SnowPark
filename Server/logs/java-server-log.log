@@ -1,5 +1,32 @@
-07 ноя 2012 21:31:19,223 INFO  [pool-2-thread-3] network.AuthenticationHandler     - :: auth passed
-07 ноя 2012 21:31:19,226 INFO  [Thread-4] objects.UserWorker     - :: accept command : 3, login1, 5f4dcc3b5aa765d61d8327deb882cf99
-07 ноя 2012 21:31:19,230 INFO  [Thread-4] objects.UserWorker     - load user state for user: login1
-07 ноя 2012 21:31:19,230 INFO  [Thread-4] objects.UserWorker     - :: accept command : 1
-07 ноя 2012 21:31:19,231 INFO  [Thread-4] objects.UserWorker     - return field for user: login1
+09 ноя 2012 11:10:48,151 INFO  [pool-2-thread-11] network.AuthenticationHandler     - :: auth passed
+09 ноя 2012 11:10:48,154 INFO  [Thread-12] objects.UserWorker     - :: accept command : 3, login1, 5f4dcc3b5aa765d61d8327deb882cf99
+09 ноя 2012 11:10:48,157 INFO  [Thread-12] objects.UserWorker     - load user state for user: login1
+09 ноя 2012 11:10:48,157 INFO  [Thread-12] objects.UserWorker     - :: accept command : 1
+09 ноя 2012 11:10:48,158 INFO  [Thread-12] objects.UserWorker     - return field for user: login1
+09 ноя 2012 11:10:56,119 INFO  [Thread-12] objects.UserWorker     - :: accept command : 2, 0, 1, 0, 6, 2, 0, 0
+09 ноя 2012 11:10:56,120 ERROR [Thread-12] objects.UserWorker     - java.lang.ClassCastException: java.lang.String cannot be cast to java.lang.Integer
+09 ноя 2012 11:11:35,000 INFO  [pool-2-thread-11] network.AuthenticationHandler     - :: auth passed
+09 ноя 2012 11:11:35,001 INFO  [Thread-13] objects.UserWorker     - :: accept command : 3, login1, 5f4dcc3b5aa765d61d8327deb882cf99
+09 ноя 2012 11:11:35,004 INFO  [Thread-13] objects.UserWorker     - load user state for user: login1
+09 ноя 2012 11:11:35,004 INFO  [Thread-13] objects.UserWorker     - :: accept command : 1
+09 ноя 2012 11:11:35,005 INFO  [Thread-13] objects.UserWorker     - return field for user: login1
+09 ноя 2012 11:12:16,592 INFO  [pool-2-thread-11] network.AuthenticationHandler     - :: auth passed
+09 ноя 2012 11:12:16,593 INFO  [Thread-14] objects.UserWorker     - :: accept command : 3, login1, 5f4dcc3b5aa765d61d8327deb882cf99
+09 ноя 2012 11:12:16,595 INFO  [Thread-14] objects.UserWorker     - load user state for user: login1
+09 ноя 2012 11:12:16,607 INFO  [Thread-14] objects.UserWorker     - :: accept command : 1
+09 ноя 2012 11:12:16,608 INFO  [Thread-14] objects.UserWorker     - return field for user: login1
+09 ноя 2012 11:12:54,151 INFO  [pool-2-thread-11] network.AuthenticationHandler     - :: auth passed
+09 ноя 2012 11:12:54,152 INFO  [Thread-15] objects.UserWorker     - :: accept command : 3, login1, 5f4dcc3b5aa765d61d8327deb882cf99
+09 ноя 2012 11:12:54,156 INFO  [Thread-15] objects.UserWorker     - load user state for user: login1
+09 ноя 2012 11:12:54,156 INFO  [Thread-15] objects.UserWorker     - :: accept command : 1
+09 ноя 2012 11:12:54,157 INFO  [Thread-15] objects.UserWorker     - return field for user: login1
+09 ноя 2012 11:13:23,708 INFO  [pool-2-thread-11] network.AuthenticationHandler     - :: auth passed
+09 ноя 2012 11:13:23,709 INFO  [Thread-16] objects.UserWorker     - :: accept command : 3, login1, 5f4dcc3b5aa765d61d8327deb882cf99
+09 ноя 2012 11:13:23,711 INFO  [Thread-16] objects.UserWorker     - load user state for user: login1
+09 ноя 2012 11:13:23,712 INFO  [Thread-16] objects.UserWorker     - :: accept command : 1
+09 ноя 2012 11:13:23,712 INFO  [Thread-16] objects.UserWorker     - return field for user: login1
+09 ноя 2012 11:37:06,666 INFO  [pool-2-thread-12] network.AuthenticationHandler     - :: auth passed
+09 ноя 2012 11:37:06,666 INFO  [Thread-17] objects.UserWorker     - :: accept command : 3, login1, 5f4dcc3b5aa765d61d8327deb882cf99
+09 ноя 2012 11:37:06,669 INFO  [Thread-17] objects.UserWorker     - load user state for user: login1
+09 ноя 2012 11:37:06,669 INFO  [Thread-17] objects.UserWorker     - :: accept command : 1
+09 ноя 2012 11:37:06,670 INFO  [Thread-17] objects.UserWorker     - return field for user: login1

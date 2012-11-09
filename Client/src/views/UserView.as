@@ -10,7 +10,7 @@ import flash.display.Sprite;
 import flash.events.MouseEvent;
 import flash.text.TextField;
 
-import models.UserModel;
+import models.IBindableModel;
 
 import mx.binding.utils.BindingUtils;
 
@@ -18,12 +18,12 @@ public class UserView extends Sprite
 {
     private var _loginScreen:Sprite = new LoginScreen();
 
-    public function UserView()
+    public function UserView(model:IBindableModel)
     {
         addChild(_loginScreen);
         connectBtn.addEventListener(MouseEvent.CLICK, onConnectClick);
         createBtn.addEventListener(MouseEvent.CLICK, onCreateClick);
-        BindingUtils.bindSetter(authChanged, UserModel.instanse, "_authPassed");
+        BindingUtils.bindSetter(authChanged, model, "_authPassed");
     }
 
     private function authChanged(authPassed:Boolean):void

@@ -9,7 +9,7 @@ package park
 {
 import basemvc.controller.CompositeController;
 
-import controllers.CoreController;
+import config.Constants;
 
 public class BaseSpaceObjectController extends CompositeController
 {
@@ -19,7 +19,7 @@ public class BaseSpaceObjectController extends CompositeController
 
     public function BaseSpaceObjectController(objectId:int, classId:String)
     {
-        _model = new BaseSpaceObjectModel(objectId, classId, CoreController.instanse.cfg[classId]);
+        _model = new BaseSpaceObjectModel(objectId, classId, Constants.CFG[classId]);
         _view = new BaseSpaceObjectView(_model);
     }
 

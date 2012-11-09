@@ -11,6 +11,8 @@ import basemvc.controller.CompositeController;
 
 import com.junkbyte.console.Cc;
 
+import config.ConfigLoader;
+
 import controllers.events.CMDList;
 import controllers.events.CommandEvent;
 import controllers.events.LocalEvent;
@@ -22,13 +24,9 @@ import mx.binding.utils.BindingUtils;
 
 import net.ServerConnection;
 import net.ServerConnectionEvent;
-import net.loaders.ConfigLoader;
 
 public class CoreController extends CompositeController
 {
-
-    private static var _instanse:CoreController;
-
     private var _node:DisplayObjectContainer;
     private var _commandQueue:Array = [];
 
@@ -37,14 +35,7 @@ public class CoreController extends CompositeController
 
     public function CoreController(node:DisplayObjectContainer)
     {
-        if (_instanse == null)
-        {
-            _instanse = this;
-        }
-        else
-        {
-            throw "can't create CoreController";
-        }
+        super();
 
         _node = node;
 
@@ -118,16 +109,6 @@ public class CoreController extends CompositeController
     private function sendCommand(e:CommandEvent):void
     {
         ServerConnection.inst.send(e.commandId, e.commandParams, e.forceSend);
-    }
-
-    public function get cfg():Object
-    {
-        return _configLoader.objectsConfig
-    }
-
-    public static function get instanse():CoreController
-    {
-        return _instanse;
     }
 }
 }

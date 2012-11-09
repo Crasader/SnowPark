@@ -6,7 +6,9 @@ package models
 {
 import crypt.Crypter;
 
-public class UserModel
+import flash.events.EventDispatcher;
+
+public class UserModel extends EventDispatcher implements IBindableModel
 {
     private static var _instanse:UserModel;
 

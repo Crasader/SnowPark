@@ -14,12 +14,10 @@ import park.BaseSpaceObjectModel;
 
 import utils.IntPnt;
 
-public class FieldModel extends EventDispatcher
+public class FieldModel extends EventDispatcher implements IBindableModel
 {
     private var _field:SnowParkField;
     private var _allObjects:Vector.<BaseSpaceObjectModel> = new Vector.<BaseSpaceObjectModel>();
-
-    private static var _instanse:FieldModel;
 
     public function FieldModel()
     {
@@ -66,13 +64,6 @@ public class FieldModel extends EventDispatcher
             }
 
         return true;
-    }
-
-    public static function get instanse():FieldModel
-    {
-        if (_instanse == null)
-            _instanse = new FieldModel();
-        return _instanse;
     }
 
     public function isPosInvalid(pos:IntPnt):Boolean
