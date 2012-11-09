@@ -19,7 +19,10 @@ public class BaseSpaceObjectController extends CompositeController
 
     public function BaseSpaceObjectController(objectId:int, classId:String)
     {
-        _model = new BaseSpaceObjectModel(objectId, classId, Constants.CFG[classId]);
+        var config:Object = Constants.CFG[classId];
+        if (!config) throw "Can't create object without config " + "( classId = " + classId + " )";
+
+        _model = new BaseSpaceObjectModel(objectId, classId, config);
         _view = new BaseSpaceObjectView(_model);
     }
 

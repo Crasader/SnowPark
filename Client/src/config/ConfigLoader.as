@@ -53,6 +53,8 @@ public class ConfigLoader extends CompositeController
 
     public function loadConfigs():void
     {
+        if (_loader.hasItem(Constants.CONFIG_PATH, true))
+            _loader.remove(Constants.CONFIG_PATH);
         _loader.add(Constants.CONFIG_PATH, {id:OBJ_IDENTIFIER});
         _loader.start();
 

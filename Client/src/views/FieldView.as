@@ -11,17 +11,19 @@ import as3isolib.data.INode;
 import as3isolib.display.scene.IsoGrid;
 import as3isolib.display.scene.IsoScene;
 
+import com.junkbyte.console.Cc;
+
 import flash.events.Event;
 
 import models.IBindableModel;
 
 public class FieldView extends IsoScene
 {
-    public static const CELL_SIZE:int = 20;
+    public static const CELL_SIZE:int = 25;
 
     public function FieldView(model:IBindableModel)
     {
-        drawGrid();
+        Cc.addSlashCommand("grid", drawGrid);
     }
 
     override public function addChild(child:INode):void

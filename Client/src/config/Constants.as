@@ -17,7 +17,7 @@ public class Constants
     public static const SEND_REQUESTS_INTERVAL:int = 5000; //ms
 
     public static const CONFIG_PATH:String = "http://127.0.0.1/config/objects.yml";
-    public static const GRAPHICS_PATH:String = "http://127.0.0.1/graphics";
+    public static const GRAPHICS_PATH:String = "http://127.0.0.1/graphics/";
 
     internal static var _config:Object;
 

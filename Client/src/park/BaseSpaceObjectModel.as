@@ -9,12 +9,19 @@ package park
 {
 import com.junkbyte.console.Cc;
 
-public class BaseSpaceObjectModel
+import mx.binding.utils.BindingUtils;
+
+public class BaseSpaceObjectModel implements IBaseSpaceObjectModel
 {
+    private static const HEIGHT_MULTIPLIER:Number = -1.5; //Крутизна склона
+    private static const HEIGHT_SHIFT:Number = 10; //Точка начала склона
+
     [Bindable]
     public var _x:int = 0;
     [Bindable]
     public var _y:int = 0;
+    [Bindable]
+    public var _z:int = 0;
 
     [Bindable]
     public var _width:int = 0;
@@ -25,10 +32,9 @@ public class BaseSpaceObjectModel
     public var _group:int = 0;
 
     [Bindable]
-    public var objectId:int = 0;
+    public var _objectId:int = 0;
 
     private var _config:Object;
-    private var _objectId:int;
     private var _classId:String;
 
     public function BaseSpaceObjectModel(objectId:int, classId:String, config:Object)
@@ -36,6 +42,8 @@ public class BaseSpaceObjectModel
         _objectId = objectId;
         _classId = classId;
         _config = config;
+
+        BindingUtils.bindSetter(updateZPos, this, "_x");
     }
 
     public function get classId():String
@@ -48,30 +56,38 @@ public class BaseSpaceObjectModel
 
     }
 
+    public function updateZPos(value:int):void
+    {
+        var new_z:int = value * HEIGHT_MULTIPLIER + HEIGHT_SHIFT;
+        if (new_z < 0) new_z = 0;
+        _z = new_z;
+    }
+
     public function get config():Object
     {
+        if (!_config) Cc.error("Null config in object with id " + classId);
         return _config;
     }
 
-    private function get cfgView():Object
+    public function get cfgView():Object
     {
         if (!config.view) Cc.error("Null view cfg in object with id " + classId);
         return config.view;
     }
 
-    private function get cfgShop():Object
+    public function get cfgShop():Object
     {
         if (!config.shop) Cc.error("Null shop cfg in object with id " + classId);
         return config.shop;
     }
 
-    private function get cfgBehavior():Object
+    public function get cfgBehavior():Object
     {
         if (!config.behavior) Cc.error("Null behavior cfg in object with id " + classId);
         return config.behavior;
     }
 
-    private function get cfgDescriptions():Object
+    public function get cfgDescriptions():Object
     {
         if (!config.descriptions) Cc.error("Null descriptions cfg in object with id " + classId);
         return config.descriptions;

@@ -95,7 +95,7 @@ public class FieldController extends CompositeController
         var isoPnt:Pt = _parentView.localToIso(new Point(e.stageX, e.stageY));
         var pos:IntPnt = new IntPnt(isoPnt.x / FieldView.CELL_SIZE, isoPnt.y / FieldView.CELL_SIZE);
 
-        var block:BaseSpaceObjectController = new BaseSpaceObjectController(12345, "1");
+        var block:BaseSpaceObjectController = new BaseSpaceObjectController(12345, "0");
         if (_fieldModel.placeObject(block.getModel(), pos))
         {
             _fieldView.addChild(block.getView());
@@ -103,7 +103,7 @@ public class FieldController extends CompositeController
         }
 
         dispatchEvent(new CommandEvent(CMDList.CREATE_OBJECT_ON_SPACE,
-                [block.getModel().objectId,
+                [block.getModel()._objectId,
                     block.getModel().classId,
                     block.getModel()._group,
                     pos.x,

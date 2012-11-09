@@ -9,6 +9,10 @@ package park
 {
 import as3isolib.display.IsoSprite;
 
+import com.junkbyte.console.Cc;
+
+import config.Constants;
+
 import flash.events.Event;
 
 import mx.binding.utils.BindingUtils;
@@ -19,24 +23,28 @@ import views.FieldView;
 
 public class BaseSpaceObjectView extends IsoSprite
 {
-    protected var _baseModel:BaseSpaceObjectModel;
+    protected var _model:IBaseSpaceObjectModel;
 
-    private var _movieLoader:MovieLoader = new MovieLoader();
+    private var _visual:MovieLoader;
 
-    public function BaseSpaceObjectView(model:BaseSpaceObjectModel)
+    public function BaseSpaceObjectView(model:IBaseSpaceObjectModel)
     {
-        _baseModel = model;
+        _model = model;
         BindingUtils.bindSetter(updateXPos, model, "_x");
         BindingUtils.bindSetter(updateYPos, model, "_y");
+        BindingUtils.bindSetter(updateZPos, model, "_z");
 
         addEventListener(Event.ADDED_TO_STAGE, onStage);
-        _movieLoader.addEventListener(MovieLoader.MOVIE_LOADED, onMovieLoaded);
-        _movieLoader.addEventListener(MovieLoader.ERROR_LOAD_MOVIE, onErrorLoadMovie);
+
+        _visual = new MovieLoader(Constants.GRAPHICS_PATH + _model.cfgView["field"]);
+        _visual.addEventListener(MovieLoader.MOVIE_LOADED, onMovieLoaded);
+        _visual.addEventListener(MovieLoader.ERROR_LOAD_MOVIE, onErrorLoadMovie);
+        sprites = [_visual];
     }
 
     private function onErrorLoadMovie(event:Event):void
     {
-
+        Cc.error("Error load movie for object " + _model.classId + ", path = " + "\"" + _model.cfgView["field"] + "\"");
     }
 
     private function onMovieLoaded(event:Event):void
@@ -46,12 +54,17 @@ public class BaseSpaceObjectView extends IsoSprite
 
     private function onStage(event:Event):void
     {
-//        _movieLoader.load()
+        _visual.startLoad();
     }
 
     private function updateYPos(value:int):void
     {
         this.y = FieldView.CELL_SIZE * value;
+    }
+
+    private function updateZPos(value:int):void
+    {
+        this.z = FieldView.CELL_SIZE * value;
     }
 
     private function updateXPos(value:int):void

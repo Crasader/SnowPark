@@ -2,33 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="29d18484-5fc4-4a98-afa2-cbd3ebc7a347" name="Default" comment="wip 17 june 2012">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Client/src/models/IBindableModel.as" />
-      <change type="DELETED" beforePath="C:\Projects\SnowParkPrototipe\Client\src\controllers\ServerController.as" afterPath="" />
-      <change type="MOVED" beforePath="C:\Projects\SnowParkPrototipe\Client\src\net\loaders\ConfigLoader.as" afterPath="$PROJECT_DIR$/../Client/src/config/ConfigLoader.as" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Client/src/park/IBaseSpaceObjectModel.as" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Client/assets/bindable.fla" afterPath="$PROJECT_DIR$/../Client/assets/bindable.fla" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Client/assets/bindable.swc" afterPath="$PROJECT_DIR$/../Client/assets/bindable.swc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Client/assets/bindable.swf" afterPath="$PROJECT_DIR$/../Client/assets/bindable.swf" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Client/out/production/SnowParkPrototipe/SnowParkPrototipe.swf" afterPath="$PROJECT_DIR$/../Client/out/production/SnowParkPrototipe/SnowParkPrototipe.swf" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Loader/out/production/Loader/Loader.swf" afterPath="$PROJECT_DIR$/../Loader/out/production/Loader/Loader.swf" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Client/.idea/misc.xml" afterPath="$PROJECT_DIR$/../Client/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Client/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../Client/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Client/SnowClient.iml" afterPath="$PROJECT_DIR$/../Client/SnowClient.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Client/src/basemvc/compose/ComponentObject.as" afterPath="$PROJECT_DIR$/../Client/src/basemvc/compose/ComponentObject.as" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Client/src/basemvc/compose/CompositeObject.as" afterPath="$PROJECT_DIR$/../Client/src/basemvc/compose/CompositeObject.as" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Client/src/basemvc/controller/CompositeController.as" afterPath="$PROJECT_DIR$/../Client/src/basemvc/controller/CompositeController.as" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Client/src/config/ConfigLoader.as" afterPath="$PROJECT_DIR$/../Client/src/config/ConfigLoader.as" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Client/src/config/Constants.as" afterPath="$PROJECT_DIR$/../Client/src/config/Constants.as" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Client/src/controllers/CameraController.as" afterPath="$PROJECT_DIR$/../Client/src/controllers/CameraController.as" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Client/src/controllers/CoreController.as" afterPath="$PROJECT_DIR$/../Client/src/controllers/CoreController.as" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Client/src/controllers/FieldController.as" afterPath="$PROJECT_DIR$/../Client/src/controllers/FieldController.as" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Client/src/controllers/UserController.as" afterPath="$PROJECT_DIR$/../Client/src/controllers/UserController.as" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Client/src/models/CameraModel.as" afterPath="$PROJECT_DIR$/../Client/src/models/CameraModel.as" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Client/src/models/FieldModel.as" afterPath="$PROJECT_DIR$/../Client/src/models/FieldModel.as" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Client/src/models/UserModel.as" afterPath="$PROJECT_DIR$/../Client/src/models/UserModel.as" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Client/src/net/ServerConnection.as" afterPath="$PROJECT_DIR$/../Client/src/net/ServerConnection.as" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Client/src/net/loaders/MovieLoader.as" afterPath="$PROJECT_DIR$/../Client/src/net/loaders/MovieLoader.as" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Client/src/park/BaseSpaceObjectController.as" afterPath="$PROJECT_DIR$/../Client/src/park/BaseSpaceObjectController.as" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Client/src/park/BaseSpaceObjectModel.as" afterPath="$PROJECT_DIR$/../Client/src/park/BaseSpaceObjectModel.as" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Client/src/park/BaseSpaceObjectView.as" afterPath="$PROJECT_DIR$/../Client/src/park/BaseSpaceObjectView.as" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Client/src/views/CameraView.as" afterPath="$PROJECT_DIR$/../Client/src/views/CameraView.as" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Client/src/views/FieldView.as" afterPath="$PROJECT_DIR$/../Client/src/views/FieldView.as" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Client/src/views/UserView.as" afterPath="$PROJECT_DIR$/../Client/src/views/UserView.as" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/logs/java-server-log.log" afterPath="$PROJECT_DIR$/logs/java-server-log.log" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/config/objects.yml" afterPath="$PROJECT_DIR$/src/config/objects.yml" />
     </list>
     <ignored path="SnowServer.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -125,7 +116,7 @@
       <file leaf-file-name="objects.yml" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/config/objects.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="28" column="15" selection-start="493" selection-end="493" vertical-scroll-proportion="0.41226214">
+            <state line="22" column="0" selection-start="408" selection-end="408" vertical-scroll-proportion="0.74418604">
               <folding />
             </state>
           </provider>
@@ -847,7 +838,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/config/objects.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="15" selection-start="493" selection-end="493" vertical-scroll-proportion="0.41226214">
+        <state line="22" column="0" selection-start="408" selection-end="408" vertical-scroll-proportion="0.74418604">
           <folding />
         </state>
       </provider>
