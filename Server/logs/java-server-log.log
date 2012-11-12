@@ -1,106 +1,38 @@
-09 ноя 2012 17:02:41,282 INFO  [pool-2-thread-43] network.AuthenticationHandler     - :: auth passed
-09 ноя 2012 17:02:41,284 INFO  [Thread-73] objects.UserWorker     - :: accept command : 3, login, 5f4dcc3b5aa765d61d8327deb882cf99
-09 ноя 2012 17:02:41,287 INFO  [Thread-73] objects.UserWorker     - load user state for user: login
-09 ноя 2012 17:02:41,297 INFO  [Thread-73] objects.UserWorker     - :: accept command : 1
-09 ноя 2012 17:02:41,298 INFO  [Thread-73] objects.UserWorker     - return field for user: login
-09 ноя 2012 17:02:44,944 INFO  [Thread-73] objects.UserWorker     - :: accept command : 2, 12345, 0, 0, 2, 0, 0, 0
-09 ноя 2012 17:02:44,944 ERROR [Thread-73] objects.UserWorker     - java.lang.ClassCastException: java.lang.String cannot be cast to java.lang.Integer
-09 ноя 2012 17:02:55,551 INFO  [Thread-73] objects.UserWorker     - :: accept command : 2, 12345, 0, 0, -5, -8, 0, 0
-09 ноя 2012 17:02:55,552 ERROR [Thread-73] objects.UserWorker     - java.lang.ClassCastException: java.lang.String cannot be cast to java.lang.Integer
-09 ноя 2012 17:03:00,576 INFO  [Thread-73] objects.UserWorker     - :: accept command : 2, 12345, 0, 0, 3, 6, 0, 0
-09 ноя 2012 17:03:00,577 ERROR [Thread-73] objects.UserWorker     - java.lang.ClassCastException: java.lang.String cannot be cast to java.lang.Integer
-09 ноя 2012 17:03:00,577 INFO  [Thread-73] objects.UserWorker     - :: accept command : 2, 12345, 0, 0, 7, 5, 0, 0
-09 ноя 2012 17:03:00,578 ERROR [Thread-73] objects.UserWorker     - java.lang.ClassCastException: java.lang.String cannot be cast to java.lang.Integer
-09 ноя 2012 17:03:05,576 INFO  [Thread-73] objects.UserWorker     - :: accept command : 2, 12345, 0, 0, 8, 9, 0, 0
-09 ноя 2012 17:03:05,577 ERROR [Thread-73] objects.UserWorker     - java.lang.ClassCastException: java.lang.String cannot be cast to java.lang.Integer
-09 ноя 2012 17:03:05,578 INFO  [Thread-73] objects.UserWorker     - :: accept command : 2, 12345, 0, 0, 0, 5, 0, 0
-09 ноя 2012 17:03:05,578 ERROR [Thread-73] objects.UserWorker     - java.lang.ClassCastException: java.lang.String cannot be cast to java.lang.Integer
-09 ноя 2012 17:03:05,578 INFO  [Thread-73] objects.UserWorker     - :: accept command : 2, 12345, 0, 0, 6, 9, 0, 0
-09 ноя 2012 17:03:05,579 ERROR [Thread-73] objects.UserWorker     - java.lang.ClassCastException: java.lang.String cannot be cast to java.lang.Integer
-09 ноя 2012 17:03:10,576 INFO  [Thread-73] objects.UserWorker     - :: accept command : 2, 12345, 0, 0, 4, 11, 0, 0
-09 ноя 2012 17:03:10,577 ERROR [Thread-73] objects.UserWorker     - java.lang.ClassCastException: java.lang.String cannot be cast to java.lang.Integer
-09 ноя 2012 17:03:15,576 INFO  [Thread-73] objects.UserWorker     - :: accept command : 2, 12345, 0, 0, 8, 14, 0, 0
-09 ноя 2012 17:03:15,577 ERROR [Thread-73] objects.UserWorker     - java.lang.ClassCastException: java.lang.String cannot be cast to java.lang.Integer
-09 ноя 2012 17:03:20,576 INFO  [Thread-73] objects.UserWorker     - :: accept command : 2, 12345, 0, 0, 5, 8, 0, 0
-09 ноя 2012 17:03:20,577 ERROR [Thread-73] objects.UserWorker     - java.lang.ClassCastException: java.lang.String cannot be cast to java.lang.Integer
-09 ноя 2012 17:03:25,576 INFO  [Thread-73] objects.UserWorker     - :: accept command : 2, 12345, 0, 0, 3, 10, 0, 0
-09 ноя 2012 17:03:25,577 ERROR [Thread-73] objects.UserWorker     - java.lang.ClassCastException: java.lang.String cannot be cast to java.lang.Integer
-09 ноя 2012 17:03:25,577 INFO  [Thread-73] objects.UserWorker     - :: accept command : 2, 12345, 0, 0, 3, 6, 0, 0
-09 ноя 2012 17:03:25,578 ERROR [Thread-73] objects.UserWorker     - java.lang.ClassCastException: java.lang.String cannot be cast to java.lang.Integer
-09 ноя 2012 17:03:25,578 INFO  [Thread-73] objects.UserWorker     - :: accept command : 2, 12345, 0, 0, 3, 7, 0, 0
-09 ноя 2012 17:03:25,578 ERROR [Thread-73] objects.UserWorker     - java.lang.ClassCastException: java.lang.String cannot be cast to java.lang.Integer
-09 ноя 2012 17:03:25,579 INFO  [Thread-73] objects.UserWorker     - :: accept command : 2, 12345, 0, 0, 3, 8, 0, 0
-09 ноя 2012 17:03:25,580 ERROR [Thread-73] objects.UserWorker     - java.lang.ClassCastException: java.lang.String cannot be cast to java.lang.Integer
-09 ноя 2012 17:03:30,575 INFO  [Thread-73] objects.UserWorker     - :: accept command : 2, 12345, 0, 0, 4, 10, 0, 0
-09 ноя 2012 17:03:30,576 ERROR [Thread-73] objects.UserWorker     - java.lang.ClassCastException: java.lang.String cannot be cast to java.lang.Integer
-09 ноя 2012 17:03:30,576 INFO  [Thread-73] objects.UserWorker     - :: accept command : 2, 12345, 0, 0, 3, 11, 0, 0
-09 ноя 2012 17:03:30,579 ERROR [Thread-73] objects.UserWorker     - java.lang.ClassCastException: java.lang.String cannot be cast to java.lang.Integer
-09 ноя 2012 17:03:35,577 INFO  [Thread-73] objects.UserWorker     - :: accept command : 2, 12345, 0, 0, 6, 10, 0, 0
-09 ноя 2012 17:03:35,577 ERROR [Thread-73] objects.UserWorker     - java.lang.ClassCastException: java.lang.String cannot be cast to java.lang.Integer
-09 ноя 2012 17:03:35,578 INFO  [Thread-73] objects.UserWorker     - :: accept command : 2, 12345, 0, 0, 5, 11, 0, 0
-09 ноя 2012 17:03:35,580 ERROR [Thread-73] objects.UserWorker     - java.lang.ClassCastException: java.lang.String cannot be cast to java.lang.Integer
-09 ноя 2012 17:03:40,577 INFO  [Thread-73] objects.UserWorker     - :: accept command : 2, 12345, 0, 0, 1, 10, 0, 0
-09 ноя 2012 17:03:40,577 ERROR [Thread-73] objects.UserWorker     - java.lang.ClassCastException: java.lang.String cannot be cast to java.lang.Integer
-09 ноя 2012 17:03:40,577 INFO  [Thread-73] objects.UserWorker     - :: accept command : 2, 12345, 0, 0, 3, 10, 0, 0
-09 ноя 2012 17:03:40,578 ERROR [Thread-73] objects.UserWorker     - java.lang.ClassCastException: java.lang.String cannot be cast to java.lang.Integer
-09 ноя 2012 17:03:40,578 INFO  [Thread-73] objects.UserWorker     - :: accept command : 2, 12345, 0, 0, 5, 10, 0, 0
-09 ноя 2012 17:03:40,579 ERROR [Thread-73] objects.UserWorker     - java.lang.ClassCastException: java.lang.String cannot be cast to java.lang.Integer
-09 ноя 2012 17:05:16,830 INFO  [pool-2-thread-44] network.AuthenticationHandler     - :: auth passed
-09 ноя 2012 17:05:16,831 INFO  [Thread-74] objects.UserWorker     - :: accept command : 3, login, 5f4dcc3b5aa765d61d8327deb882cf99
-09 ноя 2012 17:05:16,833 INFO  [Thread-74] objects.UserWorker     - load user state for user: login
-09 ноя 2012 17:05:16,833 INFO  [Thread-74] objects.UserWorker     - :: accept command : 1
-09 ноя 2012 17:05:16,834 INFO  [Thread-74] objects.UserWorker     - return field for user: login
-09 ноя 2012 17:05:20,824 INFO  [Thread-74] objects.UserWorker     - :: accept command : 2, 12345, 0, 0, -10, -6, 0, 0
-09 ноя 2012 17:05:20,824 ERROR [Thread-74] objects.UserWorker     - java.lang.ClassCastException: java.lang.String cannot be cast to java.lang.Integer
-09 ноя 2012 17:05:32,087 INFO  [Thread-74] objects.UserWorker     - :: accept command : 2, 12345, 0, 0, 6, 6, 0, 0
-09 ноя 2012 17:05:32,088 ERROR [Thread-74] objects.UserWorker     - java.lang.ClassCastException: java.lang.String cannot be cast to java.lang.Integer
-09 ноя 2012 17:05:32,088 INFO  [Thread-74] objects.UserWorker     - :: accept command : 2, 12345, 0, 0, 5, 5, 0, 0
-09 ноя 2012 17:05:32,090 ERROR [Thread-74] objects.UserWorker     - java.lang.ClassCastException: java.lang.String cannot be cast to java.lang.Integer
-09 ноя 2012 17:05:32,090 INFO  [Thread-74] objects.UserWorker     - :: accept command : 2, 12345, 0, 0, 4, 5, 0, 0
-09 ноя 2012 17:05:32,091 ERROR [Thread-74] objects.UserWorker     - java.lang.ClassCastException: java.lang.String cannot be cast to java.lang.Integer
-09 ноя 2012 17:05:37,089 INFO  [Thread-74] objects.UserWorker     - :: accept command : 2, 12345, 0, 0, 8, 11, 0, 0
-09 ноя 2012 17:05:37,089 ERROR [Thread-74] objects.UserWorker     - java.lang.ClassCastException: java.lang.String cannot be cast to java.lang.Integer
-09 ноя 2012 17:05:37,089 INFO  [Thread-74] objects.UserWorker     - :: accept command : 2, 12345, 0, 0, 7, 7, 0, 0
-09 ноя 2012 17:05:37,090 ERROR [Thread-74] objects.UserWorker     - java.lang.ClassCastException: java.lang.String cannot be cast to java.lang.Integer
-09 ноя 2012 17:05:37,090 INFO  [Thread-74] objects.UserWorker     - :: accept command : 2, 12345, 0, 0, 6, 7, 0, 0
-09 ноя 2012 17:05:37,091 ERROR [Thread-74] objects.UserWorker     - java.lang.ClassCastException: java.lang.String cannot be cast to java.lang.Integer
-09 ноя 2012 17:05:37,091 INFO  [Thread-74] objects.UserWorker     - :: accept command : 2, 12345, 0, 0, 4, 8, 0, 0
-09 ноя 2012 17:05:37,092 ERROR [Thread-74] objects.UserWorker     - java.lang.ClassCastException: java.lang.String cannot be cast to java.lang.Integer
-09 ноя 2012 17:05:42,088 INFO  [Thread-74] objects.UserWorker     - :: accept command : 2, 12345, 0, 0, 5, 9, 0, 0
-09 ноя 2012 17:05:42,089 ERROR [Thread-74] objects.UserWorker     - java.lang.ClassCastException: java.lang.String cannot be cast to java.lang.Integer
-09 ноя 2012 17:05:42,089 INFO  [Thread-74] objects.UserWorker     - :: accept command : 2, 12345, 0, 0, 11, 10, 0, 0
-09 ноя 2012 17:05:42,093 ERROR [Thread-74] objects.UserWorker     - java.lang.ClassCastException: java.lang.String cannot be cast to java.lang.Integer
-09 ноя 2012 17:05:47,089 INFO  [Thread-74] objects.UserWorker     - :: accept command : 2, 12345, 0, 0, 4, 14, 0, 0
-09 ноя 2012 17:05:47,089 ERROR [Thread-74] objects.UserWorker     - java.lang.ClassCastException: java.lang.String cannot be cast to java.lang.Integer
-09 ноя 2012 17:05:47,090 INFO  [Thread-74] objects.UserWorker     - :: accept command : 2, 12345, 0, 0, 8, 14, 0, 0
-09 ноя 2012 17:05:47,093 ERROR [Thread-74] objects.UserWorker     - java.lang.ClassCastException: java.lang.String cannot be cast to java.lang.Integer
-09 ноя 2012 17:05:52,089 INFO  [Thread-74] objects.UserWorker     - :: accept command : 2, 12345, 0, 0, 7, 11, 0, 0
-09 ноя 2012 17:05:52,089 ERROR [Thread-74] objects.UserWorker     - java.lang.ClassCastException: java.lang.String cannot be cast to java.lang.Integer
-09 ноя 2012 17:05:52,089 INFO  [Thread-74] objects.UserWorker     - :: accept command : 2, 12345, 0, 0, 6, 15, 0, 0
-09 ноя 2012 17:05:52,090 ERROR [Thread-74] objects.UserWorker     - java.lang.ClassCastException: java.lang.String cannot be cast to java.lang.Integer
-09 ноя 2012 17:05:57,088 INFO  [Thread-74] objects.UserWorker     - :: accept command : 2, 12345, 0, 0, 7, 13, 0, 0
-09 ноя 2012 17:05:57,089 ERROR [Thread-74] objects.UserWorker     - java.lang.ClassCastException: java.lang.String cannot be cast to java.lang.Integer
-09 ноя 2012 17:05:57,089 INFO  [Thread-74] objects.UserWorker     - :: accept command : 2, 12345, 0, 0, 8, 12, 0, 0
-09 ноя 2012 17:05:57,092 ERROR [Thread-74] objects.UserWorker     - java.lang.ClassCastException: java.lang.String cannot be cast to java.lang.Integer
-09 ноя 2012 17:05:57,092 INFO  [Thread-74] objects.UserWorker     - :: accept command : 2, 12345, 0, 0, 8, 13, 0, 0
-09 ноя 2012 17:05:57,093 ERROR [Thread-74] objects.UserWorker     - java.lang.ClassCastException: java.lang.String cannot be cast to java.lang.Integer
-09 ноя 2012 17:06:02,088 INFO  [Thread-74] objects.UserWorker     - :: accept command : 2, 12345, 0, 0, 6, 12, 0, 0
-09 ноя 2012 17:06:02,089 ERROR [Thread-74] objects.UserWorker     - java.lang.ClassCastException: java.lang.String cannot be cast to java.lang.Integer
-09 ноя 2012 17:06:02,090 INFO  [Thread-74] objects.UserWorker     - :: accept command : 2, 12345, 0, 0, 6, 13, 0, 0
-09 ноя 2012 17:06:02,090 ERROR [Thread-74] objects.UserWorker     - java.lang.ClassCastException: java.lang.String cannot be cast to java.lang.Integer
-09 ноя 2012 17:06:02,090 INFO  [Thread-74] objects.UserWorker     - :: accept command : 2, 12345, 0, 0, 7, 14, 0, 0
-09 ноя 2012 17:06:02,091 ERROR [Thread-74] objects.UserWorker     - java.lang.ClassCastException: java.lang.String cannot be cast to java.lang.Integer
-09 ноя 2012 17:06:07,087 INFO  [Thread-74] objects.UserWorker     - :: accept command : 2, 12345, 0, 0, 6, 11, 0, 0
-09 ноя 2012 17:06:07,088 ERROR [Thread-74] objects.UserWorker     - java.lang.ClassCastException: java.lang.String cannot be cast to java.lang.Integer
-09 ноя 2012 17:07:27,092 INFO  [Thread-74] objects.UserWorker     - :: accept command : 2, 12345, 0, 0, 6, 12, 0, 0
-09 ноя 2012 17:07:27,092 ERROR [Thread-74] objects.UserWorker     - java.lang.ClassCastException: java.lang.String cannot be cast to java.lang.Integer
-09 ноя 2012 17:07:27,093 INFO  [Thread-74] objects.UserWorker     - :: accept command : 2, 12345, 0, 0, 2, 9, 0, 0
-09 ноя 2012 17:07:27,093 ERROR [Thread-74] objects.UserWorker     - java.lang.ClassCastException: java.lang.String cannot be cast to java.lang.Integer
-09 ноя 2012 17:07:32,122 INFO  [Thread-74] objects.UserWorker     - :: accept command : 2, 12345, 0, 0, 5, 14, 0, 0
-09 ноя 2012 17:07:32,122 ERROR [Thread-74] objects.UserWorker     - java.lang.ClassCastException: java.lang.String cannot be cast to java.lang.Integer
-09 ноя 2012 17:07:32,123 INFO  [Thread-74] objects.UserWorker     - :: accept command : 2, 12345, 0, 0, 6, 14, 0, 0
-09 ноя 2012 17:07:32,127 ERROR [Thread-74] objects.UserWorker     - java.lang.ClassCastException: java.lang.String cannot be cast to java.lang.Integer
-09 ноя 2012 17:07:32,127 INFO  [Thread-74] objects.UserWorker     - :: accept command : 2, 12345, 0, 0, 3, 13, 0, 0
-09 ноя 2012 17:07:32,128 ERROR [Thread-74] objects.UserWorker     - java.lang.ClassCastException: java.lang.String cannot be cast to java.lang.Integer
-09 ноя 2012 17:07:37,122 INFO  [Thread-74] objects.UserWorker     - :: accept command : 2, 12345, 0, 0, 0, 12, 0, 0
-09 ноя 2012 17:07:37,122 ERROR [Thread-74] objects.UserWorker     - java.lang.ClassCastException: java.lang.String cannot be cast to java.lang.Integer
+11 ноя 2012 18:05:04,578 INFO  [main] Main     - DB connection inited
+11 ноя 2012 18:05:04,706 INFO  [main] Main     - User server started
+11 ноя 2012 18:05:09,652 INFO  [pool-2-thread-2] network.AuthenticationHandler     - :: auth passed
+11 ноя 2012 18:05:09,666 INFO  [Thread-3] objects.UserWorker     - :: accept command : 4, login, 5f4dcc3b5aa765d61d8327deb882cf99
+11 ноя 2012 18:05:09,829 ERROR [Thread-3] objects.UserWorker     - java.lang.ClassCastException: java.util.ArrayList cannot be cast to [Ljava.util.HashMap;
+11 ноя 2012 18:05:09,830 INFO  [Thread-3] objects.UserWorker     - :: accept command : 1
+11 ноя 2012 18:05:09,830 ERROR [Thread-3] objects.UserWorker     - java.lang.NullPointerException
+11 ноя 2012 18:05:27,341 INFO  [pool-2-thread-3] network.AuthenticationHandler     - :: auth passed
+11 ноя 2012 18:05:27,343 INFO  [Thread-4] objects.UserWorker     - :: accept command : 4, login14, 5f4dcc3b5aa765d61d8327deb882cf99
+11 ноя 2012 18:05:27,349 ERROR [Thread-4] objects.UserWorker     - java.lang.ClassCastException: java.util.ArrayList cannot be cast to [Ljava.util.HashMap;
+11 ноя 2012 18:05:27,350 INFO  [Thread-4] objects.UserWorker     - :: accept command : 1
+11 ноя 2012 18:05:27,351 ERROR [Thread-4] objects.UserWorker     - java.lang.NullPointerException
+11 ноя 2012 18:06:09,302 INFO  [main] Main     - DB connection inited
+11 ноя 2012 18:06:13,482 INFO  [main] Main     - DB connection inited
+11 ноя 2012 18:06:13,604 INFO  [main] Main     - User server started
+11 ноя 2012 18:06:19,502 INFO  [pool-2-thread-2] network.AuthenticationHandler     - :: auth passed
+11 ноя 2012 18:06:19,518 INFO  [Thread-3] objects.UserWorker     - :: accept command : 4, login15, 5f4dcc3b5aa765d61d8327deb882cf99
+11 ноя 2012 18:06:19,681 ERROR [Thread-3] objects.UserWorker     - java.lang.ClassCastException: java.util.ArrayList cannot be cast to [Ljava.util.HashMap;
+11 ноя 2012 18:06:19,682 INFO  [Thread-3] objects.UserWorker     - :: accept command : 1
+11 ноя 2012 18:06:19,682 ERROR [Thread-3] objects.UserWorker     - java.lang.NullPointerException
+11 ноя 2012 18:08:23,250 INFO  [main] Main     - DB connection inited
+11 ноя 2012 18:08:23,370 INFO  [main] Main     - User server started
+11 ноя 2012 18:08:27,596 INFO  [pool-2-thread-1] network.AuthenticationHandler     - :: auth passed
+11 ноя 2012 18:08:27,612 INFO  [Thread-2] objects.UserWorker     - :: accept command : 4, login16, 5f4dcc3b5aa765d61d8327deb882cf99
+11 ноя 2012 18:08:27,808 INFO  [Thread-2] objects.UserWorker     - :: accept command : 1
+11 ноя 2012 18:08:27,809 ERROR [Thread-2] objects.UserWorker     - java.lang.NullPointerException
+11 ноя 2012 18:09:25,203 INFO  [main] Main     - DB connection inited
+11 ноя 2012 18:09:25,326 INFO  [main] Main     - User server started
+11 ноя 2012 18:09:29,024 INFO  [pool-2-thread-2] network.AuthenticationHandler     - :: auth passed
+11 ноя 2012 18:09:29,039 INFO  [Thread-3] objects.UserWorker     - :: accept command : 4, login17, 5f4dcc3b5aa765d61d8327deb882cf99
+11 ноя 2012 18:09:29,230 INFO  [Thread-3] objects.UserWorker     - :: accept command : 1
+11 ноя 2012 18:09:29,232 ERROR [Thread-3] objects.UserWorker     - java.lang.NullPointerException
+11 ноя 2012 18:10:59,052 INFO  [main] Main     - DB connection inited
+11 ноя 2012 18:10:59,174 INFO  [main] Main     - User server started
+11 ноя 2012 18:11:03,842 INFO  [pool-2-thread-1] network.AuthenticationHandler     - :: auth passed
+11 ноя 2012 18:11:03,857 INFO  [Thread-2] objects.UserWorker     - :: accept command : 4, login18, 5f4dcc3b5aa765d61d8327deb882cf99
+11 ноя 2012 18:11:04,057 INFO  [Thread-2] objects.UserWorker     - :: accept command : 1
+11 ноя 2012 18:11:04,059 ERROR [Thread-2] objects.UserWorker     - java.lang.NullPointerException

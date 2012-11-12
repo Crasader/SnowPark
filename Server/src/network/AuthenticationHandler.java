@@ -2,7 +2,7 @@ package network;
 
 import errors.Errors;
 import db.DataBase;
-import helpers.CryptHelper;
+import utils.CryptUtil;
 import objects.UserState;
 import org.apache.log4j.Logger;
 import org.jboss.netty.channel.*;
@@ -75,7 +75,7 @@ public class AuthenticationHandler extends SimpleChannelHandler
 
         if(us == null) return false;
 
-        String hashedPass = CryptHelper.hashPass(pass, us.salt);
+        String hashedPass = CryptUtil.hashPass(pass, us.salt);
         if (us.password.contentEquals(hashedPass))
             return true;
         else

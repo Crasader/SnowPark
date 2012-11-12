@@ -1,4 +1,4 @@
-package helpers;
+package utils;
 
 import java.math.BigInteger;
 import java.nio.charset.Charset;
@@ -11,7 +11,7 @@ import java.util.Random;
  * Author: JuzTosS
  * Date: 02.11.12
  */
-public class CryptHelper
+public class CryptUtil
 {
     public static String getSalt(int saltLength) throws Exception
     {

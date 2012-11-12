@@ -1,19 +1,19 @@
 package objects;
 
-import errors.Errors;
+import config.CFG;
 import db.DataBase;
-import helpers.CryptHelper;
+import errors.Errors;
 import network.CMDList;
 import network.Command;
 import network.Response;
 import org.apache.log4j.Logger;
 import org.jboss.netty.channel.Channel;
 import org.jboss.netty.channel.ChannelHandler;
+import org.yaml.snakeyaml.Yaml;
+import utils.CryptUtil;
+import utils.Util;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Iterator;
-import java.util.LinkedList;
+import java.util.*;
 
 /**
  * Author: JuzTosS
@@ -148,13 +148,14 @@ public class UserWorker extends Thread
         int height = (Integer) cmdParams[6];
 
         Space sp = _userState.spaces.get(group);
-        if(sp == null){
+        if (sp == null)
+        {
             sp = new Space();
             _userState.spaces.put(group, sp);
         }
 
-        SpaceObj obj =  sp.objects.get(objectId);
-        if(obj != null) throw new Exception("Object already created!");
+        SpaceObj obj = sp.objects.get(objectId);
+        if (obj != null) throw new Exception("Object already created!");
 
         obj = new SpaceObj();
         obj.objectId = objectId;
@@ -183,12 +184,56 @@ public class UserWorker extends Thread
 
         _userState = new UserState();
         _userState.login = (String) cmdParams[0];
-        _userState.salt = CryptHelper.getSalt(4);
+        _userState.salt = CryptUtil.getSalt(4);
         System.out.println(cmdParams[1].toString());
-        _userState.password = CryptHelper.hashPass(cmdParams[1].toString(), _userState.salt);
+        _userState.password = CryptUtil.hashPass(cmdParams[1].toString(), _userState.salt);
 
-
+        _userState.spaces = getNewUserConfig();
         DataBase.ds().save(_userState);
+    }
+
+    private HashMap<Integer, Space> getNewUserConfig()
+    {
+        Yaml yaml = new Yaml();
+        String configString = Util.getLocalResource(CFG.LOCATION_CONFIG_NAME);
+        Map<String, ArrayList<HashMap<String, String>>> configObj = (Map<String, ArrayList<HashMap<String, String>>>) yaml.load(configString);
+        ArrayList<HashMap<String, String>> startLocation = configObj.get("playerStartLocation");
+
+        for (int i = 0; i < startLocation.size(); i++)
+        {
+            HashMap<String, String> fieldObjectConfig = startLocation.get(i);
+            System.out.println(fieldObjectConfig);
+
+            createDefinedObject(fieldObjectConfig);
+        }
+
+
+        HashMap<Integer, Space> userConfig = new HashMap<Integer, Space>();
+        return userConfig;
+    }
+
+    private SpaceObj createDefinedObject(HashMap<String, String> fieldObjectConfig)
+    {
+        SpaceObj object = new SpaceObj();
+
+        Set<String> params = fieldObjectConfig.keySet();
+        Iterator<String> paramsIt = params.iterator();
+        while (paramsIt.hasNext())
+        {
+            String key = paramsIt.next();
+            if (key == "id")
+            {
+                object.classId = Integer.getInteger(fieldObjectConfig.get("id"));
+            } else if (key == "x")
+            {
+                object.x = Integer.getInteger(fieldObjectConfig.get("x"));
+            } else if (key == "y")
+            {
+                object.x = Integer.getInteger(fieldObjectConfig.get("y"));
+            }
+
+        }
+        return object;
     }
 
 
