@@ -1,0 +1,7 @@
+.idea/*
+Client/.idea/*
+Client/out/*
+Server/.idea/*
+Server/logs/*
+Server/out/*
+Server/config/web.config

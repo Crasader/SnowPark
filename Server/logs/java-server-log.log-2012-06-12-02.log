@@ -1,9 +1,0 @@
-12 июн 2012 02:18:35,516 INFO  [pool-2-thread-2] network.PacketFrameDecoder     - decode
-12 июн 2012 02:18:35,530 INFO  [pool-2-thread-2] network.AuthenticationHandler     - auth failed
-12 июн 2012 02:18:35,531 INFO  [pool-2-thread-2] network.PacketFrameEncoder     - encoding
-12 июн 2012 02:21:27,168 INFO  [pool-2-thread-2] network.PacketFrameDecoder     - decode
-12 июн 2012 02:21:27,169 INFO  [pool-2-thread-2] network.AuthenticationHandler     - auth passed
-12 июн 2012 02:21:27,169 INFO  [pool-2-thread-2] network.PacketFrameEncoder     - encoding
-12 июн 2012 02:21:27,170 INFO  [pool-2-thread-2] network.PacketFrameDecoder     - decode
-12 июн 2012 02:21:27,170 INFO  [pool-2-thread-2] network.UserHandler     - User recieve message!
-12 июн 2012 02:21:27,174 ERROR [pool-2-thread-2] network.UserHandler     - [Ljava.lang.Object; cannot be cast to com.sun.xml.internal.ws.api.message.Packet
