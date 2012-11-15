@@ -21,6 +21,9 @@ public class Constants
 
     public static const STAGE_WIDTH:int = 800;
     public static const STAGE_HEIGHT:int = 600;
+    public static const TILE_SIZE:int = 20;
+    public static const TILE_HEIGHT:int = 10;
+    public static const MOUSEMAP_HEIGHT_MARGIN:int = 100;
 
     internal static var _config:Object;
 
@@ -28,6 +31,11 @@ public class Constants
     {
         if (!_config) Cc.error("Null CFG!");
         return _config;
+    }
+
+    public static function get MAX_FIELD_SIZE():int
+    {
+        return CFG.maxFieldSize;
     }
 
     public function Constants()

@@ -8,18 +8,14 @@
 package controllers
 {
 import as3isolib.display.IsoView;
-import as3isolib.geom.Pt;
 
 import basemvc.controller.CompositeController;
 
 import controllers.events.CMDList;
-import controllers.events.CommandEvent;
 import controllers.events.ResponseEvent;
 
 import flash.events.Event;
 import flash.events.MouseEvent;
-import flash.geom.Point;
-import flash.geom.Vector3D;
 
 import models.FieldModel;
 
@@ -39,7 +35,7 @@ public class FieldController extends CompositeController
     {
         _fieldModel = new FieldModel();
         _parentView = parentView;
-        _fieldView = new FieldView(_fieldModel);
+        _fieldView = new FieldView(_fieldModel, parentView);
         parentView.addScene(_fieldView);
 
         _fieldModel.addEventListener(Event.CHANGE, _fieldView.update);
@@ -67,21 +63,21 @@ public class FieldController extends CompositeController
 
     private function updateUserState(responseParam:Array):void
     {
-        reloadField(responseParam[0]);
+        reloadField(responseParam[0], responseParam[1]);
     }
 
-    private function reloadField(fieldObjects:Array):void
+    private function reloadField(fieldObjects:Array, heightMap:Array):void
     {
         _fieldModel.clear();
-        _fieldView.removeAllChildren();
+        _fieldModel.heightMap = heightMap;
 
         while (numChildren)
             remove(getChild(0));
 
         for each(var objInfo:Array in fieldObjects)
         {
-            var pos:IntPnt = new IntPnt(objInfo[2], objInfo[3]); // x, y
-            var block:BaseSpaceObjectController = new BaseSpaceObjectController(objInfo[0], objInfo[1]); // obj_id, class_id
+            var pos:IntPnt = new IntPnt(objInfo[1], objInfo[2]); // x, y
+            var block:BaseSpaceObjectController = new BaseSpaceObjectController(objInfo[0]); // class_id
             if (_fieldModel.placeObject(block.getModel(), pos))
             {
                 _fieldView.addChild(block.getView());
@@ -93,25 +89,24 @@ public class FieldController extends CompositeController
     private function onClick(e:MouseEvent):void
     {
 
-        var isoPnt:Pt = _parentView.localToIso(new Point(e.stageX, e.stageY));
-        var pos:IntPnt = new IntPnt(isoPnt.x / FieldView.CELL_SIZE, isoPnt.y / FieldView.CELL_SIZE);
-
-        var block:BaseSpaceObjectController = new BaseSpaceObjectController(12345, "0");
-        if (_fieldModel.placeObject(block.getModel(), pos))
-        {
-            _fieldView.addChild(block.getView());
-            add(block);
-        }
-
-        dispatchEvent(new CommandEvent(CMDList.CREATE_OBJECT_ON_SPACE,
-                [block.getModel()._objectId,
-                    block.getModel().classId,
-                    block.getModel()._group,
-                    pos.x,
-                    pos.y,
-                    block.getModel()._width,
-                    block.getModel()._length],
-                false, true));
+//        var isoPnt:Pt = _parentView.localToIso(new Point(e.stageX, e.stageY));
+//        var pos:IntPnt = new IntPnt(isoPnt.x / FieldView.CELL_SIZE, isoPnt.y / FieldView.CELL_SIZE);
+//
+//        var block:BaseSpaceObjectController = new BaseSpaceObjectController("0");
+//        if (_fieldModel.placeObject(block.getModel(), pos))
+//        {
+//            _fieldView.addChild(block.getView());
+//            add(block);
+//        }
+//
+//        dispatchEvent(new CommandEvent(CMDList.CREATE_OBJECT_ON_SPACE,
+//                [block.getModel().classId,
+//                    block.getModel()._group,
+//                    pos.x,
+//                    pos.y,
+//                    block.getModel()._width,
+//                    block.getModel()._length],
+//                false, true));
     }
 
     public function get fieldView():FieldView

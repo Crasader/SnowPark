@@ -5,6 +5,7 @@ import com.google.code.morphia.annotations.Entity;
 import com.google.code.morphia.annotations.Id;
 import org.bson.types.ObjectId;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 
 /**
@@ -27,4 +28,6 @@ public class UserState
     @Embedded
     public HashMap<Integer, Space> spaces = new HashMap<Integer, Space>();
 
+    @Embedded
+    public ArrayList<ArrayList<Integer>> heightMap = new ArrayList<ArrayList<Integer>>();
 }

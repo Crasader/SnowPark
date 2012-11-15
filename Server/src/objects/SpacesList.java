@@ -6,6 +6,5 @@ package objects;
  */
 public class SpacesList
 {
-    public static final int FIELD = 0;
-    public static final int USER_INFO = 1;
+    public static final int MAIN_FIELD = 0;
 }

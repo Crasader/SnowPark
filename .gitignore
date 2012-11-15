@@ -1,9 +1,12 @@
 .idea/*
 Client/.idea/*
 Client/out/*
+out/*
 Server/.idea/*
 Server/logs/*
 Server/out/*
 Server/config/web.config
 Client/assets/bindable.swf
 Client/assets/bindable.swc
+Client/Client.iml
+Server/Server.iml

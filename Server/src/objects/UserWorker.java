@@ -1,6 +1,6 @@
 package objects;
 
-import config.CFG;
+import config.ConfigReader;
 import db.DataBase;
 import errors.Errors;
 import network.CMDList;
@@ -9,9 +9,7 @@ import network.Response;
 import org.apache.log4j.Logger;
 import org.jboss.netty.channel.Channel;
 import org.jboss.netty.channel.ChannelHandler;
-import org.yaml.snakeyaml.Yaml;
 import utils.CryptUtil;
-import utils.Util;
 
 import java.util.*;
 
@@ -102,17 +100,23 @@ public class UserWorker extends Thread
     {
         Object[] cmdParams = cmd.params;
 
-        Space field = _userState.spaces.get(SpacesList.FIELD);
-
         Response resp = new Response();
         resp.responseId = cmd.commandId;
-        Collection<SpaceObj> objects = field.objects.values();
+
+        Space field = _userState.spaces.get(SpacesList.MAIN_FIELD);
+        Collection<SpaceObj> objects = field.objects;
         Iterator<SpaceObj> objIt = objects.iterator();
 
         ArrayList<Object[]> serializedObjs = new ArrayList<Object[]>();
         while (objIt.hasNext())
             serializedObjs.add(objIt.next().getSerialized());
-        resp.params = new Object[]{serializedObjs.toArray()};
+
+        ArrayList<Object[]> serializedHeightMap = new ArrayList<Object[]>();
+        Iterator<ArrayList<Integer>> heightIt = _userState.heightMap.iterator();
+        while (heightIt.hasNext())
+            serializedHeightMap.add(heightIt.next().toArray());
+
+        resp.params = new Object[]{serializedObjs.toArray(), serializedHeightMap.toArray()};
         _channel.write(resp);
 
         logger.info("return field for user: " + _userState.login);
@@ -139,33 +143,28 @@ public class UserWorker extends Thread
     private void createObject(Command cmd) throws Exception
     {
         Object[] cmdParams = cmd.params;
-        int objectId = (Integer) cmdParams[0];
-        int classId = (Integer) cmdParams[1];
-        int group = (Integer) cmdParams[2];
-        int x = (Integer) cmdParams[3];
-        int y = (Integer) cmdParams[4];
-        int width = (Integer) cmdParams[5];
-        int height = (Integer) cmdParams[6];
+        String classId = (String) cmdParams[0];
+        int group = (Integer) cmdParams[1];
+        int x = (Integer) cmdParams[2];
+        int y = (Integer) cmdParams[3];
+        int width = (Integer) cmdParams[4];
+        int height = (Integer) cmdParams[5];
 
-        Space sp = _userState.spaces.get(group);
+        Space sp = (Space) _userState.spaces.get(group);
         if (sp == null)
         {
             sp = new Space();
             _userState.spaces.put(group, sp);
         }
 
-        SpaceObj obj = sp.objects.get(objectId);
-        if (obj != null) throw new Exception("Object already created!");
-
-        obj = new SpaceObj();
-        obj.objectId = objectId;
+        SpaceObj obj = new SpaceObj();
         obj.classId = classId;
         obj.x = x;
         obj.y = y;
         obj.width = width;
         obj.height = height;
 
-        sp.objects.put(objectId, obj);
+        sp.objects.add(obj);
 
         DataBase.ds().save(_userState);//TODO: update
     }
@@ -185,30 +184,35 @@ public class UserWorker extends Thread
         _userState = new UserState();
         _userState.login = (String) cmdParams[0];
         _userState.salt = CryptUtil.getSalt(4);
-        System.out.println(cmdParams[1].toString());
         _userState.password = CryptUtil.hashPass(cmdParams[1].toString(), _userState.salt);
 
-        _userState.spaces = getNewUserConfig();
+        _userState.spaces = getNewUserSpaces();
+        _userState.heightMap = getNewUserHeightMap();
+
         DataBase.ds().save(_userState);
     }
 
-    private HashMap<Integer, Space> getNewUserConfig()
+    private ArrayList<ArrayList<Integer>> getNewUserHeightMap()
     {
-        Yaml yaml = new Yaml();
-        String configString = Util.getLocalResource(CFG.LOCATION_CONFIG_NAME);
-        Map<String, ArrayList<HashMap<String, String>>> configObj = (Map<String, ArrayList<HashMap<String, String>>>) yaml.load(configString);
-        ArrayList<HashMap<String, String>> startLocation = configObj.get("playerStartLocation");
+        return (ArrayList<ArrayList<Integer>>) ConfigReader.cfg().get("startLocationHeightMap");
+    }
 
+    private HashMap<Integer, Space> getNewUserSpaces()
+    {
+        ArrayList<HashMap<String, String>> startLocation = (ArrayList<HashMap<String, String>>) ConfigReader.cfg().get("playerStartLocation");
+
+        Space field = new Space();
         for (int i = 0; i < startLocation.size(); i++)
         {
             HashMap<String, String> fieldObjectConfig = startLocation.get(i);
-            System.out.println(fieldObjectConfig);
 
-            createDefinedObject(fieldObjectConfig);
+            SpaceObj obj = createDefinedObject(fieldObjectConfig);
+            field.objects.add(obj);
         }
 
-
         HashMap<Integer, Space> userConfig = new HashMap<Integer, Space>();
+        userConfig.put(SpacesList.MAIN_FIELD, field);
+
         return userConfig;
     }
 
@@ -223,7 +227,7 @@ public class UserWorker extends Thread
             String key = paramsIt.next();
             if (key == "id")
             {
-                object.classId = Integer.getInteger(fieldObjectConfig.get("id"));
+                object.classId = fieldObjectConfig.get("id");
             } else if (key == "x")
             {
                 object.x = Integer.getInteger(fieldObjectConfig.get("x"));

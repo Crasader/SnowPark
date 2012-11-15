@@ -1,3 +1,5 @@
+maxFieldSize: 50
+
 1: &trampoline
   shop:
     priceRuby: 100

@@ -31,15 +31,11 @@ public class BaseSpaceObjectModel implements IBaseSpaceObjectModel
     [Bindable]
     public var _group:int = 0;
 
-    [Bindable]
-    public var _objectId:int = 0;
-
     private var _config:Object;
     private var _classId:String;
 
-    public function BaseSpaceObjectModel(objectId:int, classId:String, config:Object)
+    public function BaseSpaceObjectModel(classId:String, config:Object)
     {
-        _objectId = objectId;
         _classId = classId;
         _config = config;
 

@@ -14,9 +14,10 @@ import park.BaseSpaceObjectModel;
 
 import utils.IntPnt;
 
-public class FieldModel extends EventDispatcher implements IBindableModel
+public class FieldModel extends EventDispatcher implements IFieldModel
 {
     private var _field:SnowParkField;
+    private var _heightMap:Array;
     private var _allObjects:Vector.<BaseSpaceObjectModel> = new Vector.<BaseSpaceObjectModel>();
 
     public function FieldModel()
@@ -87,6 +88,25 @@ public class FieldModel extends EventDispatcher implements IBindableModel
     public function get allObjects():Vector.<BaseSpaceObjectModel>
     {
         return _allObjects;
+    }
+
+    public function setHeight(x:int, y:int, height:int):void
+    {
+        _heightMap[x][y] = height;
+    }
+
+    public function set heightMap(value:Array):void
+    {
+        _heightMap = value;
+    }
+
+    public function getHeight(x:int, y:int):int
+    {
+        if (!_heightMap) return 0;
+        if (!_heightMap[x]) return 0;
+        if (!_heightMap[x][y]) return 0;
+
+        return _heightMap[x][y];
     }
 }
 }

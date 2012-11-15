@@ -19,8 +19,6 @@ import mx.binding.utils.BindingUtils;
 
 import net.loaders.MovieLoader;
 
-import views.FieldView;
-
 public class BaseSpaceObjectView extends IsoSprite
 {
     protected var _model:IBaseSpaceObjectModel;
@@ -59,17 +57,17 @@ public class BaseSpaceObjectView extends IsoSprite
 
     private function updateYPos(value:int):void
     {
-        this.y = FieldView.CELL_SIZE * value;
+        this.y = Constants.TILE_SIZE * value;
     }
 
     private function updateZPos(value:Number):void
     {
-        this.z = FieldView.CELL_SIZE * value;
+        this.z = Constants.TILE_SIZE * value;
     }
 
     private function updateXPos(value:int):void
     {
-        this.x = FieldView.CELL_SIZE * value;
+        this.x = Constants.TILE_SIZE * value;
     }
 }
 }

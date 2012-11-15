@@ -23,15 +23,18 @@ public class UserController extends CompositeController
 
     private var _userView:UserView;
     private var _userModel:UserModel;
+    private var _parentView:DisplayObjectContainer;
 
     public function UserController(parentView:DisplayObjectContainer)
     {
-        var cameraController:CameraController = new CameraController(parentView);
+        _parentView = parentView;
+        var cameraController:CameraController = new CameraController(_parentView);
         add(cameraController);
 
         _userModel = new UserModel();
         _userView = new UserView(_userModel);
-        parentView.addChild(_userView);
+        _parentView.addChild(_userView);
+
         _userView.addEventListener(UserViewEvent.AUTH, onAuth);
         _userView.addEventListener(UserViewEvent.CREATE_NEW_USER, onCreateNew);
 

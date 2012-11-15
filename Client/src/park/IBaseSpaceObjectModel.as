@@ -20,8 +20,6 @@ public interface IBaseSpaceObjectModel
 
     function get classId():String;
 
-    function get _objectId():int;
-
     function get config():Object;
 
     function get cfgView():Object;
