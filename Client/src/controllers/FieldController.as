@@ -12,6 +12,7 @@ import as3isolib.display.IsoView;
 import basemvc.controller.CompositeController;
 
 import controllers.events.CMDList;
+import controllers.events.FieldEvent;
 import controllers.events.ResponseEvent;
 
 import flash.events.Event;
@@ -50,7 +51,7 @@ public class FieldController extends CompositeController
     private function init(event:Event = null):void
     {
         core.addEventListener(ResponseEvent.SNOW_RESPONSE, onResponse);
-        _parentView.stage.addEventListener(MouseEvent.CLICK, onClick);
+        _fieldView.addEventListener(FieldEvent.MOUSE_CLICK, onFieldClick);
     }
 
     private function onResponse(e:ResponseEvent):void
@@ -86,8 +87,16 @@ public class FieldController extends CompositeController
         }
     }
 
-    private function onClick(e:MouseEvent):void
+    private function onFieldClick(e:FieldEvent):void
     {
+        var currentPos:int = _fieldModel.getHeight(e.pos.x, e.pos.y);
+        var newPos:int = currentPos;
+        if ((e.targetEvent as MouseEvent).ctrlKey)
+            newPos--;
+        else
+            newPos++;
+
+        _fieldModel.setHeight(e.pos.x, e.pos.y, newPos);
 
 //        var isoPnt:Pt = _parentView.localToIso(new Point(e.stageX, e.stageY));
 //        var pos:IntPnt = new IntPnt(isoPnt.x / FieldView.CELL_SIZE, isoPnt.y / FieldView.CELL_SIZE);

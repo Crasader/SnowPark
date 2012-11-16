@@ -7,6 +7,8 @@
  */
 package models
 {
+import controllers.events.FieldEvent;
+
 import flash.events.Event;
 import flash.events.EventDispatcher;
 
@@ -92,7 +94,26 @@ public class FieldModel extends EventDispatcher implements IFieldModel
 
     public function setHeight(x:int, y:int, height:int):void
     {
+        if (!isHeightValid(x, y, height)) return;
+
         _heightMap[x][y] = height;
+        dispatchEvent(new FieldEvent(FieldEvent.HEIGHTMAP_CHANGED, new IntPnt(x, y)));
+    }
+
+    private function isHeightValid(x:int, y:int, height:int):Boolean
+    {
+        for (var i:int = -1; i < 2; i++)
+        {
+            for (var j:int = -1; j < 2; j++)
+            {
+                if (i == 0 && j == 0) continue;
+                var diff:int = Math.abs(_heightMap[x + i][y + j] - height);
+                if (diff > 1)
+                    return false;
+            }
+        }
+
+        return true;
     }
 
     public function set heightMap(value:Array):void
