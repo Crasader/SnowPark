@@ -78,7 +78,7 @@ public class FieldView extends IsoScene
         var mouseMapSprite:Sprite = new Sprite();
         var x:int = event.pos.x;
         var y:int = event.pos.y;
-        trace(x, y);
+
         for (var i:int = -1; i < 1; i++)
         {
             for (var j:int = -1; j < 1; j++)

@@ -10,6 +10,8 @@ import org.jboss.netty.channel.ChannelStateEvent;
 import org.jboss.netty.handler.codec.replay.ReplayingDecoder;
 import org.jboss.netty.handler.codec.replay.VoidEnum;
 
+import java.util.ArrayList;
+
 /**
  * Author: JuzTosS
  * Date: 11.06.12
@@ -36,11 +38,19 @@ public class PacketFrameDecoder extends ReplayingDecoder<VoidEnum>
     {
         ChannelBuffer cb = buffer.readBytes(buffer.writerIndex());
         AMF3Deserializer d = new AMF3Deserializer(new ByteSequence(cb.array()));
-        Object[] o = (Object[]) d.readObject();
-        Command command = new Command();
-        command.commandId = (Integer) o[0];
-        command.params = (Object[]) o[1];
-        return command;
+        ArrayList<Command> arraySeq = new ArrayList<Command>();
+
+        while (d.available() > 0)
+        {
+            Object[] o = (Object[]) d.readObject();
+            Command command = new Command();
+            command.commandId = (Integer) o[0];
+            command.params = (Object[]) o[1];
+
+            arraySeq.add(command);
+        }
+
+        return arraySeq;
     }
 }
 

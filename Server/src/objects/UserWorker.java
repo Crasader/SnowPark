@@ -86,6 +86,9 @@ public class UserWorker extends Thread
                 case CMDList.CREATE_OBJECT_ON_FIELD:
                     createObject(cmd);
                     break;
+                case CMDList.CHANGE_HEIGHT:
+                    changeHeight(cmd);
+                    break;
                 default:
                     logger.error("Unknown command type");
             }
@@ -94,6 +97,14 @@ public class UserWorker extends Thread
             sendErrorResponce(cmd.commandId);
             Errors.logError(logger, exc);
         }
+    }
+
+    private void changeHeight(Command cmd)
+    {
+        Object[] cmdParams = cmd.params;
+        _userState.heightMap.get((Integer) cmdParams[0]).set((Integer) cmdParams[1], (Integer) cmdParams[2]);
+
+        DataBase.ds().save(_userState);//TODO: update
     }
 
     private void returnUserState(Command cmd)

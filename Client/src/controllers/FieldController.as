@@ -12,6 +12,7 @@ import as3isolib.display.IsoView;
 import basemvc.controller.CompositeController;
 
 import controllers.events.CMDList;
+import controllers.events.CommandEvent;
 import controllers.events.FieldEvent;
 import controllers.events.ResponseEvent;
 
@@ -89,15 +90,21 @@ public class FieldController extends CompositeController
 
     private function onFieldClick(e:FieldEvent):void
     {
-        var currentPos:int = _fieldModel.getHeight(e.pos.x, e.pos.y);
-        var newPos:int = currentPos;
+        var currentHeight:int = _fieldModel.getHeight(e.pos.x, e.pos.y);
+        var newHeight:int = currentHeight;
         if ((e.targetEvent as MouseEvent).ctrlKey)
-            newPos--;
+            newHeight--;
         else
-            newPos++;
+            newHeight++;
 
-        _fieldModel.setHeight(e.pos.x, e.pos.y, newPos);
-
+        if (_fieldModel.setHeight(e.pos.x, e.pos.y, newHeight))
+        {
+            dispatchEvent(new CommandEvent(CMDList.CHANGE_HEIGHT,
+                    [e.pos.x,
+                        e.pos.y,
+                        newHeight],
+                    false, true));
+        }
 //        var isoPnt:Pt = _parentView.localToIso(new Point(e.stageX, e.stageY));
 //        var pos:IntPnt = new IntPnt(isoPnt.x / FieldView.CELL_SIZE, isoPnt.y / FieldView.CELL_SIZE);
 //

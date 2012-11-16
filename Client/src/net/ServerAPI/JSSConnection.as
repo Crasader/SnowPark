@@ -8,7 +8,6 @@ import flash.events.IEventDispatcher;
 import flash.events.IOErrorEvent;
 import flash.events.ProgressEvent;
 import flash.events.SecurityErrorEvent;
-import flash.net.ObjectEncoding;
 import flash.net.Socket;
 
 public class JSSConnection
@@ -113,7 +112,7 @@ public class JSSConnection
         {
             try
             {
-                _socket.objectEncoding = ObjectEncoding.AMF3;
+//                _socket.objectEncoding = ObjectEncoding.AMF3;
                 _socket.writeObject(obj);
                 _socket.flush();
 

@@ -1,11 +1,14 @@
 package network;
 
-import errors.Errors;
 import db.DataBase;
-import utils.CryptUtil;
+import errors.Errors;
 import objects.UserState;
 import org.apache.log4j.Logger;
 import org.jboss.netty.channel.*;
+import utils.CryptUtil;
+
+import java.util.ArrayList;
+import java.util.Iterator;
 
 /**
  * Created with IntelliJ IDEA.
@@ -46,18 +49,23 @@ public class AuthenticationHandler extends SimpleChannelHandler
     {
         try
         {
-            Command cmd = (Command) e.getMessage();
-
-            switch (cmd.commandId)
+            ArrayList<Command> cmdSeq = (ArrayList<Command>) e.getMessage();
+            Iterator<Command> itCmd = cmdSeq.iterator();
+            while (itCmd.hasNext())
             {
-                case CMDList.AUTH:
-                    return auth(cmd);
-                case CMDList.CREATE_USER:
-                    return true;
-                default:
-                    logger.info("Wrong auth command = " + cmd.commandId);
-                    return false;
+                Command cmd = itCmd.next();
+                switch (cmd.commandId)
+                {
+                    case CMDList.AUTH:
+                        return auth(cmd);
+                    case CMDList.CREATE_USER:
+                        return true;
+                    default:
+                        logger.info("Wrong auth command = " + cmd.commandId);
+                        return false;
+                }
             }
+            return false;
 
         } catch (Exception exc)
         {
@@ -73,7 +81,7 @@ public class AuthenticationHandler extends SimpleChannelHandler
 
         UserState us = DataBase.ds().find(UserState.class, "login", login).get();
 
-        if(us == null) return false;
+        if (us == null) return false;
 
         String hashedPass = CryptUtil.hashPass(pass, us.salt);
         if (us.password.contentEquals(hashedPass))

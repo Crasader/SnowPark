@@ -92,12 +92,13 @@ public class FieldModel extends EventDispatcher implements IFieldModel
         return _allObjects;
     }
 
-    public function setHeight(x:int, y:int, height:int):void
+    public function setHeight(x:int, y:int, height:int):Boolean
     {
-        if (!isHeightValid(x, y, height)) return;
+        if (!isHeightValid(x, y, height)) return false;
 
         _heightMap[x][y] = height;
         dispatchEvent(new FieldEvent(FieldEvent.HEIGHTMAP_CHANGED, new IntPnt(x, y)));
+        return true;
     }
 
     private function isHeightValid(x:int, y:int, height:int):Boolean
