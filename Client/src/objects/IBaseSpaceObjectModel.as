@@ -2,7 +2,7 @@
  * Author: JuzTosS
  * Date: 09.11.12
  */
-package park
+package objects
 {
 public interface IBaseSpaceObjectModel
 {

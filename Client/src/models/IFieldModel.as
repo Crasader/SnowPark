@@ -4,7 +4,7 @@
  */
 package models
 {
-import park.BaseSpaceObjectModel;
+import objects.BaseSpaceObjectModel;
 
 public interface IFieldModel extends IBindableModel
 {

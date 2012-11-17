@@ -7,12 +7,13 @@
  */
 package models
 {
+import controllers.events.CoreEvent;
 import controllers.events.FieldEvent;
 
 import flash.events.Event;
 import flash.events.EventDispatcher;
 
-import park.BaseSpaceObjectModel;
+import objects.BaseSpaceObjectModel;
 
 import utils.IntPnt;
 
@@ -131,6 +132,24 @@ public class FieldModel extends EventDispatcher implements IFieldModel
         if (!_heightMap[x][y]) return 0;
 
         return _heightMap[x][y];
+    }
+
+    public function tick(event:CoreEvent):void
+    {
+        var dt:Number = Number(event.data);
+        for each(var obj:BaseSpaceObjectModel in allObjects)
+        {
+            obj.tick(dt);
+        }
+    }
+
+    public function onFrame(event:CoreEvent):void
+    {
+        var dt:Number = Number(event.data);
+        for each(var obj:BaseSpaceObjectModel in allObjects)
+        {
+            obj.onFrame(dt);
+        }
     }
 }
 }

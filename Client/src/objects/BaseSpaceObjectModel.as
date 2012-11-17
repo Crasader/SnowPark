@@ -5,9 +5,12 @@
  * Time: 21:17
  * To change this template use File | Settings | File Templates.
  */
-package park
+package objects
 {
 import com.junkbyte.console.Cc;
+
+import objects.components.IComponent;
+import objects.components.riderComponent;
 
 public class BaseSpaceObjectModel implements IBaseSpaceObjectModel
 {
@@ -30,11 +33,42 @@ public class BaseSpaceObjectModel implements IBaseSpaceObjectModel
     private var _config:Object;
     private var _classId:String;
 
+    private static const REGISTERED_COMPONENTS:Array = [riderComponent];
+    private static var _componentsHash:Object = {};
+
+    private var _components:Array = [];
+
+    public static function registerComponets():void
+    {
+        for each(var componentClass:Class in REGISTERED_COMPONENTS)
+            _componentsHash[componentClass.name] = componentClass;
+    }
+
     public function BaseSpaceObjectModel(classId:String, config:Object)
     {
         _classId = classId;
         _config = config;
 
+        loadComponents();
+
+    }
+
+    private function loadComponents():void
+    {
+        if (!cfgComponents) return;
+        for each(var cCfg:Object in cfgComponents)
+        {
+            var cClass:Class = _componentsHash[cCfg.name];
+            if (!cClass)
+            {
+                Cc.error("component not found, name: " + cCfg.name + " classId: " + _classId);
+                continue;
+            }
+
+            var component:IComponent = new cClass();
+            component.loadConfig(cCfg);
+            _components.push(component);
+        }
     }
 
     public function get classId():String
@@ -75,6 +109,23 @@ public class BaseSpaceObjectModel implements IBaseSpaceObjectModel
     {
         if (!config.descriptions) Cc.error("Null descriptions cfg in object with id " + classId);
         return config.descriptions;
+    }
+
+    private function get cfgComponents():Object
+    {
+        return cfgBehavior.components;
+    }
+
+    public function tick(dt:Number):void
+    {
+        for each(var c:IComponent in _components)
+            c.tick(dt);
+    }
+
+    public function onFrame(dt:Number):void
+    {
+        for each(var c:IComponent in _components)
+            c.onFrame(dt);
     }
 }
 }

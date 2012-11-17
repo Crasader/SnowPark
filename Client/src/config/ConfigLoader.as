@@ -10,7 +10,7 @@ import br.com.stimuli.loading.BulkLoader;
 
 import com.junkbyte.console.Cc;
 
-import controllers.events.LocalEvent;
+import controllers.events.CoreEvent;
 
 import flash.events.Event;
 import flash.events.SecurityErrorEvent;
@@ -37,7 +37,7 @@ public class ConfigLoader extends CompositeController
         if (event is SecurityErrorEvent) type = "Security";
         Cc.log("error load configs - " + type + "Error");
 
-        dispatchEvent(new LocalEvent(LocalEvent.CONFIG_LOAD_ERROR, true));
+        dispatchEvent(new CoreEvent(CoreEvent.CONFIG_LOAD_ERROR, true));
     }
 
     private function onAllLoaded(event:Event):void
@@ -46,7 +46,7 @@ public class ConfigLoader extends CompositeController
         {
             var objects:String = _loader.getText(OBJ_IDENTIFIER);
             Constants._config = YAML.decode(objects);
-            dispatchEvent(new LocalEvent(LocalEvent.CONFIG_LOADED, true));
+            dispatchEvent(new CoreEvent(CoreEvent.CONFIG_LOADED, true));
         } catch (e:*)
         {
             Cc.log("error parce configs");

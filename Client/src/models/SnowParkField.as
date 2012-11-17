@@ -7,7 +7,7 @@
  */
 package models
 {
-import park.BaseSpaceObjectModel;
+import objects.BaseSpaceObjectModel;
 
 import utils.ArrayHelper;
 import utils.IntPnt;

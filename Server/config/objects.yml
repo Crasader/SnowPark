@@ -83,3 +83,25 @@ maxFieldSize: 50
           name: "Tree"
           desc: "Will like for beginners"
 
+1000: &rider
+  shop:
+    priceRuby: 100
+    priceGold: 100
+  behavior:
+    components:
+      - name: rider
+        param1: 10
+        param2: 11
+    width: 1
+    length: 2
+    rotated: true
+  view:
+    field: "rider.swf"
+    shop: "otherFile.swf"
+  descriptions:
+        ru:
+          name: "Начинающий райдер"
+          desc: "Понравится начинающим"
+        en:
+          name: "Beginner rider"
+          desc: "Will like for beginners"

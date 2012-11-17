@@ -5,7 +5,7 @@
  * Time: 0:45
  * To change this template use File | Settings | File Templates.
  */
-package park
+package objects
 {
 import basemvc.controller.CompositeController;
 

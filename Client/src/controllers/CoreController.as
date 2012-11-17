@@ -12,12 +12,16 @@ import basemvc.controller.CompositeController;
 import com.junkbyte.console.Cc;
 
 import config.ConfigLoader;
+import config.Constants;
 
 import controllers.events.CommandEvent;
-import controllers.events.LocalEvent;
+import controllers.events.CoreEvent;
 import controllers.events.ResponseEvent;
 
 import flash.display.DisplayObjectContainer;
+import flash.events.Event;
+import flash.events.TimerEvent;
+import flash.utils.Timer;
 
 import mx.binding.utils.BindingUtils;
 
@@ -34,6 +38,10 @@ public class CoreController extends CompositeController
     private var _userController:UserController;
     private var _configLoader:ConfigLoader;
 
+    private var _worldTimer:Timer;
+    private var _lastTickTime:Number;
+    private var _lastFrameTime:Number;
+
     public function CoreController(node:DisplayObjectContainer)
     {
         super();
@@ -43,17 +51,17 @@ public class CoreController extends CompositeController
         _configLoader = new ConfigLoader();
         add(_configLoader);
 
-        _configLoader.addEventListener(LocalEvent.CONFIG_LOADED, onConfigLoaded);
-        _configLoader.addEventListener(LocalEvent.CONFIG_LOAD_ERROR, onConfigLoadError);
+        _configLoader.addEventListener(CoreEvent.CONFIG_LOADED, onConfigLoaded);
+        _configLoader.addEventListener(CoreEvent.CONFIG_LOAD_ERROR, onConfigLoadError);
         _configLoader.loadConfigs();
     }
 
-    private function onConfigLoadError(event:LocalEvent):void
+    private function onConfigLoadError(event:CoreEvent):void
     {
         Cc.log("Retry laod configs...");
     }
 
-    private function onConfigLoaded(event:LocalEvent):void
+    private function onConfigLoaded(event:CoreEvent):void
     {
         Cc.log("Configs loaded!");
         _userController = new UserController(_node);
@@ -62,6 +70,45 @@ public class CoreController extends CompositeController
         BindingUtils.bindSetter(onAuth, _userController.getModel(), "_authPassed");
         addEventListener(CommandEvent.SNOW_COMMAND, onSendCommand);
         ServerConnection.inst.addEventListener(ServerConnectionEvent.REQUEST_RECEIVED, onReceiveRequest);
+
+        startWorldTimer();
+        _lastFrameTime = new Date().time;
+        _node.stage.addEventListener(Event.ENTER_FRAME, onEnterFrame);
+    }
+
+    private function onEnterFrame(event:Event):void
+    {
+        var now:Number = new Date().time;
+        var dt:Number = now - _lastFrameTime;
+        _lastFrameTime = now;
+
+        var e:CoreEvent = new CoreEvent(CoreEvent.ENTER_FRAME);
+        e.data = dt;
+        dispatchEvent(e);
+    }
+
+    private function startWorldTimer():void
+    {
+        if (_worldTimer)
+        {
+            _worldTimer.removeEventListener(TimerEvent.TIMER, onTick);
+            _worldTimer.stop();
+        }
+
+        _lastTickTime = new Date().time;
+        _worldTimer = new Timer(Constants.WORLD_TIMER_INTERVAL);
+        _worldTimer.addEventListener(TimerEvent.TIMER, onTick);
+        _worldTimer.start();
+    }
+
+    private function onTick(event:TimerEvent):void
+    {
+        var now:Number = new Date().time;
+        var dt:Number = now - _lastTickTime;
+        _lastTickTime = now;
+        var e:CoreEvent = new CoreEvent(CoreEvent.WORLD_TICK);
+        e.data = dt;
+        dispatchEvent(e);
     }
 
     private function onAuth(passed:Boolean):void

@@ -5,7 +5,7 @@
  * Time: 21:14
  * To change this template use File | Settings | File Templates.
  */
-package park
+package objects
 {
 import as3isolib.display.IsoSprite;
 
