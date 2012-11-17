@@ -2,6 +2,8 @@ package network;
 
 import db.DataBase;
 import errors.Errors;
+import network.spec.AUTH;
+import network.spec.CREATEUSER;
 import objects.UserState;
 import org.apache.log4j.Logger;
 import org.jboss.netty.channel.*;
@@ -28,7 +30,7 @@ public class AuthenticationHandler extends SimpleChannelHandler
     public void messageReceived(ChannelHandlerContext ctx, MessageEvent e) throws Exception
     {
         Response response = new Response();
-        response.responseId = CMDList.AUTH;
+        response.responseId = AUTH.ID;
 
         if (processCmd(e))
         {
@@ -56,9 +58,9 @@ public class AuthenticationHandler extends SimpleChannelHandler
                 Command cmd = itCmd.next();
                 switch (cmd.commandId)
                 {
-                    case CMDList.AUTH:
+                    case AUTH.ID:
                         return auth(cmd);
-                    case CMDList.CREATE_USER:
+                    case CREATEUSER.ID:
                         return true;
                     default:
                         logger.info("Wrong auth command = " + cmd.commandId);
@@ -76,8 +78,8 @@ public class AuthenticationHandler extends SimpleChannelHandler
 
     private boolean auth(Command cmd)
     {
-        String login = (String) cmd.params[0];
-        String pass = (String) cmd.params[1];
+        String login = (String) cmd.params[AUTH.LOGIN];
+        String pass = (String) cmd.params[AUTH.PASSWORD];
 
         UserState us = DataBase.ds().find(UserState.class, "login", login).get();
 

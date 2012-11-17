@@ -23,14 +23,9 @@ public class SpaceObj
     @Embedded
     String classId = "0";
 
-    @Embedded
-    int width;
-
-    @Embedded
-    int height;
 
     public Object[] getSerialized()
     {
-        return new Object[]{classId, x, y, width, height};
+        return new Object[]{classId, x, y};
     }
 }

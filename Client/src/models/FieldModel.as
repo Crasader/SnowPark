@@ -36,6 +36,7 @@ public class FieldModel extends EventDispatcher implements IFieldModel
     {
         objModel._x = pos.x;
         objModel._y = pos.y;
+        objModel._z = _heightMap[pos.x][pos.y];
 
         if (!isPlaceFree(objModel))
             return false;
@@ -43,7 +44,7 @@ public class FieldModel extends EventDispatcher implements IFieldModel
         fillFieldByObject(objModel);
         _allObjects.push(objModel);
 
-        dispatchEvent(new Event(Event.CHANGE));
+        dispatchEvent(new FieldEvent(FieldEvent.OBJECT_ADDED, pos));
         return true;
     }
 
@@ -120,6 +121,7 @@ public class FieldModel extends EventDispatcher implements IFieldModel
     public function set heightMap(value:Array):void
     {
         _heightMap = value;
+        dispatchEvent(new Event(Event.CHANGE));
     }
 
     public function getHeight(x:int, y:int):int

@@ -63,3 +63,23 @@ maxFieldSize: 50
           name: "Simple rail"
           desc: "Will like for beginners"
 
+4: &tree
+  shop:
+    priceRuby: 100
+    priceGold: 100
+  behavior:
+    type: rail
+    width: 1
+    length: 2
+    rotated: true
+  view:
+    field: "tree.swf"
+    shop: "otherFile.swf"
+  descriptions:
+        ru:
+          name: "Дерево"
+          desc: "Понравится начинающим"
+        en:
+          name: "Tree"
+          desc: "Will like for beginners"
+

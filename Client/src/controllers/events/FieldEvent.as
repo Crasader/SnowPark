@@ -13,6 +13,7 @@ public class FieldEvent extends Event
     public static const MOUSE_CLICK:String = "SnowFieldMouseClick";
     public static const MOUSE_MOVE:String = "SnowFieldMouseMove";
     public static const HEIGHTMAP_CHANGED:String = "SnowHeightMapChanged";
+    public static const OBJECT_ADDED:String = "SnowObjectAdded";
 
     private var _targetEvent:Event;
     private var _pos:IntPnt;

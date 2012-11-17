@@ -11,15 +11,16 @@ import as3isolib.display.IsoView;
 
 import basemvc.controller.CompositeController;
 
-import controllers.events.CMDList;
 import controllers.events.CommandEvent;
 import controllers.events.FieldEvent;
 import controllers.events.ResponseEvent;
 
 import flash.events.Event;
-import flash.events.MouseEvent;
 
 import models.FieldModel;
+
+import net.spec.CREATEOBJECT;
+import net.spec.GETUSERSTATE;
 
 import park.BaseSpaceObjectController;
 
@@ -57,7 +58,7 @@ public class FieldController extends CompositeController
 
     private function onResponse(e:ResponseEvent):void
     {
-        if (e.commandId == CMDList.GET_USER_STATE)
+        if (e.commandId == GETUSERSTATE.ID)
         {
             updateUserState(e.responseParams);
         }
@@ -65,7 +66,7 @@ public class FieldController extends CompositeController
 
     private function updateUserState(responseParam:Array):void
     {
-        reloadField(responseParam[0], responseParam[1]);
+        reloadField(responseParam[GETUSERSTATE.FIELD_OBJS], responseParam[GETUSERSTATE.HEIGHT_MAP]);
     }
 
     private function reloadField(fieldObjects:Array, heightMap:Array):void
@@ -90,39 +91,38 @@ public class FieldController extends CompositeController
 
     private function onFieldClick(e:FieldEvent):void
     {
-        var currentHeight:int = _fieldModel.getHeight(e.pos.x, e.pos.y);
-        var newHeight:int = currentHeight;
-        if ((e.targetEvent as MouseEvent).ctrlKey)
-            newHeight--;
-        else
-            newHeight++;
-
-        if (_fieldModel.setHeight(e.pos.x, e.pos.y, newHeight))
-        {
-            dispatchEvent(new CommandEvent(CMDList.CHANGE_HEIGHT,
-                    [e.pos.x,
-                        e.pos.y,
-                        newHeight],
-                    false, true));
-        }
-//        var isoPnt:Pt = _parentView.localToIso(new Point(e.stageX, e.stageY));
-//        var pos:IntPnt = new IntPnt(isoPnt.x / FieldView.CELL_SIZE, isoPnt.y / FieldView.CELL_SIZE);
+//        var currentHeight:int = _fieldModel.getHeight(e.pos.x, e.pos.y);
+//        var newHeight:int = currentHeight;
+//        if ((e.targetEvent as MouseEvent).ctrlKey)
+//            newHeight--;
+//        else
+//            newHeight++;
 //
-//        var block:BaseSpaceObjectController = new BaseSpaceObjectController("0");
-//        if (_fieldModel.placeObject(block.getModel(), pos))
+//        if (_fieldModel.setHeight(e.pos.x, e.pos.y, newHeight))
 //        {
-//            _fieldView.addChild(block.getView());
-//            add(block);
+//            dispatchEvent(new CommandEvent(CMDList.CHANGE_HEIGHT,
+//                    [e.pos.x,
+//                        e.pos.y,
+//                        newHeight],
+//                    false, true));
 //        }
-//
-//        dispatchEvent(new CommandEvent(CMDList.CREATE_OBJECT_ON_SPACE,
-//                [block.getModel().classId,
-//                    block.getModel()._group,
-//                    pos.x,
-//                    pos.y,
-//                    block.getModel()._width,
-//                    block.getModel()._length],
-//                false, true));
+
+        var block:BaseSpaceObjectController = new BaseSpaceObjectController("4");
+        if (_fieldModel.placeObject(block.getModel(), e.pos))
+        {
+            _fieldView.addChild(block.getView());
+            add(block);
+        }
+
+        var params:Array = [];
+        params[CREATEOBJECT.CLASS_ID] = block.getModel().classId;
+        params[CREATEOBJECT.SPACE_ID] = block.getModel()._space;
+        params[CREATEOBJECT.X] = e.pos.x;
+        params[CREATEOBJECT.Y] = e.pos.y;
+
+        dispatchEvent(new CommandEvent(CREATEOBJECT.ID,
+                params,
+                false, true));
     }
 
     public function get fieldView():FieldView

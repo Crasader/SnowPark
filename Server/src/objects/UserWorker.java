@@ -1,11 +1,12 @@
 package objects;
 
 import config.ConfigReader;
+import config.Constants;
 import db.DataBase;
 import errors.Errors;
-import network.CMDList;
 import network.Command;
 import network.Response;
+import network.spec.*;
 import org.apache.log4j.Logger;
 import org.jboss.netty.channel.Channel;
 import org.jboss.netty.channel.ChannelHandler;
@@ -74,19 +75,19 @@ public class UserWorker extends Thread
         {
             switch (cmd.commandId)
             {
-                case CMDList.CREATE_USER:
+                case CREATEUSER.ID:
                     createUser(cmd);
                     break;
-                case CMDList.AUTH:
+                case AUTH.ID:
                     loadUser(cmd);
                     break;
-                case CMDList.GET_USER_STATE:
+                case GETUSERSTATE.ID:
                     returnUserState(cmd);
                     break;
-                case CMDList.CREATE_OBJECT_ON_FIELD:
+                case CREATEOBJECT.ID:
                     createObject(cmd);
                     break;
-                case CMDList.CHANGE_HEIGHT:
+                case CHANGEHEIGHT.ID:
                     changeHeight(cmd);
                     break;
                 default:
@@ -102,7 +103,7 @@ public class UserWorker extends Thread
     private void changeHeight(Command cmd)
     {
         Object[] cmdParams = cmd.params;
-        _userState.heightMap.get((Integer) cmdParams[0]).set((Integer) cmdParams[1], (Integer) cmdParams[2]);
+        _userState.heightMap.get((Integer) cmdParams[CHANGEHEIGHT.X]).set((Integer) cmdParams[CHANGEHEIGHT.Y], (Integer) cmdParams[CHANGEHEIGHT.H]);
 
         DataBase.ds().save(_userState);//TODO: update
     }
@@ -127,7 +128,11 @@ public class UserWorker extends Thread
         while (heightIt.hasNext())
             serializedHeightMap.add(heightIt.next().toArray());
 
-        resp.params = new Object[]{serializedObjs.toArray(), serializedHeightMap.toArray()};
+        ArrayList<Object> params = new ArrayList<Object>();
+        params.set(GETUSERSTATE.FIELD_OBJS, serializedObjs.toArray());
+        params.set(GETUSERSTATE.HEIGHT_MAP, serializedHeightMap.toArray());
+        resp.params = params.toArray();
+
         _channel.write(resp);
 
         logger.info("return field for user: " + _userState.login);
@@ -154,26 +159,22 @@ public class UserWorker extends Thread
     private void createObject(Command cmd) throws Exception
     {
         Object[] cmdParams = cmd.params;
-        String classId = (String) cmdParams[0];
-        int group = (Integer) cmdParams[1];
-        int x = (Integer) cmdParams[2];
-        int y = (Integer) cmdParams[3];
-        int width = (Integer) cmdParams[4];
-        int height = (Integer) cmdParams[5];
+        String classId = (String) cmdParams[CREATEOBJECT.CLASS_ID];
+        int space = (Integer) cmdParams[CREATEOBJECT.SPACE_ID];
+        int x = (Integer) cmdParams[CREATEOBJECT.X];
+        int y = (Integer) cmdParams[CREATEOBJECT.Y];
 
-        Space sp = (Space) _userState.spaces.get(group);
+        Space sp = _userState.spaces.get(space);
         if (sp == null)
         {
             sp = new Space();
-            _userState.spaces.put(group, sp);
+            _userState.spaces.put(space, sp);
         }
 
         SpaceObj obj = new SpaceObj();
         obj.classId = classId;
         obj.x = x;
         obj.y = y;
-        obj.width = width;
-        obj.height = height;
 
         sp.objects.add(obj);
 
@@ -184,7 +185,7 @@ public class UserWorker extends Thread
     {
         Object[] cmdParams = cmd.params;
 
-        _userState = DataBase.ds().find(UserState.class, "login", cmdParams[0]).get();
+        _userState = DataBase.ds().find(UserState.class, "login", cmdParams[AUTH.LOGIN]).get();
         logger.info("load user state for user: " + _userState.login);
     }
 
@@ -193,9 +194,9 @@ public class UserWorker extends Thread
         Object[] cmdParams = cmd.params;
 
         _userState = new UserState();
-        _userState.login = (String) cmdParams[0];
-        _userState.salt = CryptUtil.getSalt(4);
-        _userState.password = CryptUtil.hashPass(cmdParams[1].toString(), _userState.salt);
+        _userState.login = (String) cmdParams[CREATEUSER.LOGIN];
+        _userState.salt = CryptUtil.getSalt(Constants.SALT_LENGTH);
+        _userState.password = CryptUtil.hashPass(cmdParams[CREATEUSER.PASSWORD].toString(), _userState.salt);
 
         _userState.spaces = getNewUserSpaces();
         _userState.heightMap = getNewUserHeightMap();

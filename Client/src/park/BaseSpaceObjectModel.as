@@ -9,12 +9,8 @@ package park
 {
 import com.junkbyte.console.Cc;
 
-import mx.binding.utils.BindingUtils;
-
 public class BaseSpaceObjectModel implements IBaseSpaceObjectModel
 {
-    private static const HEIGHT_MULTIPLIER:Number = -0.7; //Крутизна склона
-    private static const HEIGHT_SHIFT:Number = 7; //Точка начала склона
 
     [Bindable]
     public var _x:int = 0;
@@ -29,7 +25,7 @@ public class BaseSpaceObjectModel implements IBaseSpaceObjectModel
     public var _length:int = 0;
 
     [Bindable]
-    public var _group:int = 0;
+    public var _space:int = 0;
 
     private var _config:Object;
     private var _classId:String;
@@ -39,7 +35,6 @@ public class BaseSpaceObjectModel implements IBaseSpaceObjectModel
         _classId = classId;
         _config = config;
 
-        BindingUtils.bindSetter(updateZPos, this, "_x");
     }
 
     public function get classId():String
@@ -50,13 +45,6 @@ public class BaseSpaceObjectModel implements IBaseSpaceObjectModel
     public function destroy():void
     {
 
-    }
-
-    public function updateZPos(value:int):void
-    {
-        var new_z:Number = value * HEIGHT_MULTIPLIER + HEIGHT_SHIFT;
-        if (new_z < 0) new_z = 0;
-        _z = new_z;
     }
 
     public function get config():Object

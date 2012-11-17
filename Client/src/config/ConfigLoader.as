@@ -19,14 +19,16 @@ import org.as3yaml.YAML;
 
 public class ConfigLoader extends CompositeController
 {
-    private var _loade:BulkLoader = new BulkLoader("snow configs loader");
+    private var _loader:BulkLoader = new BulkLoader("snow configs loader");
 
     private static const OBJ_IDENTIFIER:String = "snow_objets_config";
+    private var _path:String = Constants.CONFIG_PATH;
 
     public function ConfigLoader()
     {
-        _loade.addEventListener(BulkLoader.COMPLETE, onAllLoaded);
-        _loade.addEventListener(BulkLoader.ERROR, onErrorLoad);
+        _path += "?=" + new Date().time.toString();
+        _loader.addEventListener(BulkLoader.COMPLETE, onAllLoaded);
+        _loader.addEventListener(BulkLoader.ERROR, onErrorLoad);
     }
 
     private function onErrorLoad(event:Event):void
@@ -42,7 +44,7 @@ public class ConfigLoader extends CompositeController
     {
         try
         {
-            var objects:String = _loade.getText(OBJ_IDENTIFIER);
+            var objects:String = _loader.getText(OBJ_IDENTIFIER);
             Constants._config = YAML.decode(objects);
             dispatchEvent(new LocalEvent(LocalEvent.CONFIG_LOADED, true));
         } catch (e:*)
@@ -53,10 +55,8 @@ public class ConfigLoader extends CompositeController
 
     public function loadConfigs():void
     {
-        if (_loade.hasItem(Constants.CONFIG_PATH, true))
-            _loade.remove(Constants.CONFIG_PATH);
-        _loade.add(Constants.CONFIG_PATH, {id:OBJ_IDENTIFIER});
-        _loade.start();
+        _loader.add(_path, {id:OBJ_IDENTIFIER});
+        _loader.start();
 
     }
 }

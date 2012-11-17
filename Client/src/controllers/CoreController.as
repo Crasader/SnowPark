@@ -13,7 +13,6 @@ import com.junkbyte.console.Cc;
 
 import config.ConfigLoader;
 
-import controllers.events.CMDList;
 import controllers.events.CommandEvent;
 import controllers.events.LocalEvent;
 import controllers.events.ResponseEvent;
@@ -24,6 +23,8 @@ import mx.binding.utils.BindingUtils;
 
 import net.ServerConnection;
 import net.ServerConnectionEvent;
+import net.spec.AUTH;
+import net.spec.CREATEUSER;
 
 public class CoreController extends CompositeController
 {
@@ -99,8 +100,8 @@ public class CoreController extends CompositeController
     private function onSendCommand(e:CommandEvent):void
     {
         if (_userController.getModel()._authPassed
-                || e.commandId == CMDList.AUTH
-                || e.commandId == CMDList.CREATE_USER)
+                || e.commandId == AUTH.ID
+                || e.commandId == CREATEUSER.ID)
             sendCommand(e);
 //        else
 //            _commandQueue.push(e);

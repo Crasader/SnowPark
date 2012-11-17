@@ -38,7 +38,7 @@ public class FieldView extends IsoScene
 
     private var _parentView:IsoView;
     private var _cellOfGrid:Sprite = new Sprite();
-    private var _grid:Sprite = new Sprite();
+    private var _grid:Bitmap = new Bitmap(new BitmapData(fieldMaxWidth, fieldMaxHeight + Constants.MOUSEMAP_HEIGHT_MARGIN));
     private var _gridLayer:IsoSprite = new IsoSprite();
 
     public function FieldView(model:IFieldModel, parentView:IsoView)
@@ -46,11 +46,19 @@ public class FieldView extends IsoScene
         _model = model;
         _parentView = parentView;
         _model.addEventListener(FieldEvent.HEIGHTMAP_CHANGED, onHeightMapChanged);
+        _model.addEventListener(FieldEvent.OBJECT_ADDED, onObjectAdded);
         _parentView.addEventListener(Event.ENTER_FRAME, onMouseMove);
         _parentView.stage.addEventListener(MouseEvent.CLICK, onClick);
 
         _gridLayer.sprites = [_grid, _cellOfGrid];
+        _grid.x = -fieldMaxWidth / 2;
+        _grid.y = -Constants.MOUSEMAP_HEIGHT_MARGIN;
         addChild(_gridLayer);
+    }
+
+    private function onObjectAdded(event:FieldEvent):void
+    {
+        render();
     }
 
     private function onHeightMapChanged(event:FieldEvent):void
@@ -61,6 +69,7 @@ public class FieldView extends IsoScene
 
     private function redrawGridTile(event:FieldEvent):void
     {
+        var tileSprite:Sprite = new Sprite();
         var x:int = event.pos.x;
         var y:int = event.pos.y;
 
@@ -68,9 +77,11 @@ public class FieldView extends IsoScene
         {
             for (var j:int = -1; j < 1; j++)
             {
-                drawTile(_grid, 0xCCCCCC, x + i, y + j, true, true);
+                drawTile(tileSprite, 0xCCCCCC, x + i, y + j, true, true);
             }
         }
+
+        _grid.bitmapData.draw(tileSprite, new Matrix(1, 0, 0, 1, fieldMaxWidth / 2, Constants.MOUSEMAP_HEIGHT_MARGIN));
     }
 
     private function redrawHeightMapTile(event:FieldEvent):void
@@ -115,14 +126,17 @@ public class FieldView extends IsoScene
 
     private function redrawHeightGrid():void
     {
-        _grid.graphics.clear();
+        var gridSprite:Sprite = new Sprite();
+
         for (var i:int = 0; i < Constants.MAX_FIELD_SIZE; i++)
         {
             for (var j:int = 0; j < Constants.MAX_FIELD_SIZE; j++)
             {
-                drawTile(_grid, 0, i, j, false, true);
+                drawTile(gridSprite, 0xEEEEEE, i, j, true, true);
             }
         }
+
+        _grid.bitmapData.draw(gridSprite, new Matrix(1, 0, 0, 1, fieldMaxWidth / 2, Constants.MOUSEMAP_HEIGHT_MARGIN));
     }
 
     private function getHeightTileColor(x:int, y:int):String //TODO: Build x,y to tile map
@@ -196,7 +210,7 @@ public class FieldView extends IsoScene
     override public function addChild(child:INode):void
     {
         super.addChild(child);
-//        update();
+        render();
     }
 
     public function update(event:Event = null):void

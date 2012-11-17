@@ -23,7 +23,7 @@ public class Constants
     public static const STAGE_HEIGHT:int = 600;
     public static const TILE_SIZE:int = 20;
     public static const TILE_HEIGHT:int = 10;
-    public static const MOUSEMAP_HEIGHT_MARGIN:int = 100;
+    public static const MOUSEMAP_HEIGHT_MARGIN:int = 400;
 
     internal static var _config:Object;
 

@@ -62,7 +62,7 @@ public class BaseSpaceObjectView extends IsoSprite
 
     private function updateZPos(value:Number):void
     {
-        this.z = Constants.TILE_SIZE * value;
+        this.z = Constants.TILE_HEIGHT * value;
     }
 
     private function updateXPos(value:int):void
