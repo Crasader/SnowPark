@@ -4,14 +4,15 @@
  */
 package objects.components
 {
-import as3isolib.core.IsoDisplayObject;
+import as3isolib.display.IsoSprite;
 
+import flash.display.Sprite;
 import flash.events.IEventDispatcher;
 
 public interface IViewComponent extends IEventDispatcher
 {
     function get sprites():Array
 
-    function updatePos(view:IsoDisplayObject, dt:Number):void
+    function updatePos(view:IsoSprite, mainSprite:Sprite, dt:Number):void
 }
 }

@@ -7,6 +7,8 @@
  */
 package objects
 {
+import as3isolib.geom.Pt;
+
 import com.junkbyte.console.Cc;
 
 import events.ObjectEvent;
@@ -15,11 +17,14 @@ import flash.events.EventDispatcher;
 
 import models.IFieldModel;
 
+import objects.components.AlongRotationComponent;
 import objects.components.AnimationComponent;
 import objects.components.BaseComponent;
+import objects.components.DebugTextComponent;
 import objects.components.IViewComponent;
 import objects.components.MoveComponent;
 import objects.components.RiderComponent;
+import objects.components.TeleportComponent;
 
 public class ObjectModel extends EventDispatcher implements IObjectModel
 {
@@ -33,7 +38,13 @@ public class ObjectModel extends EventDispatcher implements IObjectModel
     private var _cfg:Object;
     private var _classId:String;
 
-    private static const REGISTERED_COMPONENTS:Array = [RiderComponent, MoveComponent, AnimationComponent];
+    private static const REGISTERED_COMPONENTS:Array = [RiderComponent,
+        MoveComponent,
+        AnimationComponent,
+        TeleportComponent,
+        AlongRotationComponent,
+        DebugTextComponent];
+
     private static var _componentsHash:Object = {};
 
     private var _components:Vector.<IViewComponent> = new Vector.<IViewComponent>();
@@ -56,11 +67,12 @@ public class ObjectModel extends EventDispatcher implements IObjectModel
 
     public function setPos(x:int, y:int):void
     {
+        var oldPos:Pt = new Pt(_x, _y, _z);
         _x = x;
         _y = y;
         _z = fieldModel.getHeight(x, y);
 
-        dispatchEvent(new ObjectEvent(ObjectEvent.POSITION_UPDATED));
+        dispatchEvent(new ObjectEvent(ObjectEvent.POSITION_UPDATED, oldPos, new Pt(_x, _y, _z)));
     }
 
     private function loadComponents():void

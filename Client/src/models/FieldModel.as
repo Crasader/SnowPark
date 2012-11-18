@@ -11,6 +11,7 @@ import config.Constants;
 
 import events.CoreEvent;
 import events.FieldEvent;
+import events.ObjectEvent;
 
 import flash.events.Event;
 import flash.events.EventDispatcher;
@@ -44,8 +45,28 @@ public class FieldModel extends EventDispatcher implements IFieldModel
         fillFieldByObject(objModel);
         _allObjects.push(objModel);
 
+        objModel.addEventListener(ObjectEvent.POSITION_UPDATED, onObjectPositionUpdated);
         dispatchEvent(new FieldEvent(FieldEvent.OBJECT_ADDED, pos));
         return true;
+    }
+
+    private function onObjectPositionUpdated(e:ObjectEvent):void
+    {
+        var obj:ObjectModel = (e.target as ObjectModel);
+
+        clearFieldPos(e.prevPos.x, e.prevPos.y);
+        fillFieldByObject(obj);
+    }
+
+    private function clearFieldPos(x:Number, y:Number):void
+    {
+        for (var i:int = x; i < x + 1; i++)
+        {
+            for (var j:int = y; j < y + 1; j++)
+            {
+                _field.setBlock(new IntPnt(i, j), null);
+            }
+        }
     }
 
     private function fillFieldByObject(obj:ObjectModel):void

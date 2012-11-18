@@ -92,6 +92,8 @@ maxFieldSize: 50
       - name: rider
         speed: 3 #unit/s
       - name: move
+      - name: alongRotation
+      - name: animation
     width: 1
     length: 2
     rotated: true

@@ -67,7 +67,7 @@ public class ObjectView extends IsoSprite
         _lastUpdateTime = now;
 
         for each (var component:IViewComponent in _model.components)
-            component.updatePos(this, dt);
+            component.updatePos(this, _visual, dt);
     }
 
     private function onErrorLoadMovie(event:Event):void

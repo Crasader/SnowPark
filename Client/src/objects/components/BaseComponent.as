@@ -4,8 +4,9 @@
  */
 package objects.components
 {
-import as3isolib.core.IsoDisplayObject;
+import as3isolib.display.IsoSprite;
 
+import flash.display.Sprite;
 import flash.events.EventDispatcher;
 
 import objects.ObjectModel;
@@ -41,7 +42,7 @@ public class BaseComponent extends EventDispatcher implements IViewComponent
         return [];
     }
 
-    public function updatePos(view:IsoDisplayObject, dt:Number):void
+    public function updatePos(view:IsoSprite, mainSprite:Sprite, dt:Number):void
     {
     }
 }
