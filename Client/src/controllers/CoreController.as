@@ -14,9 +14,9 @@ import com.junkbyte.console.Cc;
 import config.ConfigLoader;
 import config.Constants;
 
-import controllers.events.CommandEvent;
-import controllers.events.CoreEvent;
-import controllers.events.ResponseEvent;
+import events.CommandEvent;
+import events.CoreEvent;
+import events.ResponseEvent;
 
 import flash.display.DisplayObjectContainer;
 import flash.events.Event;

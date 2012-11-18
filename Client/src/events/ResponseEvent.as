@@ -2,7 +2,7 @@
  * Author: JuzTosS
  * Date: 10.06.12
  */
-package controllers.events
+package events
 {
 import flash.events.Event;
 

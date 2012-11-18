@@ -11,27 +11,30 @@ import basemvc.controller.CompositeController;
 
 import config.Constants;
 
-public class BaseSpaceObjectController extends CompositeController
+import models.FieldModel;
+
+public class ObjectController extends CompositeController
 {
 
-    protected var _model:BaseSpaceObjectModel;
-    protected var _view:BaseSpaceObjectView;
+    protected var _model:ObjectModel;
+    protected var _view:ObjectView;
 
-    public function BaseSpaceObjectController(classId:String)
+    public function ObjectController(classId:String, fieldModel:FieldModel)
     {
         var config:Object = Constants.CFG[classId];
         if (!config) throw "Can't create object without config " + "( classId = " + classId + " )";
 
-        _model = new BaseSpaceObjectModel(classId, config);
-        _view = new BaseSpaceObjectView(_model);
+        _model = new ObjectModel(classId, config, fieldModel);
+        _view = new ObjectView(_model);
+
     }
 
-    public function getView():BaseSpaceObjectView
+    public function getView():ObjectView
     {
         return _view;
     }
 
-    public function getModel():BaseSpaceObjectModel
+    public function getModel():ObjectModel
     {
         return _model;
     }

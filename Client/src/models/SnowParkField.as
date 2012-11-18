@@ -7,41 +7,30 @@
  */
 package models
 {
-import objects.BaseSpaceObjectModel;
+import config.Constants;
+
+import objects.ObjectModel;
 
 import utils.ArrayHelper;
 import utils.IntPnt;
 
 public class SnowParkField
 {
-    private static const WIDTH:int = 15;
-    private static const HEIGHT:int = 15;
-
     private var _field:Array;
 
     public function SnowParkField()
     {
-        _field = ArrayHelper.init2dArray(HEIGHT, WIDTH, null);
+        _field = ArrayHelper.init2dArray(Constants.MAX_FIELD_SIZE, Constants.MAX_FIELD_SIZE, null);
     }
 
-    public function setBlock(pos:IntPnt, obj:BaseSpaceObjectModel):void
+    public function setBlock(pos:IntPnt, obj:ObjectModel):void
     {
         _field[pos.x][pos.y] = obj;
     }
 
-    public function getBlock(pos:IntPnt):BaseSpaceObjectModel
+    public function getBlock(pos:IntPnt):ObjectModel
     {
         return _field[pos.x][pos.y];
-    }
-
-    public function get width():int
-    {
-        return WIDTH;
-    }
-
-    public function get height():int
-    {
-        return HEIGHT;
     }
 
 }

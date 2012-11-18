@@ -128,9 +128,9 @@ public class UserWorker extends Thread
         while (heightIt.hasNext())
             serializedHeightMap.add(heightIt.next().toArray());
 
-        ArrayList<Object> params = new ArrayList<Object>();
-        params.set(GETUSERSTATE.FIELD_OBJS, serializedObjs.toArray());
-        params.set(GETUSERSTATE.HEIGHT_MAP, serializedHeightMap.toArray());
+        ArrayList<Object> params = new ArrayList<Object>(2);
+        params.add(GETUSERSTATE.FIELD_OBJS, serializedObjs.toArray());
+        params.add(GETUSERSTATE.HEIGHT_MAP, serializedHeightMap.toArray());
         resp.params = params.toArray();
 
         _channel.write(resp);

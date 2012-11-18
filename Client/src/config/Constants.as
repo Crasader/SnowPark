@@ -13,7 +13,7 @@ public class Constants
     public static const SERVER_IP:String = "127.0.0.1";
     public static const SERVER_PORT:int = 9777;
 
-    public static const WORLD_TIMER_INTERVAL:int = 100; //ms
+    public static const WORLD_TIMER_INTERVAL:int = 10; //ms
 
     public static const MAX_NUM_OF_REQUESTS:int = 64;
     public static const SEND_REQUESTS_INTERVAL:int = 5000; //ms

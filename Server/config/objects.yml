@@ -90,8 +90,8 @@ maxFieldSize: 50
   behavior:
     components:
       - name: rider
-        param1: 10
-        param2: 11
+        speed: 3 #unit/s
+      - name: move
     width: 1
     length: 2
     rotated: true

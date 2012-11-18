@@ -6,8 +6,8 @@ package controllers
 {
 import basemvc.controller.CompositeController;
 
-import controllers.events.CommandEvent;
-import controllers.events.ResponseEvent;
+import events.CommandEvent;
+import events.ResponseEvent;
 
 import flash.display.DisplayObjectContainer;
 import flash.events.Event;

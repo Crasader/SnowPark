@@ -7,13 +7,15 @@
  */
 package models
 {
-import controllers.events.CoreEvent;
-import controllers.events.FieldEvent;
+import config.Constants;
+
+import events.CoreEvent;
+import events.FieldEvent;
 
 import flash.events.Event;
 import flash.events.EventDispatcher;
 
-import objects.BaseSpaceObjectModel;
+import objects.ObjectModel;
 
 import utils.IntPnt;
 
@@ -21,7 +23,7 @@ public class FieldModel extends EventDispatcher implements IFieldModel
 {
     private var _field:SnowParkField;
     private var _heightMap:Array;
-    private var _allObjects:Vector.<BaseSpaceObjectModel> = new Vector.<BaseSpaceObjectModel>();
+    private var _allObjects:Vector.<ObjectModel> = new Vector.<ObjectModel>();
 
     public function FieldModel()
     {
@@ -33,15 +35,12 @@ public class FieldModel extends EventDispatcher implements IFieldModel
         return _field;
     }
 
-    public function placeObject(objModel:BaseSpaceObjectModel, pos:IntPnt):Boolean
+    public function placeObject(objModel:ObjectModel, pos:IntPnt):Boolean
     {
-        objModel._x = pos.x;
-        objModel._y = pos.y;
-        objModel._z = _heightMap[pos.x][pos.y];
-
-        if (!isPlaceFree(objModel))
+        if (!isPlaceFree(pos.x, pos.y))
             return false;
 
+        objModel.setPos(pos.x, pos.y);
         fillFieldByObject(objModel);
         _allObjects.push(objModel);
 
@@ -49,38 +48,43 @@ public class FieldModel extends EventDispatcher implements IFieldModel
         return true;
     }
 
-    private function fillFieldByObject(obj:BaseSpaceObjectModel):void
+    private function fillFieldByObject(obj:ObjectModel):void
     {
-        for (var x:int = obj._x; x < obj._x + obj._width; x++)
-            for (var y:int = obj._y; y < obj._y + obj._length; y++)
+        for (var x:int = obj.x; x < obj.x + 1; x++)
+        {
+            for (var y:int = obj.y; y < obj.y + 1; y++)
             {
                 _field.setBlock(new IntPnt(x, y), obj);
             }
+        }
     }
 
-    private function isPlaceFree(obj:BaseSpaceObjectModel):Boolean
+    public function isPlaceFree(x:int, y:int, width:int = 1, length:int = 1):Boolean
     {
-        for (var x:int = obj._x; x < obj._x + obj._width; x++)
-            for (var y:int = obj._y; y < obj._y + obj._length; y++)
+        for (var i:int = x; i < (x + width); i++)
+        {
+            for (var j:int = y; j < (y + length); j++)
             {
-                if (isPosInvalid(new IntPnt(x, y))
-                        || (_field.getBlock(new IntPnt(x, y)) != null))
+                if (isPosInvalid(new IntPnt(i, j))
+                        || (_field.getBlock(new IntPnt(i, j)) != null))
+                {
                     return false;
+                }
             }
-
+        }
         return true;
     }
 
     public function isPosInvalid(pos:IntPnt):Boolean
     {
-        return (pos.x >= _field.width || pos.y >= _field.height || pos.x < 0 || pos.y < 0);
+        return (pos.x >= Constants.MAX_FIELD_SIZE || pos.y >= Constants.MAX_FIELD_SIZE || pos.x < 0 || pos.y < 0);
     }
 
     public function clear():void
     {
         while (_allObjects.length != 0)
         {
-            var objToDestroy:BaseSpaceObjectModel = _allObjects.pop();
+            var objToDestroy:ObjectModel = _allObjects.pop();
             objToDestroy.destroy();
         }
 
@@ -89,7 +93,7 @@ public class FieldModel extends EventDispatcher implements IFieldModel
         dispatchEvent(new Event(Event.CHANGE));
     }
 
-    public function get allObjects():Vector.<BaseSpaceObjectModel>
+    public function get allObjects():Vector.<ObjectModel>
     {
         return _allObjects;
     }
@@ -137,7 +141,7 @@ public class FieldModel extends EventDispatcher implements IFieldModel
     public function tick(event:CoreEvent):void
     {
         var dt:Number = Number(event.data);
-        for each(var obj:BaseSpaceObjectModel in allObjects)
+        for each(var obj:ObjectModel in allObjects)
         {
             obj.tick(dt);
         }
@@ -146,7 +150,7 @@ public class FieldModel extends EventDispatcher implements IFieldModel
     public function onFrame(event:CoreEvent):void
     {
         var dt:Number = Number(event.data);
-        for each(var obj:BaseSpaceObjectModel in allObjects)
+        for each(var obj:ObjectModel in allObjects)
         {
             obj.onFrame(dt);
         }

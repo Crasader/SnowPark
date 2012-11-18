@@ -20,7 +20,9 @@ public class CameraView extends IsoView
     public function CameraView(model:IBindableModel)
     {
         super();
-        this.setSize(Constants.STAGE_WIDTH, Constants.STAGE_HEIGHT);
+        setSize(Constants.STAGE_WIDTH, Constants.STAGE_HEIGHT);
+        mouseChildren = false;
+        mouseEnabled = false;
         BindingUtils.bindProperty(mainContainer, "x", model, "_x");
         BindingUtils.bindProperty(mainContainer, "y", model, "_y");
         BindingUtils.bindSetter(zoom, model, "_zoom");

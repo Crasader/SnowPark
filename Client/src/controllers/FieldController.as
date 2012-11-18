@@ -11,10 +11,10 @@ import as3isolib.display.IsoView;
 
 import basemvc.controller.CompositeController;
 
-import controllers.events.CommandEvent;
-import controllers.events.CoreEvent;
-import controllers.events.FieldEvent;
-import controllers.events.ResponseEvent;
+import events.CommandEvent;
+import events.CoreEvent;
+import events.FieldEvent;
+import events.ResponseEvent;
 
 import flash.events.Event;
 
@@ -23,8 +23,8 @@ import models.FieldModel;
 import net.spec.CREATEOBJECT;
 import net.spec.GETUSERSTATE;
 
-import objects.BaseSpaceObjectController;
-import objects.BaseSpaceObjectModel;
+import objects.ObjectController;
+import objects.ObjectModel;
 
 import utils.IntPnt;
 
@@ -38,7 +38,7 @@ public class FieldController extends CompositeController
 
     public function FieldController(parentView:IsoView)
     {
-        BaseSpaceObjectModel.registerComponets();
+        ObjectModel.registerComponets();
 
         _fieldModel = new FieldModel();
         core.addEventListener(CoreEvent.WORLD_TICK, _fieldModel.tick);
@@ -86,7 +86,7 @@ public class FieldController extends CompositeController
         for each(var objInfo:Array in fieldObjects)
         {
             var pos:IntPnt = new IntPnt(objInfo[1], objInfo[2]); // x, y
-            var block:BaseSpaceObjectController = new BaseSpaceObjectController(objInfo[0]); // class_id
+            var block:ObjectController = new ObjectController(objInfo[0], _fieldModel); // class_id
             if (_fieldModel.placeObject(block.getModel(), pos))
             {
                 _fieldView.addChild(block.getView());
@@ -113,7 +113,7 @@ public class FieldController extends CompositeController
 //                    false, true));
 //        }
 
-        var block:BaseSpaceObjectController = new BaseSpaceObjectController("1000");
+        var block:ObjectController = new ObjectController("1000", _fieldModel);
         if (_fieldModel.placeObject(block.getModel(), e.pos))
         {
             _fieldView.addChild(block.getView());

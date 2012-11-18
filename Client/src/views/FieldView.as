@@ -16,7 +16,7 @@ import as3isolib.geom.Pt;
 
 import config.Constants;
 
-import controllers.events.FieldEvent;
+import events.FieldEvent;
 
 import flash.display.Bitmap;
 import flash.display.BitmapData;
@@ -45,9 +45,12 @@ public class FieldView extends IsoScene
     {
         _model = model;
         _parentView = parentView;
+        _parentView.mouseChildren = false;
+        _parentView.mouseEnabled = false;
+
         _model.addEventListener(FieldEvent.HEIGHTMAP_CHANGED, onHeightMapChanged);
         _model.addEventListener(FieldEvent.OBJECT_ADDED, onObjectAdded);
-        _parentView.addEventListener(Event.ENTER_FRAME, onMouseMove);
+        _parentView.addEventListener(Event.ENTER_FRAME, onEnterFrame);
         _parentView.stage.addEventListener(MouseEvent.CLICK, onClick);
 
         _gridLayer.sprites = [_grid, _cellOfGrid];
@@ -112,8 +115,10 @@ public class FieldView extends IsoScene
         }
     }
 
-    private function onMouseMove(event:Event):void
+    private function onEnterFrame(event:Event):void
     {
+        render();
+
         var pixel:uint = _heightMouseMap.bitmapData.getPixel(container.mouseX + fieldMaxWidth / 2, container.mouseY + Constants.MOUSEMAP_HEIGHT_MARGIN);
 
         if (_heightMouseHash[pixel])

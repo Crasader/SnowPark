@@ -10,7 +10,7 @@ import br.com.stimuli.loading.BulkLoader;
 
 import com.junkbyte.console.Cc;
 
-import controllers.events.CoreEvent;
+import events.CoreEvent;
 
 import flash.events.Event;
 import flash.events.SecurityErrorEvent;

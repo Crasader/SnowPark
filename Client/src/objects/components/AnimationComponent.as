@@ -4,15 +4,23 @@
  */
 package objects.components
 {
-public class AnimationComponent extends IComponent
+import objects.ObjectModel;
+
+public class AnimationComponent extends BaseComponent
 {
-    public function AnimationComponent()
+    public function AnimationComponent(m:ObjectModel)
     {
+        super(m);
     }
 
     override public function onFrame(dt:Number):void
     {
 
+    }
+
+    override public function get sprites():Array
+    {
+        return super.sprites;
     }
 }
 }
