@@ -7,9 +7,9 @@
  */
 package utils
 {
-public class ArrayHelper
+public class ArrayUtil
 {
-    public function ArrayHelper()
+    public function ArrayUtil()
     {
     }
 
@@ -48,7 +48,7 @@ public class ArrayHelper
 
     static public function get2DRotatedArray(array:Array):Array
     {
-        var rotatedArray:Array = ArrayHelper.init2dArray(array[0].length, array.length);
+        var rotatedArray:Array = ArrayUtil.init2dArray(array[0].length, array.length);
         for (var i:int = 0; i < array[0].length; i++)
         {
             for (var j:int = array.length - 1; j >= 0; j--)

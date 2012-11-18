@@ -21,6 +21,8 @@ import net.loaders.MovieLoader;
 
 import objects.components.IViewComponent;
 
+import utils.NodeUtil;
+
 public class ObjectView extends IsoSprite
 {
     protected var _model:IObjectModel;
@@ -46,6 +48,7 @@ public class ObjectView extends IsoSprite
 
         for each(var component:IViewComponent in _model.components)
         {
+            component.initView(this, _visual);
             sprites = sprites.concat(component.sprites);
         }
 
@@ -67,7 +70,7 @@ public class ObjectView extends IsoSprite
         _lastUpdateTime = now;
 
         for each (var component:IViewComponent in _model.components)
-            component.updatePos(this, _visual, dt);
+            component.updatePos(dt);
     }
 
     private function onErrorLoadMovie(event:Event):void
@@ -77,7 +80,7 @@ public class ObjectView extends IsoSprite
 
     private function onMovieLoaded(event:Event):void
     {
-
+        NodeUtil.stopMC(_visual);
     }
 
     private function onStage(event:Event):void

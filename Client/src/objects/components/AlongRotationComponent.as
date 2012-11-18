@@ -4,10 +4,6 @@
  */
 package objects.components
 {
-import as3isolib.display.IsoSprite;
-
-import flash.display.Sprite;
-
 import objects.ObjectModel;
 
 public class AlongRotationComponent extends BaseComponent
@@ -17,14 +13,14 @@ public class AlongRotationComponent extends BaseComponent
         super(m);
     }
 
-    override public function updatePos(view:IsoSprite, mainSprite:Sprite, dt:Number):void
+    override public function updatePos(dt:Number):void
     {
         if (model.fieldModel.getHeight(model.x, model.y) > model.fieldModel.getHeight(model.x + 1, model.y))
         {
-            mainSprite.rotation = 45;
+            loader.rotation = 45;
         }
         else
-            mainSprite.rotation = 0;
+            loader.rotation = 0;
     }
 
     public static function get name():String

@@ -93,7 +93,8 @@ maxFieldSize: 50
         speed: 3 #unit/s
       - name: move
       - name: alongRotation
-      - name: animation
+      - name: simpleAnimation
+        fps: 10
     width: 1
     length: 2
     rotated: true

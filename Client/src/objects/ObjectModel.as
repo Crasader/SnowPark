@@ -18,12 +18,12 @@ import flash.events.EventDispatcher;
 import models.IFieldModel;
 
 import objects.components.AlongRotationComponent;
-import objects.components.AnimationComponent;
 import objects.components.BaseComponent;
 import objects.components.DebugTextComponent;
 import objects.components.IViewComponent;
 import objects.components.MoveComponent;
 import objects.components.RiderComponent;
+import objects.components.SimpleAnimationComponent;
 import objects.components.TeleportComponent;
 
 public class ObjectModel extends EventDispatcher implements IObjectModel
@@ -40,7 +40,7 @@ public class ObjectModel extends EventDispatcher implements IObjectModel
 
     private static const REGISTERED_COMPONENTS:Array = [RiderComponent,
         MoveComponent,
-        AnimationComponent,
+        SimpleAnimationComponent,
         TeleportComponent,
         AlongRotationComponent,
         DebugTextComponent];

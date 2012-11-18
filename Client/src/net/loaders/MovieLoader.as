@@ -8,6 +8,7 @@ import br.com.stimuli.loading.BulkLoader;
 
 import com.junkbyte.console.Cc;
 
+import flash.display.DisplayObject;
 import flash.display.Sprite;
 import flash.events.Event;
 import flash.system.LoaderContext;
@@ -25,6 +26,8 @@ public class MovieLoader extends Sprite
     private var _className:String;
     private var _loaderImage:Sprite = new LoaderImage();
     private var _loaderContext:LoaderContext = new LoaderContext(true);
+
+    private var _content:DisplayObject;
 
     public function MovieLoader(path:String, className:String = null)
     {
@@ -65,6 +68,7 @@ public class MovieLoader extends Sprite
         if (contains(_loaderImage))
             removeChild(_loaderImage);
         addChild(content);
+        _content = content;
 
         dispatchEvent(new Event(MOVIE_LOADED));
     }
@@ -72,6 +76,11 @@ public class MovieLoader extends Sprite
     public function startLoad():void
     {
         _loader.start();
+    }
+
+    public function get content():DisplayObject
+    {
+        return _content;
     }
 }
 }

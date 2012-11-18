@@ -6,14 +6,17 @@ package objects.components
 {
 import as3isolib.display.IsoSprite;
 
-import flash.display.Sprite;
 import flash.events.EventDispatcher;
+
+import net.loaders.MovieLoader;
 
 import objects.ObjectModel;
 
 public class BaseComponent extends EventDispatcher implements IViewComponent
 {
     private var _model:ObjectModel;
+    private var _view:IsoSprite;
+    private var _loader:MovieLoader;
 
     public function BaseComponent(m:ObjectModel)
     {
@@ -42,8 +45,24 @@ public class BaseComponent extends EventDispatcher implements IViewComponent
         return [];
     }
 
-    public function updatePos(view:IsoSprite, mainSprite:Sprite, dt:Number):void
+    public function updatePos(dt:Number):void
     {
+    }
+
+    public function initView(view:IsoSprite, loader:MovieLoader):void
+    {
+        _view = view;
+        _loader = loader;
+    }
+
+    public function get view():IsoSprite
+    {
+        return _view;
+    }
+
+    public function get loader():MovieLoader
+    {
+        return _loader;
     }
 }
 }

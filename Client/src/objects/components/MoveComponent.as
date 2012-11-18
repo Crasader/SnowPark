@@ -4,13 +4,9 @@
  */
 package objects.components
 {
-import as3isolib.display.IsoSprite;
-
 import com.gskinner.motion.GTween;
 
 import config.Constants;
-
-import flash.display.Sprite;
 
 import objects.ObjectModel;
 
@@ -21,7 +17,7 @@ public class MoveComponent extends BaseComponent
         super(m);
     }
 
-    override public function updatePos(view:IsoSprite, mainSprite:Sprite, dt:Number):void
+    override public function updatePos(dt:Number):void
     {
         var nx:Number = Constants.TILE_SIZE * model.x;
         var ny:Number = Constants.TILE_SIZE * model.y;

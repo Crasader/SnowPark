@@ -4,11 +4,7 @@
  */
 package objects.components
 {
-import as3isolib.display.IsoSprite;
-
 import config.Constants;
-
-import flash.display.Sprite;
 
 import objects.ObjectModel;
 
@@ -19,7 +15,7 @@ public class TeleportComponent extends BaseComponent
         super(m);
     }
 
-    override public function updatePos(view:IsoSprite, mainSprite:Sprite, dt:Number):void
+    override public function updatePos(dt:Number):void
     {
         view.x = Constants.TILE_SIZE * model.x;
         view.y = Constants.TILE_SIZE * model.y;

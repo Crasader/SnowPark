@@ -11,7 +11,7 @@ import config.Constants;
 
 import objects.ObjectModel;
 
-import utils.ArrayHelper;
+import utils.ArrayUtil;
 import utils.IntPnt;
 
 public class SnowParkField
@@ -20,7 +20,7 @@ public class SnowParkField
 
     public function SnowParkField()
     {
-        _field = ArrayHelper.init2dArray(Constants.MAX_FIELD_SIZE, Constants.MAX_FIELD_SIZE, null);
+        _field = ArrayUtil.init2dArray(Constants.MAX_FIELD_SIZE, Constants.MAX_FIELD_SIZE, null);
     }
 
     public function setBlock(pos:IntPnt, obj:ObjectModel):void

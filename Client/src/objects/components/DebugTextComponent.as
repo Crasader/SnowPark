@@ -4,9 +4,6 @@
  */
 package objects.components
 {
-import as3isolib.display.IsoSprite;
-
-import flash.display.Sprite;
 import flash.text.TextField;
 
 import objects.ObjectModel;
@@ -21,9 +18,9 @@ public class DebugTextComponent extends BaseComponent
         _debugTF = new TextField();
     }
 
-    override public function updatePos(view:IsoSprite, mainSprite:Sprite, dt:Number):void
+    override public function updatePos(dt:Number):void
     {
-        _debugTF.y = -mainSprite.height - mainSprite.y;
+        _debugTF.y = -loader.height - loader.y;
 
         _debugTF.text = "X=" + model.x + ", Y=" + model.y;
     }
