@@ -8,39 +8,39 @@ import flash.events.Event;
 
 public class CommandEvent extends Event
 {
-    private var _commandParams:Array;
-    private var _commandId:int;
+    private var _commandParams:Object;
+    private var _commandName:String;
 
     private var _forceSend:Boolean;
 
-    public static const SNOW_COMMAND:String = "SNOW_COMMAND";
+    public static const SEND_COMMAND:String = "SEND_COMMAND";
 
-    function CommandEvent(cmd:int, params:Array, force_send:Boolean = false, bubbles:Boolean = false, cancelable:Boolean = false):void
+    function CommandEvent(cmd:String, params:Object, force_send:Boolean = false, bubbles:Boolean = false, cancelable:Boolean = false):void
     {
-        super(SNOW_COMMAND, bubbles, cancelable);
+        super(SEND_COMMAND, bubbles, cancelable);
         _commandParams = params;
-        _commandId = cmd;
+        _commandName = cmd;
         _forceSend = force_send;
     }
 
     override public function clone():Event
     {
-        return new CommandEvent(_commandId, _commandParams, _forceSend, bubbles, cancelable);
+        return new CommandEvent(_commandName, _commandParams, _forceSend, bubbles, cancelable);
     }
 
     override public function toString():String
     {
-        return "Command: " + _commandId;
+        return "Command: " + _commandName;
     }
 
-    public function get commandParams():Array
+    public function get commandParams():Object
     {
         return _commandParams;
     }
 
-    public function get commandId():int
+    public function get commandName():String
     {
-        return _commandId;
+        return _commandName;
     }
 
     public function get forceSend():Boolean

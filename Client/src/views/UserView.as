@@ -23,7 +23,6 @@ public class UserView extends Sprite
         addChild(_loginScreen);
         connectBtn.addEventListener(MouseEvent.CLICK, onConnectClick);
         createBtn.addEventListener(MouseEvent.CLICK, onCreateClick);
-        BindingUtils.bindSetter(authChanged, model, "_authPassed");
     }
 
     private function authChanged(authPassed:Boolean):void

@@ -16,27 +16,22 @@ import config.Constants;
 
 import events.CommandEvent;
 import events.CoreEvent;
-import events.ResponseEvent;
 
 import flash.display.DisplayObjectContainer;
 import flash.events.Event;
 import flash.events.TimerEvent;
 import flash.utils.Timer;
 
-import mx.binding.utils.BindingUtils;
-
-import net.ServerConnection;
-import net.ServerConnectionEvent;
-import net.spec.AUTH;
-import net.spec.CREATEUSER;
+import net.NetController;
+import net.NetControllerEvent;
 
 public class CoreController extends CompositeController
 {
     private var _node:DisplayObjectContainer;
-    private var _commandQueue:Array = [];
 
     private var _userController:UserController;
     private var _configLoader:ConfigLoader;
+    private var _serverTransport:NetController;
 
     private var _worldTimer:Timer;
     private var _lastTickTime:Number;
@@ -45,6 +40,8 @@ public class CoreController extends CompositeController
     public function CoreController(node:DisplayObjectContainer)
     {
         super();
+
+        _serverTransport = new NetController();
 
         _node = node;
 
@@ -67,9 +64,8 @@ public class CoreController extends CompositeController
         _userController = new UserController(_node);
         add(_userController);
 
-        BindingUtils.bindSetter(onAuth, _userController.getModel(), "_authPassed");
-        addEventListener(CommandEvent.SNOW_COMMAND, onSendCommand);
-        ServerConnection.inst.addEventListener(ServerConnectionEvent.REQUEST_RECEIVED, onReceiveRequest);
+        addEventListener(CommandEvent.SEND_COMMAND, onSendCommand);
+        _serverTransport.addEventListener(NetControllerEvent.RESPONSE, onResponse);
 
         startWorldTimer();
         _lastFrameTime = new Date().time;
@@ -111,33 +107,14 @@ public class CoreController extends CompositeController
         dispatchEvent(e);
     }
 
-    private function onAuth(passed:Boolean):void
-    {
-        if (passed)
-            sendPostponedCommands();
-    }
-
-    private function sendPostponedCommands():void
-    {
-        for (var i:int = _commandQueue.length - 1; i >= 0; i--)
-            sendCommand(_commandQueue[i]);
-
-        _commandQueue.length = 0;
-    }
-
-    private function onReceiveRequest(event:ServerConnectionEvent):void
+    private function onResponse(event:NetControllerEvent):void
     {
 
         try
         {
-            var responseData:Array = event._data;
+            var responseData:String = event.data;
 
-            var commandId:int = responseData[0];
-            var responseParams:Array = responseData[1];
-
-            Cc.log("receive response : " + commandId + " : " + responseParams);
-
-            dispatchEvent(new ResponseEvent(commandId, responseParams))
+//            dispatchEvent(new ResponseEvent(commandId, responseParams))
         } catch (e:Error)
         {
             Cc.log("invalid response!");
@@ -146,17 +123,7 @@ public class CoreController extends CompositeController
 
     private function onSendCommand(e:CommandEvent):void
     {
-        if (_userController.getModel()._authPassed
-                || e.commandId == AUTH.ID
-                || e.commandId == CREATEUSER.ID)
-            sendCommand(e);
-//        else
-//            _commandQueue.push(e);
-    }
-
-    private function sendCommand(e:CommandEvent):void
-    {
-        ServerConnection.inst.send(e.commandId, e.commandParams, e.forceSend);
+        _serverTransport.send(e.commandName, e.commandParams);
     }
 }
 }

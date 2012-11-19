@@ -1,5 +1,6 @@
+import config.Constants;
 import db.DataBase;
-import network.ServerPipelineFactory;
+import network.HTTPServerPipelineFactory;
 import org.apache.log4j.Logger;
 import org.jboss.netty.bootstrap.ServerBootstrap;
 import org.jboss.netty.channel.ChannelException;
@@ -55,13 +56,13 @@ public class Main
     {
         ChannelFactory factory = new NioServerSocketChannelFactory(Executors.newCachedThreadPool(), Executors.newCachedThreadPool());
         ServerBootstrap bootstrap = new ServerBootstrap(factory);
-        bootstrap.setPipelineFactory(new ServerPipelineFactory());
+        bootstrap.setPipelineFactory(new HTTPServerPipelineFactory());
         bootstrap.setOption("child.tcpNoDelay", true);
         bootstrap.setOption("child.keepAlive", true);
 
         try
         {
-            bootstrap.bind(new InetSocketAddress(9777));
+            bootstrap.bind(new InetSocketAddress(Constants.SERVER_PORT));
         } catch (ChannelException exc)
         {
             System.out.println(exc.getCause().getMessage());

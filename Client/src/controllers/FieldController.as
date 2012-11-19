@@ -20,9 +20,6 @@ import flash.events.Event;
 
 import models.FieldModel;
 
-import net.spec.CREATEOBJECT;
-import net.spec.GETUSERSTATE;
-
 import objects.ObjectController;
 import objects.ObjectModel;
 
@@ -64,15 +61,12 @@ public class FieldController extends CompositeController
 
     private function onResponse(e:ResponseEvent):void
     {
-        if (e.commandId == GETUSERSTATE.ID)
-        {
-            updateUserState(e.responseParams);
-        }
+        //updateUserState
     }
 
     private function updateUserState(responseParam:Array):void
     {
-        reloadField(responseParam[GETUSERSTATE.FIELD_OBJS], responseParam[GETUSERSTATE.HEIGHT_MAP]);
+        //reloadField
     }
 
     private function reloadField(fieldObjects:Array, heightMap:Array):void
@@ -97,22 +91,6 @@ public class FieldController extends CompositeController
 
     private function onFieldClick(e:FieldEvent):void
     {
-//        var currentHeight:int = _fieldModel.getHeight(e.pos.x, e.pos.y);
-//        var newHeight:int = currentHeight;
-//        if ((e.targetEvent as MouseEvent).ctrlKey)
-//            newHeight--;
-//        else
-//            newHeight++;
-//
-//        if (_fieldModel.setHeight(e.pos.x, e.pos.y, newHeight))
-//        {
-//            dispatchEvent(new CommandEvent(CMDList.CHANGE_HEIGHT,
-//                    [e.pos.x,
-//                        e.pos.y,
-//                        newHeight],
-//                    false, true));
-//        }
-
         var block:ObjectController = new ObjectController("1000", _fieldModel);
         if (_fieldModel.placeObject(block.getModel(), e.pos))
         {
@@ -120,13 +98,14 @@ public class FieldController extends CompositeController
             add(block);
         }
 
-        var params:Array = [];
-        params[CREATEOBJECT.CLASS_ID] = block.getModel().classId;
-        params[CREATEOBJECT.SPACE_ID] = block.getModel()._space;
-        params[CREATEOBJECT.X] = e.pos.x;
-        params[CREATEOBJECT.Y] = e.pos.y;
+        var params:Object = {
+            classId: block.getModel().classId,
+            spaceId: block.getModel()._space,
+            x: e.pos.x,
+            y: e.pos.y
+        };
 
-        dispatchEvent(new CommandEvent(CREATEOBJECT.ID,
+        dispatchEvent(new CommandEvent("create",
                 params,
                 false, true));
     }
