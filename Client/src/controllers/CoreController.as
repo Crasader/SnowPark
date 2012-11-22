@@ -22,6 +22,8 @@ import flash.events.Event;
 import flash.events.TimerEvent;
 import flash.utils.Timer;
 
+import misc.AppSettings;
+
 import net.NetController;
 import net.NetControllerEvent;
 
@@ -36,6 +38,8 @@ public class CoreController extends CompositeController
     private var _worldTimer:Timer;
     private var _lastTickTime:Number;
     private var _lastFrameTime:Number;
+
+    private var _api:SocWrapper;
 
     public function CoreController(node:DisplayObjectContainer)
     {
@@ -70,6 +74,20 @@ public class CoreController extends CompositeController
         startWorldTimer();
         _lastFrameTime = new Date().time;
         _node.stage.addEventListener(Event.ENTER_FRAME, onEnterFrame);
+
+        var settings:AppSettings = new AppSettings();
+        settings.accessFriends = true;
+        settings.accessGroups = true;
+        _api = new SocWrapper(_node, SocWrapper.VKONTAKTE, settings);
+
+        _api.addEventListener(SocWrapperEvent.USER_LOADED, function (e:Event):void
+        {
+            Cc.log("user Loaded");
+        });
+        _api.addEventListener(SocWrapperEvent.FRIENDS_LOADED, function (e:Event):void
+        {
+            Cc.log("friends Loaded");
+        });
     }
 
     private function onEnterFrame(event:Event):void

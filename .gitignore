@@ -10,3 +10,9 @@ Client/assets/bindable.swf
 Client/assets/bindable.swc
 Client/Client.iml
 Server/Server.iml
+APIConnector/.idea/*
+APIConnector/out/*
+Loader/.idea/*
+Loader/out/*
+Loader/Loader.iml
+APIConnector/APIConnector.iml

@@ -45,7 +45,7 @@ public class ServerTransport extends EventDispatcher
 
     public function send(data:String):void
     {
-        var request:URLRequest = new URLRequest(Constants.SERVER_URL);
+        var request:URLRequest = new URLRequest(Constants.SERVER_URL + "update");
         request.method = URLRequestMethod.POST;
 
         var vars:URLVariables = new URLVariables();

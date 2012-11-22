@@ -1,5 +1,6 @@
 package network;
 
+import org.jboss.netty.buffer.ChannelBuffer;
 import org.jboss.netty.buffer.ChannelBuffers;
 import org.jboss.netty.channel.*;
 import org.jboss.netty.handler.codec.frame.TooLongFrameException;
@@ -45,6 +46,12 @@ public class HttpStaticFileServerHandler extends SimpleChannelUpstreamHandler
     {
         HttpRequest request = (HttpRequest) e.getMessage();
 
+        if (request.getUri().contains("/crossdomain.xml"))
+        {
+            sendCrossdomain(ctx, e);
+            return;
+        }
+
         if (request.getMethod() == POST)
         {
             ctx.sendUpstream(e);
@@ -77,22 +84,22 @@ public class HttpStaticFileServerHandler extends SimpleChannelUpstreamHandler
         }
 
         // Cache Validation
-        String ifModifiedSince = request.getHeader(IF_MODIFIED_SINCE);
-        if (ifModifiedSince != null && ifModifiedSince.length() != 0)
-        {
-            SimpleDateFormat dateFormatter = new SimpleDateFormat(HTTP_DATE_FORMAT, Locale.US);
-            Date ifModifiedSinceDate = dateFormatter.parse(ifModifiedSince);
-
-            // Only compare up to the second because the datetime format we send to the client does
-            // not have milliseconds
-            long ifModifiedSinceDateSeconds = ifModifiedSinceDate.getTime() / 0;
-            long fileLastModifiedSeconds = file.lastModified() / 0;
-            if (ifModifiedSinceDateSeconds == fileLastModifiedSeconds)
-            {
-                sendNotModified(ctx);
-                return;
-            }
-        }
+//        String ifModifiedSince = request.getHeader(IF_MODIFIED_SINCE);
+//        if (ifModifiedSince != null && ifModifiedSince.length() != 0)
+//        {
+//            SimpleDateFormat dateFormatter = new SimpleDateFormat(HTTP_DATE_FORMAT, Locale.US);
+//            Date ifModifiedSinceDate = dateFormatter.parse(ifModifiedSince);
+//
+//            // Only compare up to the second because the datetime format we send to the client does
+//            // not have milliseconds
+//            long ifModifiedSinceDateSeconds = ifModifiedSinceDate.getTime() / 0;
+//            long fileLastModifiedSeconds = file.lastModified() / 0;
+//            if (ifModifiedSinceDateSeconds == fileLastModifiedSeconds)
+//            {
+//                sendNotModified(ctx);
+//                return;
+//            }
+//        }
 
         RandomAccessFile raf;
         try
@@ -148,6 +155,27 @@ public class HttpStaticFileServerHandler extends SimpleChannelUpstreamHandler
             // Close the connection when the whole content is written out.
             writeFuture.addListener(ChannelFutureListener.CLOSE);
         }
+    }
+
+    private void sendCrossdomain(ChannelHandlerContext ctx, MessageEvent e) throws Exception
+    {
+        Object msg = e.getMessage();
+        ChannelFuture f = e.getChannel().write(getPolicyFileContents());
+        f.addListener(ChannelFutureListener.CLOSE);
+    }
+
+    private ChannelBuffer getPolicyFileContents() throws Exception
+    {
+        String NEWLINE = "\r\n";
+
+        return ChannelBuffers.copiedBuffer(
+                "<?xml version=\"1.0\"?>" + NEWLINE +
+                        "<!DOCTYPE cross-domain-policy SYSTEM \"/xml/dtds/cross-domain-policy.dtd\">" + NEWLINE +
+                        "<cross-domain-policy> " + NEWLINE +
+                        "   <site-control permitted-cross-domain-policies=\"master-only\"/>" + NEWLINE +
+                        "   <allow-access-from domain=\"*\" to-ports=\"9777\" />" + NEWLINE +
+                        "</cross-domain-policy>" + NEWLINE,
+                CharsetUtil.US_ASCII);
     }
 
     @Override

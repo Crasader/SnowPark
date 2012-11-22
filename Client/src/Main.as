@@ -15,7 +15,7 @@ public class Main extends Sprite
 
     public function Main()
     {
-
+        Security.allowDomain("*");
         if (stage)
             init();
         else
@@ -26,7 +26,6 @@ public class Main extends Sprite
     {
         removeEventListener(Event.ADDED_TO_STAGE, init);
 
-        Security.allowDomain("*");
         Console.init(stage);
         var entryPoint:EntryPoint = new EntryPoint();
         addChild(entryPoint);

@@ -10,11 +10,22 @@ package core
 import controllers.CoreController;
 
 import flash.display.Sprite;
+import flash.events.Event;
 
 public class EntryPoint extends Sprite
 {
     public function EntryPoint()
     {
+
+        if (stage)
+            init();
+        else
+            addEventListener(Event.ADDED_TO_STAGE, init);
+    }
+
+    private function init(event:Event = null):void
+    {
+        removeEventListener(Event.ADDED_TO_STAGE, init);
         new CoreController(this);
     }
 }
