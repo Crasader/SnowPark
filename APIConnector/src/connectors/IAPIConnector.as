@@ -19,36 +19,28 @@ public interface IAPIConnector extends IEventDispatcher
 
     function get posterId():String;
 
-    function get fakeViewerId():String;
-
     function get authKey():String;
 
     function set onBalanceChanged(callback:Function):void;
 
     function init(...__rest):void;
 
-    function showSetup(mask:int):void;
+    function showSetup(settings:AppSettings):void;
 
     function showInviteBox(cb:Function = null, ids:Array = null):void;
 
-    function showPaymentBox(votes:uint = 0):void;
+    function showPaymentBox(units:uint = 0):void;
 
-    function getProfiles(ids:Array, cb:Function, fields:String, er:Function = null):void;
+    function getProfiles(ids:Array, cb:Function):void;
 
-    function getFriends(userId:String, fields:String, cb:Function = null, er:Function = null):void;
+    function getFriends(userId:String, cb:Function):void;
 
-    function get currencyForms():Array;
+    function currencyForms():Array;
 
-    function firstRequest(command:Object):void;
+    function isMemberOfGroup(userId:String, groupId:String, cb:Function):void;
 
-    function isMemberOfGroup(groupId:String, cb:Function, userId:String = null):void;
-
-    function getUserSettings(cb:Function = null, er:Function = null):void;
+    function getUserSettings(cb:Function):void;
 
     function get appInstalled():Boolean;
-
-    function getSerializedSettings(settings:AppSettings):int;
-
-    function getDeserializedSettings(settings:int):AppSettings;
 }
 }

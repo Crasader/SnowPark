@@ -77,8 +77,7 @@ public class CoreController extends CompositeController
 
         var settings:AppSettings = new AppSettings();
         settings.accessFriends = true;
-        settings.accessGroups = true;
-        _api = new SocWrapper(_node, SocWrapper.VKONTAKTE, settings);
+        _api = new SocWrapper();
 
         _api.addEventListener(SocWrapperEvent.USER_LOADED, function (e:Event):void
         {
@@ -88,6 +87,8 @@ public class CoreController extends CompositeController
         {
             Cc.log("friends Loaded");
         });
+
+        _api.initialize(_node, SocWrapper.LOCAL, settings);
     }
 
     private function onEnterFrame(event:Event):void

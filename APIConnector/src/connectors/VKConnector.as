@@ -9,6 +9,7 @@ import flash.events.Event;
 import flash.events.EventDispatcher;
 
 import misc.AppSettings;
+import misc.SUser;
 
 import vk.APIConnection;
 
@@ -17,6 +18,11 @@ public class VKConnector extends EventDispatcher implements IAPIConnector
     private var _parameters:Object;
     private var _onBalanceChanged:Function;
     private var _connection:APIConnection;
+
+    private static const FIELDS:String = "uid, first_name, last_name," +
+            " nickname, sex, bdate," +
+            " city, country, photo, photo_medium," +
+            " photo_big";
 
     //stage, flashVars
     public function init(...__rest):void
@@ -66,11 +72,6 @@ public class VKConnector extends EventDispatcher implements IAPIConnector
         return parameters["poster_id"];
     }
 
-    public function get fakeViewerId():String
-    {
-        return parameters["fake_viewer_id"];
-    }
-
     public function get apiId():String
     {
         return parameters["api_id"];
@@ -88,7 +89,7 @@ public class VKConnector extends EventDispatcher implements IAPIConnector
         }
     }
 
-    public function get currencyForms():Array
+    public function currencyForms():Array
     {
         return ['голос', 'голоса', 'голосов'];
     }
@@ -99,9 +100,9 @@ public class VKConnector extends EventDispatcher implements IAPIConnector
         return _parameters;
     }
 
-    public function showSetup(mask:int):void
+    public function showSetup(settings:AppSettings):void
     {
-        _connection.callMethod("showSettingsBox", mask);
+        _connection.callMethod("showSettingsBox", getSerializedSettings(settings));
     }
 
     public function showInviteBox(cb:Function = null, ids:Array = null):void
@@ -114,8 +115,7 @@ public class VKConnector extends EventDispatcher implements IAPIConnector
         _connection.callMethod("showPaymentBox", votes);
     }
 
-    //fields "uid, first_name";
-    public function getProfiles(ids:Array, cb:Function, fields:String, er:Function = null):void
+    public function getProfiles(ids:Array, cb:Function):void
     {
         var uids:String = "";
         for each(var id:String in ids)
@@ -123,25 +123,63 @@ public class VKConnector extends EventDispatcher implements IAPIConnector
 
         uids = uids.slice(0, uids.length - 1);
 
-        _connection.api('users.get', {uids:uids, fields:fields}, cb, er);
+        _connection.api('users.get', {uids:uids, fields:FIELDS}, usersLoaded, onError);
+
+        function usersLoaded(res:Object):void
+        {
+            var users:Array = fillProfiles(res);
+            cb(users);
+        }
     }
 
-    public function getFriends(userId:String, fields:String, cb:Function = null, er:Function = null):void
+    public function getFriends(userId:String, cb:Function):void
     {
-        _connection.api('friends.get', {uid:userId, fields:fields}, cb, er);
+        _connection.api('friends.get', {uid:userId, fields:FIELDS}, usersLoaded, onError);
+
+        function usersLoaded(res:Object):void
+        {
+            var users:Array = fillProfiles(res);
+            cb(users);
+        }
     }
 
-    public function firstRequest(command:Object):void
+    private function fillProfiles(res:Object):Array
+    {
+        var users:Array = [];
+        for each(var userObj:Object in res)
+        {
+            var user:SUser = new SUser();
+
+            user.avatar_pic = userObj.photo;
+            user.birthdate = stringToDate(userObj.bdate);
+            user.city = userObj.city;
+            user.country = userObj.country;
+            user.first_name = userObj.first_name;
+            user.id = userObj.uid;
+            user.last_name = userObj.last_name;
+            user.nickname = userObj.nickname;
+            user.photo_big = userObj.photo_big;
+            user.photo_medium = userObj.photo_medium;
+            user.sex = userObj.sex;
+
+            users.push(user);
+        }
+
+        return users;
+    }
+
+    public function isMemberOfGroup(userId:String, groupId:String, cb:Function):void
     {
     }
 
-    public function isMemberOfGroup(groupId:String, cb:Function, userId:String = null):void
+    public function getUserSettings(cb:Function):void
     {
-    }
+        _connection.api('getUserSettings', {uid:viewerId}, getSettings, onError);
 
-    public function getUserSettings(cb:Function = null, er:Function = null):void
-    {
-        _connection.api('getUserSettings', {uid:viewerId}, cb, er);
+        function getSettings(e:Object):void
+        {
+            cb(getDeserializedSettings(int(e)));
+        }
     }
 
     public function get appInstalled():Boolean
@@ -232,6 +270,21 @@ public class VKConnector extends EventDispatcher implements IAPIConnector
 
         return appSettings;
 
+    }
+
+    private function onError(e:Object):void
+    {
+        var output:String = "";
+        for each(var e_text:String in e)
+            output += e_text;
+
+        throw(new Error(output));
+    }
+
+    private function stringToDate(date:String):Date
+    {
+        var dates:Array = date.split(".");
+        return new Date(dates[2], dates[1], dates[0]);
     }
 }
 }

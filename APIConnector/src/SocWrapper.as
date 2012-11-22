@@ -29,7 +29,12 @@ public class SocWrapper extends EventDispatcher
     private var _appSettings:AppSettings = new AppSettings();
     private var _minAppSettings:AppSettings = new AppSettings();
 
-    public function SocWrapper(stageInst:DisplayObjectContainer, connectorType:int, settings:AppSettings)
+    public function SocWrapper()
+    {
+
+    }
+
+    public function initialize(stageInst:DisplayObjectContainer, connectorType:int, settings:AppSettings):void
     {
         _minAppSettings = settings;
         _api = new _connectors[connectorType]();
@@ -49,12 +54,11 @@ public class SocWrapper extends EventDispatcher
         loadFriends();
     }
 
-    private function onGetUserSettings(result:Object):void
+    private function onGetUserSettings(settings:AppSettings):void
     {
-        _appSettings = _api.getDeserializedSettings(int(result));
         if (!_appSettings.minimumAccess(_minAppSettings))
         {
-            _api.showSetup(_api.getSerializedSettings(_minAppSettings));
+            _api.showSetup(_minAppSettings);
         }
     }
 
@@ -69,10 +73,7 @@ public class SocWrapper extends EventDispatcher
 
     private function loadFriends():void
     {
-        _api.getFriends(_api.viewerId, "uid, first_name, last_name," +
-                " nickname, sex, bdate," +
-                " city, country, photo, photo_medium," +
-                " photo_big", onFriendsLoaded, onError);
+        _api.getFriends(_api.viewerId, onFriendsLoaded);
     }
 
     private function onError(e:Object):void
@@ -80,38 +81,15 @@ public class SocWrapper extends EventDispatcher
         checkSettings();
     }
 
-    private function onFriendsLoaded(res:Object):void
+    private function onFriendsLoaded(res:Array):void
     {
-        for each(var userObj:Object in res)
-        {
-            var user:SUser = new SUser();
-
-            user.avatar_pic = userObj.photo;
-            user.birthdate = userObj.bdate;
-            user.city = userObj.city;
-            user.country = userObj.country;
-            user.first_name = userObj.first_name;
-            user.id = userObj.uid;
-            user.last_name = userObj.last_name;
-            user.nickname = userObj.nickname;
-            user.photo_big = userObj.photo_big;
-            user.photo_medium = userObj.photo_medium;
-            user.sex = userObj.sex;
-
-            _friends.push(user);
-        }
-
+        _friends = res;
         dispatchEvent(new SocWrapperEvent(SocWrapperEvent.FRIENDS_LOADED));
     }
 
     private function loadUser():void
     {
-        _user = new SUser();
-
-        _api.getProfiles([_api.viewerId], onUserLoaded, "uid, first_name, last_name," +
-                " nickname, sex, bdate," +
-                " city, country, photo, photo_medium," +
-                " photo_big", onError);
+        _api.getProfiles([_api.viewerId], onUserLoaded);
     }
 
     public function getUser():SUser
@@ -119,29 +97,10 @@ public class SocWrapper extends EventDispatcher
         return _user;
     }
 
-    private function onUserLoaded(res:Object):void
+    private function onUserLoaded(res:Array):void
     {
-        var userObj:Object = res[0];
-
-        _user.avatar_pic = userObj.photo;
-        _user.birthdate = stringToDate(userObj.bdate);
-        _user.city = userObj.city;
-        _user.country = userObj.country;
-        _user.first_name = userObj.first_name;
-        _user.id = userObj.uid;
-        _user.last_name = userObj.last_name;
-        _user.nickname = userObj.nickname;
-        _user.photo_big = userObj.photo_big;
-        _user.photo_medium = userObj.photo_medium;
-        _user.sex = userObj.sex;
-
+        _user = res[0];
         dispatchEvent(new SocWrapperEvent(SocWrapperEvent.USER_LOADED));
-    }
-
-    private function stringToDate(date:String):Date
-    {
-        var dates:Array = date.split(".");
-        return new Date(dates[2], dates[1], dates[0]);
     }
 
     public function getFriends():Array
@@ -171,7 +130,7 @@ public class SocWrapper extends EventDispatcher
 
     public function showSettingsWindow(settings:AppSettings):void
     {
-        _api.showSetup(_api.getSerializedSettings(settings));
+        _api.showSetup(settings);
     }
 
 }
