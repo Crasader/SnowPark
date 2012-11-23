@@ -15,6 +15,7 @@ public class Constants
     public static final String DATABASE_HOST = "localhost";
     public static final int DATABASE_PORT = 27017;
     public static final int SERVER_PORT = 9777;
+    public static final String API_SECRET = "QZw0ZoqNQ2q4sPVv8VYD";
 
     public static final int SALT_LENGTH = 4;
 }

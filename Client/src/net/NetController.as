@@ -22,6 +22,8 @@ public class NetController extends EventDispatcher
     private var _errorCommandBuffer:Array = [];
     private var _transport:ServerTransport = new ServerTransport();
 
+    private var _defaultMessageParams:Object;
+
     public function NetController()
     {
         _transport.addEventListener(ServerTransportEvent.RESPONSE, onResponse);
@@ -31,11 +33,22 @@ public class NetController extends EventDispatcher
         _updateTimer.start();
     }
 
-    private function sendRequest(event:TimerEvent):void
+    private function sendRequest(event:TimerEvent = null):void
     {
+        if (_commandBuffer.length <= 0) return;
+
         _errorCommandBuffer = _commandBuffer.concat();
-        var data:String = JSON.stringify(_commandBuffer);
-        _transport.send(data);
+
+        var data:Object = {queue:_commandBuffer};
+        for (var key:String in _defaultMessageParams)
+        {
+            data[key] = _defaultMessageParams[key];
+        }
+
+        var dataJSON:String = JSON.stringify(data);
+
+        _transport.send(dataJSON);
+        _commandBuffer.length = 0;
     }
 
     private function onError(event:ServerTransportEvent):void
@@ -51,9 +64,17 @@ public class NetController extends EventDispatcher
         dispatchEvent(new NetControllerEvent(NetControllerEvent.RESPONSE, stringData));
     }
 
-    public function send(cmd:String, params:Object):void
+    public function send(cmd:String, params:Object, force:Boolean):void
     {
+        Cc.log("in queue: " + cmd + ", " + params.toString());
+
         _commandBuffer.push({cmd:cmd, params:params});
+        if (force) sendRequest();
+    }
+
+    public function initialize(defaultMessageParams:Object):void
+    {
+        _defaultMessageParams = defaultMessageParams;
     }
 }
 }

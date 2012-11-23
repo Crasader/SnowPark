@@ -29,7 +29,7 @@ public interface IAPIConnector extends IEventDispatcher
 
     function showInviteBox(cb:Function = null, ids:Array = null):void;
 
-    function showPaymentBox(units:uint = 0):void;
+    function showPaymentBox(typeTr:String, param:String):void;
 
     function getProfiles(ids:Array, cb:Function):void;
 

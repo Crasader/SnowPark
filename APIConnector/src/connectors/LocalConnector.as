@@ -49,7 +49,7 @@ public class LocalConnector extends EventDispatcher implements IAPIConnector
 
     public function get authKey():String
     {
-        return "1";
+        return "42f32af339f0fa4aa8035f97ed3f8271";
     }
 
     public function currencyForms():Array
@@ -112,7 +112,7 @@ public class LocalConnector extends EventDispatcher implements IAPIConnector
     {
     }
 
-    public function showPaymentBox(units:uint = 0):void
+    public function showPaymentBox(typeTr:String, param:String):void
     {
     }
 

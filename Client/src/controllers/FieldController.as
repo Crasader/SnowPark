@@ -91,6 +91,16 @@ public class FieldController extends CompositeController
 
     private function onFieldClick(e:FieldEvent):void
     {
+        if (_fieldModel.activeTool == FieldModel.DOWN_TOOL)
+            decreaceGroundLevel(e);
+        if (_fieldModel.activeTool == FieldModel.UP_TOOL)
+            encreaceGroundLevel(e);
+        if (_fieldModel.activeTool == FieldModel.PLACE_OBJECT_TOOL)
+            placeObject(e);
+    }
+
+    private function placeObject(e:FieldEvent):void
+    {
         var block:ObjectController = new ObjectController("1000", _fieldModel);
         if (_fieldModel.placeObject(block.getModel(), e.pos))
         {
@@ -99,10 +109,10 @@ public class FieldController extends CompositeController
         }
 
         var params:Object = {
-            classId: block.getModel().classId,
-            spaceId: block.getModel()._space,
-            x: e.pos.x,
-            y: e.pos.y
+            classId:block.getModel().classId,
+            spaceId:block.getModel()._space,
+            x      :e.pos.x,
+            y      :e.pos.y
         };
 
         dispatchEvent(new CommandEvent("create",
@@ -110,9 +120,48 @@ public class FieldController extends CompositeController
                 false, true));
     }
 
+    private function encreaceGroundLevel(e:FieldEvent):void
+    {
+        var newHeight:int = _fieldModel.getHeight(e.pos.x, e.pos.y) + 1;
+        if (_fieldModel.setHeight(e.pos.x, e.pos.y, newHeight))
+        {
+            var params:Object = {
+                x     :e.pos.x,
+                y     :e.pos.y,
+                height:newHeight
+            };
+
+            dispatchEvent(new CommandEvent("changeHeight",
+                    params,
+                    false, true));
+        }
+    }
+
+    private function decreaceGroundLevel(e:FieldEvent):void
+    {
+        var newHeight:int = _fieldModel.getHeight(e.pos.x, e.pos.y) - 1;
+        if (_fieldModel.setHeight(e.pos.x, e.pos.y, newHeight))
+        {
+            var params:Object = {
+                x     :e.pos.x,
+                y     :e.pos.y,
+                height:newHeight
+            };
+
+            dispatchEvent(new CommandEvent("changeHeight",
+                    params,
+                    false, true));
+        }
+    }
+
     public function get fieldView():FieldView
     {
         return _fieldView;
+    }
+
+    public function get fieldModel():FieldModel
+    {
+        return _fieldModel;
     }
 }
 }

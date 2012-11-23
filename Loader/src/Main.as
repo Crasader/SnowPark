@@ -20,7 +20,7 @@ public class Main extends Sprite
         Security.allowDomain("*");
         initLoader();
         addChild(_textPrc);
-        _contentLoader.load(new URLRequest("http://localhost/snow/SnowParkClient.swf"));
+        _contentLoader.load(new URLRequest("http://juztoss.zapto.org:5000/snow/SnowParkClient.swf"));
     }
 
     private function initLoader():void

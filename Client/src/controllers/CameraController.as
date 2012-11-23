@@ -29,14 +29,16 @@ public class CameraController extends CompositeController
     private var _mouseMoved:Boolean = false;
     private var _lastMouseMoveEvent:MouseEvent;
 
+    private var _fieldController:FieldController;
+
     public function CameraController(parentView:DisplayObjectContainer)
     {
         _cameraModel = new CameraModel();
         _cameraView = new CameraView(_cameraModel);
         parentView.addChild(_cameraView);
 
-        var fieldController:FieldController = new FieldController(_cameraView);
-        add(fieldController);
+        _fieldController = new FieldController(_cameraView);
+        add(_fieldController);
 
         if (_cameraView.stage)
             init();
@@ -102,5 +104,9 @@ public class CameraController extends CompositeController
         _mousePressed = true;
     }
 
+    public function get fieldController():FieldController
+    {
+        return _fieldController;
+    }
 }
 }

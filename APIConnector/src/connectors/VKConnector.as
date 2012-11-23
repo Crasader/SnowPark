@@ -110,9 +110,15 @@ public class VKConnector extends EventDispatcher implements IAPIConnector
         _connection.callMethod("showInviteBox");
     }
 
-    public function showPaymentBox(votes:uint = 0):void
+    public static const TYPE_TR_VOTES:String = "votes";
+    public static const TYPE_TR_OFFERS:String = "offers";
+    public static const TYPE_TR_ITEM:String = "item";
+
+    public function showPaymentBox(typeTr:String, param:String):void
     {
-        _connection.callMethod("showPaymentBox", votes);
+        var methodParams:Object = {type:typeTr};
+        methodParams[typeTr] = param;
+        _connection.callMethod("showOrderBox", methodParams);
     }
 
     public function getProfiles(ids:Array, cb:Function):void

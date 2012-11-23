@@ -22,9 +22,18 @@ import utils.IntPnt;
 
 public class FieldModel extends EventDispatcher implements IFieldModel
 {
+    public static const VOID_TOOL:String = "VoidTool";
+    public static const MOVE_TOOL:String = "MoveTool";
+    public static const UP_TOOL:String = "UpTool";
+    public static const DOWN_TOOL:String = "DownTool";
+    public static const PLACE_OBJECT_TOOL:String = "PlaceObjetTool";
+    public static const REMOVE_OBJECT_TOOL:String = "RemoveObjectTool";
+
     private var _field:SnowParkField;
     private var _heightMap:Array;
     private var _allObjects:Vector.<ObjectModel> = new Vector.<ObjectModel>();
+
+    private var _activeTool:String = VOID_TOOL;
 
     public function FieldModel()
     {
@@ -67,6 +76,16 @@ public class FieldModel extends EventDispatcher implements IFieldModel
                 _field.setBlock(new IntPnt(i, j), null);
             }
         }
+    }
+
+    public function get activeTool():String
+    {
+        return _activeTool;
+    }
+
+    public function setTool(tool:String):void
+    {
+        _activeTool = tool;
     }
 
     private function fillFieldByObject(obj:ObjectModel):void

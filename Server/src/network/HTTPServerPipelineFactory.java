@@ -24,7 +24,7 @@ public class HTTPServerPipelineFactory implements ChannelPipelineFactory
         pipeline.addLast("encoder", new HttpResponseEncoder());
         pipeline.addLast("chunkedWriter", new ChunkedWriteHandler());
 
-        pipeline.addLast("fileHandler", new HttpStaticFileServerHandler());
+        pipeline.addLast("fileHandler", new HttpGatewayServerHandler());
         pipeline.addLast("gameHandler", new HttpGameServerHandler());
 
         return pipeline;

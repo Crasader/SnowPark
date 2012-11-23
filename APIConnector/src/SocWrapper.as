@@ -40,15 +40,14 @@ public class SocWrapper extends EventDispatcher
         _api = new _connectors[connectorType]();
         _api.init(stageInst.stage, stageInst.stage.loaderInfo.parameters);
         _api.addEventListener(SocWrapperEvent.SETTINGS_CHANGED, onSettingsChanged);
-        init();
     }
 
     private function onSettingsChanged(event:SocWrapperEvent):void
     {
-        init();
+        loadBaseInformation();
     }
 
-    private function init():void
+    public function loadBaseInformation():void
     {
         loadUser();
         loadFriends();
@@ -123,9 +122,13 @@ public class SocWrapper extends EventDispatcher
         _api.showInviteBox();
     }
 
-    public function openPaymentWindow(votes:int = 0):void
+    public static const TYPE_TR_VOTES:String = "votes";
+    public static const TYPE_TR_OFFERS:String = "offers";
+    public static const TYPE_TR_ITEM:String = "item";
+
+    public function openPaymentWindow(typeTr:String, param:String):void
     {
-        _api.showPaymentBox(votes);
+        _api.showPaymentBox(typeTr, param);
     }
 
     public function showSettingsWindow(settings:AppSettings):void
@@ -133,5 +136,14 @@ public class SocWrapper extends EventDispatcher
         _api.showSetup(settings);
     }
 
+    public function get authKey():String
+    {
+        return _api.authKey;
+    }
+
+    public function get apiId():String
+    {
+        return _api.apiId;
+    }
 }
 }

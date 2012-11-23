@@ -13,5 +13,7 @@ public interface IFieldModel extends IBindableModel
     function getHeight(x:int, y:int):int;
 
     function isPlaceFree(x:int, y:int, width:int = 1, length:int = 1):Boolean
+
+    function get activeTool():String;
 }
 }

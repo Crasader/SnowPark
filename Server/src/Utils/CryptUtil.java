@@ -15,7 +15,7 @@ public class CryptUtil
 {
     public static String getSalt(int saltLength) throws Exception
     {
-        if(saltLength <= 0) throw new Exception("wrong saltLength, must be > 0");
+        if (saltLength <= 0) throw new Exception("wrong saltLength, must be > 0");
 
         Random r = new SecureRandom();
         byte[] salt = new byte[saltLength];
@@ -34,8 +34,7 @@ public class CryptUtil
             md = MessageDigest.getInstance("MD5");
             md.update(raw, 0, raw.length);
             output = md.digest();
-        }
-        catch (NoSuchAlgorithmException e)
+        } catch (NoSuchAlgorithmException e)
         {
             e.printStackTrace();
         }
@@ -52,5 +51,12 @@ public class CryptUtil
         String saltedPass = MD5PassString + salt;
 
         return new BigInteger(1, createMD5(saltedPass.getBytes(charset))).toString(16);
+    }
+
+    public static String hashString(String str)
+    {
+        Charset charset = Charset.forName("UTF-8");
+        byte[] MD5Pass = createMD5(str.getBytes(charset));
+        return new BigInteger(1, MD5Pass).toString(16);
     }
 }

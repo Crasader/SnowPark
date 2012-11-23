@@ -5,77 +5,94 @@
 package views
 {
 
-import flash.display.SimpleButton;
+import config.Constants;
+
+import events.UserEvent;
+
 import flash.display.Sprite;
+import flash.events.Event;
 import flash.events.MouseEvent;
-import flash.text.TextField;
 
 import models.IBindableModel;
 
-import mx.binding.utils.BindingUtils;
+import net.loaders.MovieLoader;
+
+import utils.ButtonUtil;
 
 public class UserView extends Sprite
 {
-    private var _loginScreen:Sprite = new LoginScreen();
+    private var _mainGUI:MovieLoader;
 
     public function UserView(model:IBindableModel)
     {
-        addChild(_loginScreen);
-        connectBtn.addEventListener(MouseEvent.CLICK, onConnectClick);
-        createBtn.addEventListener(MouseEvent.CLICK, onCreateClick);
+        _mainGUI = new MovieLoader(Constants.GRAPHICS_PATH + "gui/gui.swf", "MainGui");
+        _mainGUI.addEventListener(MovieLoader.MOVIE_LOADED, onGUILoaded);
+        _mainGUI.addEventListener(MovieLoader.ERROR_LOAD_MOVIE, onErrorLoadGUI);
+        addChild(_mainGUI);
+        _mainGUI.startLoad();
     }
 
-    private function authChanged(authPassed:Boolean):void
+    private function onErrorLoadGUI(event:Event):void
     {
-        if (authPassed)
-        {
-            removeChild(_loginScreen);
-        }
-        else
-        {
-            addChild(_loginScreen);
-        }
 
     }
 
-    private function onCreateClick(event:MouseEvent):void
+    private function onGUILoaded(event:Event):void
     {
-        dispatchEvent(new UserViewEvent(UserViewEvent.CREATE_NEW_USER));
+        init();
     }
 
-    private function onConnectClick(event:MouseEvent):void
+    private function init():void
     {
-        dispatchEvent(new UserViewEvent(UserViewEvent.AUTH));
+        ButtonUtil.setButton(_mainGUI.content["buttonBuild"], onBuildClick);
+        ButtonUtil.setButton(_mainGUI.content["buttonUp"], onUpClick);
+        ButtonUtil.setButton(_mainGUI.content["buttonDown"], onDownClick);
+        ButtonUtil.setButton(_mainGUI.content["buttonSettings"], onSettingsClick);
+        ButtonUtil.setButton(_mainGUI.content["buttonMoney"], onMoneyClick);
+        ButtonUtil.setButton(_mainGUI.content["buttonExp"], onExpClick);
+        ButtonUtil.setButton(_mainGUI.content["buttonReal"], onRealClick);
+        ButtonUtil.setButton(_mainGUI.content["buttonAllFriends"], onAllFriendsClick);
     }
 
-    private function get connectBtn():SimpleButton
+    private function onBuildClick(e:MouseEvent):void
     {
-        return _loginScreen.getChildByName("connect_btn") as SimpleButton;
+        dispatchEvent(new UserEvent(UserEvent.BUILD));
     }
 
-    private function get createBtn():SimpleButton
+    private function onUpClick(e:MouseEvent):void
     {
-        return _loginScreen.getChildByName("create_btn") as SimpleButton;
+        dispatchEvent(new UserEvent(UserEvent.TOOL_UP));
     }
 
-    private function get loginTF():TextField
+    private function onDownClick(e:MouseEvent):void
     {
-        return _loginScreen.getChildByName("login_tf") as TextField;
+        dispatchEvent(new UserEvent(UserEvent.TOOL_DOWN));
     }
 
-    private function get passwordTF():TextField
+    private function onSettingsClick(e:MouseEvent):void
     {
-        return _loginScreen.getChildByName("password_tf") as TextField;
+        dispatchEvent(new UserEvent(UserEvent.SETTINGS));
     }
 
-    public function get loginStr():String
+    private function onMoneyClick(e:MouseEvent):void
     {
-        return loginTF.text;
+        dispatchEvent(new UserEvent(UserEvent.MONEY));
     }
 
-    public function get passStr():String
+    private function onExpClick(e:MouseEvent):void
     {
-        return passwordTF.text;
+        dispatchEvent(new UserEvent(UserEvent.EXP));
     }
+
+    private function onRealClick(e:MouseEvent):void
+    {
+        dispatchEvent(new UserEvent(UserEvent.REAL));
+    }
+
+    private function onAllFriendsClick(e:MouseEvent):void
+    {
+        dispatchEvent(new UserEvent(UserEvent.ALL_FRIENDS));
+    }
+
 }
 }

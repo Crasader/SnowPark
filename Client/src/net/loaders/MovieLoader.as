@@ -48,6 +48,8 @@ public class MovieLoader extends Sprite
 
     private function onAllLoaded(event:Event):void
     {
+        if (_content) return;
+
         var className:String = _className || DEFAULT_MOVIE_CLASS_NAME;
         try
         {

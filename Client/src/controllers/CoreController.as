@@ -45,8 +45,6 @@ public class CoreController extends CompositeController
     {
         super();
 
-        _serverTransport = new NetController();
-
         _node = node;
 
         _configLoader = new ConfigLoader();
@@ -69,7 +67,6 @@ public class CoreController extends CompositeController
         add(_userController);
 
         addEventListener(CommandEvent.SEND_COMMAND, onSendCommand);
-        _serverTransport.addEventListener(NetControllerEvent.RESPONSE, onResponse);
 
         startWorldTimer();
         _lastFrameTime = new Date().time;
@@ -82,6 +79,7 @@ public class CoreController extends CompositeController
         _api.addEventListener(SocWrapperEvent.USER_LOADED, function (e:Event):void
         {
             Cc.log("user Loaded");
+            dispatchEvent(new CommandEvent("getUserData", {}, true));
         });
         _api.addEventListener(SocWrapperEvent.FRIENDS_LOADED, function (e:Event):void
         {
@@ -89,6 +87,10 @@ public class CoreController extends CompositeController
         });
 
         _api.initialize(_node, SocWrapper.LOCAL, settings);
+        _serverTransport = new NetController();
+        _serverTransport.addEventListener(NetControllerEvent.RESPONSE, onResponse);
+        _serverTransport.initialize({authKey:_api.authKey, apiId:_api.apiId, viewerId:_api.getUser().id});
+        _api.loadBaseInformation();
     }
 
     private function onEnterFrame(event:Event):void
@@ -128,11 +130,10 @@ public class CoreController extends CompositeController
 
     private function onResponse(event:NetControllerEvent):void
     {
-
         try
         {
             var responseData:String = event.data;
-
+            Cc.log("response: " + event.data);
 //            dispatchEvent(new ResponseEvent(commandId, responseParams))
         } catch (e:Error)
         {
@@ -142,7 +143,7 @@ public class CoreController extends CompositeController
 
     private function onSendCommand(e:CommandEvent):void
     {
-        _serverTransport.send(e.commandName, e.commandParams);
+        _serverTransport.send(e.commandName, e.commandParams, e.forceSend);
     }
 }
 }
