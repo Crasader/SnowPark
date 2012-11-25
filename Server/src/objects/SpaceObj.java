@@ -5,6 +5,8 @@ import com.google.code.morphia.annotations.Entity;
 import com.google.code.morphia.annotations.Id;
 import org.bson.types.ObjectId;
 
+import java.util.HashMap;
+
 /**
  * Author: JuzTosS
  * Date: 17.06.12
@@ -24,8 +26,13 @@ public class SpaceObj
     String classId = "0";
 
 
-    public Object[] getSerialized()
+    public HashMap<String, Object> getSerialized()
     {
-        return new Object[]{classId, x, y};
+        HashMap<String, Object> sObj = new HashMap<String, Object>();
+        sObj.put("classId", classId);
+        sObj.put("x", ((Integer) x).toString());
+        sObj.put("y", ((Integer) x).toString());
+
+        return sObj;
     }
 }

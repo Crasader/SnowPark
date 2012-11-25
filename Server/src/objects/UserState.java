@@ -19,11 +19,7 @@ public class UserState
     ObjectId eDatabaseId;
 
     @Embedded
-    public String salt = "";
-    @Embedded
-    public String password = "";
-    @Embedded
-    public String login = "";
+    public String id = "";
 
     @Embedded
     public HashMap<Integer, Space> spaces = new HashMap<Integer, Space>();

@@ -28,11 +28,6 @@ public class CommandEvent extends Event
         return new CommandEvent(_commandName, _commandParams, _forceSend, bubbles, cancelable);
     }
 
-    override public function toString():String
-    {
-        return "Command: " + _commandName;
-    }
-
     public function get commandParams():Object
     {
         return _commandParams;

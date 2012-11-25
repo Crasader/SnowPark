@@ -61,7 +61,10 @@ public class FieldController extends CompositeController
 
     private function onResponse(e:ResponseEvent):void
     {
-        //updateUserState
+        if (e.cmd == "getUserData" && e.params["type"] == "all")
+        {
+            reloadField(e.params["objects"], e.params["heightMap"]);
+        }
     }
 
     private function updateUserState(responseParam:Array):void
@@ -77,10 +80,10 @@ public class FieldController extends CompositeController
         while (numChildren)
             remove(getChild(0));
 
-        for each(var objInfo:Array in fieldObjects)
+        for each(var objInfo:Object in fieldObjects)
         {
-            var pos:IntPnt = new IntPnt(objInfo[1], objInfo[2]); // x, y
-            var block:ObjectController = new ObjectController(objInfo[0], _fieldModel); // class_id
+            var pos:IntPnt = new IntPnt(objInfo["x"], objInfo["y"]);
+            var block:ObjectController = new ObjectController(objInfo["classId"], _fieldModel);
             if (_fieldModel.placeObject(block.getModel(), pos))
             {
                 _fieldView.addChild(block.getView());

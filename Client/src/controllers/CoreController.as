@@ -16,6 +16,7 @@ import config.Constants;
 
 import events.CommandEvent;
 import events.CoreEvent;
+import events.ResponseEvent;
 
 import flash.display.DisplayObjectContainer;
 import flash.events.Event;
@@ -79,8 +80,10 @@ public class CoreController extends CompositeController
         _api.addEventListener(SocWrapperEvent.USER_LOADED, function (e:Event):void
         {
             Cc.log("user Loaded");
-            dispatchEvent(new CommandEvent("getUserData", {}, true));
+            _serverTransport.initialize({authKey:_api.authKey, apiId:_api.apiId, viewerId:_api.getUser().id});
+            dispatchEvent(new CommandEvent("getUserData", {type:"all"}, true));
         });
+
         _api.addEventListener(SocWrapperEvent.FRIENDS_LOADED, function (e:Event):void
         {
             Cc.log("friends Loaded");
@@ -89,7 +92,6 @@ public class CoreController extends CompositeController
         _api.initialize(_node, SocWrapper.LOCAL, settings);
         _serverTransport = new NetController();
         _serverTransport.addEventListener(NetControllerEvent.RESPONSE, onResponse);
-        _serverTransport.initialize({authKey:_api.authKey, apiId:_api.apiId, viewerId:_api.getUser().id});
         _api.loadBaseInformation();
     }
 
@@ -132,9 +134,18 @@ public class CoreController extends CompositeController
     {
         try
         {
-            var responseData:String = event.data;
+            var responseDataJSON:String = event.data;
             Cc.log("response: " + event.data);
-//            dispatchEvent(new ResponseEvent(commandId, responseParams))
+
+            var responseData:Object = JSON.parse(responseDataJSON);
+            var commands:Array = responseData["queue"];
+            for each(var commandObj:Object in commands)
+            {
+                var cmd:String = commandObj["cmd"];
+                commandObj["cmd"] = null;
+
+                dispatchEvent(new ResponseEvent(cmd, commandObj));
+            }
         } catch (e:Error)
         {
             Cc.log("invalid response!");

@@ -144,7 +144,7 @@ public class FieldView extends IsoScene
         _grid.bitmapData.draw(gridSprite, new Matrix(1, 0, 0, 1, fieldMaxWidth / 2, Constants.MOUSEMAP_HEIGHT_MARGIN));
     }
 
-    private function getHeightTileColor(x:int, y:int):String //TODO: Build x,y to tile map
+    private function getHeightTileColor(x:int, y:int):String //TODO: Build x,y to tile map //вместо перебора
     {
         for (var color:String in _heightMouseHash)
         {

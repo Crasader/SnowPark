@@ -8,36 +8,31 @@ import flash.events.Event;
 
 public class ResponseEvent extends Event
 {
-    private var _responseParams:Array;
-    private var _commandId:int;
+    private var _params:Object;
+    private var _cmd:String;
 
     public static const SNOW_RESPONSE:String = "SNOW_RESPONSE";
 
-    function ResponseEvent(cmd:int, params:Array, bubbles:Boolean = false, cancelable:Boolean = false):void
+    function ResponseEvent(cmd:String, params:Object, bubbles:Boolean = false, cancelable:Boolean = false):void
     {
         super(SNOW_RESPONSE, bubbles, cancelable);
-        _responseParams = params;
-        _commandId = cmd;
+        _params = params;
+        _cmd = cmd;
     }
 
     override public function clone():Event
     {
-        return new ResponseEvent(_commandId, _responseParams, bubbles, cancelable);
+        return new ResponseEvent(_cmd, _params, bubbles, cancelable);
     }
 
-    override public function toString():String
+    public function get params():Object
     {
-        return "Command: " + _commandId;
+        return _params;
     }
 
-    public function get responseParams():Array
+    public function get cmd():String
     {
-        return _responseParams;
-    }
-
-    public function get commandId():int
-    {
-        return _commandId;
+        return _cmd;
     }
 }
 }

@@ -95,18 +95,18 @@ public class HttpGatewayServerHandler extends SimpleChannelUpstreamHandler
         Throwable cause = e.getCause();
         if (cause instanceof TooLongFrameException)
         {
-            sendError(ctx, BAD_REQUEST);
+            sendHTTPError(ctx, BAD_REQUEST);
             return;
         }
 
         cause.printStackTrace();
         if (ch.isConnected())
         {
-            sendError(ctx, INTERNAL_SERVER_ERROR);
+            sendHTTPError(ctx, INTERNAL_SERVER_ERROR);
         }
     }
 
-    protected static void sendError(ChannelHandlerContext ctx, HttpResponseStatus status)
+    protected static void sendHTTPError(ChannelHandlerContext ctx, HttpResponseStatus status)
     {
         HttpResponse response = new DefaultHttpResponse(HTTP_1_1, status);
         response.setHeader(CONTENT_TYPE, "text/plain; charset=UTF-8");

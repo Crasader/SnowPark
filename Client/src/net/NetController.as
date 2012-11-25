@@ -47,6 +47,9 @@ public class NetController extends EventDispatcher
 
         var dataJSON:String = JSON.stringify(data);
 
+        Cc.log("request:\n" + dataJSON);
+        Cc.log("\n end request.");
+
         _transport.send(dataJSON);
         _commandBuffer.length = 0;
     }
@@ -66,8 +69,6 @@ public class NetController extends EventDispatcher
 
     public function send(cmd:String, params:Object, force:Boolean):void
     {
-        Cc.log("in queue: " + cmd + ", " + params.toString());
-
         _commandBuffer.push({cmd:cmd, params:params});
         if (force) sendRequest();
     }
