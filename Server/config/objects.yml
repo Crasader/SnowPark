@@ -1,110 +1,121 @@
 maxFieldSize: 50
+i18n: ru
 
-1: &trampoline
-  shop:
-    priceRuby: 100
-    priceGold: 100
-  behavior:
-    type: trampoline
-    width: 1
-    length: 3
-    rotated: false
-    static:
-      x: 3
-      y: 3
-  view:
-    field: "trampoline.swf"
-    shop: "otherFile.swf"
-  descriptions:
-    ru:
-      name: "Обычный трамплин"
-      desc: "Понравится начинающим"
-    en:
-      name: "Simple trampoline"
-      desc: "Will like for beginners"
-
-0: &decor
-  shop:
-    priceRuby: 100
-    priceGold: 100
-  behavior:
-    type: decor
-    width: 1
-    length: 1
-    rotated: true
-  view:
-    field: "decor.swf"
-    shop: "otherFile.swf"
-  descriptions:
+objects:
+  1: &trampoline
+    shop:
+      show: true
+      tab: kicker
+      priceReal: 100
+      priceMoney: 100
+    behavior:
+      type: trampoline
+      width: 1
+      length: 3
+      rotated: false
+      static:
+        x: 3
+        y: 3
+    view:
+      field: "trampoline.swf"
+      shop: "trampoline.swf"
+    descriptions:
       ru:
-        name: "Плакат с символикой парка"
-        desc: "Хороший плакат, расскажет посетителям о том где они находятся"
+        name: "Обычный трамплин"
+        desc: "Понравится начинающим"
       en:
-        name: "Poster with park logo"
-        desc: "Good poster, tell to riders about park"
+        name: "Simple trampoline"
+        desc: "Will like for beginners"
 
-2: &rail
-  shop:
-    priceRuby: 100
-    priceGold: 100
-  behavior:
-    type: rail
-    width: 1
-    length: 2
-    rotated: true
-  view:
-    field: "rail.swf"
-    shop: "otherFile.swf"
-  descriptions:
+  0: &decor
+    shop:
+      show: false
+      tab: decor
+      priceReal: 100
+      priceMoney: 100
+    behavior:
+      type: decor
+      width: 1
+      length: 1
+      rotated: true
+    view:
+      field: "decor.swf"
+      shop: "decor.swf"
+    descriptions:
         ru:
-          name: "Обычный рэйл"
-          desc: "Понравится начинающим"
+          name: "Плакат с символикой парка"
+          desc: "Хороший плакат, расскажет посетителям о том где они находятся"
         en:
-          name: "Simple rail"
-          desc: "Will like for beginners"
+          name: "Poster with park logo"
+          desc: "Good poster, tell to riders about park"
 
-4: &tree
-  shop:
-    priceRuby: 100
-    priceGold: 100
-  behavior:
-    type: rail
-    width: 1
-    length: 2
-    rotated: true
-  view:
-    field: "tree.swf"
-    shop: "otherFile.swf"
-  descriptions:
-        ru:
-          name: "Дерево"
-          desc: "Понравится начинающим"
-        en:
-          name: "Tree"
-          desc: "Will like for beginners"
+  2: &rail
+    shop:
+      show: true
+      tab: kicker
+      priceReal: 100
+      priceMoney: 100
+    behavior:
+      type: rail
+      width: 1
+      length: 2
+      rotated: true
+    view:
+      field: "rail.swf"
+      shop: "rail.swf"
+    descriptions:
+          ru:
+            name: "Обычный рэйл"
+            desc: "Понравится начинающим"
+          en:
+            name: "Simple rail"
+            desc: "Will like for beginners"
 
-1000: &rider
-  shop:
-    priceRuby: 100
-    priceGold: 100
-  behavior:
-    components:
-      - name: rider
-        speed: 3 #unit/s
-      - name: move
-      - name: alongRotation
-      - name: simpleAnimation
-        fps: 10
-    width: 1
-    length: 2
-    rotated: true
-  view:
-    field: "rider.swf"
-    shop: "otherFile.swf"
-  descriptions:
-        ru:
-          name: "Начинающий райдер"
-          desc: "Понравится начинающим"
-        en:
-          name: "Beginner rider"
-          desc: "Will like for beginners"
+  4: &tree
+    shop:
+      show: true
+      tab: decor
+      priceReal: 100
+      priceMoney: 100
+    behavior:
+      type: rail
+      width: 1
+      length: 2
+      rotated: true
+    view:
+      field: "tree.swf"
+      shop: "tree.swf"
+    descriptions:
+          ru:
+            name: "Дерево"
+            desc: "Понравится начинающим"
+          en:
+            name: "Tree"
+            desc: "Will like for beginners"
+
+  1000: &rider
+    shop:
+      show: false
+      priceReal: 100
+      priceMoney: 100
+    behavior:
+      components:
+        - name: rider
+          speed: 3 #unit/s
+        - name: move
+        - name: alongRotation
+        - name: simpleAnimation
+          fps: 10
+      width: 1
+      length: 2
+      rotated: true
+    view:
+      field: "rider.swf"
+      shop: "otherFile.swf"
+    descriptions:
+          ru:
+            name: "Начинающий райдер"
+            desc: "Понравится начинающим"
+          en:
+            name: "Beginner rider"
+            desc: "Will like for beginners"

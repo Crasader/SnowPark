@@ -5,94 +5,89 @@
 package views
 {
 
-import config.Constants;
+import com.junkbyte.console.Cc;
 
-import events.UserEvent;
+import events.UserViewEvent;
 
 import flash.display.Sprite;
 import flash.events.Event;
-import flash.events.MouseEvent;
 
 import models.IBindableModel;
 
-import net.loaders.MovieLoader;
-
-import utils.ButtonUtil;
+import views.windows.BaseWindow;
+import views.windows.MainGui;
+import views.windows.ShopWindow;
 
 public class UserView extends Sprite
 {
-    private var _mainGUI:MovieLoader;
+	private static const GUI_LAYER:int = 1;
+	private static const WINDOW_LAYER:int = 2;
 
-    public function UserView(model:IBindableModel)
-    {
-        _mainGUI = new MovieLoader(Constants.GRAPHICS_PATH + "gui/gui.swf", "MainGui");
-        _mainGUI.addEventListener(MovieLoader.MOVIE_LOADED, onGUILoaded);
-        _mainGUI.addEventListener(MovieLoader.ERROR_LOAD_MOVIE, onErrorLoadGUI);
-        addChild(_mainGUI);
-        _mainGUI.startLoad();
-    }
+	private var _mainGui:BaseWindow = new MainGui();
+	private var _shopWindow:BaseWindow = new ShopWindow();
 
-    private function onErrorLoadGUI(event:Event):void
-    {
+	private var _windowLayer:Sprite = new Sprite();
+	private var _mainGuiLayer:Sprite = new Sprite();
 
-    }
+	public function UserView(model:IBindableModel)
+	{
+		addChildsWithOrder();
+		showMainGUI();
 
-    private function onGUILoaded(event:Event):void
-    {
-        init();
-    }
+		addEventListener(UserViewEvent.SHOW_SHOP_WND, showShopWindow);
+	}
 
-    private function init():void
-    {
-        ButtonUtil.setButton(_mainGUI.content["buttonBuild"], onBuildClick);
-        ButtonUtil.setButton(_mainGUI.content["buttonUp"], onUpClick);
-        ButtonUtil.setButton(_mainGUI.content["buttonDown"], onDownClick);
-        ButtonUtil.setButton(_mainGUI.content["buttonSettings"], onSettingsClick);
-        ButtonUtil.setButton(_mainGUI.content["buttonMoney"], onMoneyClick);
-        ButtonUtil.setButton(_mainGUI.content["buttonExp"], onExpClick);
-        ButtonUtil.setButton(_mainGUI.content["buttonReal"], onRealClick);
-        ButtonUtil.setButton(_mainGUI.content["buttonAllFriends"], onAllFriendsClick);
-    }
+	private function showMainGUI():void
+	{
+		showWindow(_mainGui, GUI_LAYER);
+	}
 
-    private function onBuildClick(e:MouseEvent):void
-    {
-        dispatchEvent(new UserEvent(UserEvent.BUILD));
-    }
+	private function showShopWindow(e:Event):void
+	{
+		showWindow(_shopWindow, WINDOW_LAYER);
+	}
 
-    private function onUpClick(e:MouseEvent):void
-    {
-        dispatchEvent(new UserEvent(UserEvent.TOOL_UP));
-    }
+	private function addChildsWithOrder():void
+	{
+		addChild(_mainGuiLayer);
+		addChild(_windowLayer);
+	}
 
-    private function onDownClick(e:MouseEvent):void
-    {
-        dispatchEvent(new UserEvent(UserEvent.TOOL_DOWN));
-    }
+	private function showWindow(window:BaseWindow, layer:int):void
+	{
+		var layerSprite:Sprite = getLayer(layer);
+		if (!layerSprite)
+		{
+			Cc.warn("Unknown layer!");
+			return;
+		}
 
-    private function onSettingsClick(e:MouseEvent):void
-    {
-        dispatchEvent(new UserEvent(UserEvent.SETTINGS));
-    }
+		window.addEventListener(UserViewEvent.CLOSE_WND, onCloseWindow);
 
-    private function onMoneyClick(e:MouseEvent):void
-    {
-        dispatchEvent(new UserEvent(UserEvent.MONEY));
-    }
+		layerSprite.addChild(window);
+	}
 
-    private function onExpClick(e:MouseEvent):void
-    {
-        dispatchEvent(new UserEvent(UserEvent.EXP));
-    }
+	private function onCloseWindow(e:UserViewEvent):void
+	{
+		var wnd:BaseWindow = e.currentTarget as BaseWindow;
+		wnd.removeEventListener(UserViewEvent.CLOSE_WND, onCloseWindow);
+		_windowLayer.removeChild(wnd);
+	}
 
-    private function onRealClick(e:MouseEvent):void
-    {
-        dispatchEvent(new UserEvent(UserEvent.REAL));
-    }
-
-    private function onAllFriendsClick(e:MouseEvent):void
-    {
-        dispatchEvent(new UserEvent(UserEvent.ALL_FRIENDS));
-    }
+	private function getLayer(layer:int):Sprite
+	{
+		var layerSprite:Sprite;
+		switch (layer)
+		{
+			case GUI_LAYER:
+				layerSprite = _mainGuiLayer;
+				break;
+			case WINDOW_LAYER:
+				layerSprite = _windowLayer
+				break;
+		}
+		return layerSprite;
+	}
 
 }
 }
