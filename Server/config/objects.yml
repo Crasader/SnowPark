@@ -78,10 +78,12 @@ objects:
       priceReal: 100
       priceMoney: 100
     behavior:
-      type: rail
+      type: decor
       width: 1
       length: 2
       rotated: true
+      components:
+        - name: hightlight
     view:
       field: "tree.swf"
       shop: "tree.swf"
@@ -119,3 +121,76 @@ objects:
           en:
             name: "Beginner rider"
             desc: "Will like for beginners"
+
+  2000: &liftDownSite
+    shop:
+      show: true
+      tab: build
+      priceReal: 100
+      priceMoney: 100
+    behavior:
+      components:
+        - name: liftDownSite
+        - name: simpleAnimation
+          fps: 10
+      width: 1
+      length: 2
+      rotated: true
+    view:
+      field: "liftDownsite.swf"
+      shop: "liftDownsite.swf"
+    descriptions:
+          ru:
+            name: "Низ подъёмника"
+            desc: "Понравится начинающим"
+          en:
+            name: "Beginner rider"
+            desc: "Will like for beginners"
+  2001: &liftUpSite
+    shop:
+      show: true
+      tab: build
+      priceReal: 100
+      priceMoney: 100
+    behavior:
+      components:
+        - name: liftUpSite
+        - name: simpleAnimation
+          fps: 10
+      width: 1
+      length: 2
+      rotated: true
+    view:
+      field: "liftUpsite.swf"
+      shop: "liftUpsite.swf"
+    descriptions:
+          ru:
+            name: "Верх подъёмника"
+            desc: "Понравится начинающим"
+          en:
+            name: "Beginner rider"
+            desc: "Will like for beginners"
+  2002: &liftPillar
+    shop:
+      show: true
+      tab: build
+      priceReal: 100
+      priceMoney: 100
+    behavior:
+      components:
+        - name: liftPillar
+          fps: 10
+      width: 1
+      length: 2
+      rotated: true
+    view:
+      field: "liftPillar.swf"
+      shop: "liftPillar.swf"
+    descriptions:
+          ru:
+            name: "колонна подъёмника"
+            desc: "Понравится начинающим"
+          en:
+            name: "Beginner rider"
+            desc: "Will like for beginners"
+

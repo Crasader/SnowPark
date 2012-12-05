@@ -2,7 +2,6 @@ package objects;
 
 import config.ConfigReader;
 import db.DataBase;
-import network.Command;
 import org.apache.log4j.Logger;
 
 import java.util.*;
@@ -18,94 +17,9 @@ public class UserWorker extends Thread
 
     private UserState _userState;
 
-    private Boolean _stopped = false;
-
-    volatile private LinkedList<Command> _commandQueue = new LinkedList<Command>();
-
     public UserWorker()
     {
     }
-
-//    private void changeHeight(Command cmd)
-//    {
-//        Object[] cmdParams = cmd.params;
-//        _userState.heightMap.get((Integer) cmdParams[CHANGEHEIGHT.X]).set((Integer) cmdParams[CHANGEHEIGHT.Y], (Integer) cmdParams[CHANGEHEIGHT.H]);
-//
-//        DataBase.ds().save(_userState);//TODO: update
-//    }
-
-//    private void returnUserState(Command cmd)
-//    {
-//        Object[] cmdParams = cmd.params;
-//
-//        Response resp = new Response();
-//        resp.responseId = cmd.commandId;
-//
-//        Space field = _userState.spaces.get(SpacesList.MAIN_FIELD);
-//        Collection<SpaceObj> objects = field.objects;
-//        Iterator<SpaceObj> objIt = objects.iterator();
-//
-//        ArrayList<Object[]> serializedObjs = new ArrayList<Object[]>();
-//        while (objIt.hasNext())
-//            serializedObjs.add(objIt.next().getSerialized());
-//
-//        ArrayList<Object[]> serializedHeightMap = new ArrayList<Object[]>();
-//        Iterator<ArrayList<Integer>> heightIt = _userState.heightMap.iterator();
-//        while (heightIt.hasNext())
-//            serializedHeightMap.add(heightIt.next().toArray());
-//
-//        ArrayList<Object> params = new ArrayList<Object>(2);
-//        params.add(GETUSERSTATE.FIELD_OBJS, serializedObjs.toArray());
-//        params.add(GETUSERSTATE.HEIGHT_MAP, serializedHeightMap.toArray());
-//        resp.params = params.toArray();
-//
-//        _channel.write(resp);
-//
-//        logger.info("return field for user: " + _userState.login);
-//    }
-
-    public void acceptCommand(Command cmd)
-    {
-        _commandQueue.push(cmd);
-
-        if (!isAlive())
-            start();
-    }
-
-    private void logCmd(Command cmd)
-    {
-        String commandParamsToTrace = "";
-        for (int i = 0; i < cmd.params.length; i++)
-        {
-            commandParamsToTrace += ", " + cmd.params[i];
-        }
-        logger.info(":: accept command : " + cmd.commandId + commandParamsToTrace);
-    }
-
-//    private void createObject(Command cmd) throws Exception
-//    {
-//        Object[] cmdParams = cmd.params;
-//        String classId = (String) cmdParams[CREATEOBJECT.CLASS_ID];
-//        int space = (Integer) cmdParams[CREATEOBJECT.SPACE_ID];
-//        int x = (Integer) cmdParams[CREATEOBJECT.X];
-//        int y = (Integer) cmdParams[CREATEOBJECT.Y];
-//
-//        Space sp = _userState.spaces.get(space);
-//        if (sp == null)
-//        {
-//            sp = new Space();
-//            _userState.spaces.put(space, sp);
-//        }
-//
-//        SpaceObj obj = new SpaceObj();
-//        obj.classId = classId;
-//        obj.x = x;
-//        obj.y = y;
-//
-//        sp.objects.add(obj);
-//
-//        DataBase.ds().save(_userState);//TODO: update
-//    }
 
     private ArrayList<ArrayList<Integer>> getNewUserHeightMap()
     {
@@ -156,11 +70,12 @@ public class UserWorker extends Thread
     }
 
 
-    public void createNew()
+    public void createNew(String userId)
     {
         _userState = new UserState();
         _userState.spaces = getNewUserSpaces();
         _userState.heightMap = getNewUserHeightMap();
+        _userState.id = userId;
 
         DataBase.ds().save(_userState);
     }
@@ -170,8 +85,15 @@ public class UserWorker extends Thread
         _userState = userState;
     }
 
-    public HashMap<String, Object> processCommand(HashMap<String, Object> data)
+    private void logCmd(HashMap<String, Object> data)
     {
+        logger.info(":: accept command : " + data.toString());
+    }
+
+    public HashMap<String, Object> processCommand(HashMap<String, Object> data) throws Exception
+    {
+
+        logCmd(data);
 
         String cmd = (String) data.get("cmd");
         HashMap<String, Object> params = (HashMap<String, Object>) data.get("params");
@@ -181,6 +103,8 @@ public class UserWorker extends Thread
             return processCreate(params);
         else if (cmd.contentEquals("changeHeight"))
             return processChangeHeight(params);
+        else if (cmd.contentEquals("destroy"))
+            return processDestroy(params);
         else
         {
             HashMap<String, Object> unknownCmd = new HashMap<String, Object>();
@@ -189,13 +113,75 @@ public class UserWorker extends Thread
         }
     }
 
-    private HashMap<String, Object> processChangeHeight(HashMap<String, Object> params)
+    private HashMap<String, Object> processDestroy(HashMap<String, Object> params) throws Exception
     {
+        Integer spaceId = (Integer) params.get("spaceId");
+        Space sp = _userState.spaces.get(spaceId);
+        if (sp == null)
+        {
+            throw new Exception("Invalid spaceId: " + params.toString());
+        }
+
+        Iterator<SpaceObj> it = sp.objects.iterator();
+        while (it.hasNext())
+        {
+            SpaceObj obj = it.next();
+            if (obj.classId.contentEquals((String) params.get("classId"))
+                    && obj.x == (Integer) params.get("x")
+                    && obj.y == (Integer) params.get("y"))
+            {
+                break;
+            }
+        }
+
+        it.remove();
+        DataBase.ds().save(_userState);//TODO: update
+
+        return new HashMap<String, Object>();
+    }
+
+    private HashMap<String, Object> processChangeHeight(HashMap<String, Object> params) throws Exception
+    {
+        Integer x = (Integer) params.get("x");
+        Integer y = (Integer) params.get("y");
+        Integer newHeight = (Integer) params.get("height");
+
+        for (int i = 0; i < 2; i++)
+            for (int j = 0; j < 2; j++)
+            {
+                int neighborHeight = _userState.heightMap.get(x).get(y);
+                if ((neighborHeight - newHeight) > 1)
+                    throw new Exception("Invalid height: " + newHeight.toString() + " x: " + x.toString() + " y:" + y.toString());
+            }
+
+        _userState.heightMap.get(x).set(y, newHeight);
+
+        DataBase.ds().save(_userState);//TODO: update
         return new HashMap<String, Object>();
     }
 
     private HashMap<String, Object> processCreate(HashMap<String, Object> params)
     {
+        Integer spaceId = (Integer) params.get("spaceId");
+        Space sp = _userState.spaces.get(spaceId);
+        if (sp == null)
+        {
+            sp = new Space();
+            _userState.spaces.put(spaceId, sp);
+        }
+
+        SpaceObj obj = new SpaceObj();
+        obj.classId = (String) params.get("classId");
+        obj.x = (Integer) params.get("x");
+        obj.y = (Integer) params.get("y");
+
+        String advanced = (String) params.get("advanced");
+        if (advanced != null) obj.advanced = advanced;
+
+        sp.objects.add(obj);
+
+        DataBase.ds().save(_userState);//TODO: update
+
         return new HashMap<String, Object>();
     }
 

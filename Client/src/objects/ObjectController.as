@@ -16,30 +16,48 @@ import models.FieldModel;
 public class ObjectController extends CompositeController
 {
 
-	protected var _model:ObjectModel;
-	protected var _view:ObjectView;
+    protected var _model:ObjectModel;
+    protected var _view:ObjectView;
+    private var _fieldModel:FieldModel;
 
-	public function ObjectController(classId:String, fieldModel:FieldModel)
-	{
-		var config:Object = Constants.CFG["objects"][classId];
-		if (!config)
-		{
-			throw "Can't create object without config " + "( classId = " + classId + " )";
-		}
+    public function ObjectController(classId:String, fieldModel:FieldModel)
+    {
+        _fieldModel = fieldModel;
 
-		_model = new ObjectModel(classId, config, fieldModel);
-		_view = new ObjectView(_model);
+        var config:Object = Constants.CFG["objects"][classId];
+        if (!config)
+        {
+            throw "Can't create object without config " + "( classId = " + classId + " )";
+        }
 
-	}
+        _model = new ObjectModel(classId, config, fieldModel);
+        _view = new ObjectView(_model);
 
-	public function getView():ObjectView
-	{
-		return _view;
-	}
+    }
 
-	public function getModel():ObjectModel
-	{
-		return _model;
-	}
+    public function getView():ObjectView
+    {
+        return _view;
+    }
+
+    public function getModel():ObjectModel
+    {
+        return _model;
+    }
+
+    public function mouseOn():void
+    {
+        _view.mouseOn();
+    }
+
+    public function mouseOff():void
+    {
+        _view.mouseOff();
+    }
+
+    public function mouseClick():void
+    {
+        _view.mouseClick();
+    }
 }
 }

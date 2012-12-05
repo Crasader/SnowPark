@@ -8,9 +8,11 @@ import basemvc.controller.CompositeController;
 
 import events.ResponseEvent;
 import events.UserEvent;
+import events.UserViewEvent;
 
 import flash.display.DisplayObjectContainer;
 import flash.events.Event;
+import flash.events.UncaughtErrorEvent;
 
 import models.FieldModel;
 import models.UserModel;
@@ -41,7 +43,20 @@ public class UserController extends CompositeController
         _userView.addEventListener(UserEvent.SETTINGS, onSettings);
         _userView.addEventListener(UserEvent.TOOL_DOWN, onToolDown);
         _userView.addEventListener(UserEvent.TOOL_UP, onToolUp);
+        _userView.addEventListener(UserEvent.TOOL_DESTROY, onToolDestroy);
+        _userView.addEventListener(UserEvent.CANCEL, onCancel);
+
         init();
+    }
+
+    private function onCancel(event:UserEvent):void
+    {
+        fieldController.fieldModel.setTool(FieldModel.VOID_TOOL);
+    }
+
+    private function onToolDestroy(event:UserEvent):void
+    {
+        fieldController.fieldModel.setTool(FieldModel.DESTROY_TOOL);
     }
 
     private function get fieldController():FieldController
@@ -66,7 +81,7 @@ public class UserController extends CompositeController
 
     private function onBuild(event:UserEvent):void
     {
-        fieldController.fieldModel.setTool(FieldModel.PLACE_OBJECT_TOOL);
+        fieldController.fieldModel.setTool(FieldModel.PLACE_OBJECT_TOOL, event.data);
     }
 
     private function onAllFriends(event:UserEvent):void
@@ -77,11 +92,28 @@ public class UserController extends CompositeController
     private function init(e:Event = null):void
     {
         core.addEventListener(ResponseEvent.SNOW_RESPONSE, onResponse);
+        Main.globalErrorDispatcher.addEventListener(UncaughtErrorEvent.UNCAUGHT_ERROR, onGlobalError);
+    }
+
+    private function onGlobalError(e:UncaughtErrorEvent):void
+    {
+        _userView.dispatchEvent(new UserViewEvent(UserViewEvent.SHOW_POPUP, false,
+                {
+                    header :"Ошибка клиента",
+                    content:(e.error as Object).toString()
+                }));
     }
 
     private function onResponse(e:ResponseEvent):void
     {
-
+        if (e.params["status"] == "Error")
+        {
+            _userView.dispatchEvent(new UserViewEvent(UserViewEvent.SHOW_POPUP, false,
+                    {
+                        header :"Ошибка сервера",
+                        content:e.params["data"]
+                    }));
+        }
     }
 
     public function getModel():UserModel

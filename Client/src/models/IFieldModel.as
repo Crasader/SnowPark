@@ -6,6 +6,8 @@ package models
 {
 import objects.ObjectModel;
 
+import utils.IntPnt;
+
 public interface IFieldModel extends IBindableModel
 {
     function get allObjects():Vector.<ObjectModel>;
@@ -15,5 +17,9 @@ public interface IFieldModel extends IBindableModel
     function isPlaceFree(x:int, y:int, width:int = 1, length:int = 1):Boolean
 
     function get activeTool():String;
+
+    function get activeToolParams():Object;
+
+    function getObject(pos:IntPnt):ObjectModel
 }
 }

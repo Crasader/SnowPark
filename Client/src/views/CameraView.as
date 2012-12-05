@@ -21,8 +21,6 @@ public class CameraView extends IsoView
     {
         super();
         setSize(Constants.STAGE_WIDTH, Constants.STAGE_HEIGHT);
-        mouseChildren = false;
-        mouseEnabled = false;
         BindingUtils.bindProperty(mainContainer, "x", model, "_x");
         BindingUtils.bindProperty(mainContainer, "y", model, "_y");
         BindingUtils.bindSetter(zoom, model, "_zoom");

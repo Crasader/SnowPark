@@ -23,17 +23,17 @@ import utils.IntPnt;
 public class FieldModel extends EventDispatcher implements IFieldModel
 {
     public static const VOID_TOOL:String = "VoidTool";
-    public static const MOVE_TOOL:String = "MoveTool";
+    public static const DESTROY_TOOL:String = "DestroyTool";
     public static const UP_TOOL:String = "UpTool";
     public static const DOWN_TOOL:String = "DownTool";
     public static const PLACE_OBJECT_TOOL:String = "PlaceObjetTool";
-    public static const REMOVE_OBJECT_TOOL:String = "RemoveObjectTool";
 
     private var _field:SnowParkField;
     private var _heightMap:Array;
     private var _allObjects:Vector.<ObjectModel> = new Vector.<ObjectModel>();
 
     private var _activeTool:String = VOID_TOOL;
+    private var _activeToolParams:Object;
 
     public function FieldModel()
     {
@@ -45,7 +45,7 @@ public class FieldModel extends EventDispatcher implements IFieldModel
         return _field;
     }
 
-    public function placeObject(objModel:ObjectModel, pos:IntPnt):Boolean
+    public function createObject(objModel:ObjectModel, pos:IntPnt):Boolean
     {
         if (!isPlaceFree(pos.x, pos.y))
             return false;
@@ -83,9 +83,10 @@ public class FieldModel extends EventDispatcher implements IFieldModel
         return _activeTool;
     }
 
-    public function setTool(tool:String):void
+    public function setTool(tool:String, params:Object = null):void
     {
         _activeTool = tool;
+        _activeToolParams = params;
     }
 
     private function fillFieldByObject(obj:ObjectModel):void
@@ -122,12 +123,6 @@ public class FieldModel extends EventDispatcher implements IFieldModel
 
     public function clear():void
     {
-        while (_allObjects.length != 0)
-        {
-            var objToDestroy:ObjectModel = _allObjects.pop();
-            objToDestroy.destroy();
-        }
-
         _field = new SnowParkField();
 
         dispatchEvent(new Event(Event.CHANGE));
@@ -194,6 +189,32 @@ public class FieldModel extends EventDispatcher implements IFieldModel
         {
             obj.onFrame(dt);
         }
+    }
+
+    public function get activeToolParams():Object
+    {
+        return _activeToolParams;
+    }
+
+    public function getObject(pos:IntPnt):ObjectModel
+    {
+        return _field.getBlock(pos);
+    }
+
+    public function destroy(m:ObjectModel):Boolean
+    {
+        clearFieldByObject(m);
+        _allObjects.splice(_allObjects.indexOf(m), 1);
+        m.removeEventListener(ObjectEvent.POSITION_UPDATED, onObjectPositionUpdated);
+        dispatchEvent(new FieldEvent(FieldEvent.OBJECT_DESTROYED));
+        m.destroy();
+
+        return true;
+    }
+
+    private function clearFieldByObject(m:ObjectModel):void
+    {
+
     }
 }
 }

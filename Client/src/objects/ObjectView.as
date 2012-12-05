@@ -15,7 +15,10 @@ import config.Constants;
 
 import events.ObjectEvent;
 
+import flash.display.BitmapData;
 import flash.events.Event;
+import flash.geom.Point;
+import flash.geom.Rectangle;
 
 import net.loaders.MovieLoader;
 
@@ -28,6 +31,7 @@ public class ObjectView extends IsoSprite
     protected var _model:IObjectModel;
 
     private var _visual:MovieLoader;
+    private var _hitMask:BitmapData;
 
     private var _lastUpdateTime:Number = 0;
 
@@ -41,8 +45,6 @@ public class ObjectView extends IsoSprite
         _visual = new MovieLoader(Constants.GRAPHICS_PATH + _model.cfgView["field"]);
         _visual.addEventListener(MovieLoader.MOVIE_LOADED, onMovieLoaded);
         _visual.addEventListener(MovieLoader.ERROR_LOAD_MOVIE, onErrorLoadMovie);
-        _visual.mouseChildren = false;
-        _visual.mouseEnabled = false;
 
         sprites = [_visual];
 
@@ -75,17 +77,50 @@ public class ObjectView extends IsoSprite
 
     private function onErrorLoadMovie(event:Event):void
     {
-        Cc.error("Error load movie for object " + _model.classId + ", path = " + "\"" + _model.cfgView["field"] + "\"");
+        Cc.error("Error load movie for object " + _model.classId);
     }
 
     private function onMovieLoaded(event:Event):void
     {
         NodeUtil.stopMC(_visual);
+
+        if (_hitMask) _hitMask.dispose();
+        _hitMask = new BitmapData(_visual.width, _visual.height);
+        _hitMask.draw(_visual);
     }
 
     private function onStage(event:Event):void
     {
         _visual.startLoad();
+    }
+
+    public function get hitMask():BitmapData
+    {
+        return _hitMask;
+    }
+
+    public function get hitMaskPos():Point
+    {
+        var bouds:Rectangle = _visual.getBounds(_visual.stage);
+        return new Point(bouds.x, bouds.y);
+    }
+
+    public function mouseOn():void
+    {
+        for each (var component:IViewComponent in _model.components)
+            component.mouseOn();
+    }
+
+    public function mouseOff():void
+    {
+        for each (var component:IViewComponent in _model.components)
+            component.mouseOff();
+    }
+
+    public function mouseClick():void
+    {
+        for each (var component:IViewComponent in _model.components)
+            component.mouseClick();
     }
 }
 }

@@ -14,6 +14,7 @@ public class FieldEvent extends Event
     public static const MOUSE_MOVE:String = "SnowFieldMouseMove";
     public static const HEIGHTMAP_CHANGED:String = "SnowHeightMapChanged";
     public static const OBJECT_ADDED:String = "SnowObjectAdded";
+    public static const OBJECT_DESTROYED:String = "SnowObjectDestroyed";
 
     private var _targetEvent:Event;
     private var _pos:IntPnt;
@@ -22,7 +23,7 @@ public class FieldEvent extends Event
     {
         super(type);
         _pos = pos;
-        _targetEvent = targetEvent
+        _targetEvent = targetEvent;
     }
 
     public function get pos():IntPnt

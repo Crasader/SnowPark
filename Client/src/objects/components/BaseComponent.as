@@ -64,5 +64,22 @@ public class BaseComponent extends EventDispatcher implements IViewComponent
     {
         return _loader;
     }
+
+    public function mouseOn():void
+    {
+    }
+
+    public function mouseOff():void
+    {
+    }
+
+    public function mouseClick():void
+    {
+    }
+
+    public function destroy():void
+    {
+
+    }
 }
 }

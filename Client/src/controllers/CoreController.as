@@ -146,6 +146,10 @@ public class CoreController extends CompositeController
 
                 dispatchEvent(new ResponseEvent(cmd, commandObj));
             }
+            if (!commands)
+            {
+                dispatchEvent(new ResponseEvent("system", responseData));
+            }
         } catch (e:Error)
         {
             Cc.log("invalid response!");

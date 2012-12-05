@@ -16,7 +16,10 @@ import events.CoreEvent;
 import events.FieldEvent;
 import events.ResponseEvent;
 
+import flash.display.BitmapData;
 import flash.events.Event;
+import flash.events.MouseEvent;
+import flash.geom.Point;
 
 import models.FieldModel;
 
@@ -45,18 +48,61 @@ public class FieldController extends CompositeController
         parentView.addScene(_fieldView);
 
         _fieldModel.addEventListener(Event.CHANGE, _fieldView.update);
-        _fieldView.update();
 
         if (parentView.stage)
+        {
             init();
+        }
         else
+        {
             parentView.addEventListener(Event.ADDED_TO_STAGE, init);
+        }
     }
 
     private function init(event:Event = null):void
     {
         core.addEventListener(ResponseEvent.SNOW_RESPONSE, onResponse);
         _fieldView.addEventListener(FieldEvent.MOUSE_CLICK, onFieldClick);
+        _fieldView.addEventListener(FieldEvent.MOUSE_MOVE, onMouseMove);
+    }
+
+    private function onMouseMove(event:FieldEvent):void
+    {
+        checkObjectCoollide(event, checkMove);
+    }
+
+    private function checkClick(obj:ObjectController, checked:Boolean):void
+    {
+        if (checked)
+            obj.mouseClick();
+    }
+
+    private function checkMove(obj:ObjectController, checked:Boolean):void
+    {
+        if (checked) obj.mouseOn();
+        else obj.mouseOff();
+    }
+
+    private function checkObjectCoollide(event:FieldEvent, checkF:Function):ObjectController //TODO: Оптимизировать поиск только по соседним с мышкой клеточкам
+    {
+        for (var i:int = 0; i < numChildren; i++)
+        {
+            var child:ObjectController = getChild(i) as ObjectController;
+            if (!child) continue;
+
+            var hitMask:BitmapData = child.getView().hitMask;
+            var hitMaskPos:Point = child.getView().hitMaskPos;
+            if (!hitMask) continue;
+
+            var me:MouseEvent = event.targetEvent as MouseEvent;
+            var xx:Number = me.stageX - hitMaskPos.x;
+            var yy:Number = me.stageY - hitMaskPos.y;
+            var value:uint = hitMask.getPixel32(xx, yy);
+
+            checkF(child, value != 0);
+        }
+
+        return null;
     }
 
     private function onResponse(e:ResponseEvent):void
@@ -84,7 +130,7 @@ public class FieldController extends CompositeController
         {
             var pos:IntPnt = new IntPnt(objInfo["x"], objInfo["y"]);
             var block:ObjectController = new ObjectController(objInfo["classId"], _fieldModel);
-            if (_fieldModel.placeObject(block.getModel(), pos))
+            if (_fieldModel.createObject(block.getModel(), pos))
             {
                 _fieldView.addChild(block.getView());
                 add(block);
@@ -95,35 +141,69 @@ public class FieldController extends CompositeController
     private function onFieldClick(e:FieldEvent):void
     {
         if (_fieldModel.activeTool == FieldModel.DOWN_TOOL)
-            decreaceGroundLevel(e);
-        if (_fieldModel.activeTool == FieldModel.UP_TOOL)
-            encreaceGroundLevel(e);
-        if (_fieldModel.activeTool == FieldModel.PLACE_OBJECT_TOOL)
-            placeObject(e);
+            decreaseGroundLevel(e);
+        else if (_fieldModel.activeTool == FieldModel.UP_TOOL)
+            increaseGroundLevel(e);
+        else if (_fieldModel.activeTool == FieldModel.PLACE_OBJECT_TOOL)
+            createObject(e);
+        else if (_fieldModel.activeTool == FieldModel.DESTROY_TOOL)
+            checkObjectCoollide(e, checkDestroy);
+        else
+        {
+            checkObjectCoollide(e, checkClick);
+        }
+
     }
 
-    private function placeObject(e:FieldEvent):void
+    private function checkDestroy(obj:ObjectController, checked:Boolean):void
     {
-        var block:ObjectController = new ObjectController("1000", _fieldModel);
-        if (_fieldModel.placeObject(block.getModel(), e.pos))
+        if (checked) destroyObject(obj);
+    }
+
+    private function destroyObject(obj:ObjectController):void
+    {
+        if (_fieldModel.destroy(obj.getModel()))
+        {
+            remove(obj);
+            _fieldView.removeChild(obj.getView());
+            var params:Object = {
+                classId:obj.getModel().classId,
+                spaceId:obj.getModel()._space,
+                x      :obj.getModel().x,
+                y      :obj.getModel().y
+            };
+
+            dispatchEvent(new CommandEvent("destroy",
+                    params,
+                    false, true));
+        }
+
+    }
+
+    private function createObject(e:FieldEvent):void
+    {
+
+        var objId:String = _fieldModel.activeToolParams.toString();
+        var block:ObjectController = new ObjectController(objId, _fieldModel);
+        if (_fieldModel.createObject(block.getModel(), e.pos))
         {
             _fieldView.addChild(block.getView());
             add(block);
+
+            var params:Object = {
+                classId:block.getModel().classId,
+                spaceId:block.getModel()._space,
+                x      :e.pos.x,
+                y      :e.pos.y
+            };
+
+            dispatchEvent(new CommandEvent("create",
+                    params,
+                    false, true));
         }
-
-        var params:Object = {
-            classId:block.getModel().classId,
-            spaceId:block.getModel()._space,
-            x      :e.pos.x,
-            y      :e.pos.y
-        };
-
-        dispatchEvent(new CommandEvent("create",
-                params,
-                false, true));
     }
 
-    private function encreaceGroundLevel(e:FieldEvent):void
+    private function increaseGroundLevel(e:FieldEvent):void
     {
         var newHeight:int = _fieldModel.getHeight(e.pos.x, e.pos.y) + 1;
         if (_fieldModel.setHeight(e.pos.x, e.pos.y, newHeight))
@@ -140,7 +220,7 @@ public class FieldController extends CompositeController
         }
     }
 
-    private function decreaceGroundLevel(e:FieldEvent):void
+    private function decreaseGroundLevel(e:FieldEvent):void
     {
         var newHeight:int = _fieldModel.getHeight(e.pos.x, e.pos.y) - 1;
         if (_fieldModel.setHeight(e.pos.x, e.pos.y, newHeight))

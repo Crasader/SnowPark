@@ -20,6 +20,7 @@ import models.IFieldModel;
 import objects.components.AlongRotationComponent;
 import objects.components.BaseComponent;
 import objects.components.DebugTextComponent;
+import objects.components.HightlightComponent;
 import objects.components.IViewComponent;
 import objects.components.MoveComponent;
 import objects.components.RiderComponent;
@@ -43,7 +44,9 @@ public class ObjectModel extends EventDispatcher implements IObjectModel
         SimpleAnimationComponent,
         TeleportComponent,
         AlongRotationComponent,
-        DebugTextComponent];
+        DebugTextComponent,
+        HightlightComponent
+    ];
 
     private static var _componentsHash:Object = {};
 
@@ -96,11 +99,6 @@ public class ObjectModel extends EventDispatcher implements IObjectModel
     public function get classId():String
     {
         return _classId;
-    }
-
-    public function destroy():void
-    {
-
     }
 
     public function get cfg():Object
@@ -173,6 +171,12 @@ public class ObjectModel extends EventDispatcher implements IObjectModel
     public function get components():Vector.<IViewComponent>
     {
         return _components;
+    }
+
+    public function destroy():void
+    {
+        for each(var c:BaseComponent in _components)
+            c.destroy();
     }
 }
 }

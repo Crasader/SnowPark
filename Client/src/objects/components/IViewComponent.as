@@ -21,5 +21,11 @@ public interface IViewComponent extends IEventDispatcher
     function get loader():MovieLoader;
 
     function get view():IsoSprite;
+
+    function mouseOn():void
+
+    function mouseOff():void
+
+    function mouseClick():void
 }
 }

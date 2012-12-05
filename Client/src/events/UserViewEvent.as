@@ -8,17 +8,26 @@ import flash.events.Event;
 
 public class UserViewEvent extends Event
 {
-	public static const SHOW_SHOP_WND:String = "UVEShowShopWindow";
-	public static const CLOSE_WND:String = "UVECloseWnd";
+    public static const SHOW_SHOP_WND:String = "UVEShowShopWindow";
+    public static const SHOW_POPUP:String = "UVEShowPopup";
+    public static const CLOSE_WND:String = "UVECloseWnd";
 
-	public function UserViewEvent(type:String, bubbles:Boolean = false, cancelable:Boolean = false)
-	{
-		super(type, bubbles, cancelable);
-	}
+    private var _params:Object;
 
-	override public function clone():Event
-	{
-		return new UserViewEvent(type, bubbles, cancelable);
-	}
+    public function UserViewEvent(type:String, bubbles:Boolean = false, params:Object = null)
+    {
+        _params = params;
+        super(type, bubbles, cancelable);
+    }
+
+    override public function clone():Event
+    {
+        return new UserViewEvent(type, bubbles, params);
+    }
+
+    public function get params():Object
+    {
+        return _params;
+    }
 }
 }

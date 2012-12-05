@@ -34,15 +34,15 @@ public class HttpGameServerHandler extends HttpGatewayServerHandler
     @Override
     public void messageReceived(ChannelHandlerContext ctx, MessageEvent e) throws Exception
     {
-        HttpRequest request = (HttpRequest) e.getMessage();
 
-        System.out.println("messageRecieved");
+        HttpRequest request = (HttpRequest) e.getMessage();
 
         String uri = request.getUri();
         if (uri.contentEquals(VK_CALLBACK))
             processVKCallback(ctx, request.getContent());
         else
             processCommand(ctx, decodePost(request));
+
     }
 
     private void processVKCallback(ChannelHandlerContext ctx, ChannelBuffer cb)
@@ -71,24 +71,30 @@ public class HttpGameServerHandler extends HttpGatewayServerHandler
         return content;
     }
 
-    private void processCommand(ChannelHandlerContext ctx, HashMap<String, Object> data)
+    private void processCommand(ChannelHandlerContext ctx, HashMap<String, Object> data) throws Exception
     {
-        UserWorker user = usersCache.getUser((String) data.get("user_id"));
-        ArrayList<Object> commands = (ArrayList<Object>) data.get("queue");
-
-        ArrayList<Object> response = new ArrayList<Object>();
-
-        Iterator<Object> commandIt = commands.iterator();
-        while (commandIt.hasNext())
+        try
         {
-            HashMap<String, Object> commandData = (HashMap<String, Object>) commandIt.next();
-            HashMap<String, Object> res = user.processCommand(commandData);
-            res.put("cmd", commandData.get("cmd"));
-            response.add(res);
+            UserWorker user = usersCache.getUser((String) data.get("viewerId"));
+            ArrayList<Object> commands = (ArrayList<Object>) data.get("queue");
+
+            ArrayList<Object> response = new ArrayList<Object>();
+
+            Iterator<Object> commandIt = commands.iterator();
+            while (commandIt.hasNext())
+            {
+                HashMap<String, Object> commandData = (HashMap<String, Object>) commandIt.next();
+                HashMap<String, Object> res = user.processCommand(commandData);
+                res.put("cmd", commandData.get("cmd"));
+                response.add(res);
+            }
+
+
+            sendOKStatus(ctx, response);
+        } catch (Exception exc)
+        {
+            sendError(ctx, exc.getMessage());
         }
-
-
-        sendOKStatus(ctx, response);
     }
 
     public void sendOKStatus(ChannelHandlerContext ctx, Object data)

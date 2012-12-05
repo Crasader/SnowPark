@@ -25,13 +25,15 @@ public class SpaceObj
     @Embedded
     String classId = "0";
 
+    @Embedded
+    String advanced;
 
     public HashMap<String, Object> getSerialized()
     {
         HashMap<String, Object> sObj = new HashMap<String, Object>();
         sObj.put("classId", classId);
         sObj.put("x", ((Integer) x).toString());
-        sObj.put("y", ((Integer) x).toString());
+        sObj.put("y", ((Integer) y).toString());
 
         return sObj;
     }
