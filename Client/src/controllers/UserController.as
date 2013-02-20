@@ -34,6 +34,8 @@ public class UserController extends CompositeController
         _cameraController = new CameraController(_parentView);
         add(_cameraController);
 
+        _cameraController.addEventListener(UserEvent.TOOL_CHANGED, onToolChanged);
+
         _userModel = new UserModel();
         _userView = new UserView(_userModel);
         _parentView.addChild(_userView);
@@ -47,6 +49,11 @@ public class UserController extends CompositeController
         _userView.addEventListener(UserEvent.CANCEL, onCancel);
 
         init();
+    }
+
+    private function onToolChanged(event:UserEvent):void
+    {
+        _userView.onToolChanged(event);
     }
 
     private function onCancel(event:UserEvent):void

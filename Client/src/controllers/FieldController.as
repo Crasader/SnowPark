@@ -15,6 +15,7 @@ import events.CommandEvent;
 import events.CoreEvent;
 import events.FieldEvent;
 import events.ResponseEvent;
+import events.UserEvent;
 
 import flash.display.BitmapData;
 import flash.events.Event;
@@ -48,6 +49,7 @@ public class FieldController extends CompositeController
         parentView.addScene(_fieldView);
 
         _fieldModel.addEventListener(Event.CHANGE, _fieldView.update);
+        _fieldModel.addEventListener(FieldEvent.TOOL_CHANGED, onToolChanged);
 
         if (parentView.stage)
         {
@@ -136,6 +138,13 @@ public class FieldController extends CompositeController
                 add(block);
             }
         }
+    }
+
+    private function onToolChanged(event:FieldEvent):void
+    {
+        var e:UserEvent = new UserEvent(UserEvent.TOOL_CHANGED, true);
+        e.data = _fieldModel.activeTool;
+        dispatchEvent(e);
     }
 
     private function onFieldClick(e:FieldEvent):void

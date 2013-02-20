@@ -77,6 +77,7 @@ public class CoreController extends CompositeController
         settings.accessFriends = true;
         _api = new SocWrapper();
 
+        //vvvv TODO: normal loaded code vvvv
         _api.addEventListener(SocWrapperEvent.USER_LOADED, function (e:Event):void
         {
             Cc.log("user Loaded");
@@ -88,6 +89,7 @@ public class CoreController extends CompositeController
         {
             Cc.log("friends Loaded");
         });
+        //^^^^ TODO: normal loaded code ^^^^
 
         _api.initialize(_node, SocWrapper.LOCAL, settings);
         _serverTransport = new NetController();

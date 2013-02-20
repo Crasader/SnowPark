@@ -14,16 +14,6 @@ public class NodeUtil
 	{
 	}
 
-	public static function setTimeout(cb:Function, delay:int, ...params):uint
-	{
-		var timeoutId:uint = setTimeout(function ():void
-		{
-			clearTimeout(timeoutId);
-			cb.apply(NaN, params);
-		}, delay);
-		return timeoutId;
-	}
-
 	public static function stopMC(mc:Sprite):void
 	{
 		if (mc is MovieClip)

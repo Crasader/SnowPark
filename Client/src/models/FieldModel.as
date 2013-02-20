@@ -9,6 +9,8 @@ package models
 {
 import config.Constants;
 
+import de.polygonal.ds.sort.compare.compareStringCaseInSensitiveDesc;
+
 import events.CoreEvent;
 import events.FieldEvent;
 import events.ObjectEvent;
@@ -35,6 +37,8 @@ public class FieldModel extends EventDispatcher implements IFieldModel
     private var _activeTool:String = VOID_TOOL;
     private var _activeToolParams:Object;
 
+    private var _componentsHash:Object = {};
+
     public function FieldModel()
     {
         _field = new SnowParkField();
@@ -43,20 +47,6 @@ public class FieldModel extends EventDispatcher implements IFieldModel
     public function getField():SnowParkField
     {
         return _field;
-    }
-
-    public function createObject(objModel:ObjectModel, pos:IntPnt):Boolean
-    {
-        if (!isPlaceFree(pos.x, pos.y))
-            return false;
-
-        objModel.setPos(pos.x, pos.y);
-        fillFieldByObject(objModel);
-        _allObjects.push(objModel);
-
-        objModel.addEventListener(ObjectEvent.POSITION_UPDATED, onObjectPositionUpdated);
-        dispatchEvent(new FieldEvent(FieldEvent.OBJECT_ADDED, pos));
-        return true;
     }
 
     private function onObjectPositionUpdated(e:ObjectEvent):void
@@ -87,6 +77,8 @@ public class FieldModel extends EventDispatcher implements IFieldModel
     {
         _activeTool = tool;
         _activeToolParams = params;
+
+        dispatchEvent(new FieldEvent(FieldEvent.TOOL_CHANGED));
     }
 
     private function fillFieldByObject(obj:ObjectModel):void
@@ -212,9 +204,48 @@ public class FieldModel extends EventDispatcher implements IFieldModel
         return true;
     }
 
-    private function clearFieldByObject(m:ObjectModel):void
+    public function createObject(objModel:ObjectModel, pos:IntPnt):Boolean
     {
+        if (!isPlaceFree(pos.x, pos.y))
+            return false;
 
+        objModel.setPos(pos.x, pos.y);
+        fillFieldByObject(objModel);
+        _allObjects.push(objModel);
+
+        objModel.addEventListener(ObjectEvent.POSITION_UPDATED, onObjectPositionUpdated);
+        dispatchEvent(new FieldEvent(FieldEvent.OBJECT_ADDED, pos));
+        return true;
+    }
+
+    private function onObjectComponentsLoaded(event:ObjectEvent):void
+    {
+        updateComponentsHash(event.target as ObjectModel);
+    }
+
+    private function updateComponentsHash(m:ObjectModel):void
+    {
+//        for (var i:int = 0; i < m.components.length; i++)
+//        {
+//            var c:Object = m.components[i];
+//            c.
+//        }
+    }
+
+    private function clearFieldByObject(obj:ObjectModel):void
+    {
+        for (var x:int = obj.x; x < obj.x + 1; x++)
+        {
+            for (var y:int = obj.y; y < obj.y + 1; y++)
+            {
+                _field.setBlock(new IntPnt(x, y), null);
+            }
+        }
+    }
+
+    public function get componentsHash():Object
+    {
+        return _componentsHash;
     }
 }
 }

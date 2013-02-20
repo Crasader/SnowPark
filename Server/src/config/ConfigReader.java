@@ -1,7 +1,7 @@
 package config;
 
 import org.yaml.snakeyaml.Yaml;
-import utils.Util;
+import utils.CoreUtil;
 
 import java.util.Map;
 
@@ -19,7 +19,7 @@ public class ConfigReader
             return _config;
 
         Yaml yaml = new Yaml();
-        String configString = Util.getLocalResource(Constants.LOCATION_CONFIG_NAME);
+        String configString = CoreUtil.getLocalResource(Constants.LOCATION_CONFIG_NAME);
         Map<String, Object> configObj = (Map<String, Object>) yaml.load(configString);
         _config = configObj;
         return configObj;

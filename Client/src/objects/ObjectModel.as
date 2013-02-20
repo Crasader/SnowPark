@@ -13,6 +13,8 @@ import com.junkbyte.console.Cc;
 
 import events.ObjectEvent;
 
+import flash.events.Event;
+
 import flash.events.EventDispatcher;
 
 import models.IFieldModel;
@@ -22,6 +24,9 @@ import objects.components.BaseComponent;
 import objects.components.DebugTextComponent;
 import objects.components.HightlightComponent;
 import objects.components.IViewComponent;
+import objects.components.LiftDownsite;
+import objects.components.LiftPillar;
+import objects.components.LiftUpsite;
 import objects.components.MoveComponent;
 import objects.components.RiderComponent;
 import objects.components.SimpleAnimationComponent;
@@ -39,13 +44,17 @@ public class ObjectModel extends EventDispatcher implements IObjectModel
     private var _cfg:Object;
     private var _classId:String;
 
-    private static const REGISTERED_COMPONENTS:Array = [RiderComponent,
-        MoveComponent,
-        SimpleAnimationComponent,
-        TeleportComponent,
-        AlongRotationComponent,
-        DebugTextComponent,
-        HightlightComponent
+    public static const REGISTERED_COMPONENTS:Array = [
+            RiderComponent,
+            MoveComponent,
+            SimpleAnimationComponent,
+            TeleportComponent,
+            AlongRotationComponent,
+            DebugTextComponent,
+            HightlightComponent,
+            LiftUpsite,
+            LiftDownsite,
+            LiftPillar
     ];
 
     private static var _componentsHash:Object = {};

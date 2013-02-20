@@ -17,6 +17,7 @@ import as3isolib.geom.Pt;
 import config.Constants;
 
 import events.FieldEvent;
+import events.UserEvent;
 
 import flash.display.Bitmap;
 import flash.display.BitmapData;
@@ -25,6 +26,7 @@ import flash.display.Sprite;
 import flash.events.Event;
 import flash.events.MouseEvent;
 import flash.geom.Matrix;
+import flash.text.TextField;
 
 import models.IFieldModel;
 
@@ -35,7 +37,8 @@ public class FieldView extends IsoScene
     private var _model:IFieldModel;
 
     private var _heightMouseMap:Bitmap = new Bitmap(new BitmapData(fieldMaxWidth, fieldMaxHeight + Constants.MOUSEMAP_HEIGHT_MARGIN));
-    private var _heightMouseHash:Object = {};
+    private var _heightMouseHash:Array;
+    private var _heightMouseColors:Object = {};
 
     private var _parentView:IsoView;
     private var _selectedSellOfGrid:Sprite = new Sprite();
@@ -108,8 +111,8 @@ public class FieldView extends IsoScene
             for (var j:int = -1; j < 1; j++)
             {
                 var tile:DisplayObject = getTileSprite(x + i, y + j);
-                _field.bitmapData.draw(tile, new Matrix(1, 0, 0, 1, fieldMaxWidth / 2 + getX(x + i, y + j),
-                        Constants.MOUSEMAP_HEIGHT_MARGIN + getY(x + i, y + j)));
+                _field.bitmapData.draw(tile, new Matrix(1, 0, 0, 1, fieldMaxWidth / 2 + getScreenX(x + i, y + j),
+                        Constants.MOUSEMAP_HEIGHT_MARGIN + getScreenY(x + i, y + j)));
             }
         }
 
@@ -126,8 +129,8 @@ public class FieldView extends IsoScene
         {
             for (var j:int = -1; j < 1; j++)
             {
-                var color:String = getHeightTileColor(x + i, y + j);
-                drawGridTile(mouseMapSprite, uint(color), x + i, y + j);
+                var color:uint = getHeightTileColor(x + i, y + j);
+                drawGridTile(mouseMapSprite, color, x + i, y + j);
             }
         }
 
@@ -140,9 +143,9 @@ public class FieldView extends IsoScene
 
         var pixel:uint = _heightMouseMap.bitmapData.getPixel(container.mouseX + fieldMaxWidth / 2, container.mouseY + Constants.MOUSEMAP_HEIGHT_MARGIN);
 
-        if (_heightMouseHash[pixel])
+        if (_heightMouseColors[pixel])
         {
-            dispatchEvent(new FieldEvent(FieldEvent.MOUSE_CLICK, new IntPnt(_heightMouseHash[pixel].x, _heightMouseHash[pixel].y), event));
+            dispatchEvent(new FieldEvent(FieldEvent.MOUSE_CLICK, new IntPnt(_heightMouseColors[pixel].x, _heightMouseColors[pixel].y), event));
         }
     }
 
@@ -165,11 +168,11 @@ public class FieldView extends IsoScene
         {
             var pixel:uint = _heightMouseMap.bitmapData.getPixel(container.mouseX + fieldMaxWidth / 2, container.mouseY + Constants.MOUSEMAP_HEIGHT_MARGIN);
 
-            if (_heightMouseHash[pixel])
+            if (_heightMouseColors[pixel])
             {
-                dispatchEvent(new FieldEvent(FieldEvent.MOUSE_MOVE, new IntPnt(_heightMouseHash[pixel].x, _heightMouseHash[pixel].y), _mouseMovedAfterFrame));
+                dispatchEvent(new FieldEvent(FieldEvent.MOUSE_MOVE, new IntPnt(_heightMouseColors[pixel].x, _heightMouseColors[pixel].y), _mouseMovedAfterFrame));
                 _selectedSellOfGrid.graphics.clear();
-                drawGridTile(_selectedSellOfGrid, 0x008800, _heightMouseHash[pixel].x, _heightMouseHash[pixel].y);
+                drawSelectTile(_selectedSellOfGrid, 0x008800, _heightMouseColors[pixel].x, _heightMouseColors[pixel].y);
             }
             else
             {
@@ -207,16 +210,9 @@ public class FieldView extends IsoScene
         _grid.bitmapData.unlock();
     }
 
-    private function getHeightTileColor(x:int, y:int):String //TODO: Build x,y to tile map //вместо перебора
+    private function getHeightTileColor(x:int, y:int):uint
     {
-        for (var color:String in _heightMouseHash)
-        {
-            if (_heightMouseHash[color].x == x && _heightMouseHash[color].y == y)
-            {
-                return color;
-            }
-        }
-        return "";
+        return _heightMouseHash[x][y];
     }
 
     private function get fieldMaxWidth():Number
@@ -239,24 +235,43 @@ public class FieldView extends IsoScene
         var colorCounter:uint = 1;
         var mouseMapSprite:Sprite = new Sprite();
 
+
         for (var i:int = 0; i < Constants.MAX_FIELD_SIZE; i++)
         {
             for (var j:int = 0; j < Constants.MAX_FIELD_SIZE; j++)
             {
-                _heightMouseHash[colorCounter] = {x:i, y:j};
+                _heightMouseColors[colorCounter] = {x: i, y: j};
                 drawGridTile(mouseMapSprite, colorCounter, i, j);
                 colorCounter += 20;
             }
         }
 
         _heightMouseMap.bitmapData.draw(mouseMapSprite, new Matrix(1, 0, 0, 1, fieldMaxWidth / 2, Constants.MOUSEMAP_HEIGHT_MARGIN));
+        createMouseTileHash(_heightMouseColors);
+    }
+
+    private function createMouseTileHash(heightMouseColors:Object):void
+    {
+        _heightMouseHash = [];
+        for (var i:int = 0; i < Constants.MAX_FIELD_SIZE; i++)
+        {
+            _heightMouseHash.push([]);
+            (_heightMouseHash[i] as Array).length = Constants.MAX_FIELD_SIZE;
+        }
+
+        for (var key:String in heightMouseColors)
+        {
+            var color:uint = uint(key);
+            var pnt:Object = heightMouseColors[key];
+            _heightMouseHash[pnt.x][pnt.y] = color;
+        }
     }
 
     private function drawGridTile(map:Sprite, color:uint, x:int, y:int, fill:Boolean = true, border:Boolean = false):void
     {
         if (border)
         {
-            map.graphics.lineStyle(0);
+            map.graphics.lineStyle(0, 0xCCCCCC);
         }
         else
         {
@@ -267,24 +282,58 @@ public class FieldView extends IsoScene
         {
             map.graphics.beginFill(color);
         }
-        map.graphics.moveTo(getX(x, y), getY(x, y));
+        map.graphics.moveTo(getScreenX(x, y), getScreenY(x, y));
 
-        map.graphics.lineTo(getX(x + 1, y), getY(x + 1, y));
-        map.graphics.lineTo(getX(x + 1, y + 1), getY(x + 1, y + 1));
-        map.graphics.lineTo(getX(x, y + 1), getY(x, y + 1));
-        map.graphics.lineTo(getX(x, y), getY(x, y));
+        map.graphics.lineTo(getScreenX(x + 1, y), getScreenY(x + 1, y));
+        map.graphics.lineTo(getScreenX(x + 1, y + 1), getScreenY(x + 1, y + 1));
+        map.graphics.lineTo(getScreenX(x, y + 1), getScreenY(x, y + 1));
+        map.graphics.lineTo(getScreenX(x, y), getScreenY(x, y));
+        if (fill)
+        {
+            map.graphics.endFill();
+        }
+
+        var posText:TextField = new TextField();
+        posText.text = x + "," + y;
+        posText.x = getScreenX(x, y);
+        posText.y = getScreenY(x, y);
+        map.addChild(posText);
+    }
+
+
+    private function drawSelectTile(map:Sprite, color:uint, x:int, y:int, fill:Boolean = true, border:Boolean = false):void
+    {
+        if (border)
+        {
+            map.graphics.lineStyle(0, 0xCCCCCC);
+        }
+        else
+        {
+            map.graphics.lineStyle(0, 0, 0);
+        }
+
+        if (fill)
+        {
+            map.graphics.beginFill(color);
+        }
+        map.graphics.moveTo(getScreenX(x, y), getScreenY(x, y));
+
+        map.graphics.lineTo(getScreenX(x + 1, y), getScreenY(x + 1, y));
+        map.graphics.lineTo(getScreenX(x + 1, y + 1), getScreenY(x + 1, y + 1));
+        map.graphics.lineTo(getScreenX(x, y + 1), getScreenY(x, y + 1));
+        map.graphics.lineTo(getScreenX(x, y), getScreenY(x, y));
         if (fill)
         {
             map.graphics.endFill();
         }
     }
 
-    private function getX(x:int, y:int):Number
+    private function getScreenX(x:int, y:int):Number
     {
         return IsoMath.isoToScreen(new Pt(x * Constants.TILE_SIZE, y * Constants.TILE_SIZE, zz(x, y) * Constants.TILE_HEIGHT)).x;
     }
 
-    private function getY(x:int, y:int):Number
+    private function getScreenY(x:int, y:int):Number
     {
         return IsoMath.isoToScreen(new Pt(x * Constants.TILE_SIZE, y * Constants.TILE_SIZE, zz(x, y) * Constants.TILE_HEIGHT)).y;
     }
@@ -312,7 +361,7 @@ public class FieldView extends IsoScene
             for (var j:int = 0; j < Constants.MAX_FIELD_SIZE - 1; j++)
             {
                 var tile:DisplayObject = getTileSprite(i, j);
-                _field.bitmapData.draw(tile, new Matrix(1, 0, 0, 1, fieldMaxWidth / 2 + getX(i, j), Constants.MOUSEMAP_HEIGHT_MARGIN + getY(i, j)));
+                _field.bitmapData.draw(tile, new Matrix(1, 0, 0, 1, fieldMaxWidth / 2 + getScreenX(i, j), Constants.MOUSEMAP_HEIGHT_MARGIN + getScreenY(i, j)));
             }
         }
 

@@ -97,7 +97,8 @@ objects:
 
   1000: &rider
     shop:
-      show: false
+      show: true
+      tab: decor
       priceReal: 100
       priceMoney: 100
     behavior:
@@ -113,7 +114,7 @@ objects:
       rotated: true
     view:
       field: "rider.swf"
-      shop: "otherFile.swf"
+      shop: "rider.swf"
     descriptions:
           ru:
             name: "Начинающий райдер"

@@ -18,9 +18,9 @@ public class SpaceObj
     ObjectId eDatabaseId;
 
     @Embedded
-    int x;
+    Integer x;
     @Embedded
-    int y;
+    Integer y;
 
     @Embedded
     String classId = "0";

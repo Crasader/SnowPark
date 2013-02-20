@@ -18,6 +18,7 @@ public class UserEvent extends Event
     public static const EXP:String = "UEExp";
     public static const REAL:String = "UEReal";
     public static const CANCEL:String = "UECancel";
+    public static const TOOL_CHANGED:String = "UETollChanged";
 
     public var data:Object;
 

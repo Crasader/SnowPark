@@ -15,7 +15,7 @@ public class ObjectEvent extends Event
     private var _prevPos:Pt;
     private var _curPos:Pt;
 
-    public function ObjectEvent(type:String, prevPos:Pt, curPos:Pt)
+    public function ObjectEvent(type:String, prevPos:Pt = null, curPos:Pt = null)
     {
         _prevPos = prevPos;
         _curPos = curPos;

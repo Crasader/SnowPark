@@ -15,6 +15,7 @@ public class FieldEvent extends Event
     public static const HEIGHTMAP_CHANGED:String = "SnowHeightMapChanged";
     public static const OBJECT_ADDED:String = "SnowObjectAdded";
     public static const OBJECT_DESTROYED:String = "SnowObjectDestroyed";
+    public static const TOOL_CHANGED:String = "SnowToolChanged";
 
     private var _targetEvent:Event;
     private var _pos:IntPnt;

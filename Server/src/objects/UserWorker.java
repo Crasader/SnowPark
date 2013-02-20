@@ -28,14 +28,12 @@ public class UserWorker extends Thread
 
     private HashMap<Integer, Space> getNewUserSpaces()
     {
-        ArrayList<HashMap<String, String>> startLocation = (ArrayList<HashMap<String, String>>) ConfigReader.cfg().get("playerStartLocation");
+        ArrayList<Object> startLocation = (ArrayList<Object>) ConfigReader.cfg().get("playerStartLocation");
 
         Space field = new Space();
-        for (int i = 0; i < startLocation.size(); i++)
+        for (Object fieldObjectConfig : startLocation)
         {
-            HashMap<String, String> fieldObjectConfig = startLocation.get(i);
-
-            SpaceObj obj = createDefinedObject(fieldObjectConfig);
+            SpaceObj obj = createDefinedObject((HashMap<String, Integer>)fieldObjectConfig);
             field.objects.add(obj);
         }
 
@@ -45,24 +43,22 @@ public class UserWorker extends Thread
         return userConfig;
     }
 
-    private SpaceObj createDefinedObject(HashMap<String, String> fieldObjectConfig)
+    private SpaceObj createDefinedObject(HashMap<String, Integer> fieldObjectConfig)
     {
         SpaceObj object = new SpaceObj();
 
         Set<String> params = fieldObjectConfig.keySet();
-        Iterator<String> paramsIt = params.iterator();
-        while (paramsIt.hasNext())
+        for (String key : params)
         {
-            String key = paramsIt.next();
-            if (key == "id")
+            if (key.equals("id"))
             {
-                object.classId = fieldObjectConfig.get("id");
-            } else if (key == "x")
+                object.classId = String.valueOf(fieldObjectConfig.get("id"));
+            } else if (key.equals("x"))
             {
-                object.x = Integer.getInteger(fieldObjectConfig.get("x"));
-            } else if (key == "y")
+                object.x = fieldObjectConfig.get("x");
+            } else if (key.equals("y"))
             {
-                object.x = Integer.getInteger(fieldObjectConfig.get("y"));
+                object.x = fieldObjectConfig.get("y");
             }
 
         }
@@ -97,6 +93,10 @@ public class UserWorker extends Thread
 
         String cmd = (String) data.get("cmd");
         HashMap<String, Object> params = (HashMap<String, Object>) data.get("params");
+        if(cmd == null || cmd.equals(""))
+        {
+            throw new Exception("Null command!");
+        }
         if (cmd.contentEquals("getUserData"))
             return processGetUserData(params);
         else if (cmd.contentEquals("create"))
